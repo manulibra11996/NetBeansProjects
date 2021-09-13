@@ -56,11 +56,11 @@
                 for (Articulo articulo : listaArticulo){
                     cantidad = 0;
                     for (Carrito carrito: listaCarrito) {
-                        if (articulo.getId_articulo() == carrito.getId_articulo()) {
+                        if (articulo.getIdArticulo() == carrito.getId_articulo()) {
                             cantidad ++;
                         }     
                     }
-                    idArticulo = articulo.getId_articulo().toString();
+                    idArticulo = articulo.getIdArticulo().toString();
                     if(cantidad != 0){%>
                         <tr>
                             <td><%=articulo.getNombre()%></td> 

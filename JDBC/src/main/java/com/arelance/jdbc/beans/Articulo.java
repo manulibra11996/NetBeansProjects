@@ -13,7 +13,7 @@ package com.arelance.jdbc.beans;
 
 public class Articulo {
     
-    private Integer id_articulo;
+    private Integer idArticulo;
     private String nombre;
     private String descripcion;
     private Double precio;
@@ -21,19 +21,19 @@ public class Articulo {
     public Articulo() {
     }
 
-    public Articulo(Integer id_articulo, String nombre, String descripcion, Double precio) {
-        this.id_articulo = id_articulo;
+    public Articulo(Integer idArticulo, String nombre, String descripcion, Double precio) {
+        this.idArticulo = idArticulo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
     }
 
-    public Integer getId_articulo() {
-        return id_articulo;
+    public Integer getIdArticulo() {
+        return idArticulo;
     }
 
-    public void setId_articulo(Integer id_articulo) {
-        this.id_articulo = id_articulo;
+    public void setIdArticulo(Integer idArticulo) {
+        this.idArticulo = idArticulo;
     }
 
     public String getNombre() {

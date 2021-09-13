@@ -33,7 +33,7 @@ public class ArticuloDAOImpl implements IArticuloDao{
                 rs=conn.createStatement().executeQuery(sql);
                 while (rs.next()) {
                     Articulo a=new Articulo();
-                    a.setId_articulo(rs.getInt(1));
+                    a.setIdArticulo(rs.getInt(1));
                     a.setNombre(rs.getString(2));
                     a.setDescripcion(rs.getString(3));
                     a.setPrecio(rs.getDouble(4));

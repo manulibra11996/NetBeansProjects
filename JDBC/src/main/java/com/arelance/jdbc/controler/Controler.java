@@ -58,7 +58,7 @@ public class Controler extends HttpServlet {
             String[] listaArticuloElegidos = request.getParameterValues("articulo");
             List<Integer> idListaArticulo = new ArrayList<>();
             Integer idUsuario = null;
-            Integer idArticulo = null;
+            Integer idArticulo;
             
             IUsuarioDao implementacionUsuario = new UsuarioDAOServ(); 
             List<Usuario> listaUsuario = implementacionUsuario.obtener();
@@ -130,8 +130,8 @@ public class Controler extends HttpServlet {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
                                 idUsuario=usuario.getId_usuario(); 
                                 for (Articulo articulo : listaArticulo) {
-                                    if(idListaArticulo.contains(articulo.getId_articulo())){
-                                        idArticulo = articulo.getId_articulo();
+                                    if(idListaArticulo.contains(articulo.getIdArticulo())){
+                                        idArticulo = articulo.getIdArticulo();
                                         implementacionCarrito.guardar(new Carrito(idUsuario, idArticulo));
                                     }
                                 }
@@ -151,8 +151,8 @@ public class Controler extends HttpServlet {
                         }
                         for (Articulo articulo : listaArticulo) {
                             for (Carrito carrito : listaCarrito) {
-                                if(articulo.getId_articulo() == carrito.getId_articulo()){
-                                    idArticulo = articulo.getId_articulo();
+                                if(articulo.getIdArticulo() == carrito.getId_articulo()){
+                                    idArticulo = articulo.getIdArticulo();
                                     implementacionFactura.guardar(new Factura(idUsuario,idArticulo, articulo.getPrecio()));
                                 }
                             }
@@ -168,8 +168,8 @@ public class Controler extends HttpServlet {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
                                 idUsuario=usuario.getId_usuario(); 
                                 for (Articulo articulo : listaArticulo) {
-                                    if(idListaArticulo.contains(articulo.getId_articulo())){
-                                        idArticulo = articulo.getId_articulo();
+                                    if(idListaArticulo.contains(articulo.getIdArticulo())){
+                                        idArticulo = articulo.getIdArticulo();
                                         implementacionCarrito.guardar(new Carrito(idUsuario, idArticulo));
                                     }
                                 }
@@ -185,7 +185,7 @@ public class Controler extends HttpServlet {
                 
                 case "Eliminararticulos":
                     idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
-                    idArticulo = Integer.parseInt(request.getParameter("idArticulo"));;
+                    idArticulo = Integer.parseInt(request.getParameter("idArticulo"));
                     implementacionCarrito.eliminar_art(new Carrito(idUsuario,idArticulo));
                     request.getServletContext().getRequestDispatcher("/tienda/carrito.jsp").forward(request, response);
                 break;

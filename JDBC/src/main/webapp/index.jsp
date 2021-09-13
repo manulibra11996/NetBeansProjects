@@ -50,7 +50,7 @@
                     </tr>
                 <%for (Articulo articulo : listaArticulo) {%>
                     <tr>
-                        <td><input type='checkbox' name='articulo' id='<%=articulo.getId_articulo()%>' value='<%=articulo.getId_articulo()%>'></td>
+                        <td><input type='checkbox' name='articulo' id='<%=articulo.getIdArticulo()%>' value='<%=articulo.getIdArticulo()%>'></td>
                         <td><%=articulo.getNombre()%></td>
                         <td><%=articulo.getPrecio()%> &#8364</td>
                     </tr> 
