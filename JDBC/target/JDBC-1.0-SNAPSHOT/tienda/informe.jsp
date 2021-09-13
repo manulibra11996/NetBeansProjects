@@ -58,7 +58,7 @@
                     for (Articulo articulo : listaArticulo){
                         cantidad = 0;
                         for (Factura factura :  listaFactura) {
-                            if (articulo.getIdArticulo() == factura.getId_articulo()) {
+                            if (articulo.getIdArticulo() == factura.getIdArticulo()) {
                                 cantidad ++;
                             }     
                         }

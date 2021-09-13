@@ -11,51 +11,52 @@ package com.arelance.jdbc.beans;
  */
 public class Carrito {
     
-    private Integer idcarrito;
-    private Integer id_usuario;
-    private Integer id_articulo;
+    private Integer idCarrito;
+    private Integer idUsuario;
+    private Integer idArticulo;
 
-    public Carrito(Integer idcarrito, Integer id_usuario, Integer id_articulo) {
-        this.idcarrito = idcarrito;
-        this.id_usuario = id_usuario;
-        this.id_articulo = id_articulo;
+    public Carrito(Integer idCarrito, Integer idUsuario, Integer idArticulo) {
+        this.idCarrito = idCarrito;
+        this.idUsuario = idUsuario;
+        this.idArticulo = idArticulo;
     }
 
-    public Carrito(Integer id_usuario, Integer id_articulo) {
-        this.id_usuario = id_usuario;
-        this.id_articulo = id_articulo;
+    public Carrito(Integer idUsuario, Integer idArticulo) {
+        this.idUsuario = idUsuario;
+        this.idArticulo = idArticulo;
     }
 
-    public Carrito(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public Carrito(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
     
     public Carrito() {
     }
 
-    public Integer getIdcarrito() {
-        return idcarrito;
+    public Integer getIdCarrito() {
+        return idCarrito;
     }
 
-    public void setIdcarrito(Integer idcarrito) {
-        this.idcarrito = idcarrito;
+    public void setIdCarrito(Integer idCarrito) {
+        this.idCarrito = idCarrito;
     }
+
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public Integer getIdArticulo() {
+        return idArticulo;
+    }
+
+    public void setIdArticulo(Integer idArticulo) {
+        this.idArticulo = idArticulo;
+    }
+
     
-    public Integer getId_usuario() {
-        return id_usuario;
-    }
-
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    public Integer getId_articulo() {
-        return id_articulo;
-    }
-
-    public void setId_articulo(Integer id_articulo) {
-        this.id_articulo = id_articulo;
-    }
-
     
 }

@@ -33,7 +33,6 @@ public class PostLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             
@@ -42,7 +41,6 @@ public class PostLogin extends HttpServlet {
             
             request.getRequestDispatcher("./Controler").
                 forward(request, response);
-//            response.sendRedirect("./Controler");
         }
     }
 

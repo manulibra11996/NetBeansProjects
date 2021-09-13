@@ -39,8 +39,8 @@ public class LoginFilter implements Filter {
         }
         try {
             chain.doFilter(request, response);
-        } catch (Throwable t) {
-            t.printStackTrace();
+        } catch (IOException exception) {
+            exception.toString();
         }
     }
 

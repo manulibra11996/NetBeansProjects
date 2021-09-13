@@ -22,7 +22,6 @@ public class UsuarioDAOImpl implements IUsuarioDao{
 
     @Override
     public List<Usuario> obtener() {
-        ResultSet rs=null;
 
         String sql="SELECT * FROM usuario";
 
@@ -30,18 +29,18 @@ public class UsuarioDAOImpl implements IUsuarioDao{
 
         try {	
             try (Connection conn = Conexion.conectar()) {
-                rs=conn.createStatement().executeQuery(sql);
-                while (rs.next()) {
-                    Usuario u=new Usuario();
-                    u.setId_usuario(rs.getInt(1));
-                    u.setNick(rs.getString(2));
-                    u.setContraseña(rs.getString(3));
-                    listaUsuarios.add(u);
+                try(ResultSet rs = conn.createStatement().executeQuery(sql)){
+                    while (rs.next()) {
+                        Usuario u=new Usuario();
+                        u.setIdUsuario(rs.getInt(1));
+                        u.setNick(rs.getString(2));
+                        u.setContrasena(rs.getString(3));
+                        listaUsuarios.add(u);
+                    }
                 }
-                rs.close();
             }
         } catch (SQLException e) {
-            System.out.println("Error: Clase UsuarioDaoImple, método obtener");
+            System.out.println("Error: Clase UsuarioDaoImple, método obtener");//Pide cambiarlo a logger log
         }
         return listaUsuarios;
 
@@ -49,14 +48,14 @@ public class UsuarioDAOImpl implements IUsuarioDao{
 
     @Override
     public void guardar(Usuario usuario) {
-        String sql="INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContraseña() +"')";
+        String sql="INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContrasena()+"')";
 
         try {			
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase UsuarioDaoImple, método guardar");
+                System.out.println("Error: Clase UsuarioDaoImple, método guardar");//Pide cambiarlo a logger log
         } 
 
     }

@@ -20,6 +20,10 @@ import javax.naming.NamingException;
  */
 public class Conexion {
 
+    private Conexion() {
+    }
+
+    
     public static Connection conectar() {
         Connection con = null;
 
@@ -28,7 +32,7 @@ public class Conexion {
             DataSource ds = (DataSource) ctx.lookup("jdbc/Examen");
             con = ds.getConnection();
         } catch (SQLException e) {
-            System.out.println("No se pudo conectar a la base de datos");
+            System.out.println("No se pudo conectar a la base de datos");//pide cambiarlo a logger log
         } catch (NamingException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }

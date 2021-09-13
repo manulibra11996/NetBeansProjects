@@ -22,7 +22,6 @@ public class FacturaDAOImpl implements IFacturaDao{
 
     @Override
     public List<Factura> obtener() {
-        ResultSet rs=null;
 
         String sql="SELECT idfactura, usuario_idusuario, articulo_idarticulo, precio FROM factura";
 
@@ -30,19 +29,19 @@ public class FacturaDAOImpl implements IFacturaDao{
 
         try {	
             try (Connection conn = Conexion.conectar()) {
-                rs=conn.createStatement().executeQuery(sql);
-                while (rs.next()) {
-                    Factura f=new Factura();
-                    f.setId_factura(rs.getInt(1));
-                    f.setId_usuario(rs.getInt(2));
-                    f.setId_articulo(rs.getInt(3));
-                    f.setPrecio(rs.getDouble(4));
-                    listaFactura.add(f);
+                try(ResultSet rs = conn.createStatement().executeQuery(sql)){
+                    while (rs.next()) {
+                        Factura f=new Factura();
+                        f.setIdFactura(rs.getInt(1));
+                        f.setIdUsuario(rs.getInt(2));
+                        f.setIdArticulo(rs.getInt(3));
+                        f.setPrecio(rs.getDouble(4));
+                        listaFactura.add(f);
+                    }
                 }
-                rs.close();
             }
         } catch (SQLException e) {
-            System.out.println("Error: Clase FacturaDaoImple, método obtener");
+            System.out.println("Error: Clase FacturaDaoImple, método obtener");//Pide cambiarlo a logger log
         }
         return listaFactura;
     }
@@ -50,27 +49,27 @@ public class FacturaDAOImpl implements IFacturaDao{
 
     @Override
     public void guardar(Factura factura) {
-        String sql="INSERT INTO factura (usuario_idusuario,articulo_idarticulo,precio) VALUES (" + factura.getId_usuario() + "," + factura.getId_articulo() +"," + factura.getPrecio() + ")";
+        String sql="INSERT INTO factura (usuario_idusuario,articulo_idarticulo,precio) VALUES (" + factura.getIdUsuario()+ "," + factura.getIdArticulo() +"," + factura.getPrecio() + ")";
 
         try {			
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase FacturaDaoImple, método guardar");
+                System.out.println("Error: Clase FacturaDaoImple, método guardar");//Pide cambiarlo a logger log
         } 
     }
 
     @Override
     public void eliminar(Factura factura) {
-        String sql="DELETE FROM factura WHERE usuario_idusuario= '" + factura.getId_usuario() + "'";
+        String sql="DELETE FROM factura WHERE usuario_idusuario= '" + factura.getIdUsuario() + "'";
 
         try {			
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase FacturaDaoImple, método eliminar");
+                System.out.println("Error: Clase FacturaDaoImple, método eliminar");//Pide cambiarlo a logger log
         } 
     }
 

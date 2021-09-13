@@ -56,7 +56,7 @@
                 for (Articulo articulo : listaArticulo){
                     cantidad = 0;
                     for (Carrito carrito: listaCarrito) {
-                        if (articulo.getIdArticulo() == carrito.getId_articulo()) {
+                        if (articulo.getIdArticulo() == carrito.getIdArticulo()) {
                             cantidad ++;
                         }     
                     }

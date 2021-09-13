@@ -34,8 +34,8 @@ public class CarritoDAOServ implements ICarritoDao{
     }
 
     @Override
-    public void eliminar_art(Carrito carrito) {
-        carritoDao.eliminar_art(carrito);
+    public void eliminarArt(Carrito carrito) {
+        carritoDao.eliminarArt(carrito);
     }
 
 }

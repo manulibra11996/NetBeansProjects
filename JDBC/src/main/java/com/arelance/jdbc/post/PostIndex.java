@@ -32,12 +32,10 @@ public class PostIndex extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             String boton = request.getParameter("boton");
             String[] listaArticuloElegidos = request.getParameterValues("articulo");
             request.getRequestDispatcher("./Controler").
                     forward(request, response);
-//            response.sendRedirect("./Controler");
         }
     }
 

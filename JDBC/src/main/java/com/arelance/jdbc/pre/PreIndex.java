@@ -42,7 +42,6 @@ public class PreIndex extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             IArticuloDao implementacionArticulo = new ArticuloDAOServ(); 
             List<Articulo> listaArticulo = implementacionArticulo.obtener();
             IUsuarioDao implementacionUsuario = new UsuarioDAOServ(); 

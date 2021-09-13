@@ -11,33 +11,33 @@ package com.arelance.jdbc.beans;
  */
 public class Usuario {
     
-    private Integer id_usuario;
+    private Integer idUsuario;
     private String nick;
-    private String contraseña;
+    private String contrasena;
 
-    public Usuario(Integer id_usuario, String nick, String contraseña) {
-        this.id_usuario = id_usuario;
+    public Usuario(Integer idUsuario, String nick, String contrasena) {
+        this.idUsuario = idUsuario;
         this.nick = nick;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
     public Usuario() {
     }
 
-    public Usuario(String nick, String contraseña) throws UserIlegalExeption{
-        if (nick == null || contraseña == null) {
+    public Usuario(String nick, String contrasena) throws UserIlegalExeption{
+        if (nick == null || contrasena == null) {
             throw new UserIlegalExeption();
         }
         this.nick = nick;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
 
-    public Integer getId_usuario() {
-        return id_usuario;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNick() {
@@ -48,13 +48,14 @@ public class Usuario {
         this.nick = nick;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
-    
+
+   
     
 }

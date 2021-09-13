@@ -18,11 +18,11 @@ import com.arelance.jdbc.dao.factura.IFacturaDao;
 import com.arelance.jdbc.dao.factura.service.FacturaDAOServ;
 import com.arelance.jdbc.dao.usuario.IUsuarioDao;
 import com.arelance.jdbc.dao.usuario.service.UsuarioDAOServ;
-import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -50,14 +50,13 @@ public class Controler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             String boton = request.getParameter("boton");
             String[] listaArticuloElegidos = request.getParameterValues("articulo");
             List<Integer> idListaArticulo = new ArrayList<>();
-            Integer idUsuario = null;
+            Integer idDelUsuario = null;
             Integer idArticulo;
             
             IUsuarioDao implementacionUsuario = new UsuarioDAOServ(); 
@@ -78,6 +77,8 @@ public class Controler extends HttpServlet {
                     idListaArticulo.add(Integer.parseInt(listaArticuloElegidos[i]));
                 }
             }
+            
+            String accesoCarrito = "/tienda/carrito.jsp";
             
             switch(boton){
                 case "Registro":
@@ -109,9 +110,9 @@ public class Controler extends HttpServlet {
                     int logearse = 0;
                     for (Usuario usuario : listaUsuario) {
                         if (nick.compareTo(usuario.getNick()) == 0 ) {
-                            idUsuario=usuario.getId_usuario();
+                            idDelUsuario=usuario.getIdUsuario();
                             request.getSession().setAttribute("nick", nick);
-                            request.setAttribute("idUsuario", idUsuario);
+                            request.setAttribute("idUsuarioEnviado", idDelUsuario);
                             request.getRequestDispatcher("/index.jsp").forward(request, response);
                         }else{
                             logearse++;
@@ -128,11 +129,11 @@ public class Controler extends HttpServlet {
                     if(request.getSession() != null){
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idUsuario=usuario.getId_usuario(); 
+                                idDelUsuario=usuario.getIdUsuario(); 
                                 for (Articulo articulo : listaArticulo) {
                                     if(idListaArticulo.contains(articulo.getIdArticulo())){
                                         idArticulo = articulo.getIdArticulo();
-                                        implementacionCarrito.guardar(new Carrito(idUsuario, idArticulo));
+                                        implementacionCarrito.guardar(new Carrito(idDelUsuario, idArticulo));
                                     }
                                 }
                             } 
@@ -146,19 +147,19 @@ public class Controler extends HttpServlet {
                     if(request.getSession() != null){ 
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idUsuario=usuario.getId_usuario();
+                                idDelUsuario=usuario.getIdUsuario();
                             }
                         }
                         for (Articulo articulo : listaArticulo) {
                             for (Carrito carrito : listaCarrito) {
-                                if(articulo.getIdArticulo() == carrito.getId_articulo()){
+                                if(Objects.equals(articulo.getIdArticulo(), carrito.getIdArticulo())){
                                     idArticulo = articulo.getIdArticulo();
-                                    implementacionFactura.guardar(new Factura(idUsuario,idArticulo, articulo.getPrecio()));
+                                    implementacionFactura.guardar(new Factura(idDelUsuario,idArticulo, articulo.getPrecio()));
                                 }
                             }
                         }
                     }
-                    implementacionCarrito.eliminar(new Carrito(idUsuario));
+                    implementacionCarrito.eliminar(new Carrito(idDelUsuario));
                     request.getServletContext().getRequestDispatcher("/tienda/informe.jsp").forward(request, response);
                 break;
                 
@@ -166,11 +167,11 @@ public class Controler extends HttpServlet {
                     if(request.getSession() != null){ 
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idUsuario=usuario.getId_usuario(); 
+                                idDelUsuario=usuario.getIdUsuario(); 
                                 for (Articulo articulo : listaArticulo) {
                                     if(idListaArticulo.contains(articulo.getIdArticulo())){
                                         idArticulo = articulo.getIdArticulo();
-                                        implementacionCarrito.guardar(new Carrito(idUsuario, idArticulo));
+                                        implementacionCarrito.guardar(new Carrito(idDelUsuario, idArticulo));
                                     }
                                 }
                             } 
@@ -180,20 +181,24 @@ public class Controler extends HttpServlet {
                 break;
                 
                 case "Vercarrito":
-                    request.getServletContext().getRequestDispatcher("/tienda/carrito.jsp").forward(request, response);
+                    request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
                 break;
                 
                 case "Eliminararticulos":
-                    idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+                    idDelUsuario = Integer.parseInt(request.getParameter("idUsuario"));
                     idArticulo = Integer.parseInt(request.getParameter("idArticulo"));
-                    implementacionCarrito.eliminar_art(new Carrito(idUsuario,idArticulo));
-                    request.getServletContext().getRequestDispatcher("/tienda/carrito.jsp").forward(request, response);
+                    implementacionCarrito.eliminarArt(new Carrito(idDelUsuario,idArticulo));
+                    request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
                 break;
                 
                 case "VaciarCarrito":
-                    idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
-                    implementacionCarrito.eliminar(new Carrito(idUsuario));
-                    request.getServletContext().getRequestDispatcher("/tienda/carrito.jsp").forward(request, response);
+                    idDelUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+                    implementacionCarrito.eliminar(new Carrito(idDelUsuario));
+                    request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
+                break;
+                
+                default:
+                    response.sendRedirect("./index.jsp");
                 break;
             }
         }

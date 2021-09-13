@@ -13,7 +13,7 @@ public class UserIlegalExeption extends Exception {
 
     @Override
     public String getMessage() {
-        return "No existe el nick o el pasword"; //To change body of generated methods, choose Tools | Templates.
+        return "No existe el nick o el pasword"; 
     }
     
 }
