@@ -9,7 +9,6 @@ package com.arelance.sgaejb_jpa.services.personaservice.impl;
 import com.arelance.sgaejb_jpa.dao.persona.PersonaDAO;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Persona;
-import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 

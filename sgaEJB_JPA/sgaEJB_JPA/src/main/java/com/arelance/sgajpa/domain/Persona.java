@@ -29,10 +29,14 @@ public class Persona implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_persona")
     private int idPersona;
-    private String nombre;
-    private String apellido;
-    private String email;
-    private String telefono;
+    @Column(name = "firstname")
+   private String nombre;
+   @Column(name = "lastname")
+   private String apellido;
+   @Column(name = "email")
+   private String email;
+   @Column(name = "telephone")
+   private String telefono;
 
     public Persona() {
     }
