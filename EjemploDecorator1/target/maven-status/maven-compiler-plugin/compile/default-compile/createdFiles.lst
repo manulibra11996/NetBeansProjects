@@ -1,0 +1,7 @@
+com\arelance\ejemplodecorator1\beans\WatchDecorator.class
+com\arelance\ejemplodecorator1\pruebas\ClientDecoratorPattern.class
+com\arelance\ejemplodecorator1\beans\LuxuryWatchDecorator.class
+com\arelance\ejemplodecorator1\beans\BasicWatch.class
+com\arelance\ejemplodecorator1\beans\GamersWatchDecorator.class
+com\arelance\ejemplodecorator1\beans\Watch.class
+com\arelance\ejemplodecorator1\beans\SportWatchDecorator.class

@@ -1,0 +1,14 @@
+com\arelance\megajobs\PostRegistro.class
+com\arelance\megajobs\beans\Usuario.class
+com\arelance\megajobs\Controler.class
+com\arelance\megajobs\JAXRSConfiguration.class
+com\arelance\megajobs\PostIndex.class
+com\arelance\megajobs\beans\Localizacion.class
+com\arelance\megajobs\beans\Experiencia.class
+com\arelance\megajobs\PostLogin.class
+NewServletListener.class
+com\arelance\megajobs\resources\JavaEE8Resource.class
+com\arelance\megajobs\PreRegistro.class
+com\arelance\megajobs\beans\Oferta.class
+com\arelance\megajobs\PreLogin.class
+com\arelance\megajobs\PreIndex.class

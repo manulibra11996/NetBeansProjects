@@ -1,0 +1,6 @@
+com\arelance\ejemplocomando\luzprimera\Command.class
+com\arelance\ejemplocomando\luzprimera\PressSwitch.class
+com\arelance\ejemplocomando\luzprimera\Switch.class
+com\arelance\ejemplocomando\luzprimera\FlipUpCommand.class
+com\arelance\ejemplocomando\luzprimera\FlipDownCommand.class
+com\arelance\ejemplocomando\luzprimera\Light.class

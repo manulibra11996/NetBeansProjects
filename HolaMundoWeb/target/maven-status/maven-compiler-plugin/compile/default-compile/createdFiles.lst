@@ -1,0 +1,12 @@
+com\arelance\holamundoweb\PreConfirmacionBorradoServlet.class
+CreateSessionListener.class
+com\arelance\holamundoweb\Eliminador.class
+com\arelance\holamundoweb\JAXRSConfiguration.class
+com\arelance\holamundoweb\procesado\PostDatosPersonales.class
+com\arelance\holamundoweb\PostAñadirSerlet.class
+com\arelance\holamundoweb\procesado\PostConfirmacion.class
+com\arelance\holamundoweb\PostConfirmacionBorradoServlet.class
+com\arelance\holamundoweb\procesado\PreConfirmacion.class
+com\arelance\holamundoweb\resources\JavaEE8Resource.class
+com\arelance\holamundoweb\beans\Usuario.class
+com\arelance\holamundoweb\procesado\PreDatosPersonales.class

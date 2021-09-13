@@ -1,0 +1,16 @@
+com\arelance\gestionbiblioteca\beans\Seleccionable.class
+com\arelance\gestionbiblioteca\services\CRUDRepository.class
+com\arelance\gestionbiblioteca\actions\Command.class
+com\arelance\gestionbiblioteca\beans\DatosUsuario.class
+com\arelance\gestionbiblioteca\beans\Opcion.class
+com\arelance\gestionbiblioteca\actions\CommandSeleccionable.class
+com\arelance\gestionbiblioteca\beans\OpcionRegistrar.class
+com\arelance\gestionbiblioteca\Principal.class
+com\arelance\gestionbiblioteca\beans\Controller.class
+com\arelance\gestionbiblioteca\beans\OpcionSalir.class
+com\arelance\gestionbiblioteca\views\RecogerDatosUsuario.class
+com\arelance\gestionbiblioteca\views\View.class
+com\arelance\gestionbiblioteca\beans\BaseDatosUsuario.class
+com\arelance\gestionbiblioteca\beans\Usuario.class
+com\arelance\gestionbiblioteca\beans\Libro.class
+com\arelance\gestionbiblioteca\beans\OpcionLogin.class

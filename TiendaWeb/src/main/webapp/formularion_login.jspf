@@ -1,0 +1,16 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<% if(request.getParameter("nick") != null && request.getParameter("password") != null){
+        out.print("<h3>"+request.getAttribute("mensaje")+"</h3>");
+    }
+    Integer contador = 3;
+    out.print("<p> Intentos restantes " + contador + "</p>");
+%>
+<h1>Inicio de sesion</h1>
+<form action="./PostLogin" method="GET">
+    <p>Nick: <input type="text" name="nick" placeholder="Escribe tu nick" required="required"></p>
+    <p>Password: <input type="text" name="password" placeholder="Escribe una contraseña" required="required"></p>
+    <input type="hidden" name="contador" value="<%=contador%>">
+    <input type="submit" name="boton" value="Login">
+    <input type="reset"  value="Limpiar campos">
+</form>

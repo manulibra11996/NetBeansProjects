@@ -1,0 +1,11 @@
+com\arelance\jdbc\beans\Usuario.class
+com\arelance\jdbc\dao\usuario\IUsuarioDao.class
+com\arelance\jdbc\dao\articulo\service\ArticuloDAOServ.class
+com\arelance\jdbc\beans\Articulo.class
+com\arelance\jdbc\Conexion.class
+com\arelance\jdbc\dao\articulo\IArticuloDao.class
+com\arelance\jdbc\dao\articulo\impl\ArticuloDAOImpl.class
+com\arelance\jdbc\resources\JavaEE8Resource.class
+com\arelance\jdbc\dao\usuario\impl\UsuarioDAOImpl.class
+com\arelance\jdbc\JAXRSConfiguration.class
+com\arelance\jdbc\listener\UsuarioServletListener.class

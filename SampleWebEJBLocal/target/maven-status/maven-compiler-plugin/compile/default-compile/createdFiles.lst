@@ -1,0 +1,5 @@
+com\controler\MainServlet.class
+com\arelance\samplewebejblocal\resources\JavaEE8Resource.class
+com\arelance\samplewebejblocal\UsuarioService.class
+com\benas\dominio\Usuario.class
+com\arelance\samplewebejblocal\impl\UsuarioServiceImpl.class

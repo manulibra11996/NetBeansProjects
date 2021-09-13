@@ -1,0 +1,5 @@
+com\arelance\calculadoraweb\PostCalculadora.class
+com\arelance\calculadoraweb\JAXRSConfiguration.class
+com\arelance\calculadoraweb\PreCalculadora.class
+com\arelance\calculadoraweb\listeners\CreateSession.class
+com\arelance\calculadoraweb\resources\JavaEE8Resource.class

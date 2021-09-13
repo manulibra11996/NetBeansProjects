@@ -1,0 +1,5 @@
+com\arelance\sql\beans\Articulo.class
+com\arelance\sql\Main_menu.class
+com\arelance\sql\beans\Cliente.class
+com\arelance\sql\beans\DetallePedido.class
+com\arelance\sql\beans\Pedido.class

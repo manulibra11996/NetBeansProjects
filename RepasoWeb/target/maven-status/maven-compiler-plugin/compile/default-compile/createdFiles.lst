@@ -1,0 +1,7 @@
+com\arelance\repasoweb\resources\JavaEE8Resource.class
+com\arelance\repasoweb\PreRepaso.class
+com\arelance\repasoweb\MostrarNombresParesFilter.class
+com\arelance\repasoweb\listener\Listener.class
+com\arelance\repasoweb\PostRepaso.class
+com\arelance\repasoweb\JAXRSConfiguration.class
+com\arelance\repasoweb\SelectorNombresFilter.class

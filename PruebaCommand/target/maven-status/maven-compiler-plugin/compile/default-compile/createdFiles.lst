@@ -1,0 +1,8 @@
+com\arelance\pruebacommand\beans\Division.class
+com\arelance\pruebacommand\beans\Command.class
+com\arelance\pruebacommand\beans\Suma.class
+com\arelance\pruebacommand\beans\Resta.class
+com\arelance\pruebacommand\beans\Multiplicacion.class
+com\arelance\pruebacommand\main\main.class
+com\arelance\pruebacommand\beans\Calculadora.class
+com\arelance\pruebacommand\beans\ISwitchable.class

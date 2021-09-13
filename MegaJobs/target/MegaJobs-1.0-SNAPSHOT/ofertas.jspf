@@ -1,0 +1,22 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="java.util.Arrays"%>
+<%@page import="com.arelance.megajobs.beans.Localizacion"%>
+<%@page import="com.arelance.megajobs.beans.Experiencia"%>
+<%@page import="java.util.Set"%>
+<%@page import="com.arelance.megajobs.beans.Oferta"%>
+<%@ page pageEncoding="UTF-8" %>
+   <form action="./PostTienda" method="GET">
+        <%
+
+            Set<Oferta> ofertas = (Set<Oferta>) request.getSession().getAttribute("registro");
+            ofertas.add(new Oferta("Programador Junior . Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec elit sit amet ligula pretium iaculis ac non sem. Praesent consequat nunc at risus auctor, dictum varius sapien dignissim.", 
+                    Localizacion.Local, 10000, Experiencia.Junior));
+           
+            for (Oferta oferta : ofertas) { 
+                String[] textoSeparado = oferta.getDescripcionLarga().split(" . ");
+
+                out.print("<p><input type=\"checkbox\" name=\"articulos\" value=\" " + oferta + "\">" + textoSeparado[0] + "</p>");
+            }
+ 
+        %>
+        </form>

@@ -1,0 +1,6 @@
+com\arelance\ejemplocommand2\luzsegunda\ISwitchable.class
+com\arelance\ejemplocommand2\luzsegunda\Light.class
+com\arelance\ejemplocommand2\luzsegunda\PressSwitch.class
+com\arelance\ejemplocommand2\luzsegunda\FlipDownCommand.class
+com\arelance\ejemplocommand2\luzsegunda\FlipUpCommand.class
+com\arelance\ejemplocommand2\luzsegunda\Command.class
