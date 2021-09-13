@@ -32,7 +32,7 @@ public class Test {
         persona.setEmail("mperez@gmail.com");
         persona.setTelefono("666999888");
         log.debug("objeto a persistir"+persona);
-        em.persist(persona);
+        em.remove(persona);
         tx.commit();
         log.debug("objeto persistido"+persona);
         em.close();

@@ -48,6 +48,11 @@ public class Persona implements Serializable {
         this.telefono = telefono;
     }
 
+    public Persona(int idPersona) {
+        this.idPersona = idPersona;
+    }
+
+    
     /**
      * @return the idPersona
      */
