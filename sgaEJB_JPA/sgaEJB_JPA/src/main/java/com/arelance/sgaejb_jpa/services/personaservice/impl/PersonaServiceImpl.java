@@ -26,6 +26,11 @@ public class PersonaServiceImpl implements PersonaService {
        
         return personaDAO.listarPersonas();
     }
+    
+    @Override
+    public Persona findPersonaByID(Persona persona){
+        return personaDAO.findPersonaByID(persona);
+    }
 
     @Override
     public Persona findPersonaByEmail(Persona persona) {
