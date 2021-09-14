@@ -30,13 +30,13 @@ public class Persona implements Serializable {
     @Column(name = "id_persona")
     private int idPersona;
     @Column(name = "firstname")
-   private String nombre;
-   @Column(name = "lastname")
-   private String apellido;
-   @Column(name = "email")
-   private String email;
-   @Column(name = "telephone")
-   private String telefono;
+    private String nombre;
+    @Column(name = "lastname")
+    private String apellido;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "telephone")
+    private String telefono;
 
     public Persona() {
     }
@@ -46,10 +46,6 @@ public class Persona implements Serializable {
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
-    }
-
-    public Persona(int idPersona) {
-        this.idPersona = idPersona;
     }
 
     

@@ -4,8 +4,7 @@
     Author     : salvador
 --%>
 
-<%@page import="com.arelance.sgaejb_jpa.services.personaservice.impl.PersonaServiceImpl"%>
-<%@page import="com.arelance.sgajpa.domain.Persona"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
@@ -17,13 +16,13 @@
     <body>
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
-            <c:out value="${persona.nombre}"/><p>  
+            <a href="PreActualizar?id=<c:out value="${persona.idPersona}"/>"><c:out value="${persona.nombre}"/></a><a href="PreBorrar?id=<c:out value="${persona.idPersona}"/>">
+                    Borrar<br /></a> 
         </c:forEach>  
-        <h1>Buscando la persona con id=3</h1>
-            <%
-                PersonaServiceImpl impl = new PersonaServiceImpl();
-                Persona personaID = impl.findPersonaByID(new Persona(3));
-            %>
-            <c:out value="<%=personaID.getNombre()%>"/><p>
+        <a href="PreBusquedaID">Buscando a Maria por id</a>
+        <br />
+        <a href="PreBusquedaEmail">Buscando a Maria por email</a>
+        <br />
+        <a href="formulario.jsp">Añadir usuario</a>
     </body>
 </html>
