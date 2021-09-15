@@ -17,8 +17,8 @@ import javax.ejb.Local;
 @Local
 public interface PersonaService {
     public List<Persona> listarPersonas();
-      public Persona findPersonaById(Persona persona);
-        public Persona findPersonaById(Integer id);
+    public Persona findPersonaById(Persona persona);
+    public Persona findPersonaById(Integer id);
     public Persona findPersonaByEmail(Persona persona);
     public void addPersona(Persona persona);
     public void updatePersona(Persona persona);

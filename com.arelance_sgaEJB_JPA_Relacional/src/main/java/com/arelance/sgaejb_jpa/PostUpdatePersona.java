@@ -42,9 +42,11 @@ public class PostUpdatePersona extends HttpServlet {
         switch (request.getParameter("action")) {
             case "actualizar":
                 personaService.updatePersona(persona);
+                response.sendRedirect("MainServlet");
                 break;
             case "eliminar":
                 personaService.removePersona(persona);
+                response.sendRedirect("MainServlet");
                 break;
             default:
 

@@ -18,16 +18,16 @@
             <c:if test="${persona!=null}">
                 <label for="nombre">nombre:</label><input id="nombre" type="text" name="nombre" value="${persona.nombre}" onchange="comprobar()">
             </c:if>
-             <c:if test="${persona==null}">
-                 <c:out value="no existe la perona seleccionada"/>
-             </c:if>
-            <input type="submit" id="actualizar" name=action value="actualizar" disabled="true">
-              <input type="submit" id="eliminar" name=action value="eliminar">
+            <c:if test="${persona==null}">
+                <c:out value="no existe la perona seleccionada"/>
+            </c:if>
+            <input type="submit" id="actualizar" name=action value="actualizar" >
+            <input type="submit" id="eliminar" name=action value="eliminar">
         </form>
         <script>
             var nombre=form.nombre.value;
             function comprobar(){
-                form.actualizar.disabled=(nombre==form.nombre.value);
+                form.actualizar.disabled=(nombre===form.nombre.value);
                 
             }
         </script>

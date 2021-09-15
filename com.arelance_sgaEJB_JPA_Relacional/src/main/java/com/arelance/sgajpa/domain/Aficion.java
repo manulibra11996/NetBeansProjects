@@ -27,9 +27,9 @@ public class Aficion implements Serializable{
     @Column(name = "nombre_aficion")
     private String nombre;
     private String descripcion;
-    @ManyToOne
-    @JoinColumn(name = "id_persona")
-    private Persona persona;
+//    @ManyToOne
+//    @JoinColumn(name = "id_persona")
+//    private Persona persona;
 
     /**
      * @return the idAficion
@@ -76,16 +76,16 @@ public class Aficion implements Serializable{
     /**
      * @return the persona
      */
-    public Persona getPersona() {
-        return persona;
-    }
-
-    /**
-     * @param persona the persona to set
-     */
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
+//    public Persona getPersona() {
+//        return persona;
+//    }
+//
+//    /**
+//     * @param persona the persona to set
+//     */
+//    public void setPersona(Persona persona) {
+//        this.persona = persona;
+//    }
     
     
 }

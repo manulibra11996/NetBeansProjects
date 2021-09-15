@@ -8,6 +8,7 @@ package com.arelance.sgaejb_jpa;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,12 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author salvador
+ * @author Manuel
  */
-@WebServlet(name = "PreUpdatePersona", urlPatterns = {"/PreUpdatePersona"})
-public class PreUpdatePersona extends HttpServlet {
-    @Inject
-    private PersonaService personaService;
+@WebServlet(name = "PreAnadir", urlPatterns = {"/PreAnadir"})
+public class PreAnadir extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,11 +32,29 @@ public class PreUpdatePersona extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @Inject
+    private PersonaService personaService;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Persona persona = (Persona) request.getSession().getAttribute("persona");
-        request.getSession().setAttribute("persona",persona);
-        request.getRequestDispatcher("update.jsp").forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+             String nombre = request.getParameter("nombre");
+            String apellido = request.getParameter("apellido");
+            String email = request.getParameter("email");
+            String telefono = request.getParameter("telefono");
+            String boton = request.getParameter("boton");
+            
+            if(boton.contentEquals("Registro")){
+                Persona persona = new Persona();
+                persona.setNombre(nombre);
+                persona.setApellido(apellido);
+                persona.setEmail(email);
+                persona.setTelefono(telefono);
+                personaService.addPersona(persona);
+                request.getSession().setAttribute("persona", persona);
+                response.sendRedirect("MainServlet");
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
