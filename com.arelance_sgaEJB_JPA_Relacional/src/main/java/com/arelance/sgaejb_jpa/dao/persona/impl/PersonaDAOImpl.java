@@ -28,7 +28,7 @@ public class PersonaDAOImpl implements PersonaDAO{
        return  em.createNamedQuery("Persona.findAll").getResultList();
     }
     
-  @Override
+    @Override
     public Persona findPersonaByID(Persona persona) {
       return em.find(Persona.class, persona.getIdPersona());
     }
@@ -46,12 +46,12 @@ public class PersonaDAOImpl implements PersonaDAO{
 
     @Override
     public void updatePersona(Persona persona) {
-     em.merge(persona);
+        em.merge(persona);
     }
 
     @Override
     public void removePersona(Persona persona) {
-     em.remove( em.merge(persona));
+        em.remove( em.merge(persona));
     }
 
     @Override
