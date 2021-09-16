@@ -21,7 +21,7 @@ public class Aficion implements Serializable{
    
     
     @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_aficion")
     private int idAficion;
     @Column(name = "nombre_aficion")

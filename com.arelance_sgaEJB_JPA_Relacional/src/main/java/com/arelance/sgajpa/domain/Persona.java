@@ -37,7 +37,7 @@ public class Persona implements Serializable {
     private String apellido;
     private String email;
     private String telefono;
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_persona")
     private  List<Aficion> aficiones;
 

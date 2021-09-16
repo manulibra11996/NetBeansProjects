@@ -25,13 +25,14 @@ public class PersonaDAOImpl implements PersonaDAO{
 
     @Override
     public List<Persona> listarPersonas() {
-       return  em.createNamedQuery("Persona.findAll").getResultList();
+        return  em.createNamedQuery("Persona.findAll").getResultList();
     }
     
     @Override
     public Persona findPersonaByID(Persona persona) {
       return em.find(Persona.class, persona.getIdPersona());
     }
+    
     @Override
     public Persona findPersonaByEmail(Persona persona) {
         Query query =em.createQuery("from Persona p where p.email= :email");

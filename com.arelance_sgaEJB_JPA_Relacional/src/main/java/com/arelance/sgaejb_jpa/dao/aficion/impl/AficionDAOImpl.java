@@ -8,6 +8,7 @@ package com.arelance.sgaejb_jpa.dao.aficion.impl;
 import com.arelance.sgaejb_jpa.dao.aficion.AficionDAO;
 import com.arelance.sgajpa.domain.Aficion;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -16,6 +17,7 @@ import javax.persistence.Query;
  *
  * @author Manuel
  */
+@Stateless
 public class AficionDAOImpl implements AficionDAO{
     @PersistenceContext(unitName = "sgaPU")
     EntityManager em;

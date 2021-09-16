@@ -6,6 +6,7 @@
 package com.arelance.sgaejb_jpa;
 
 import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
+import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Aficion;
 import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
