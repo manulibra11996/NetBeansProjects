@@ -22,7 +22,6 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> listarPersonas() {
-
         return personaDAO.listarPersonas();
     }
 

@@ -30,14 +30,14 @@ public class PersonaDAOImpl implements PersonaDAO{
     
     @Override
     public Persona findPersonaByID(Persona persona) {
-      return em.find(Persona.class, persona.getIdPersona());
+        return em.find(Persona.class, persona.getIdPersona());
     }
     
     @Override
     public Persona findPersonaByEmail(Persona persona) {
         Query query =em.createQuery("from Persona p where p.email= :email");
         query.setParameter("email", persona.getEmail());
-      return (Persona) query.getSingleResult();
+        return (Persona) query.getSingleResult();
     }
 
     @Override
@@ -57,7 +57,7 @@ public class PersonaDAOImpl implements PersonaDAO{
 
     @Override
     public Persona findPersonaByID(int id) {
-       return em.find(Persona.class, id);
+        return em.find(Persona.class, id);
     }
 
   
