@@ -5,10 +5,11 @@
  */
 package com.arelance.sgaejb_jpa;
 
+import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
+import com.arelance.sgajpa.domain.Aficion;
 import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,11 +19,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Manuel
+ * @author salvador
  */
-@WebServlet(name = "PreAnadir", urlPatterns = {"/PreAnadir"})
-public class PreAnadir extends HttpServlet {
-
+@WebServlet(name = "PreUpdateAficion", urlPatterns = {"/PreUpdateAficion"})
+public class PreUpdateAficion extends HttpServlet {
+    @Inject
+    private AficionService aficionService;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,29 +34,11 @@ public class PreAnadir extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Inject
-    private PersonaService personaService;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            String email = request.getParameter("email");
-            String telefono = request.getParameter("telefono");
-            String boton = request.getParameter("boton");
-            
-            if(boton.contentEquals("Registro")){
-                Persona persona = new Persona();
-                persona.setNombre(nombre);
-                persona.setApellido(apellido);
-                persona.setEmail(email);
-                persona.setTelefono(telefono);
-                personaService.addPersona(persona);
-                request.getSession().setAttribute("persona", persona);
-                response.sendRedirect("PreUpdatePersona");
-            }
-        }
+        Aficion aficion = (Aficion) request.getSession().getAttribute("aficion");
+        request.getSession().setAttribute("aficion",aficion);
+        request.getRequestDispatcher("updateAficion.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

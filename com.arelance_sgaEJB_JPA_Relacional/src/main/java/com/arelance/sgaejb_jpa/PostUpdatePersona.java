@@ -39,6 +39,9 @@ public class PostUpdatePersona extends HttpServlet {
             throws ServletException, IOException {
         Persona persona = (Persona) request.getSession().getAttribute("persona");
         persona.setNombre(request.getParameter("nombre"));
+        persona.setApellido(request.getParameter("apellido"));
+        persona.setEmail(request.getParameter("email"));
+        persona.setTelefono(request.getParameter("telefono"));
         switch (request.getParameter("action")) {
             case "actualizar":
                 personaService.updatePersona(persona);

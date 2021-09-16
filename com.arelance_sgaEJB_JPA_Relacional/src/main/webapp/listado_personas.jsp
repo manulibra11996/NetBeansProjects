@@ -23,5 +23,6 @@
             <hr>
         </c:forEach>  
             <a href="formulario.jsp">Añadir usuario</a>
+            <a href="formularioAficion.jsp">Añadir aficion</a>
     </body>
 </html>

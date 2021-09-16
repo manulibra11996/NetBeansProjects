@@ -5,8 +5,8 @@
  */
 package com.arelance.sgaejb_jpa;
 
-import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
-import com.arelance.sgajpa.domain.Persona;
+import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
+import com.arelance.sgajpa.domain.Aficion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.inject.Inject;
@@ -20,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Manuel
  */
-@WebServlet(name = "PreAnadir", urlPatterns = {"/PreAnadir"})
-public class PreAnadir extends HttpServlet {
+@WebServlet(name = "PreAnadirAficion", urlPatterns = {"/PreAnadirAficion"})
+public class PreAnadirAficion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,26 +33,22 @@ public class PreAnadir extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Inject
-    private PersonaService personaService;
+    private AficionService aficionService;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            String email = request.getParameter("email");
-            String telefono = request.getParameter("telefono");
+            String descripcion = request.getParameter("descripcion");
             String boton = request.getParameter("boton");
             
             if(boton.contentEquals("Registro")){
-                Persona persona = new Persona();
-                persona.setNombre(nombre);
-                persona.setApellido(apellido);
-                persona.setEmail(email);
-                persona.setTelefono(telefono);
-                personaService.addPersona(persona);
-                request.getSession().setAttribute("persona", persona);
-                response.sendRedirect("PreUpdatePersona");
+                Aficion aficion = new Aficion();
+                aficion.setNombre(nombre);
+                aficion.setDescripcion(descripcion);
+                aficionService.addAficion(aficion);
+                request.getSession().setAttribute("aficion", aficion);
+                response.sendRedirect("PreUpdateAficion");
             }
         }
     }

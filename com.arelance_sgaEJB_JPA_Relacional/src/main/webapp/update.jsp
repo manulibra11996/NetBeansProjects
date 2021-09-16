@@ -17,6 +17,9 @@
         <form id="form" action="PostUpdatePersona">
             <c:if test="${persona!=null}">
                 <label for="nombre">nombre:</label><input id="nombre" type="text" name="nombre" value="${persona.nombre}" onchange="comprobar()">
+                <label for="apellido">apellido:</label><input id="apellido" type="text" name="apellido" value="${persona.apellido}" onchange="comprobar()">
+                <label for="email">email:</label><input id="email" type="text" name="email" value="${persona.email}" onchange="comprobar()">
+                 <label for="telefono">telefono:</label><input id="telefono" type="text" name="telefono" value="${persona.telefono}" onchange="comprobar()">
             </c:if>
             <c:if test="${persona==null}">
                 <c:out value="no existe la perona seleccionada"/>

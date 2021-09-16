@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <h1>Formulario para añadir una persona</h1>
+        <h1>Formulario para añadir una persona</h1>
         <form action="PreAnadir" method="GET">
             <p>Nombre: <input type="text" name="nombre" placeholder="Escribe tu nombre" required="required"></p>
             <p>Apellidos: <input type="text" name="apellido" placeholder="Escribe tu apellido" required="required"></p>
