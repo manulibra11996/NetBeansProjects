@@ -56,4 +56,10 @@ public class PersonaServiceImpl implements PersonaService {
         return personaDAO.findPersonaByID(id);
     }
 
+    @Override
+    public void refrescar() {
+       personaDAO.refrescar();
+    }
+
+    
 }

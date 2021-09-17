@@ -27,7 +27,7 @@ public class Aficion implements Serializable{
     @Column(name = "nombre_aficion")
     private String nombre;
     private String descripcion;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_persona")
     private Persona persona;
 

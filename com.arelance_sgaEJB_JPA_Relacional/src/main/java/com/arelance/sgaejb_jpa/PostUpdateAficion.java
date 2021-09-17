@@ -26,7 +26,8 @@ public class PostUpdateAficion extends HttpServlet {
 
     @Inject
     private AficionService aficionService;
-
+    @Inject
+    private PersonaService personaService;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -46,10 +47,12 @@ public class PostUpdateAficion extends HttpServlet {
         switch (request.getParameter("action")) {
             case "actualizar":
                 aficionService.updateAficion(aficion);
+                personaService.refrescar();
                 response.sendRedirect("MainServlet");
                 break;
             case "eliminar":
                 aficionService.removeAficion(aficion);
+                personaService.refrescar();
                 response.sendRedirect("MainServlet");
                 break;
             default:

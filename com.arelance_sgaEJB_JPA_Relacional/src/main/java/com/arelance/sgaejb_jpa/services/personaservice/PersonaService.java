@@ -23,5 +23,5 @@ public interface PersonaService {
     public void addPersona(Persona persona);
     public void updatePersona(Persona persona);
     public void removePersona(Persona persona);
-    
+    public void refrescar();
 }

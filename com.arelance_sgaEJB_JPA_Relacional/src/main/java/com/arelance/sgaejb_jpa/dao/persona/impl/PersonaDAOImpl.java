@@ -59,7 +59,10 @@ public class PersonaDAOImpl implements PersonaDAO{
     public Persona findPersonaByID(int id) {
         return em.find(Persona.class, id);
     }
-
-  
+    
+    @Override
+    public void refrescar(){
+        em.refresh(em.merge(em));
+    }
  
 }
