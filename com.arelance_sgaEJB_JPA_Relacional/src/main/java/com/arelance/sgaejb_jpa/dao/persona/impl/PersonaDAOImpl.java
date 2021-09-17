@@ -25,7 +25,9 @@ public class PersonaDAOImpl implements PersonaDAO{
 
     @Override
     public List<Persona> listarPersonas() {
-        return  em.createNamedQuery("Persona.findAll").getResultList();
+        List<Persona> lista = em.createNamedQuery("Persona.findAll").getResultList();
+        em.close();
+        return  lista;
     }
     
     @Override
@@ -61,8 +63,8 @@ public class PersonaDAOImpl implements PersonaDAO{
     }
     
     @Override
-    public void refrescar(){
-        em.refresh(em.merge(em));
+    public void refrescar(Persona persona){
+        em.refresh(em.merge(persona));
     }
  
 }

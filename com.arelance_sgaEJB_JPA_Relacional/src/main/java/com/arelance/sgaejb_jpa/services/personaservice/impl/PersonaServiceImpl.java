@@ -57,8 +57,8 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public void refrescar() {
-       personaDAO.refrescar();
+    public void refrescar(Persona persona) {
+       personaDAO.refrescar(persona);
     }
 
     

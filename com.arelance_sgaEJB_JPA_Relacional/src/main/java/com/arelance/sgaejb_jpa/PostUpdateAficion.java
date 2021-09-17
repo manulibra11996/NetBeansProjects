@@ -47,12 +47,12 @@ public class PostUpdateAficion extends HttpServlet {
         switch (request.getParameter("action")) {
             case "actualizar":
                 aficionService.updateAficion(aficion);
-                personaService.refrescar();
+                personaService.refrescar(persona);
                 response.sendRedirect("MainServlet");
                 break;
             case "eliminar":
                 aficionService.removeAficion(aficion);
-                personaService.refrescar();
+                personaService.refrescar(persona);
                 response.sendRedirect("MainServlet");
                 break;
             default:
