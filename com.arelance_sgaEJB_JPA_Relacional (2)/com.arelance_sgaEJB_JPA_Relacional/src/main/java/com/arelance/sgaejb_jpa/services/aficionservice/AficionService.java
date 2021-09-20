@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.sgaejb_jpa.services.personaservice;
+package com.arelance.sgaejb_jpa.services.aficionservice;
 
 import com.arelance.sgajpa.domain.Aficion;
 import java.util.List;

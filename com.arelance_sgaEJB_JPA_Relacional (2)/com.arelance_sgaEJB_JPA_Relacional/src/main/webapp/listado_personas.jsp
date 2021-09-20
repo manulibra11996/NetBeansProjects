@@ -16,7 +16,7 @@
         <form id="filtroForm" action="MainServlet">
             <label for="filtro">filtro:</label> <input type="text" id=filtro name="nombre"> 
             <input type="submit" name="filtro_action" value="filtrar">
-            
+            <fieldset name="edad">edad</fieldset>
         </form>
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
@@ -31,6 +31,7 @@
   <c:out value="${'id menor:'.concat(min)}"/>
   <c:out value="${'id mayor:'.concat(max)}"/>
   <c:out value="${'total personas:'.concat(total)}"/>
+  <c:out value="${'promedio edad:'.concat(media)}"/>
     <c:forEach var="aficion" items="${aficiones}">  
             <hr>
                      <c:out value="${aficion}"/><br>

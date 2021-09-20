@@ -25,6 +25,6 @@ public interface PersonaDAO {
     public void updatePersona(Persona persona);
     public void removePersona(Persona persona);
     public Iterator<Object> datosResumenPersona();
-
+    
     public List<Persona> listarFiltroPersonas(String nombreParametro);
 }

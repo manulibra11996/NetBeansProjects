@@ -36,6 +36,7 @@ public class Persona implements Serializable {
     private String apellido;
     private String email;
     private String telefono;
+    private Integer edad;
     @OneToMany(mappedBy ="persona")
     private  List<Aficion> aficiones;
 
@@ -48,6 +49,15 @@ public class Persona implements Serializable {
         this.email = email;
         this.telefono = telefono;
     }
+
+    public Persona(String nombre, String apellido, String email, String telefono, Integer edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.edad = edad;
+    }
+    
 
     /**
      * @return the idPersona
@@ -138,6 +148,14 @@ public class Persona implements Serializable {
         this.aficiones = aficiones;
     }
 
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -146,6 +164,7 @@ public class Persona implements Serializable {
         hash = 79 * hash + Objects.hashCode(this.apellido);
         hash = 79 * hash + Objects.hashCode(this.email);
         hash = 79 * hash + Objects.hashCode(this.telefono);
+        hash = 79 * hash + Objects.hashCode(this.edad);
         hash = 79 * hash + Objects.hashCode(this.aficiones);
         return hash;
     }
@@ -175,6 +194,9 @@ public class Persona implements Serializable {
             return false;
         }
         if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        if (!Objects.equals(this.edad, other.edad)) {
             return false;
         }
         if (!Objects.equals(this.aficiones, other.aficiones)) {

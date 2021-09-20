@@ -67,15 +67,14 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     @Override
     public Iterator<Object> datosResumenPersona() {
-        String jpql = "SELECT min(p.idPersona)as idMinimo,max(p.idPersona), count(p) as totalPersonas FROM Persona p";
+        String jpql = "SELECT min(p.idPersona)as idMinimo,max(p.idPersona), count(p) as totalPersonas, avg(p.edad) as promedio FROM Persona p";
         return em.createQuery(jpql).getResultList().iterator();
 
     }
 
     @Override
     public List<Persona> listarFiltroPersonas(String nombreParametro) {
-       String jpql="SELECT p FROM Persona p WHERE p.nombre like :nombreParametro";
-       
+        String jpql="SELECT p FROM Persona p WHERE p.nombre like :nombreParametro";
         Query q=em.createQuery(jpql);
         q.setParameter("nombreParametro", "%"+nombreParametro+"%");
         return  q.getResultList();

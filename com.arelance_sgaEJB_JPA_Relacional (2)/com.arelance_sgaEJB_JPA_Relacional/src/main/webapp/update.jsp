@@ -20,6 +20,7 @@
                 <label for="nombre">apellido</label><input id="apellido" type="text" name="apellido" value="${persona!=null?persona.apellido:''}" onchange="comprobar(this,'${persona.apellido}')>
                 <label for="nombre">email</label><input id="email" type="text" name="email" value="${persona!=null?persona.email:''}" onchange="comprobar(this,'${persona.email}')>
                 <label for="nombre">telefono</label><input id="telefono" type="text" name="telefono" value="${persona!=null?persona.telefono:''}" onchange="comprobar(this,'${persona.telefono}')>
+                <label for="nombre">edad</label><input id="edad" type="text" name="edad" value="${persona!=null?persona.edad:''}" onchange="comprobar(this,'${persona.edad}')>
                 <input type="submit" id="actualizar" name=action value="actualizar"  disabled="true">
                 <input type="submit" id="eliminar" name=action value="eliminar">
                 <input type="submit" id="alta" name=action value="alta">

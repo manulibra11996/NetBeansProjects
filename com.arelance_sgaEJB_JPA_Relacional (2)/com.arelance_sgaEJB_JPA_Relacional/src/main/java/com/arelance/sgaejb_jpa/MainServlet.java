@@ -5,10 +5,12 @@
  */
 package com.arelance.sgaejb_jpa;
 
-import com.arelance.sgaejb_jpa.services.personaservice.AficionService;
+import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
+import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +37,7 @@ public class MainServlet extends HttpServlet {
     @Inject
     private PersonaService personaService;
     @Inject
-    AficionService aficionService;
+    private AficionService aficionService;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,6 +53,7 @@ public class MainServlet extends HttpServlet {
             request.setAttribute("min", datosResumen[0]);
             request.setAttribute("max", datosResumen[1]);
             request.setAttribute("total", datosResumen[2]);
+            request.setAttribute("media", datosResumen[3]);
             request.setAttribute("aficiones", aficionService.listarResumenAficiones());
         }
 
