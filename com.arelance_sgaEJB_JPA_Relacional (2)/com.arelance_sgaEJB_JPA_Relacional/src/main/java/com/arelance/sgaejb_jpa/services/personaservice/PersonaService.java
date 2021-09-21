@@ -33,5 +33,9 @@ public interface PersonaService {
 
     public Iterator<Object> datosResumenPersona();
 
-    public List<Persona>  listarFiltroPersonas(String nombreParametro);
+    public Iterator<Object> datosResumenPersona(int min, int max);
+    
+    public List<Persona> listarFiltroPersonas(int min, int max);
+    
+    public List<Persona> listarFiltroPersonas(String nombreParametro);
 }

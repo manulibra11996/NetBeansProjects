@@ -80,4 +80,24 @@ public class PersonaDAOImpl implements PersonaDAO {
         return  q.getResultList();
     }
 
+    @Override
+    public Iterator<Object> datosResumenPersona(int min, int max) {
+         String jpql = "SELECT avg(p.edad) as promedio FROM Persona p WHERE p.edad BETWEEN :min AND :max ";
+        Query q=em.createQuery(jpql);
+        q.setParameter("min", min);
+        q.setParameter("max", max);
+        return  q.getResultList().iterator();
+    }
+
+    @Override
+    public List<Persona> listarFiltroPersonas(int min, int max) {
+         String jpql="SELECT p FROM Persona p WHERE p.edad BETWEEN :min AND :max ";
+        Query q=em.createQuery(jpql);
+        q.setParameter("min", min);
+        q.setParameter("max", max);
+        return  q.getResultList();
+    }
+
+   
+
 }

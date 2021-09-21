@@ -7,10 +7,8 @@ package com.arelance.sgaejb_jpa;
 
 import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
-import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,24 +36,42 @@ public class MainServlet extends HttpServlet {
     private PersonaService personaService;
     @Inject
     private AficionService aficionService;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
+        int min = 1;
+        int max = 100;
+        boolean edadesCom = true;
+        if(request.getParameter("min") != null){
+            min = Integer.parseInt(request.getParameter("min"));
+        }
+        if(request.getParameter("max") != null){
+            max = Integer.parseInt(request.getParameter("max"));
+        }
         if (nombre != null && !nombre.equals("")) {
             request.setAttribute("lista", personaService.listarFiltroPersonas(nombre));
-        } else {
+        } else if (request.getParameter("min") != null || request.getParameter("max") != null) {
+            request.setAttribute("lista", personaService.listarFiltroPersonas(min, max));
+        }else {
             request.setAttribute("lista", personaService.listarPersonas());
         }
         Iterator<Object> iter = personaService.datosResumenPersona();
+        Iterator<Object> edades = personaService.datosResumenPersona(min, max);
         while (iter.hasNext()) {
             Object[] datosResumen = (Object[]) iter.next();
-            request.setAttribute("min", datosResumen[0]);
-            request.setAttribute("max", datosResumen[1]);
+            request.setAttribute("minID", datosResumen[0]);
+            request.setAttribute("maxID", datosResumen[1]);
             request.setAttribute("total", datosResumen[2]);
-            request.setAttribute("media", datosResumen[3]);
-            request.setAttribute("aficiones", aficionService.listarResumenAficiones());
         }
+        while (edadesCom) {
+            Object datosEdad = edades.next();
+            request.setAttribute("media", datosEdad);
+            edadesCom = false;
+        }
+
+        request.setAttribute("aficiones", aficionService.listarResumenAficiones());
+
 
         request.getRequestDispatcher("listado_personas.jsp").forward(request, response);
 

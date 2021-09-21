@@ -14,9 +14,11 @@
     </head>
     <body>
         <form id="filtroForm" action="MainServlet">
-            <label for="filtro">filtro:</label> <input type="text" id=filtro name="nombre"> 
+            <label for="filtro">filtro:</label> <input type="text" id=filtro name="nombre"><br />
+            <label for="edad">edad:</label><br />
+            <label for="max">max:</label> <input type="text" id=edad name="max"><br />
+            <label for="min">min:</label> <input type="text" id=edad name="min"><br />
             <input type="submit" name="filtro_action" value="filtrar">
-            <fieldset name="edad">edad</fieldset>
         </form>
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
@@ -28,8 +30,8 @@
             <hr>
         </c:forEach>  
   <a href="PreUpdatePersona"><c:out value="alta"/><p></a>
-  <c:out value="${'id menor:'.concat(min)}"/>
-  <c:out value="${'id mayor:'.concat(max)}"/>
+  <c:out value="${'id menor:'.concat(minID)}"/>
+  <c:out value="${'id mayor:'.concat(maxID)}"/>
   <c:out value="${'total personas:'.concat(total)}"/>
   <c:out value="${'promedio edad:'.concat(media)}"/>
     <c:forEach var="aficion" items="${aficiones}">  
