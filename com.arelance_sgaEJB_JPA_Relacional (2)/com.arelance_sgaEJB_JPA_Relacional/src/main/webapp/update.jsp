@@ -17,16 +17,19 @@
         <h1>formulario Persona:</h1>
         <form id="myform" action="PostUpdatePersona">
             <label for="nombre">nombre:</label><input id="nombre" type="text" name="nombre" value="${persona!=null?persona.nombre:''}" onchange="comprobar(this,'${persona.nombre}')">
-                <label for="nombre">apellido</label><input id="apellido" type="text" name="apellido" value="${persona!=null?persona.apellido:''}" onchange="comprobar(this,'${persona.apellido}')>
-                <label for="nombre">email</label><input id="email" type="text" name="email" value="${persona!=null?persona.email:''}" onchange="comprobar(this,'${persona.email}')>
-                <label for="nombre">telefono</label><input id="telefono" type="text" name="telefono" value="${persona!=null?persona.telefono:''}" onchange="comprobar(this,'${persona.telefono}')>
-                <label for="nombre">edad</label><input id="edad" type="text" name="edad" value="${persona!=null?persona.edad:''}" onchange="comprobar(this,'${persona.edad}')>
+                <label for="nombre">apellido</label><input id="apellido" type="text" name="apellido" value="${persona!=null?persona.apellido:''}" onchange="comprobar(this,'${persona.apellido}')">
+                <label for="nombre">email</label><input id="email" type="text" name="email" value="${persona!=null?persona.email:''}" onchange="comprobar(this,'${persona.email}')">
+                <label for="nombre">telefono</label><input id="telefono" type="text" name="telefono" value="${persona!=null?persona.telefono:''}" onchange="comprobar(this,'${persona.telefono}')">
+                <label for="nombre">edad</label><input id="edad" type="text" name="edad" value="${persona!=null?persona.edad:''}" onchange="comprobar(this,'${persona.edad}')">
+                
+                
+                
                 <input type="submit" id="actualizar" name=action value="actualizar"  disabled="true">
                 <input type="submit" id="eliminar" name=action value="eliminar">
                 <input type="submit" id="alta" name=action value="alta">
         </form>
         <!-- Formulario afición -->
-        <h2>formulario Persona:</h2>
+        <h2>formulario Aficion:</h2>
         <form id="aficionForm" action="PostUpdatePersona">
         <label for="nombre">nombre aficion:</label><input id="nombre_aficion" type="text" name="nombre_aficion" >
         <label for="nombre">descripcion</label><input id="descripcion" type="text" name="descripcion" >

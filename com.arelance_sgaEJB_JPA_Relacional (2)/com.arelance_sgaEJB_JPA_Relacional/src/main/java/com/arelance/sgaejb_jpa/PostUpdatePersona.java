@@ -74,7 +74,7 @@ public class PostUpdatePersona extends HttpServlet {
                     personaService.removePersona(persona);
                     break;
                 case "alta":
-                    persona = new Persona(nombre, apellido, email, telefono);
+                    persona = new Persona(nombre, apellido, email, telefono, edad);
                     personaService.addPersona(persona);
                     request.getSession().setAttribute("persona", persona);
                     break;
@@ -101,7 +101,8 @@ public class PostUpdatePersona extends HttpServlet {
 
             }
         }
-        request.getRequestDispatcher("MainServlet").forward(request, response);
+
+        response.sendRedirect("MainServlet");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
