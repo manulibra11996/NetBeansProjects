@@ -5,6 +5,8 @@
  */
 package com.arelance.sgaejb_jpa.services.personaservice.impl;
 
+import com.arelance.sgaejb_jpa.DTO.MaxDTO;
+import com.arelance.sgaejb_jpa.DTO.MinDTO;
 import com.arelance.sgaejb_jpa.dao.persona.PersonaDAO;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Persona;
@@ -59,9 +61,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Iterator<Object> datosResumenPersona() {
-
         return personaDAO.datosResumenPersona();
-
     }
 
     @Override
@@ -70,12 +70,33 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public Iterator<Object> datosResumenPersona(int min, int max) {
-        return  personaDAO.datosResumenPersona(min, max);
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max) {
+       return personaDAO.listarFiltroPersonas(min, max);
     }
 
     @Override
-    public List<Persona> listarFiltroPersonas(int min, int max) {
-        return  personaDAO.listarFiltroPersonas(min, max);
+    public Iterator<Object> listarFiltroPersonas(MinDTO min) {
+        return personaDAO.listarFiltroPersonas(min);
     }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max) {
+        return personaDAO.listarFiltroPersonas(max);
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max, String nombreParametro) {
+       return personaDAO.listarFiltroPersonas(min, max, nombreParametro);
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, String nombreParametro) {
+        return personaDAO.listarFiltroPersonas(min, nombreParametro);
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max, String nombreParametro) {
+        return personaDAO.listarFiltroPersonas(max, nombreParametro);
+    }
+
 }

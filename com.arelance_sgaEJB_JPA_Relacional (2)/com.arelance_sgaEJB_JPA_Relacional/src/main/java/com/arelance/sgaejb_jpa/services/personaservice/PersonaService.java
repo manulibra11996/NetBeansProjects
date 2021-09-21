@@ -5,6 +5,8 @@
  */
 package com.arelance.sgaejb_jpa.services.personaservice;
 
+import com.arelance.sgaejb_jpa.DTO.MaxDTO;
+import com.arelance.sgaejb_jpa.DTO.MinDTO;
 import com.arelance.sgajpa.domain.Persona;
 import java.util.Iterator;
 import java.util.List;
@@ -33,9 +35,18 @@ public interface PersonaService {
 
     public Iterator<Object> datosResumenPersona();
 
-    public Iterator<Object> datosResumenPersona(int min, int max);
-    
-    public List<Persona> listarFiltroPersonas(int min, int max);
-    
     public List<Persona> listarFiltroPersonas(String nombreParametro);
+    
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max);
+    
+    public Iterator<Object> listarFiltroPersonas(MinDTO min);
+    
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max);
+    
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max,String nombreParametro);
+    
+    public Iterator<Object> listarFiltroPersonas(MinDTO min,String nombreParametro);
+    
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max,String nombreParametro);
+    
 }

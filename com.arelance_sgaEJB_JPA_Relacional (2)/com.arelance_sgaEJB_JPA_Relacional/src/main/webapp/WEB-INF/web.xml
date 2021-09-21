@@ -3,7 +3,71 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
    version="4.0">
-    
+    <filter>
+        <filter-name>Filto1</filter-name>
+        <filter-class>filtros.Filtro1</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto2</filter-name>
+        <filter-class>filtros.Filtro2</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto3</filter-name>
+        <filter-class>filtros.Filtro3</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto4</filter-name>
+        <filter-class>filtros.Filtro4</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto5</filter-name>
+        <filter-class>filtros.Filtro5</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto6</filter-name>
+        <filter-class>filtros.Filtro6</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto7</filter-name>
+        <filter-class>filtros.Filtro7</filter-class>
+    </filter>
+    <filter>
+        <filter-name>Filto8</filter-name>
+        <filter-class>filtros.Filtro8</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>Filtro1</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro2</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro3</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro4</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro5</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro6</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro7</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Filtro8</filter-name>
+        <url-pattern>/MainServlet</url-pattern>
+    </filter-mapping>
+
     <session-config>
         <session-timeout>
             30

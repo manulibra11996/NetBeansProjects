@@ -47,7 +47,10 @@ public class PostUpdatePersona extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String email = request.getParameter("email");
         String telefono = request.getParameter("telefono");
-        Integer edad = Integer.parseInt(request.getParameter("edad"));
+        Integer edad = 0;
+        if (request.getParameter("edad") != ""){
+            edad = Integer.parseInt(request.getParameter("edad"));
+        }
         String action = request.getParameter("action");
         if (action != null) {
             switch (action) {
@@ -71,7 +74,9 @@ public class PostUpdatePersona extends HttpServlet {
 
                     break;
                 case "eliminar":
-                    personaService.removePersona(persona);
+                    if (request.getSession().getAttribute("persona") != null){
+                        personaService.removePersona(persona);
+                    }
                     break;
                 case "alta":
                     persona = new Persona(nombre, apellido, email, telefono, edad);

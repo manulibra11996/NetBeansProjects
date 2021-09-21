@@ -5,6 +5,8 @@
  */
 package com.arelance.sgaejb_jpa;
 
+import com.arelance.sgaejb_jpa.DTO.MaxDTO;
+import com.arelance.sgaejb_jpa.DTO.MinDTO;
 import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import java.io.IOException;
@@ -40,24 +42,22 @@ public class MainServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
-        int min = 1;
-        int max = 100;
+        MinDTO min = new MinDTO();
+        MaxDTO max = new MaxDTO();
         boolean edadesCom = true;
         if(request.getParameter("min") != null){
-            min = Integer.parseInt(request.getParameter("min"));
+            min.setMin(Integer.parseInt(request.getParameter("min")));
         }
         if(request.getParameter("max") != null){
-            max = Integer.parseInt(request.getParameter("max"));
+            max.setMax(Integer.parseInt(request.getParameter("max")));
         }
         if (nombre != null && !nombre.equals("")) {
             request.setAttribute("lista", personaService.listarFiltroPersonas(nombre));
-        } else if (request.getParameter("min") != null || request.getParameter("max") != null) {
-            request.setAttribute("lista", personaService.listarFiltroPersonas(min, max));
-        }else {
+        } else {
             request.setAttribute("lista", personaService.listarPersonas());
         }
         Iterator<Object> iter = personaService.datosResumenPersona();
-        Iterator<Object> edades = personaService.datosResumenPersona(min, max);
+        Iterator<Object> edades = personaService.listarFiltroPersonas(min, max);
         while (iter.hasNext()) {
             Object[] datosResumen = (Object[]) iter.next();
             request.setAttribute("minID", datosResumen[0]);

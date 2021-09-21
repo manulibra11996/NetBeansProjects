@@ -5,6 +5,8 @@
  */
 package com.arelance.sgaejb_jpa.dao.persona.impl;
 
+import com.arelance.sgaejb_jpa.DTO.MaxDTO;
+import com.arelance.sgaejb_jpa.DTO.MinDTO;
 import com.arelance.sgaejb_jpa.dao.persona.PersonaDAO;
 import com.arelance.sgajpa.domain.Persona;
 import java.util.Iterator;
@@ -74,15 +76,16 @@ public class PersonaDAOImpl implements PersonaDAO {
 
     @Override
     public List<Persona> listarFiltroPersonas(String nombreParametro) {
-        String jpql="SELECT p FROM Persona p WHERE p.nombre like :nombreParametro";
+        String jpql="SELECT p FROM Persona p WHERE p.nombre like :nombreParametro ";
         Query q=em.createQuery(jpql);
         q.setParameter("nombreParametro", "%"+nombreParametro+"%");
         return  q.getResultList();
     }
 
+
     @Override
-    public Iterator<Object> datosResumenPersona(int min, int max) {
-         String jpql = "SELECT avg(p.edad) as promedio FROM Persona p WHERE p.edad BETWEEN :min AND :max ";
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max) {
+        String jpql = "SELECT * FROM Persona p WHERE p.edad BETWEEN :min AND :max ";
         Query q=em.createQuery(jpql);
         q.setParameter("min", min);
         q.setParameter("max", max);
@@ -90,14 +93,48 @@ public class PersonaDAOImpl implements PersonaDAO {
     }
 
     @Override
-    public List<Persona> listarFiltroPersonas(int min, int max) {
-         String jpql="SELECT p FROM Persona p WHERE p.edad BETWEEN :min AND :max ";
+    public Iterator<Object> listarFiltroPersonas(MinDTO min) {
+        String jpql = "SELECT * FROM Persona p WHERE p.edad >= :min ";
+        Query q=em.createQuery(jpql);
+        q.setParameter("min", min);
+        return  q.getResultList().iterator();
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max) {
+        String jpql = "SELECT * FROM Persona p WHERE p.edad <= :max ";
+        Query q=em.createQuery(jpql);
+        q.setParameter("max", max);
+        return  q.getResultList().iterator();
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max, String nombreParametro) {
+        String jpql = "SELECT * FROM Persona p WHERE (p.edad BETWEEN :min AND :max) AND (p.nombre LIKE :nombreParametro)";
         Query q=em.createQuery(jpql);
         q.setParameter("min", min);
         q.setParameter("max", max);
-        return  q.getResultList();
+        q.setParameter("nombreParametro", "%"+nombreParametro+"%");
+        return  q.getResultList().iterator();
     }
 
-   
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, String nombreParametro) {
+        String jpql = "SELECT * FROM Persona p WHERE (p.edad >= :min ) AND (p.nombre LIKE :nombreParametro)";
+        Query q=em.createQuery(jpql);
+        q.setParameter("min", min);
+        q.setParameter("nombreParametro", "%"+nombreParametro+"%");
+        return  q.getResultList().iterator();
+    }
+
+    @Override
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max, String nombreParametro) {
+        String jpql = "SELECT * FROM Persona p WHERE (p.edad <= :max ) AND (p.nombre LIKE :nombreParametro)";
+        Query q=em.createQuery(jpql);
+        q.setParameter("max", max);
+        q.setParameter("nombreParametro", "%"+nombreParametro+"%");
+        return  q.getResultList().iterator();
+    }
+
 
 }
