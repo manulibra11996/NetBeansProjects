@@ -3,15 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.sgaejb_jpa;
+package com.arelance.filtrodto.servlet;
 
-import com.arelance.sgaejb_jpa.DTO.MaxDTO;
-import com.arelance.sgaejb_jpa.DTO.MinDTO;
-import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
-import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import java.io.IOException;
-import java.util.Iterator;
-import javax.inject.Inject;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author salvador
+ * @author Manuel
  */
-@WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"}, loadOnStartup = 0)
+@WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
 public class MainServlet extends HttpServlet {
 
     /**
@@ -34,44 +29,30 @@ public class MainServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Inject
-    private PersonaService personaService;
-    @Inject
-    private AficionService aficionService;
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-//        String nombre = request.getParameter("nombre");
-//        MinDTO min = new MinDTO();
-//        MaxDTO max = new MaxDTO();
-//        boolean edadesCom = true;
-//        if(request.getParameter("min") != null){
-//            min.setMin(Integer.parseInt(request.getParameter("min")));
-//        }
-//        if(request.getParameter("max") != null){
-//            max.setMax(Integer.parseInt(request.getParameter("max")));
-//        }
-//        if (nombre != null && !nombre.equals("")) {
-//            request.setAttribute("lista", personaService.listarFiltroPersonas(nombre));
-//        } else {
-//            request.setAttribute("lista", personaService.listarPersonas());
-//        }
-        Iterator<Object> iter = personaService.datosResumenPersona();
-        while (iter.hasNext()) {
-            Object[] datosResumen = (Object[]) iter.next();
-            request.setAttribute("minID", datosResumen[0]);
-            request.setAttribute("maxID", datosResumen[1]);
-            request.setAttribute("total", datosResumen[2]);
-            request.setAttribute("media", datosResumen[3]);
-        }
-
-        request.setAttribute("aficiones", aficionService.listarResumenAficiones());
-
-
-        request.getRequestDispatcher("listado_personas.jsp").forward(request, response);
-
+    throws ServletException, IOException {
+      String url = "";
+      if(!testLoad()){
+        url = "index.jsp"; 
+      }
+      request.getRequestDispatcher(url).forward(request, response);
     }
-
+    /**
+     * 
+     * @return true/false para el inital load
+     */
+    private boolean testLoad(){
+        String attr = "initialLoad";
+        Boolean sw = (boolean) getServletContext().getAttribute(attr);
+        if(sw == null){
+            throw new NullPointerException();
+        }
+        if ( sw == true) {
+            getServletContext().setAttribute(attr,!sw);
+        }
+        return (boolean) getServletContext().getAttribute(attr);
+        
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -38,6 +38,7 @@ public class Filtro1 implements Filter {
         String max = request.getParameter("max");
         if(nombre == null && min == null && max == null){
             request.setAttribute("lista", personaDAO.listarPersonas());
+
             return;
         }
             
