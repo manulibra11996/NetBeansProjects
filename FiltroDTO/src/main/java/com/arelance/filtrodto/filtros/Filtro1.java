@@ -5,13 +5,10 @@
  */
 package com.arelance.filtrodto.filtros;
 
+import com.arelance.filtrodto.dtos.Filtro;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -28,6 +25,19 @@ public class Filtro1 implements Filter {
             FilterChain chain)
             throws IOException, ServletException {
 
+        String valor1 = request.getParameter("valor1");
+
+        if (valor1 != null && valor1.trim().length() > 0) {
+            Filtro f = new NombreFiltro(valor1);
+            Filtro fx = null;
+            if(request.getAttribute("filtro") != null){
+                fx = (Filtro) request.getAttribute("filtro");
+                fx.buiderFiter(f);
+            }else{
+                request.setAttribute("filtro", f);
+            }
+        }
+
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
@@ -38,5 +48,5 @@ public class Filtro1 implements Filter {
             problem = t;
             t.printStackTrace();
         }
-    }    
+    }
 }

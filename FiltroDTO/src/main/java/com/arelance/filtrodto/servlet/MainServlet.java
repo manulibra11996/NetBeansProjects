@@ -32,7 +32,13 @@ public class MainServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
       String url = "";
-      if(!testLoad()){
+      String seguir = "enviar";
+
+      if (request.getParameter("enviar") != null){
+        if(request.getParameter("enviar").equals(seguir)){
+            url = "./filtrar/muestra.jsp";
+        }
+      }else if(!testLoad()){
         url = "index.jsp"; 
       }
       request.getRequestDispatcher(url).forward(request, response);
@@ -43,7 +49,7 @@ public class MainServlet extends HttpServlet {
      */
     private boolean testLoad(){
         String attr = "initialLoad";
-        Boolean sw = (boolean) getServletContext().getAttribute(attr);
+        Boolean sw = (boolean) getServletContext().getAttribute("initialLoad");
         if(sw == null){
             throw new NullPointerException();
         }

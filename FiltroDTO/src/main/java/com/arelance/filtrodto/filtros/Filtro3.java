@@ -12,24 +12,22 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /**
  *
  * @author Manuel
  */
-@WebFilter(filterName = "Filtro2", urlPatterns = {"/*"})
-public class Filtro2 implements Filter {
-
-   
+public class Filtro3 implements Filter {
+    
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
         
-        String valor2 = request.getParameter("valor2");
+        
+        String valor3 = request.getParameter("valor3");
 
-        if (valor2 != null && valor2.trim().length() > 0) {
-            Filtro f = new MinFiltro(valor2);
+        if (valor3 != null && valor3.trim().length() > 0) {
+            Filtro f = new MaxFiltro(valor3);
             Filtro fx = null;
             if(request.getAttribute("filtro") != null){
                 fx = (Filtro) request.getAttribute("filtro");
@@ -38,7 +36,7 @@ public class Filtro2 implements Filter {
                 request.setAttribute("filtro", f);
             }
         }
-
+        
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
