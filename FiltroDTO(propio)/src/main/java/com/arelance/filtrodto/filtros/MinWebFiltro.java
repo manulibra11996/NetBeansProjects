@@ -19,8 +19,8 @@ import javax.servlet.annotation.WebFilter;
  *
  * @author Manuel
  */
-@WebFilter(filterName = "Filtro2", urlPatterns = {"/filtrar/*"})
-public class Filtro2 implements Filter {
+@WebFilter
+public class MinWebFiltro implements Filter {
 
    
     public void doFilter(ServletRequest request, ServletResponse response,

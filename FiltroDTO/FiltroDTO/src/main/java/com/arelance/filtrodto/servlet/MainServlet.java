@@ -32,12 +32,12 @@ public class MainServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
      
-            String url = "";
-            if(!testLoad()){
-              url=  "index.jsp";
-            }
+//            String url = "";
+//            if(!testLoad()){
+//              url=  "index.jsp";
+//            }
 
-            request.getRequestDispatcher(url).forward(request, response);
+            request.getRequestDispatcher("/Destino").forward(request, response);
         
     }
 /**
@@ -45,18 +45,18 @@ public class MainServlet extends HttpServlet {
  * @return true/false para el inital load
  * @exception weijhweoifwerfiowerhfufifwfhpiufh9fhi
  */
-    private boolean testLoad() {
-        String attr="initialLoad";
-        Boolean sw = (boolean) getServletContext().getAttribute(attr);
-        if (sw == null) {
-            throw new NullPointerException();
-        }
-        if (sw == true) {
-            getServletContext().setAttribute(attr, !sw);
-        }
-
-        return (boolean) getServletContext().getAttribute(attr);
-    }
+//    private boolean testLoad() {
+//        String attr="initialLoad";
+//        Boolean sw = (boolean) getServletContext().getAttribute(attr);
+//        if (sw == null) {
+//            throw new NullPointerException();
+//        }
+//        if (sw == true) {
+//            getServletContext().setAttribute(attr, !sw);
+//        }
+//
+//        return (boolean) getServletContext().getAttribute(attr);
+//    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -9,24 +9,17 @@ package com.arelance.filtrodto;
 import com.arelance.filtrodto.dtos.filters.Fiter;
 import com.arelance.filtrodto.dtos.filters.NombreFilter;
 import java.io.IOException;
-import java.io.PrintStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /**
  *
  * @author Admin
  */
-@WebFilter
-
-public class sScondFilter implements javax.servlet.Filter {
+public class NameWebFilter implements javax.servlet.Filter {
     
    
       @Override
@@ -34,6 +27,7 @@ public class sScondFilter implements javax.servlet.Filter {
             FilterChain chain)
             throws IOException, ServletException {
         
+          
        
         String nombre=request.getParameter("nombre");
         if(nombre!=null && nombre.trim().length()>0){

@@ -15,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Admin
+ * @author Manuel
  */
-@WebServlet(name = "MainControler", urlPatterns = {"/MainControler"})
-public class MainControler extends HttpServlet {
+@WebServlet(name = "Destino", urlPatterns = {"/Destino"})
+public class Destino extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,8 +33,9 @@ public class MainControler extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            getServletContext();
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            
         }
     }
 

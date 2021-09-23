@@ -27,5 +27,14 @@ public abstract class Fiter {
     
     
     public abstract String execute();
+
+    public String getSqlSentecnce() {
+        return sqlSentecnce;
+    }
+
+    public void setSqlSentecnce(String sqlSentecnce) {
+        this.sqlSentecnce = sqlSentecnce;
+    }
+    
     
 }

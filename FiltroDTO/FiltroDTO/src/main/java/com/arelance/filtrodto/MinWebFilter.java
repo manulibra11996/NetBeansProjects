@@ -3,42 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.filtrodto.filtros;
+package com.arelance.filtrodto;
 
-import com.arelance.filtrodto.dtos.NombreFiltro;
-import com.arelance.filtrodto.dtos.Filtro;
+import com.arelance.filtrodto.dtos.filters.Fiter;
+import com.arelance.filtrodto.dtos.filters.MinFilter;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 
 /**
  *
  * @author Manuel
  */
-@WebFilter(filterName = "Filtro1", urlPatterns = {"/filtrar/*"})
-public class Filtro1 implements Filter {
+public class MinWebFilter implements Filter {
 
-    public void doFilter(ServletRequest request, ServletResponse response,
+      @Override
+      public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-
-        String valor1 = request.getParameter("valor1");
-
-        if (valor1 != null && valor1.trim().length() > 0) {
-            Filtro f = new NombreFiltro(valor1);
-            Filtro fx = null;
-            if(request.getAttribute("filtro") != null){
-                fx = (Filtro) request.getAttribute("filtro");
+        
+          
+       
+        String minimo=request.getParameter("minimo");
+        if(minimo!=null && minimo.trim().length()>0){
+            Fiter f=new MinFilter(Integer.parseInt(minimo));
+            Fiter fx=null;
+            if( request.getAttribute("filter")!=null){
+                fx=(Fiter) request.getAttribute("filter");
                 fx.buiderFiter(f);
             }else{
-                request.setAttribute("filtro", f);
+                request.setAttribute("filter", f);
             }
+           
+            
+            
         }
-
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
@@ -46,8 +48,13 @@ public class Filtro1 implements Filter {
             // If an exception is thrown somewhere down the filter chain,
             // we still want to execute our after processing, and then
             // rethrow the problem after that.
-            problem = t;
+       
             t.printStackTrace();
         }
+        
+  
+        // If there was a problem, we want to rethrow it if it is
+     
     }
+
 }

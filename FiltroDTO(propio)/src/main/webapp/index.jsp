@@ -13,11 +13,11 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <form method="get" action="MainServlet">
-            <label>Nombre</label><input type="text" name="valor1">
-            <label>Minimo</label><input type="text" name="valor2">
-            <label>Maximo</label><input type="text" name="valor3">
-            <input type="submit" name="enviar" value="enviar">
+        <form action="MainServlet" method="get">
+            <label>Nombre</label><input type="text" name="valor1" id="valor1">
+            <label>Minimo</label><input type="text" name="valor2" id="valor2">
+            <label>Maximo</label><input type="text" name="valor3" id="valor3">
+            <input type="submit" name="enviar" value="enviar" id="enviar">
         </form>
             
     </body>

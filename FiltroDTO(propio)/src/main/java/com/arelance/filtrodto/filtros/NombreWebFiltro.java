@@ -5,7 +5,7 @@
  */
 package com.arelance.filtrodto.filtros;
 
-import com.arelance.filtrodto.dtos.MaxFiltro;
+import com.arelance.filtrodto.dtos.NombreFiltro;
 import com.arelance.filtrodto.dtos.Filtro;
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -19,18 +19,17 @@ import javax.servlet.annotation.WebFilter;
  *
  * @author Manuel
  */
-@WebFilter(filterName = "Filtro3", urlPatterns = {"/filtrar/*"})
-public class Filtro3 implements Filter {
-    
+@WebFilter
+public class NombreWebFiltro implements Filter {
+
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        
-        String valor3 = request.getParameter("valor3");
 
-        if (valor3 != null && valor3.trim().length() > 0) {
-            Filtro f = new MaxFiltro(valor3);
+        String valor1 = request.getParameter("valor1");
+
+        if (valor1 != null && valor1.trim().length() > 0) {
+            Filtro f = new NombreFiltro(valor1);
             Filtro fx = null;
             if(request.getAttribute("filtro") != null){
                 fx = (Filtro) request.getAttribute("filtro");
@@ -39,7 +38,7 @@ public class Filtro3 implements Filter {
                 request.setAttribute("filtro", f);
             }
         }
-        
+
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
@@ -50,5 +49,5 @@ public class Filtro3 implements Filter {
             problem = t;
             t.printStackTrace();
         }
-    }    
+    }
 }
