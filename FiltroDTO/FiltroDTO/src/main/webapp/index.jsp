@@ -4,6 +4,7 @@
     Author     : Admin
 --%>
 
+
 <%@page import="com.arelance.filtrodto.dtos.filters.Fiter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,12 +21,10 @@
             <input type="submit" name="envio" id="envio">
         </form>
         <%
-            request.getAttribute("filter");
             Object aux = request.getAttribute("filter");
             if(aux != null){
-            Fiter fx = (Fiter) aux;
-            fx.execute();
-            out.print(fx.getSqlSentecnce());
+                Fiter fx = (Fiter) aux;
+                out.print(fx.);
             }
         %>
     </body>

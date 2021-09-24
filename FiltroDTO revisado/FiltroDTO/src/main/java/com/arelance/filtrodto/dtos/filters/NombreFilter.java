@@ -5,11 +5,13 @@
  */
 package com.arelance.filtrodto.dtos.filters;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Admin
  */
-public class NombreFilter implements Fiter{
+public class NombreFilter extends Fiter{
     private String nombre;
 
     public NombreFilter(String nombre) {
@@ -18,7 +20,11 @@ public class NombreFilter implements Fiter{
 
     @Override
     public String execute() {
+     
         return "nombre="+nombre;
+        // 
     }
- 
+    
+    
+    
 }

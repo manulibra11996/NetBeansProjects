@@ -5,13 +5,11 @@
  */
 package com.arelance.filtrodto.dtos.filters;
 
-import java.util.Iterator;
-
 /**
  *
  * @author Admin
  */
-public class MinFilter extends Fiter{
+public class MinFilter implements Fiter{
     
     private int minimo;
 
@@ -19,20 +17,9 @@ public class MinFilter extends Fiter{
         this.minimo = minimo;
     }
     
-     @Override
+    @Override
     public String execute() {
-     
-        
-        for (Iterator<Fiter> iterator = fiters.iterator(); iterator.hasNext();) {
-            Fiter next = iterator.next();
-            
-          sqlSentecnce=sqlSentecnce+next.execute();
-            
-            
-        }
-        sqlSentecnce=sqlSentecnce+"edad>="+minimo;
-        return sqlSentecnce;
-        // 
+        return "minimo>="+minimo;
     }
-    
+
 }

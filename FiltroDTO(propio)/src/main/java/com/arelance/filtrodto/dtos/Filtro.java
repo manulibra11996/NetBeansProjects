@@ -27,4 +27,14 @@ public abstract class Filtro {
     
     
     public abstract String execute();
+
+    public String getSqlSentence() {
+        return sqlSentence;
+    }
+
+    public void setSqlSentence(String sqlSentence) {
+        this.sqlSentence = sqlSentence;
+    }
+    
+    
 }

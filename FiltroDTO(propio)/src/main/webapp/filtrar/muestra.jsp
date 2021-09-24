@@ -4,6 +4,7 @@
     Author     : Manuel
 --%>
 
+<%@page import="com.arelance.filtrodto.dtos.Filtro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,8 +15,12 @@
     <body>
         <h1>Hello World!</h1>
         <%
-            String mostrar = (String) request.getAttribute("filtro");
+             Object aux = request.getAttribute("filtro");
+            if(aux != null){
+            Filtro fx = (Filtro) aux;
+            fx.execute();
+                out.print(fx.getSqlSentence());
+            }
         %>
-        <p><%=mostrar%></p>
     </body>
 </html>

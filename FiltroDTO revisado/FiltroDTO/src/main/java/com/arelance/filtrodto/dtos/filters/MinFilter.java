@@ -5,20 +5,25 @@
  */
 package com.arelance.filtrodto.dtos.filters;
 
+import java.util.Iterator;
+
 /**
  *
  * @author Admin
  */
-public class NombreFilter implements Fiter{
-    private String nombre;
+public class MinFilter extends Fiter{
+    
+    private int minimo;
 
-    public NombreFilter(String nombre) {
-        this.nombre=nombre;
+    public MinFilter(int minimo) {
+        this.minimo = minimo;
     }
-
-    @Override
+    
+     @Override
     public String execute() {
-        return "nombre="+nombre;
+    
+        return "edad>="+minimo;
+        // 
     }
- 
+    
 }
