@@ -5,6 +5,10 @@
  */
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -17,50 +21,61 @@ import javax.persistence.Table;
 @Table(name="student")  
 public class StudentEntity {  
   
-    @Id  
-    private int s_id;  
-    private String s_name;  
-    private int s_age;  
-      
-    public StudentEntity(int s_id, String s_name, int s_age) {  
-        super();  
-        this.s_id = s_id;  
-        this.s_name = s_name;  
-        this.s_age = s_age;  
-    }  
+    @Id 
+    @Column(name = "s_id")
+    private int id;
+    @Column(name = "s_name")
+    private String name;
+    @Column(name = "s_edad")
+    private int age;
+    
+    @ElementCollection  
+    private List<Address> address=new ArrayList<Address>();  
 
-    public StudentEntity(int s_id) {
-        this.s_id = s_id;
+    public StudentEntity(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
     }
     
+    public StudentEntity(int id) {
+        this.id = id;
+    }
     
-  
     public StudentEntity() {  
         super();  
     }  
   
-    public int getS_id() {  
-        return s_id;  
+    public int getId() {  
+        return id;  
     }  
   
-    public void setS_id(int s_id) {  
-        this.s_id = s_id;  
+    public void setId(int id) {  
+        this.id = id;  
     }  
   
-    public String getS_name() {  
-        return s_name;  
+    public String getName() {  
+        return name;  
     }  
   
-    public void setS_name(String s_name) {  
-        this.s_name = s_name;  
+    public void setName(String name) {  
+        this.name = name;  
     }  
-  
-    public int getS_age() {  
-        return s_age;  
-    }  
-  
-    public void setS_age(int s_age) {  
-        this.s_age = s_age;  
-    }  
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public List<Address> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<Address> address) {
+        this.address = address;
+    }
       
 }

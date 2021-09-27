@@ -25,14 +25,20 @@ public class PersistStudent {
           
         em.getTransaction().begin();  
           
-        StudentEntity s1 = new StudentEntity ();  
-        s1.setS_id ( 101 );  
+       StudentEntity s1 = new  StudentEntity ();  
+        s1.setId ( 101 );  
+        s1.setName ( "Gaurav" );  
+        s1.setAge ( 24 );  
           
-        StudentEntity s2 = new StudentEntity ();  
-        s2.setS_id ( 102 ); 
+        StudentEntity s2 = new  StudentEntity ();  
+        s2.setId ( 102 );  
+        s2.setName ( "Ronit" );  
+        s2.setAge ( 22 );  
           
-        StudentEntity s3 = new StudentEntity ();  
-        s3.setS_id ( 103 );  
+        StudentEntity s3 = new  StudentEntity ();  
+        s3.setId ( 103 );  
+        s3.setName ( "Rahul" );  
+        s3.setAge ( 26 );
         
         em.persist(s1);  
         em.persist(s2);  
