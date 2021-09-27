@@ -5,12 +5,11 @@
  */
 package com.arelance.sgaejb_jpa;
 
-import com.arelance.sgaejb_jpa.DTO.MaxDTO;
-import com.arelance.sgaejb_jpa.DTO.MinDTO;
-import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
+import com.arelance.sgaejb_jpa.services.personaservice.AficionDao;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Persona;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import javax.inject.Inject;
@@ -39,16 +38,16 @@ public class MainServlet extends HttpServlet {
     @Inject
     private PersonaService personaService;
     @Inject
-    private AficionService aficionService;
-    
+    AficionDao aficionDao;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      String lista = "lista";
+        String lista = "lista";
         String nombre = request.getParameter("nombre");
         String id = request.getParameter("id");
         if (id != null && !id.equals("")) {
         
-            List<Persona> personas = (List<Persona>) personaService.findPersonaById(Integer.parseInt(id));
+            List<Persona> personas = personaService.findPersonaById(Integer.parseInt(id));
             if (personas != null) {
                 request.setAttribute(lista, personas);
             }
@@ -64,7 +63,7 @@ public class MainServlet extends HttpServlet {
             request.setAttribute("min", datosResumen[0]);
             request.setAttribute("max", datosResumen[1]);
             request.setAttribute("total", datosResumen[2]);
-            request.setAttribute("aficiones", aficionService.listarResumenAficiones());
+            request.setAttribute("aficiones", aficionDao.listarResumenAficiones());
         }
 
         request.getRequestDispatcher("listado_personas.jsp").forward(request, response);

@@ -9,6 +9,7 @@ package com.arelance.filtrodto;
 import com.arelance.filtrodto.dtos.filters.Fiter;
 import com.arelance.filtrodto.dtos.filters.NombreFilter;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -22,40 +23,22 @@ import javax.servlet.ServletResponse;
 public class NameWebFilter implements javax.servlet.Filter {
     
    
-      @Override
-      public void doFilter(ServletRequest request, ServletResponse response,
-            FilterChain chain)
-            throws IOException, ServletException {
-        
-          
-       
-        String nombre=request.getParameter("nombre");
-        if(nombre!=null && nombre.trim().length()>0){
-            Fiter f=new NombreFilter(nombre);
-            Fiter.buiderFiter(f);
-            if( request.getAttribute("filter")!=null){
-                Fiter.buiderFiter(f);
-            }else{
-                request.setAttribute("filter", f);
-            }
-           
-            
-            
-        }
-        Throwable problem = null;
-        try {
-            chain.doFilter(request, response);
-        } catch (Throwable t) {
-            // If an exception is thrown somewhere down the filter chain,
-            // we still want to execute our after processing, and then
-            // rethrow the problem after that.
-       
-            t.printStackTrace();
-        }
-        
-  
-        // If there was a problem, we want to rethrow it if it is
-     
-    }
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,
+          FilterChain chain)
+          throws IOException, ServletException {
 
+
+      String nombre=request.getParameter("nombre");
+      if(!(nombre!=null && nombre.trim().length()>0)){
+         chain.doFilter(request, response); 
+      }
+
+      List<Fiter> filters = (List<Fiter>) request.getAttribute("filter");    
+      Fiter f = new NombreFilter(nombre);
+      filters.add(f);
+
+      chain.doFilter(request, response); 
+
+    } 
 }

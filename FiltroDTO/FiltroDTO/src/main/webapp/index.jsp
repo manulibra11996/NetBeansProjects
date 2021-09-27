@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.util.List"%>
 <%@page import="com.arelance.filtrodto.dtos.filters.Fiter"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,10 +22,8 @@
             <input type="submit" name="envio" id="envio">
         </form>
         <%
-            Object aux = request.getAttribute("filter");
-            if(aux != null){
-                Fiter fx = (Fiter) aux;
-                out.print(fx.);
+            if(request.getAttribute("devolver") != null){
+                out.print(request.getAttribute("devolver"));
             }
         %>
     </body>

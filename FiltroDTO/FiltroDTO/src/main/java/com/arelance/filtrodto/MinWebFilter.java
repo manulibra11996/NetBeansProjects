@@ -8,6 +8,7 @@ package com.arelance.filtrodto;
 import com.arelance.filtrodto.dtos.filters.Fiter;
 import com.arelance.filtrodto.dtos.filters.MinFilter;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -26,33 +27,16 @@ public class MinWebFilter implements Filter {
             throws IOException, ServletException {
         
           
-       
-        String minimo=request.getParameter("minimo");
-        if(minimo!=null && minimo.trim().length()>0){
-            Fiter f=new MinFilter(Integer.parseInt(minimo));
-            Fiter.buiderFiter(f);
-            if( request.getAttribute("filter")!=null){
-                Fiter.buiderFiter(f);
-            }else{
-                request.setAttribute("filter", f);
-            }
-           
-            
-            
-        }
-        Throwable problem = null;
-        try {
-            chain.doFilter(request, response);
-        } catch (Throwable t) {
-            // If an exception is thrown somewhere down the filter chain,
-            // we still want to execute our after processing, and then
-            // rethrow the problem after that.
-       
-            t.printStackTrace();
-        }
-        
-  
-        // If there was a problem, we want to rethrow it if it is
+         String minimo=request.getParameter("minimo");
+      if(!(minimo!=null && minimo.trim().length()>0)){
+         chain.doFilter(request, response); 
+      }
+
+      List<Fiter> filters = (List<Fiter>) request.getAttribute("filter");    
+      Fiter f = new MinFilter(Integer.parseInt(minimo));
+      filters.add(f);
+
+      chain.doFilter(request, response); 
      
     }
 

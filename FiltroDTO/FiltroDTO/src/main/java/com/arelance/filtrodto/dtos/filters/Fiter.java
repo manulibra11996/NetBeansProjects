@@ -5,7 +5,6 @@
  */
 package com.arelance.filtrodto.dtos.filters;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,20 +13,13 @@ import java.util.List;
  */
 public interface Fiter {
 
-    public static String getSqlSentecnce() {
+    public static String getSqlSentecnce(List<Fiter> fiters) {
         String sqlSentecnce = "";
         for (Fiter fiter : fiters) {
            sqlSentecnce = sqlSentecnce.concat(fiter.execute()).concat(" ");
         }
         return sqlSentecnce.trim();
     }
-    
-    public static final List<Fiter> fiters = new ArrayList<>();
-    
-    public static Fiter buiderFiter(Fiter fiter) {
-     fiters.add(fiter);
-     return  fiter;
-    }
-    
+
     public abstract String execute();
 }

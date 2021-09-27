@@ -5,8 +5,10 @@
  */
 package com.arelance.filtrodto.servlet;
 
+import com.arelance.filtrodto.dtos.filters.Fiter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,7 +35,15 @@ public class Destino extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-
+            
+            List<Fiter> aux = (List<Fiter>)request.getAttribute("filter");
+            String devolver = "";
+            if(aux != null){
+                for (Fiter fiter : aux) {
+                    devolver = devolver.concat(fiter.execute());
+                }
+                request.setAttribute("devolver", devolver);
+            }
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             
         }
