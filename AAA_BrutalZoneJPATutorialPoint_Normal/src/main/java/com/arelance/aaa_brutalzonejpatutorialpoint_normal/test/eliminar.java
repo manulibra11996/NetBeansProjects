@@ -5,7 +5,7 @@
  */
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.test;
 
-import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntity;
+import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntityList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -21,7 +21,7 @@ public class eliminar {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        StudentEntity s = em.find(StudentEntity.class, 102);
+        StudentEntityList s = em.find(StudentEntityList.class, 102);
         if (s != null) {
              em.remove(s);
         }

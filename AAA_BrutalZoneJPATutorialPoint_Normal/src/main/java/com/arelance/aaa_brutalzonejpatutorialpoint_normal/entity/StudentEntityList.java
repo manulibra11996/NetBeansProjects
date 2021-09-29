@@ -19,7 +19,7 @@ import javax.persistence.Table;
  */
 @Entity  
 @Table(name="student")  
-public class StudentEntity {  
+public class StudentEntityList {  
   
     @Id 
     @Column(name = "s_id")
@@ -32,17 +32,17 @@ public class StudentEntity {
     @ElementCollection  
     private List<Address> address=new ArrayList<Address>();  
 
-    public StudentEntity(int id, String name, int age) {
+    public StudentEntityList(int id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
     
-    public StudentEntity(int id) {
+    public StudentEntityList(int id) {
         this.id = id;
     }
     
-    public StudentEntity() {  
+    public StudentEntityList() {  
         super();  
     }  
   

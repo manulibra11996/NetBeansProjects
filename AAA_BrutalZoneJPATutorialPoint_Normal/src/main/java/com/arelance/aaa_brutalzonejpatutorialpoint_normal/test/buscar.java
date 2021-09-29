@@ -1,7 +1,7 @@
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.test;
 
 import com.arelance.aaa_brutalzonejpatutorialpoint_normal.*;
-import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntity;
+import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntityList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -27,17 +27,17 @@ public class buscar {
 
         em.getTransaction().begin();  
           
-        StudentEntity s1 = new StudentEntity ();  
+        StudentEntityList s1 = new StudentEntityList ();  
         s1.setId(1 );  
         s1.setName("Fran");
         s1.setAge(25);
           
-        StudentEntity s2 = new StudentEntity ();  
+        StudentEntityList s2 = new StudentEntityList ();  
         s2.setId(2 );  
         s2.setName("Isi");
         s2.setAge(30);
           
-        StudentEntity s3 = new StudentEntity ();  
+        StudentEntityList s3 = new StudentEntityList ();  
         s3.setId(3 );  
         s3.setName("Ruben");
         s3.setAge(40);
@@ -50,7 +50,7 @@ public class buscar {
         
         //Metodo 1
         for (int i = 1; i < 4; i++) {
-            StudentEntity s = em.find(StudentEntity.class , i);  
+            StudentEntityList s = em.find(StudentEntityList.class , i);  
             
             System.out.println ( "Id. De estudiante = " + s.getId());  
             System.out.println ( "Nombre del estudiante = " + s.getName());

@@ -5,7 +5,7 @@
  */
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.test;
 
-import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntity;
+import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntityList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -24,7 +24,7 @@ public class update {
       
         em.getTransaction().begin(); 
         
-        StudentEntity s = em.find (StudentEntity.class, 102 );  
+        StudentEntityList s = em.find (StudentEntityList.class, 102 );  
         System.out.println ( "Antes de la actualización" );  
         System.out.println ( "Id. De estudiante =" + s.getId ());  
         System.out.println ( "Nombre del estudiante =" + s.getName ());  

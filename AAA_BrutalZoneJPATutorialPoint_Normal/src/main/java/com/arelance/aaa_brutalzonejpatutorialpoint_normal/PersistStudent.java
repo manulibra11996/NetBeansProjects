@@ -1,6 +1,6 @@
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal;
 
-import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntity;
+import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntityList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -25,17 +25,17 @@ public class PersistStudent {
           
         em.getTransaction().begin();  
           
-       StudentEntity s1 = new  StudentEntity ();  
+       StudentEntityList s1 = new  StudentEntityList ();  
         s1.setId ( 101 );  
         s1.setName ( "Gaurav" );  
         s1.setAge ( 24 );  
           
-        StudentEntity s2 = new  StudentEntity ();  
+        StudentEntityList s2 = new  StudentEntityList ();  
         s2.setId ( 102 );  
         s2.setName ( "Ronit" );  
         s2.setAge ( 22 );  
           
-        StudentEntity s3 = new  StudentEntity ();  
+        StudentEntityList s3 = new  StudentEntityList ();  
         s3.setId ( 103 );  
         s3.setName ( "Rahul" );  
         s3.setAge ( 26 );

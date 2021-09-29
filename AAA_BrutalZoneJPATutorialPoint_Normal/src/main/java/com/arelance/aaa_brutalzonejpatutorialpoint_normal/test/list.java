@@ -6,7 +6,7 @@
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.test;
 
 import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.Address;
-import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntity;
+import com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity.StudentEntityList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -34,18 +34,17 @@ public class list {
         a2.setE_city("Jaipur");
         a2.setE_state("Rajasthan");
 
-        StudentEntity se1 = new StudentEntity();
+        StudentEntityList se1 = new StudentEntityList();
         se1.setId(1);
         se1.setName("Vijay");
         se1.setAge(50);
         se1.getAddress().add(a1);
-        se1.getAddress().add(a2);
 
         em.persist(se1);
 
         em.getTransaction().commit();
 
-        StudentEntity s = em.find(StudentEntity.class, 1);
+        StudentEntityList s = em.find(StudentEntityList.class, 1);
 
         System.out.println("Id. De estudiante = " + s.getId());
         System.out.println("Nombre del estudiante = " + s.getName());
