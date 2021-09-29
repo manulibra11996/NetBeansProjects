@@ -45,22 +45,9 @@ public class AsigCascade {
         em.persist(sea1);
         em.persist(sea2);
 
+        em.remove(em.merge(sea2));
+        
         em.getTransaction().commit();
-        
-        StudentEntityAsig s1 = em.find(StudentEntityAsig.class, 101);
-
-        System.out.println("Id. De estudiante = " + s1.getId());
-        System.out.println("Nombre del estudiante = " + s1.getName());
-        System.out.println("Edad del estudiante = " + s1.getAge());
-        System.out.println("Asignatura del estudiante = " + s1.getAsig().getName());
-        
-        StudentEntityAsig s2 = em.find(StudentEntityAsig.class, 102);
-
-        System.out.println("Id. De estudiante = " + s2.getId());
-        System.out.println("Nombre del estudiante = " + s2.getName());
-        System.out.println("Edad del estudiante = " + s2.getAge());
-        System.out.println("Asignatura del estudiante = " + s2.getAsig().getName());
-      
         em.close();
         emf.close();
 
