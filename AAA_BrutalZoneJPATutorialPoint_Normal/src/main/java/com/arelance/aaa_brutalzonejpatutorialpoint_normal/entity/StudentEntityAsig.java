@@ -5,11 +5,8 @@
  */
 package com.arelance.aaa_brutalzonejpatutorialpoint_normal.entity;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -31,7 +28,7 @@ public class StudentEntityAsig {
     @Column(name = "s_edad")
     private int age;
     
-    @OneToOne(cascade=CascadeType.PERSIST)  
+    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})  
     private Asignatura asig;  
 
     public StudentEntityAsig(int id, String name, int age, Asignatura asig) {
