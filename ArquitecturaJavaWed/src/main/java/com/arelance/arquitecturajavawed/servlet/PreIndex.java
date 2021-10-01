@@ -6,9 +6,11 @@
 package com.arelance.arquitecturajavawed.servlet;
 
 import com.arelance.arquitecturajavawed.DTO.LibroPersonaDTO;
+import com.arelance.arquitecturajavawed.service.implementacion.LibroPersonaService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -34,15 +36,14 @@ public class PreIndex extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+     @Inject
+    private LibroPersonaService libroPersonaService;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            List<LibroPersonaDTO> lista = em.createQuery("select distinct new com.mycompany.arquitecturajava.DTO.LibroPersonaDTO(p.apellidos,l.titulo,l.paginas) from Persona p, Libro l", LibroPersonaDTO.class).getResultList();
-            request.setAttribute("lista", lista);
-            List<LibroPersonaDTO> contador = em.createQuery("select distinct new com.mycompany.arquitecturajava.DTO.LibroPersonaDTO(p.apellidos,l.titulo,l.paginas) from Persona p, Libro l", LibroPersonaDTO.class).getResultList();
-           
+            List<LibroPersonaDTO> lpdtos = libroPersonaService.obtener();
+            request.setAttribute("lista", lpdtos);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
