@@ -8,6 +8,7 @@ package com.arelance.arquitecturajavawed.DAO.implementacion;
 import com.arelance.arquitecturajavawed.DAO.ILibroPersonaDAO;
 import com.arelance.arquitecturajavawed.DTO.LibroPersonaDTO;
 import java.util.List;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -16,14 +17,15 @@ import javax.persistence.Query;
  *
  * @author Manuel
  */
+@Stateless
 public class LibroPersonaDAO implements ILibroPersonaDAO{
 
-    @PersistenceContext(unitName = "UnidadPersonas")
+    @PersistenceContext(unitName = "UnidadPersona")
     EntityManager em;
     
     @Override
     public List<LibroPersonaDTO> obtener() {
-        Query query = em.createQuery("select distinct new com.mycompany.arquitecturajava.DTO.LibroPersonaDTO(p.apellidos,l.titulo,l.paginas) from Persona p, Libro l");
+        Query query = em.createQuery("select l from Persona p INNER JOIN p.libros l", LibroPersonaDTO.class);
         return (List<LibroPersonaDTO>) query.getResultList();
     }
     

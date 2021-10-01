@@ -7,11 +7,13 @@ package com.arelance.arquitecturajavawed.DAO;
 
 import com.arelance.arquitecturajavawed.DTO.LibroPersonaDTO;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
  * @author Manuel
  */
+@Local
 public interface ILibroPersonaDAO {
 
     public List<LibroPersonaDTO> obtener();

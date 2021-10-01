@@ -5,7 +5,7 @@
  */
 package com.arelance.arquitecturajavawed.service.implementacion;
 
-import com.arelance.arquitecturajavawed.DAO.implementacion.*;
+import com.arelance.arquitecturajavawed.DAO.implementacion.LibroPersonaDAO;
 import com.arelance.arquitecturajavawed.DTO.LibroPersonaDTO;
 import com.arelance.arquitecturajavawed.service.ILibroPersonaService;
 import java.util.List;
