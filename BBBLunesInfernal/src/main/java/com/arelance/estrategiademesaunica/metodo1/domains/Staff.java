@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.estrategiademesaunica.domains;
+package com.arelance.estrategiademesaunica.metodo1.domains;
 
 import java.io.Serializable;
 import javax.persistence.DiscriminatorColumn;
@@ -13,47 +13,41 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.Table;
 
 /**
  *
  * @author Manuel
  */
 @Entity
-@Table
-@Inheritance( strategy = InheritanceType.SINGLE_TABLE )
-@DiscriminatorColumn( name = "type" )
-
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type")
 public class Staff implements Serializable {
    @Id
-   @GeneratedValue( strategy = GenerationType.AUTO )
-   
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int sid;
    private String sname;
    
-   public Staff( int sid, String sname ) {
-      super( );
+   public Staff(int sid, String sname) {
       this.sid = sid;
       this.sname = sname;
    }
    
-   public Staff( ) {
-      super( );
+   public Staff() {
    }
    
-   public int getSid( ) {
+   public int getSid() {
       return sid;
    }
    
-   public void setSid( int sid ) {
+   public void setSid(int sid) {
       this.sid = sid;
    }
    
-   public String getSname( ) {
+   public String getSname() {
       return sname;
    }
    
-   public void setSname( String sname ) {
+   public void setSname(String sname) {
       this.sname = sname;
    }
 }

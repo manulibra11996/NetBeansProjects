@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.estrategiademesaunica.domains;
+package com.arelance.estrategiademesaunica.metodo1.domains;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -13,37 +13,35 @@ import javax.persistence.Entity;
  * @author Manuel
  */
 @Entity
-@DiscriminatorValue( value="TS" )
+@DiscriminatorValue(value="TS")
 public class TeachingStaff extends Staff {
 
    private String qualification;
    private String subjectexpertise;
 
-   public TeachingStaff( int sid, String sname, 
-   
-   String qualification,String subjectexpertise ) {
-      super( sid, sname );
+   public TeachingStaff(int sid, String sname, String qualification,String subjectexpertise) {
+      super(sid, sname);
       this.qualification = qualification;
       this.subjectexpertise = subjectexpertise;
    }
 
-   public TeachingStaff( ) {
-      super( );
+   public TeachingStaff() {
+       super();
    }
 
-   public String getQualification( ){
+   public String getQualification(){
       return qualification;
    }
 
-   public void setQualification( String qualification ){
+   public void setQualification(String qualification){
       this.qualification = qualification;
    }
 
-   public String getSubjectexpertise( ) {
+   public String getSubjectexpertise() {
       return subjectexpertise;
    }
 
-   public void setSubjectexpertise( String subjectexpertise ){
+   public void setSubjectexpertise(String subjectexpertise){
       this.subjectexpertise = subjectexpertise;
    }
 }

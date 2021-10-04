@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.estrategiademesaunica.domains;
+package com.arelance.estrategiademesaunica.metodo2.domains;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Manuel
  */
 @Entity
-@DiscriminatorValue( value = "NS" )
+@PrimaryKeyJoinColumn(referencedColumnName="sid")
 
 public class NonTeachingStaff extends Staff {
    private String areaexpertise;
 
-   public NonTeachingStaff( int sid, String sname, String areaexpertise ) {
-      super( sid, sname );
+   public NonTeachingStaff(int sid, String sname, String areaexpertise) {
+      super(sid, sname);
       this.areaexpertise = areaexpertise;
    }
 
-   public NonTeachingStaff( ) {
-      super( );
+   public NonTeachingStaff() {
+      super();
    }
 
-   public String getAreaexpertise( ) {
+   public String getAreaexpertise() {
       return areaexpertise;
    }
 
-   public void setAreaexpertise( String areaexpertise ){
+   public void setAreaexpertise(String areaexpertise) {
       this.areaexpertise = areaexpertise;
    }
 }
