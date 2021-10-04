@@ -6,10 +6,13 @@
 package com.arelance.ccclunesinfernal.domains;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,6 +25,8 @@ public class Department implements Serializable {
    @GeneratedValue( strategy=GenerationType.AUTO )
    private int id;
    private String name;
+   @OneToMany(mappedBy = "department")
+   private List<Employee> employee;
 
    public int getId() {
       return id;

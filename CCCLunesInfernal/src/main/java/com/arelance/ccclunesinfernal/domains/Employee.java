@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 /**
@@ -27,6 +28,7 @@ public class Employee implements Serializable{
    private String deg;
    
    @ManyToOne
+   @JoinColumn(referencedColumnName = "id")
    private Department department;
 
    public Employee(int eid, String ename, double salary, String deg) {

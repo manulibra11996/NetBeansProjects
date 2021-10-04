@@ -57,6 +57,7 @@ public class ManyToOne {
         entitymanager.persist(employee3);
 
         entitymanager.getTransaction().commit();
+        
         entitymanager.close();
         emfactory.close();
     }
