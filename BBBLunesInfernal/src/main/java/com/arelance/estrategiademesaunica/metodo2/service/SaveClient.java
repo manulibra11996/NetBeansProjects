@@ -5,8 +5,8 @@
  */
 package com.arelance.estrategiademesaunica.metodo2.service;
 
-import com.arelance.estrategiademesaunica.metodo2.domains.NonTeachingStaff;
-import com.arelance.estrategiademesaunica.metodo2.domains.TeachingStaff;
+import com.arelance.estrategiademesaunica.metodo2.domains.NonTeachingStaff2;
+import com.arelance.estrategiademesaunica.metodo2.domains.TeachingStaff2;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -22,12 +22,12 @@ public class SaveClient {
       entitymanager.getTransaction( ).begin( );
 
       //Teaching staff entity 
-      TeachingStaff ts1 = new TeachingStaff(1,"Gopal","MSc MEd","Maths");
-      TeachingStaff ts2 = new TeachingStaff(2, "Manisha", "BSc BEd", "English");
+      TeachingStaff2 ts1 = new TeachingStaff2(1,"Gopal","MSc MEd","Maths");
+      TeachingStaff2 ts2 = new TeachingStaff2(2, "Manisha", "BSc BEd", "English");
       
       //Non-Teaching Staff entity
-      NonTeachingStaff nts1 = new NonTeachingStaff(3, "Satish", "Accounts");
-      NonTeachingStaff nts2 = new NonTeachingStaff(4, "Krishna", "Office Admin");
+      NonTeachingStaff2 nts1 = new NonTeachingStaff2(3, "Satish", "Accounts");
+      NonTeachingStaff2 nts2 = new NonTeachingStaff2(4, "Krishna", "Office Admin");
 
       //storing all entities
       entitymanager.persist(ts1);

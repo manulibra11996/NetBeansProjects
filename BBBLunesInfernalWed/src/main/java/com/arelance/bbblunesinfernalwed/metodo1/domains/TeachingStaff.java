@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.estrategiademesaunica.metodo2.domains;
+package com.arelance.bbblunesinfernalwed.metodo1.domains;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 /**
  *
  * @author Manuel
  */
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName="sid")
-
+@DiscriminatorValue(value="TS")
 public class TeachingStaff extends Staff {
+
    private String qualification;
    private String subjectexpertise;
 
@@ -26,7 +26,7 @@ public class TeachingStaff extends Staff {
    }
 
    public TeachingStaff() {
-      super();
+       super();
    }
 
    public String getQualification(){
@@ -37,12 +37,11 @@ public class TeachingStaff extends Staff {
       this.qualification = qualification;
    }
 
-    public String getSubjectexpertise() {
-        return subjectexpertise;
-    }
+   public String getSubjectexpertise() {
+      return subjectexpertise;
+   }
 
-    public void setSubjectexpertise(String subjectexpertise) {
-        this.subjectexpertise = subjectexpertise;
-    }
-
+   public void setSubjectexpertise(String subjectexpertise){
+      this.subjectexpertise = subjectexpertise;
+   }
 }

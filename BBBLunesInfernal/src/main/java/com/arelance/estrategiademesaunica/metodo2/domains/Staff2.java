@@ -20,18 +20,18 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public class Staff implements Serializable {
+public class Staff2 implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int sid;
     private String sname;
 
-    public Staff(int sid, String sname) {
+    public Staff2(int sid, String sname) {
         this.sid = sid;
         this.sname = sname;
     }
 
-    public Staff() {
+    public Staff2() {
     }
 
     public int getSid() {
