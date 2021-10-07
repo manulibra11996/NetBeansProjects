@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domains;
+package com.arelance.ccclunesinfernal.domains;
 
 import java.util.Set;
 import javax.persistence.Entity;
@@ -17,7 +17,7 @@ import javax.persistence.ManyToMany;
  * @author Manuel
  */
 @Entity
-public class Maestro{
+public class Teacher {
 
    @Id
    @GeneratedValue( strategy = GenerationType.AUTO )
@@ -25,14 +25,14 @@ public class Maestro{
    private String tname;
    private String subject;
 
-   @ManyToMany(targetEntity = Class.class)
+   @ManyToMany(targetEntity = Clas.class)
    private Set clasSet;
 
-   public Maestro(){
+   public Teacher(){
       super();
    }
    
-   public Maestro(int tid, String tname, String subject, Set clasSet) {
+   public Teacher(int tid, String tname, String subject, Set clasSet) {
       super();
       this.tid = tid;
       this.tname = tname;
