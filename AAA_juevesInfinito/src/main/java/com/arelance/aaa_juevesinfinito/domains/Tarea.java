@@ -5,6 +5,7 @@
  */
 package com.arelance.aaa_juevesinfinito.domains;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,7 +17,7 @@ import javax.persistence.ManyToOne;
  * @author Manuel
  */
 @Entity(name = "TAREA")
-public class Tarea {
+public class Tarea implements Serializable{
 
     @Id
     private TareaID id;

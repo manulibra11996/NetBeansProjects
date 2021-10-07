@@ -5,6 +5,7 @@
  */
 package com.arelance.aaa_juevesinfinito.domains;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.ManyToMany;
  * @author Manuel
  */
 @Entity(name = "EMP")
-public class Emp {
+public class Emp implements Serializable{
 
     @Id
     @Column(name = "id_emp")

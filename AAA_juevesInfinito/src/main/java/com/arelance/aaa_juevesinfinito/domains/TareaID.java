@@ -5,6 +5,7 @@
  */
 package com.arelance.aaa_juevesinfinito.domains;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -13,7 +14,7 @@ import javax.persistence.Embeddable;
  * @author Manuel
  */
 @Embeddable
-public class TareaID {
+public class TareaID implements Serializable{
 
     @Column(name = "id_emp")
     private int idEmp;
