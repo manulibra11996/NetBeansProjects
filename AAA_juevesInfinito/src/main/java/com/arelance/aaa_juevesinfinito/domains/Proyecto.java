@@ -13,12 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author Manuel
  */
-@Entity(name = "PROYECTO")
+@Entity
+@Table(name = "PROYECTO")
 public class Proyecto implements Serializable{
 
     @Id

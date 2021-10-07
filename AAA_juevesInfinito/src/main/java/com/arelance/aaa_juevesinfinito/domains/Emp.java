@@ -13,11 +13,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 /**
  *
  * @author Manuel
  */
-@Entity(name = "EMP")
+@Entity
+@Table(name = "EMP")
 public class Emp implements Serializable{
 
     @Id

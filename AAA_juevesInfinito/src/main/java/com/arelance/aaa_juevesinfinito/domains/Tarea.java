@@ -7,22 +7,25 @@ package com.arelance.aaa_juevesinfinito.domains;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  *
  * @author Manuel
  */
-@Entity(name = "TAREA")
-public class Tarea implements Serializable{
+@Entity
+@Table(name = "TAREA")
+public class Tarea implements Serializable {
 
     @Id
     private TareaID id;
     @Column(name = "horas")
-    private int horas;
+    private double horas;
     @Column(name = "descripcion")
     private String descripcion;
     @ManyToOne
@@ -40,11 +43,11 @@ public class Tarea implements Serializable{
         this.id = id;
     }
 
-    public int getHoras() {
+    public double getHoras() {
         return horas;
     }
 
-    public void setHoras(int horas) {
+    public void setHoras(double horas) {
         this.horas = horas;
     }
 
@@ -71,6 +74,5 @@ public class Tarea implements Serializable{
     public void setEmp(Emp emp) {
         this.emp = emp;
     }
-    
-    
+
 }
