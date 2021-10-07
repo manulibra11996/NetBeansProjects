@@ -3,7 +3,6 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="JavaAFondo" transaction-type="JTA">
     <jta-data-source>jdbc/JavaAFondo</jta-data-source>
-    <class>com.arelance.aaa_juevesinfinito.domains.Dept</class>
     <class>com.arelance.aaa_juevesinfinito.domains.Emp</class>
     <class>com.arelance.aaa_juevesinfinito.domains.Persona</class>
     <class>com.arelance.aaa_juevesinfinito.domains.Proyecto</class>

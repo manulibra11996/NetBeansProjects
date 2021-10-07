@@ -12,8 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-
 /**
  *
  * @author Manuel
@@ -36,9 +34,6 @@ public class Emp {
             joinColumns = {@JoinColumn(name = "id_emp")},
             inverseJoinColumns = {@JoinColumn(name = "id_proyecto")})
     private List<Proyecto> proyectos;
-    @OneToMany
-    @JoinColumn(name = "id_dept")
-    private Dept dept;
     
     public int getIdEmp() {
         return idEmp;
@@ -80,13 +75,4 @@ public class Emp {
         this.proyectos = proyectos;
     }
 
-    public Dept getDept() {
-        return dept;
-    }
-
-    public void setDept(Dept dept) {
-        this.dept = dept;
-    }
-    
-    
 }

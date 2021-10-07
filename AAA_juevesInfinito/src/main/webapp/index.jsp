@@ -32,11 +32,6 @@
             for (Emp emp : emps) {
         %>
         <p><%= emp.getNombre()%></p>
-        <%}
-            List<Dept> depts = (List<Dept>) request.getAttribute("depts");
-            for (Dept dept : depts) {
-        %>
-        <p><%= dept.getNombre()%></p>
         <%}%>
     </body>
 </html>
