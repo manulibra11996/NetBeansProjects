@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.jpacriteriaejemplo1.domain;
+package com.arelance.aaa_criteria;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -32,6 +32,7 @@ public class Empleados implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @Basic(optional = false)
     @Column(name = "Eid")
     private Integer eid;
     @Column(name = "Ename")
@@ -41,9 +42,8 @@ public class Empleados implements Serializable {
     private double salary;
     @Column(name = "Deg")
     private String deg;
-//    @JoinColumn(name = "Did", referencedColumnName = "Did")
-//    @ManyToOne
-//    private Departamentos did;
+
+
 
     public Empleados() {
     }
@@ -89,13 +89,7 @@ public class Empleados implements Serializable {
         this.deg = deg;
     }
 
-//    public Departamentos getDid() {
-//        return did;
-//    }
-//
-//    public void setDid(Departamentos did) {
-//        this.did = did;
-//    }
+ 
 
     @Override
     public int hashCode() {
@@ -119,7 +113,7 @@ public class Empleados implements Serializable {
 
     @Override
     public String toString() {
-        return "com.arelance.jpacriteriaejemplo1.domain.Empleados[ eid=" + eid + " ]";
+        return "com.arelance.aaa_criteria.Empleados[ eid=" + eid + " ]";
     }
     
 }
