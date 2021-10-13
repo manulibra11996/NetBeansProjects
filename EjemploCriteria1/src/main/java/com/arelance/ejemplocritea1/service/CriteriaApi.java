@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.jpacriteriaejemplo1.service;
+package com.arelance.ejemplocritea1.service;
 
-import com.arelance.jpacriteriaejemplo1.domain.Empleados;
-import java.util.List;
+import com.arelance.ejemplocritea1.domain.Empleados;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;

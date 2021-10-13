@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.jpacriteriaejemplo1.domain;
+package com.arelance.ejemplocritea1.domain;
 
 import java.io.Serializable;
 import java.util.Collection;

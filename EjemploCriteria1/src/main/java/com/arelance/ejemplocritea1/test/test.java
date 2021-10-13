@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.jpacriteriaejemplo1.test;
+package com.arelance.ejemplocritea1.test;
 
-import com.arelance.jpacriteriaejemplo1.domain.Empleados;
+import com.arelance.ejemplocritea1.domain.Empleados;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
