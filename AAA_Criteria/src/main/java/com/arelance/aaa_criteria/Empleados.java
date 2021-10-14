@@ -10,8 +10,6 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -42,8 +40,8 @@ public class Empleados implements Serializable {
     private double salary;
     @Column(name = "Deg")
     private String deg;
-
-
+    @Column(name = "Did")
+    private int did;
 
     public Empleados() {
     }
@@ -89,8 +87,6 @@ public class Empleados implements Serializable {
         this.deg = deg;
     }
 
- 
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -115,5 +111,5 @@ public class Empleados implements Serializable {
     public String toString() {
         return "com.arelance.aaa_criteria.Empleados[ eid=" + eid + " ]";
     }
-    
+
 }

@@ -10,8 +10,6 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -41,6 +39,8 @@ public class Empleados implements Serializable {
     private double salary;
     @Column(name = "Deg")
     private String deg;
+    @Column(name = "Did")
+    private int did;
 //    @JoinColumn(name = "Did", referencedColumnName = "Did")
 //    @ManyToOne
 //    private Departamentos did;

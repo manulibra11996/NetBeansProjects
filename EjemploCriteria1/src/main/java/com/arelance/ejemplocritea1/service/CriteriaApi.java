@@ -20,8 +20,7 @@ import javax.persistence.criteria.Root;
  * @author Manuel
  */
 public class CriteriaApi {
-
-    public static void main(String[] args) {
+ public static void main(String[] args) {
 //
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("criteria");
         EntityManager entitymanager = emfactory.createEntityManager();
