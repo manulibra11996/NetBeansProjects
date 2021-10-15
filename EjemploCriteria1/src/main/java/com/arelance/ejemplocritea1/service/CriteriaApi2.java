@@ -6,7 +6,6 @@
 package com.arelance.ejemplocritea1.service;
 
 import com.arelance.ejemplocritea1.domain.Departamentos;
-import com.arelance.ejemplocritea1.domain.Empleados;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,12 +17,11 @@ import javax.persistence.criteria.Root;
 
 /**
  *
- * @author Manuel
+ * @author manul
  */
 public class CriteriaApi2 {
 
     public static void main(String[] args) {
-
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("criteria");
         EntityManager entitymanager = emfactory.createEntityManager();
 
@@ -47,4 +45,5 @@ public class CriteriaApi2 {
         entitymanager.close();
         emfactory.close();
     }
+
 }
