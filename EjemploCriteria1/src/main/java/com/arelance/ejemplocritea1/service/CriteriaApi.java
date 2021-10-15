@@ -6,11 +6,15 @@
 package com.arelance.ejemplocritea1.service;
 
 import com.arelance.ejemplocritea1.domain.Empleados;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Root;
 
 
@@ -21,7 +25,7 @@ import javax.persistence.criteria.Root;
  */
 public class CriteriaApi {
  public static void main(String[] args) {
-//
+
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("criteria");
         EntityManager entitymanager = emfactory.createEntityManager();
 
@@ -29,15 +33,21 @@ public class CriteriaApi {
         CriteriaQuery<Empleados> criteriaQuery = criteriaBuilder.createQuery(Empleados.class);
 
         Root<Empleados> from = criteriaQuery.from(Empleados.class);
-//
-//        System.out.println("Select all records");
-//        CriteriaQuery<Empleados> select = criteriaQuery.select(from);
-//        TypedQuery<Empleados> typedQuery = entitymanager.createQuery(select);
-//        List<Empleados> resultlist = typedQuery.getResultList();
-//
-//        for (Empleados empleados : resultlist) {
-//            System.out.println("EID: " + empleados.getEid() + "Ename: " + empleados.getEname());
-//        }
+
+        List<Order> orders = new ArrayList<Order>();
+        orders.add(criteriaBuilder.desc(from.get("ename")));
+        orders.add(criteriaBuilder.desc(from.get("salary")));
+        orders.add(criteriaBuilder.asc(from.get("deg")));
+        
+        System.out.println("Select all records");
+        CriteriaQuery<Empleados> select = criteriaQuery.select(from);
+        criteriaQuery.orderBy(orders);      
+        TypedQuery<Empleados> typedQuery = entitymanager.createQuery(select);
+        List<Empleados> resultlist = typedQuery.getResultList();
+
+        for (Empleados empleados : resultlist) {
+            System.out.println("EID: " + empleados.getEid() + " Ename: " + empleados.getEname() + " Salary: " + empleados.getSalary() + " Deg: " + empleados.getDeg());
+        }
 
         entitymanager.close();
         emfactory.close();
