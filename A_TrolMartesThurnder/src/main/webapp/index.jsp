@@ -20,9 +20,10 @@
 
             for (Empleado empleado : lista) {
         %>
-        <p><%=empleado.getEmpName()%></p>
-        <%
-            }
-        %>
+        <p><%=empleado.getEmpName()%><a href="PreModificar?idEmpleado=<%=empleado.getIdempleado()%>">Modificar</a>
+            <a href="PreEliminar?idEmpleado=<%=empleado.getIdempleado()%>">Eliminar</a></p>
+            <%
+                }
+            %>
     </body>
 </html>

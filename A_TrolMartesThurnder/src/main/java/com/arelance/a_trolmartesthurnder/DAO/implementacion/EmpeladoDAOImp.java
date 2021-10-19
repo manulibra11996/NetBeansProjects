@@ -5,7 +5,7 @@
  */
 package com.arelance.a_trolmartesthurnder.DAO.implementacion;
 
-import com.arelance.a_trolmartesthurnder.entity.DAO.EmpleadoDAO;
+import com.arelance.a_trolmartesthurnder.DAO.EmpleadoDAO;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -66,6 +66,16 @@ public class EmpeladoDAOImp implements EmpleadoDAO {
         em.getTransaction().begin();
         em.createQuery(criteriaDelete).executeUpdate();
         em.getTransaction().commit();
+    }
+
+    @Override
+    public Empleado BuscarId(int id) {
+        CriteriaQuery<Empleado> criteriaQuery = criteriaBuilder.createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from);
+        select.where(criteriaBuilder.greaterThan(from.get("idempleado"), id));
+        TypedQuery<Empleado> typedQuery = em.createQuery(select);
+        return typedQuery.getSingleResult();
     }
 
 }

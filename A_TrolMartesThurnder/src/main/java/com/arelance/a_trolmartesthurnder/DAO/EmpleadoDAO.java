@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.a_trolmartesthurnder.entity.DAO;
+package com.arelance.a_trolmartesthurnder.DAO;
 
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import java.util.List;
@@ -16,12 +16,14 @@ import javax.ejb.Local;
 @Local
 public interface EmpleadoDAO {
 
-    public List<Empleado> ListarEmpleados();//Obtener todas las actividades
+    public List<Empleado> ListarEmpleados();
 
-    public void AñadirEmpleado(Empleado empleado);//Añadir actividades.
+    public void AñadirEmpleado(Empleado empleado);
 
-    public void ModificarEmpleado(Empleado empleado);//Modificar actividades.
+    public void ModificarEmpleado(Empleado empleado);
 
-    public void RemoverEmpleado(Empleado empleado);//Remover actividades.
+    public void RemoverEmpleado(Empleado empleado);
+    
+    public Empleado BuscarId(int id);
 
 }

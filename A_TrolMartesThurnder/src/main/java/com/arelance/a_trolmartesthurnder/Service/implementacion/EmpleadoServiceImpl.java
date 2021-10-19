@@ -6,7 +6,7 @@
 package com.arelance.a_trolmartesthurnder.Service.implementacion;
 
 import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
-import com.arelance.a_trolmartesthurnder.entity.DAO.EmpleadoDAO;
+import com.arelance.a_trolmartesthurnder.DAO.EmpleadoDAO;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import java.util.List;
 import javax.inject.Inject;
@@ -38,6 +38,11 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     @Override
     public void RemoverEmpleado(Empleado empleado) {
         empleadoDAO.RemoverEmpleado(empleado);
+    }
+
+    @Override
+    public Empleado BuscarId(int id) {
+        return empleadoDAO.BuscarId(id);
     }
 
    
