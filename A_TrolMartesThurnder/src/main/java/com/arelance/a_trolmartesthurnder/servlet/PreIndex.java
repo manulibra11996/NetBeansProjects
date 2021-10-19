@@ -7,6 +7,8 @@ package com.arelance.a_trolmartesthurnder.servlet;
 
 import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
+import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacade;
+import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -34,13 +36,13 @@ public class PreIndex extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Inject
-    private EmpleadoService empleadoService;
+    private EmpleadoFacadeLocal facadeLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            List<Empleado> empleados = empleadoService.ListarEmpleados();
+            List<Empleado> empleados = facadeLocal.findAll();
             request.setAttribute("lista", empleados);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
