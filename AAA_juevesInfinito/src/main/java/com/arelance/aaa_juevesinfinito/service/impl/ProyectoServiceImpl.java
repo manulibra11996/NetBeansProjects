@@ -27,7 +27,7 @@ public class ProyectoServiceImpl implements ProyectoService {
 
     @Override
     public void AñadirProyecto(Proyecto proyecto) {
-       proyectoDAO.AñadirProyecto(proyecto);
+        proyectoDAO.AñadirProyecto(proyecto);
     }
 
     @Override

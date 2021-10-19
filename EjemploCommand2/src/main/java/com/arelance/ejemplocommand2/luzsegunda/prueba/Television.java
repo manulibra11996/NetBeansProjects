@@ -11,7 +11,7 @@ import com.arelance.ejemplocommand2.luzsegunda.beans.ISwitchable;
  *
  * @author Manuel
  */
-public class Television implements ISwitchable{
+public class Television implements ISwitchable {
 
     @Override
     public void turnOn() {
@@ -22,5 +22,5 @@ public class Television implements ISwitchable{
     public void turnOff() {
         System.out.println("La tele esta apagada");
     }
-    
+
 }

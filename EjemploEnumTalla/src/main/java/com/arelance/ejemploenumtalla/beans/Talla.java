@@ -10,7 +10,7 @@ package com.arelance.ejemploenumtalla.beans;
  * @author Manuel
  */
 public enum Talla {
-    SMALL("S"),MEDIUM("M"),LARGE("L"),XLARGE("XL");
+    SMALL("S"), MEDIUM("M"), LARGE("L"), XLARGE("XL");
     private String abreviatura;
 
     private Talla(String abreviatura) {
@@ -20,5 +20,5 @@ public enum Talla {
     public String getAbreviatura() {
         return abreviatura;
     }
-    
+
 }

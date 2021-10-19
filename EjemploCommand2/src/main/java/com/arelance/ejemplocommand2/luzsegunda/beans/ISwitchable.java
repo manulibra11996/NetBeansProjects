@@ -9,8 +9,9 @@ package com.arelance.ejemplocommand2.luzsegunda.beans;
  *
  * @author Manuel
  */
-
 public interface ISwitchable {
+
     void turnOn();
+
     void turnOff();
 }

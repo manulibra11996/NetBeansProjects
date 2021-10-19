@@ -37,14 +37,14 @@ public class Post extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             double op1 = Double.parseDouble(request.getParameter("op1"));
             double op2 = Double.parseDouble(request.getParameter("op2"));
-            double valor = op1+op2;
-            
+            double valor = op1 + op2;
+
             List<Double> mostrar = (List<Double>) request.getSession().getAttribute("mostrar");
             mostrar.add(valor);
-            
+
             request.setAttribute("mostrar", mostrar);
             request.getRequestDispatcher("/index.jsp").forward(request, response);
-            
+
         }
     }
 

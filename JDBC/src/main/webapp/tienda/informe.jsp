@@ -39,47 +39,47 @@
         <%
             for (Usuario usuario : listaUsuario) {
                 if (usuario.getNick().equals(request.getSession().getAttribute("nick"))){%>
-                    <h2>Comprador <%=usuario.getNick()%></h2>
-                <%
-                    idUsuario = usuario.getId_usuario();
-                }
-            } 
-            if (listaFactura.size() != 0) {
+        <h2>Comprador <%=usuario.getNick()%></h2>
+        <%
+            idUsuario = usuario.getId_usuario();
+        }
+    } 
+    if (listaFactura.size() != 0) {
         %>
-                <h3>Productos vendidos</h3>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                    </tr>
-                 <%
-                    for (Articulo articulo : listaArticulo){
-                        cantidad = 0;
-                        for (Factura factura :  listaFactura) {
-                            if (articulo.getIdArticulo() == factura.getIdArticulo()) {
-                                cantidad ++;
-                            }     
-                        }
-                        if(cantidad != 0){%>
-                        <tr>
-                            <td><%=articulo.getNombre()%></td>
-                            <td><%=articulo.getDescripcion()%></td>
-                            <td><%=articulo.getPrecio()%> &#8364</td>
-                            <td><%=cantidad%></td>
-                        </tr>
-                    <%
-                            total=total+(articulo.getPrecio()*cantidad);
-                        }  
-                    }
-                    %>
-                </table>    
-                    <p>Precio total: <%=total%> &#8364</p>
-                    <%implementacionFactura.eliminar(new Factura(idUsuario));
+        <h3>Productos vendidos</h3>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+            </tr>
+            <%
+               for (Articulo articulo : listaArticulo){
+                   cantidad = 0;
+                   for (Factura factura :  listaFactura) {
+                       if (articulo.getIdArticulo() == factura.getIdArticulo()) {
+                           cantidad ++;
+                       }     
+                   }
+                   if(cantidad != 0){%>
+            <tr>
+                <td><%=articulo.getNombre()%></td>
+                <td><%=articulo.getDescripcion()%></td>
+                <td><%=articulo.getPrecio()%> &#8364</td>
+                <td><%=cantidad%></td>
+            </tr>
+            <%
+                    total=total+(articulo.getPrecio()*cantidad);
+                }  
+            }
+            %>
+        </table>    
+        <p>Precio total: <%=total%> &#8364</p>
+        <%implementacionFactura.eliminar(new Factura(idUsuario));
             }else{%>
-                <p>No as comprado nada vuelve la tienda</p>
-            <%}%>
-            <a href="http://localhost:8080/JDBC/index.jsp">Volver a la tienda</a>
+        <p>No as comprado nada vuelve la tienda</p>
+        <%}%>
+        <a href="http://localhost:8080/JDBC/index.jsp">Volver a la tienda</a>
     </body>
 </html>

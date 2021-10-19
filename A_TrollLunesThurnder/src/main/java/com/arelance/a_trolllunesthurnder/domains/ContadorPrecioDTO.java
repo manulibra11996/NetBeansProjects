@@ -11,8 +11,8 @@ import java.io.Serializable;
  *
  * @author Manuel
  */
-public class ContadorPrecioDTO implements Serializable{
-    
+public class ContadorPrecioDTO implements Serializable {
+
     private Long contador;
     private Integer precio;
 
@@ -36,6 +36,5 @@ public class ContadorPrecioDTO implements Serializable{
     public void setPrecio(Integer precio) {
         this.precio = precio;
     }
-    
-    
+
 }

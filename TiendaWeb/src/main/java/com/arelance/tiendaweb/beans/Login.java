@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public class Login implements Comparable<Login>,Serializable{
-    
+public class Login implements Comparable<Login>, Serializable {
+
     private final String nick;
     private final String password;
 
@@ -25,8 +25,6 @@ public class Login implements Comparable<Login>,Serializable{
     public String getPassword() {
         return password;
     }
-
-    
 
     public String getNick() {
         return nick;
@@ -70,9 +68,6 @@ public class Login implements Comparable<Login>,Serializable{
         return sb.toString();
     }
 
-    
-
-   
     @Override
     public int compareTo(Login l) {
         int retorno = nick.compareTo(l.nick);
@@ -81,7 +76,5 @@ public class Login implements Comparable<Login>,Serializable{
         }
         return retorno;
     }
-
-   
 
 }

@@ -12,9 +12,10 @@ import com.arelance.libreriafinal.vistas.ViewUsuario;
  *
  * @author manulibra
  */
-public class OpcionAlquiler extends Opciones{
+public class OpcionAlquiler extends Opciones {
+
     private Controller controller = new Controller();
-    
+
     public OpcionAlquiler(ViewUsuario view) {
         super(view);
     }

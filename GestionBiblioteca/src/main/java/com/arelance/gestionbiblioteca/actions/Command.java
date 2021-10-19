@@ -10,7 +10,7 @@ package com.arelance.gestionbiblioteca.actions;
  * @author Gabri
  */
 public interface Command {
-    
+
     void execute();
-    
+
 }

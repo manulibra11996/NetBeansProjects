@@ -13,14 +13,14 @@
     </head>
     <body>
         <h1>Control de faltas</h1>
-         <%
-            String[] nombres;
-            String cadena = "?";
-            String nombre;
-            String[] seleccionados =(String[]) request.getParameterValues("nombres");
+        <%
+           String[] nombres;
+           String cadena = "?";
+           String nombre;
+           String[] seleccionados =(String[]) request.getParameterValues("nombres");
             
-            nombres = (String[]) request.getParameterValues("seleccionados");
-            session.setAttribute("nombresSeleccionados", nombres);
+           nombres = (String[]) request.getParameterValues("seleccionados");
+           session.setAttribute("nombresSeleccionados", nombres);
             
 
         %>

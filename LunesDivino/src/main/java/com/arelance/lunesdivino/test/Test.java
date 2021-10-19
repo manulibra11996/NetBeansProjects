@@ -12,7 +12,5 @@ import com.arelance.lunesdivino.modelo.Libro;
  * @author Admin
  */
 public class Test {
- 
-    
-    
+
 }

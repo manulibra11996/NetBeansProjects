@@ -19,10 +19,10 @@
             <a href="PreUpdatePersona?idPersona=${persona.idPersona}"><c:out value="${persona.nombre}"/><p></a>
                 <c:forEach var="aficion" items="${persona.aficiones}">  
                     <c:out value="${aficion.nombre}:-->>${persona.telefono}"/><br>
-                </c:forEach>  
+            </c:forEach>  
             <hr>
         </c:forEach>  
-            <a href="formulario.jsp">Añadir usuario</a>
-            <a href="formularioAficion.jsp">Añadir aficion</a>
+        <a href="formulario.jsp">Añadir usuario</a>
+        <a href="formularioAficion.jsp">Añadir aficion</a>
     </body>
 </html>

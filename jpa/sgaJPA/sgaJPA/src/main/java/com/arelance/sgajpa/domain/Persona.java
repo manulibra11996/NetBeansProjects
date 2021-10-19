@@ -17,21 +17,21 @@ import javax.persistence.Id;
  * @author salvador
  */
 @Entity
-public class Persona implements Serializable{
+public class Persona implements Serializable {
 
-   private static Long serialVersionUID=1L;
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
-   @Column(name = "id_persona")
-   private int idPersona;
-   @Column(name = "firstname")
-   private String nombre;
-   @Column(name = "lastname")
-   private String apellido;
-   @Column(name = "email")
-   private String email;
-   @Column(name = "telephone")
-   private String telefono;
+    private static Long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_persona")
+    private int idPersona;
+    @Column(name = "firstname")
+    private String nombre;
+    @Column(name = "lastname")
+    private String apellido;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "telephone")
+    private String telefono;
 
     /**
      * @return the idPersona
@@ -107,6 +107,5 @@ public class Persona implements Serializable{
     public String toString() {
         return "Persona{" + "idPersona=" + idPersona + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + ", telefono=" + telefono + '}';
     }
-   
-    
+
 }

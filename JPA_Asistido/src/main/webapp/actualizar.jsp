@@ -14,11 +14,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <%
-           Persona personaEncontrada = (Persona) request.getAttribute("personaEncontrada");
-       %>
+        <%
+          Persona personaEncontrada = (Persona) request.getAttribute("personaEncontrada");
+        %>
         <h1>Actualizar usuario</h1>
-       <form action="PostActualizar" method="GET">
+        <form action="PostActualizar" method="GET">
             <input type="hidden" name="id" value="<%=personaEncontrada.getIdPersona()%>">
             <p>Nombre: <input type="text" name="nombre" value="<%=personaEncontrada.getNombre()%>" required="required"></p>
             <p>Apellidos: <input type="text" name="apellido" value="<%=personaEncontrada.getApellido()%>" required="required"></p>

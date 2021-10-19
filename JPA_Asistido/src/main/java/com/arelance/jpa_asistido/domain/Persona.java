@@ -68,7 +68,6 @@ public class Persona implements Serializable {
         this.idPersona = idPersona;
     }
 
-
     @Override
     public int hashCode() {
         int hash = 0;
@@ -125,5 +124,5 @@ public class Persona implements Serializable {
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-    
+
 }

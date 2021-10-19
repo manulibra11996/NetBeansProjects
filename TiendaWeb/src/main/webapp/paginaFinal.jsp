@@ -13,10 +13,10 @@
     </head>
     <body>
         <p>Bienvenido 
-        <%
-            String nick = request.getParameter("nick");
-            out.print(nick);
-        %>
+            <%
+                String nick = request.getParameter("nick");
+                out.print(nick);
+            %>
         </p>
     </body>
 </html>

@@ -5,7 +5,6 @@
  */
 package com.arelance.sgaejb_jpa.services.personaservice.impl;
 
-
 import com.arelance.sgajpa.domain.Aficion;
 import java.util.List;
 import javax.ejb.Stateless;
@@ -22,53 +21,52 @@ import java.util.TreeSet;
  */
 @Stateless
 public class AficionServiceImpl implements AficionDao {
-     @PersistenceContext(unitName = "sgaPU")
+
+    @PersistenceContext(unitName = "sgaPU")
     EntityManager em;
+
     @Override
     public List<Aficion> listarAficiones() {
-    return em.createNamedQuery("Aficion.findAll", Aficion.class).getResultList();
+        return em.createNamedQuery("Aficion.findAll", Aficion.class).getResultList();
     }
 
     @Override
     public Aficion findAficionById(Aficion aficion) {
-    return  em.find(Aficion.class, aficion.getIdAficion());
+        return em.find(Aficion.class, aficion.getIdAficion());
     }
-
-   
-   
 
     @Override
     public void addAficion(Aficion aficion) {
-       Persona persona=em.merge(aficion.getPersona());
+        Persona persona = em.merge(aficion.getPersona());
         em.persist(aficion);
         em.refresh(persona);
     }
 
     @Override
     public void updateAficion(Aficion aficion) {
-        
-      em.merge(aficion);
-      
+
+        em.merge(aficion);
+
     }
 
     @Override
     public void removeAficion(Aficion aficion) {
-       em.remove(em.merge(aficion));
+        em.remove(em.merge(aficion));
     }
 
     @Override
     public Aficion findAficionById(Integer id) {
-        return  em.find(Aficion.class, id);
+        return em.find(Aficion.class, id);
     }
 
     @Override
     public Set<String> listarResumenAficiones() {
-       String jpql="SELECT  concat(a.nombre,':',a.descripcion) as resumenAficion FROM Aficion as a";
-     
-       Set<String> lista=null;
-       lista=new TreeSet<>(em.createQuery(jpql).getResultList());
-       return lista;
-       
+        String jpql = "SELECT  concat(a.nombre,':',a.descripcion) as resumenAficion FROM Aficion as a";
+
+        Set<String> lista = null;
+        lista = new TreeSet<>(em.createQuery(jpql).getResultList());
+        return lista;
+
     }
-    
+
 }

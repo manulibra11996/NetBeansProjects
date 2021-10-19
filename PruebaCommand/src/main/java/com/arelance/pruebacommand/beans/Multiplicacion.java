@@ -5,12 +5,11 @@
  */
 package com.arelance.pruebacommand.beans;
 
-
 /**
  *
  * @author Manuel
  */
-public class Multiplicacion implements ICommand{
+public class Multiplicacion implements ICommand {
 
     private final Operacion operacion;
 
@@ -19,8 +18,8 @@ public class Multiplicacion implements ICommand{
     }
 
     @Override
-   public double ejecutar() {
+    public double ejecutar() {
         return operacion.mulpiplicar();
     }
-    
+
 }

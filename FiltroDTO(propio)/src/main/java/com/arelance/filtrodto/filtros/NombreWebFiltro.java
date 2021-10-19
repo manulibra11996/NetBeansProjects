@@ -31,10 +31,10 @@ public class NombreWebFiltro implements Filter {
         if (valor1 != null && valor1.trim().length() > 0) {
             Filtro f = new NombreFiltro(valor1);
             Filtro fx = null;
-            if(request.getAttribute("filtro") != null){
+            if (request.getAttribute("filtro") != null) {
                 fx = (Filtro) request.getAttribute("filtro");
                 fx.buiderFiter(f);
-            }else{
+            } else {
                 request.setAttribute("filtro", f);
             }
         }

@@ -35,11 +35,11 @@ public class PostLogin extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
-            
+
             String boton = request.getParameter("boton");
-            
+
             request.getRequestDispatcher("./Controler").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

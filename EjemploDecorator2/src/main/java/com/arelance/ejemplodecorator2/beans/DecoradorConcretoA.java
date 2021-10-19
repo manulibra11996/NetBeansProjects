@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author Manuel
  */
-public class DecoradorConcretoA extends Decorador{
-    
+public class DecoradorConcretoA extends Decorador {
+
     String nombre;
     Scanner teclado = new Scanner(System.in);
-    
+
     public DecoradorConcretoA(ComponenteVisual componenteVisual) {
         super(componenteVisual);
         operacion();
@@ -23,10 +23,9 @@ public class DecoradorConcretoA extends Decorador{
 
     @Override
     public void operacion() {
-        super.operacion(); 
+        super.operacion();
         nombre = teclado.next();
         System.out.println(nombre);
     }
-    
-    
+
 }

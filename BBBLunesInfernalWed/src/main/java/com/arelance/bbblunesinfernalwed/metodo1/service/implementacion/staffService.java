@@ -15,7 +15,7 @@ import javax.inject.Inject;
  *
  * @author Manuel
  */
-public class staffService implements staff{
+public class staffService implements staff {
 
     @Inject
     private staffDAO dao;
@@ -24,8 +24,5 @@ public class staffService implements staff{
     public List<Staff> obtener() {
         return dao.obtener();
     }
-    
-   
-    
-    
+
 }

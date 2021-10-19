@@ -10,18 +10,19 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-    
+
 /**
  *
  * @author Manuel
  */
 public class Main {
+
     public static void main(String[] args) {
         ResultSet rs = null;
         Statement stmt = null;
-        
+
         try {
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sakila?SSL=false&serverTimezone=Europe/Madrid", 
+            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/sakila?SSL=false&serverTimezone=Europe/Madrid",
                     "root", "Fullstack.2021");
             stmt = conn.createStatement();
 //            rs = stmt.executeQuery("SELECT first_name,last_name FROM actor LIMIT 10"); 
@@ -30,13 +31,12 @@ public class Main {
 //                String lastName =  rs.getString("last_name");
 //                System.out.println(fistName + " " + lastName);
 //            }
-            
+
 //            stmt.executeUpdate("INSERT INTO actor(first_name,last_name) VALUES ('Manuel','Fernandez')"); 
 //            rs = stmt.executeQuery("SELECT first_name,last_name FROM actor WHERE last_name='Fernandez'"); 
 //            String fistName =  rs.getString("first_name");
 //            String lastName =  rs.getString("last_name");
 //            System.out.println(fistName + " " + lastName);
-            
 //            stmt.executeUpdate("DELETE FROM actor WHERE last_name='Fernandez'"); 
 //            rs = stmt.executeQuery("SELECT COUNT(last_name) FROM actor WHERE last_name='Fernandez' GROUP BY first_name,last_name"); 
 //            int count = rs.getInt("COUNT(last_name)");

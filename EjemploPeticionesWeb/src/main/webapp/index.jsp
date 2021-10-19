@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
+
         <h1>Soy index</h1>
         <%
             request.setAttribute("test", "esta es la prueba de vida");

@@ -14,10 +14,10 @@ import javax.ejb.Local;
  * @author Manuel
  */
 @Local
-public interface EmpService{
+public interface EmpService {
 
     public List<Emp> ListarEmp();
-    
+
     public void AñadirEmp(Emp emp);
 
     public void ModificarEmp(Emp emp);

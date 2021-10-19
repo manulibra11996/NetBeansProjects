@@ -18,21 +18,20 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class CarritoDAOImpl implements ICarritoDao{
+public class CarritoDAOImpl implements ICarritoDao {
 
     @Override
     public List<Carrito> obtener() {
 
-
-        String sql="SELECT idcarrito, usuario_idusuario, articulo_idarticulo FROM carrito";
+        String sql = "SELECT idcarrito, usuario_idusuario, articulo_idarticulo FROM carrito";
 
         List<Carrito> listaCarrito = new ArrayList<>();
 
-        try {	
+        try {
             try (Connection conn = Conexion.conectar()) {
-               try(ResultSet rs = conn.createStatement().executeQuery(sql)){
+                try (ResultSet rs = conn.createStatement().executeQuery(sql)) {
                     while (rs.next()) {
-                        Carrito c=new Carrito();
+                        Carrito c = new Carrito();
                         c.setIdCarrito(rs.getInt(1));
                         c.setIdUsuario(rs.getInt(2));
                         c.setIdArticulo(rs.getInt(3));
@@ -46,45 +45,44 @@ public class CarritoDAOImpl implements ICarritoDao{
         return listaCarrito;
 
     }
-    
 
     @Override
     public void guardar(Carrito carrito) {
-        String sql="INSERT INTO carrito (usuario_idusuario, articulo_idarticulo) VALUES (" + carrito.getIdUsuario() + "," + carrito.getIdArticulo() + ")";
+        String sql = "INSERT INTO carrito (usuario_idusuario, articulo_idarticulo) VALUES (" + carrito.getIdUsuario() + "," + carrito.getIdArticulo() + ")";
 
-        try {			
+        try {
             try (Connection conn = Conexion.conectar()) {
-                 conn.createStatement().executeUpdate(sql);
+                conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase CarritoDaoImple, método guardar");//Pide cambiarlo a logger log
-        } 
+            System.out.println("Error: Clase CarritoDaoImple, método guardar");//Pide cambiarlo a logger log
+        }
     }
 
     @Override
     public void eliminar(Carrito carrito) {
-        String sql="DELETE FROM carrito WHERE usuario_idusuario= '" + carrito.getIdUsuario() + "'";
+        String sql = "DELETE FROM carrito WHERE usuario_idusuario= '" + carrito.getIdUsuario() + "'";
 
-        try {			
+        try {
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase CarritoDaoImple, método eliminar");//Pide cambiarlo a logger log
-        } 
+            System.out.println("Error: Clase CarritoDaoImple, método eliminar");//Pide cambiarlo a logger log
+        }
     }
 
     @Override
     public void eliminarArt(Carrito carrito) {
-        String sql="DELETE FROM carrito WHERE (usuario_idusuario= '" + carrito.getIdUsuario() + "') AND (articulo_idarticulo= '" + carrito.getIdArticulo() + "')";
+        String sql = "DELETE FROM carrito WHERE (usuario_idusuario= '" + carrito.getIdUsuario() + "') AND (articulo_idarticulo= '" + carrito.getIdArticulo() + "')";
 
-        try {			
+        try {
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase CarritoDaoImple, método eliminar");//Pide cambiarlo a logger log
-        } 
+            System.out.println("Error: Clase CarritoDaoImple, método eliminar");//Pide cambiarlo a logger log
+        }
     }
 
 }

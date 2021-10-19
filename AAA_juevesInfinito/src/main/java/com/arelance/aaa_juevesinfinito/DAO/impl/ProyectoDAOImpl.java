@@ -42,6 +42,4 @@ public class ProyectoDAOImpl implements ProyectoDAO {
         em.remove(em.merge(proyecto));
     }
 
-   
-
 }

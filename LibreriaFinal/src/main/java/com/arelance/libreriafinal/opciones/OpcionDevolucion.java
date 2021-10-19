@@ -12,9 +12,10 @@ import com.arelance.libreriafinal.vistas.ViewUsuario;
  *
  * @author manulibra
  */
-public class OpcionDevolucion extends Opciones{
+public class OpcionDevolucion extends Opciones {
+
     private Controller controller = new Controller();
-    
+
     public OpcionDevolucion(ViewUsuario view) {
         super(view);
     }

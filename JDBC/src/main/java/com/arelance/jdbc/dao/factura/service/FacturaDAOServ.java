@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class FacturaDAOServ implements IFacturaDao{
+public class FacturaDAOServ implements IFacturaDao {
 
     private IFacturaDao facturaDao = new FacturaDAOImpl();
 

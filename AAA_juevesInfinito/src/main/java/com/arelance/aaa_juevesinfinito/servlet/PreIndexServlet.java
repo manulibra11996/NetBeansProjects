@@ -5,7 +5,6 @@
  */
 package com.arelance.aaa_juevesinfinito.servlet;
 
-
 import com.arelance.aaa_juevesinfinito.domains.Emp;
 import com.arelance.aaa_juevesinfinito.domains.Proyecto;
 import com.arelance.aaa_juevesinfinito.domains.Tarea;
@@ -43,15 +42,16 @@ public class PreIndexServlet extends HttpServlet {
     private TareaService tareaService;
     @Inject
     private EmpService empService;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    
+
         List<Proyecto> proyectos = proyectoService.ListarProyecto();
-        request.setAttribute("proyectos",proyectos);
+        request.setAttribute("proyectos", proyectos);
         List<Tarea> tareas = tareaService.ListarTarea();
-        request.setAttribute("tareas",tareas);
+        request.setAttribute("tareas", tareas);
         List<Emp> emps = empService.ListarEmp();
-        request.setAttribute("emps",emps);
+        request.setAttribute("emps", emps);
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

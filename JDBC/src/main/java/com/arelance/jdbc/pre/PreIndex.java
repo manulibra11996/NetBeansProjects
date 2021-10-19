@@ -42,15 +42,15 @@ public class PreIndex extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            IArticuloDao implementacionArticulo = new ArticuloDAOServ(); 
+            IArticuloDao implementacionArticulo = new ArticuloDAOServ();
             List<Articulo> listaArticulo = implementacionArticulo.obtener();
-            IUsuarioDao implementacionUsuario = new UsuarioDAOServ(); 
+            IUsuarioDao implementacionUsuario = new UsuarioDAOServ();
             List<Usuario> listaUsuario = implementacionUsuario.obtener();
-            ICarritoDao implementacionCarrito = new CarritoDAOServ(); 
+            ICarritoDao implementacionCarrito = new CarritoDAOServ();
             List<Carrito> listaCarrito = implementacionCarrito.obtener();
-            
+
             request.getRequestDispatcher("./index.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

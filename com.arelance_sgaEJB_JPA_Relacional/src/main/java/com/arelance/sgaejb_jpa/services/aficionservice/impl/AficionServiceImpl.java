@@ -16,10 +16,11 @@ import javax.persistence.Query;
  *
  * @author Manuel
  */
-public class AficionServiceImpl implements AficionService{
-   @Inject
+public class AficionServiceImpl implements AficionService {
+
+    @Inject
     private AficionDAO aficionDAO;
-    
+
     @Override
     public List<Aficion> listarAficiones() {
         return aficionDAO.listarAficiones();
@@ -27,7 +28,7 @@ public class AficionServiceImpl implements AficionService{
 
     @Override
     public Aficion findAficionByNombre(Aficion aficion) {
-       return aficionDAO.findAficionByNombre(aficion);
+        return aficionDAO.findAficionByNombre(aficion);
     }
 
     @Override
@@ -54,5 +55,5 @@ public class AficionServiceImpl implements AficionService{
     public void removeAficion(Aficion aficion) {
         aficionDAO.removeAficion(aficion);
     }
-    
+
 }

@@ -40,8 +40,8 @@ public class PreUpdatePersona extends HttpServlet {
         String id = request.getParameter("idPersona");
         if (id != null) {
             request.getSession().setAttribute("persona", personaService.findPersonaById(Integer.parseInt(request.getParameter("idPersona"))));
-        }else{
-              request.getSession().removeAttribute("persona");
+        } else {
+            request.getSession().removeAttribute("persona");
         }
         request.getRequestDispatcher("update.jsp").forward(request, response);
     }

@@ -15,11 +15,10 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "aficiones")
-public class Aficion implements Serializable{
-    
-     private static Long serialVersionUID = 1L;
-   
-    
+public class Aficion implements Serializable {
+
+    private static Long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_aficion")
@@ -86,6 +85,5 @@ public class Aficion implements Serializable{
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-    
-    
+
 }

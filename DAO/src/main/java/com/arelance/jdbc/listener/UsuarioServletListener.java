@@ -23,12 +23,12 @@ public class UsuarioServletListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         Set<Usuario> usuarios = new HashSet<>();
-        UsuarioDAOImpl implementacionUsuario = new UsuarioDAOImpl(); 
+        UsuarioDAOImpl implementacionUsuario = new UsuarioDAOImpl();
         List<Usuario> listaUsuario = implementacionUsuario.obtener();
         for (Usuario usuario : listaUsuario) {
-            usuarios.add(new Usuario(usuario.getNick(),usuario.getContraseña()));
+            usuarios.add(new Usuario(usuario.getNick(), usuario.getContraseña()));
         }
-        
+
         sce.getServletContext().setAttribute("usuarios", usuarios);
     }
 

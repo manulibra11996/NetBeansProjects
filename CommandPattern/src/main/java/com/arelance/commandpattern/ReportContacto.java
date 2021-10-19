@@ -11,13 +11,11 @@ import java.util.List;
  *
  * @author Admin
  */
-public class ReportContacto implements Command<List<Contacto>>{
+public class ReportContacto implements Command<List<Contacto>> {
 
     @Override
     public void execute(List<Contacto> t) {
-       t.forEach(item->System.out.println(item.getNombre()+" "+item.getEmal()));
+        t.forEach(item -> System.out.println(item.getNombre() + " " + item.getEmal()));
     }
 
-  
-    
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public final class Libro {
-    
+
     private String titulo;
     private String ISBM;
 
@@ -66,6 +66,5 @@ public final class Libro {
         }
         return true;
     }
-    
-    
+
 }

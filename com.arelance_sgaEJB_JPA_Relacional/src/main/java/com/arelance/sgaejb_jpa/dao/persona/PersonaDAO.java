@@ -5,7 +5,6 @@
  */
 package com.arelance.sgaejb_jpa.dao.persona;
 
-
 import com.arelance.sgajpa.domain.Persona;
 import java.util.List;
 import javax.ejb.Local;
@@ -16,12 +15,20 @@ import javax.ejb.Local;
  */
 @Local
 public interface PersonaDAO {
+
     public List<Persona> listarPersonas();
+
     public Persona findPersonaByEmail(Persona persona);
+
     public Persona findPersonaByID(Persona persona);
-    public Persona findPersonaByID(int  id);
+
+    public Persona findPersonaByID(int id);
+
     public void addPersona(Persona persona);
+
     public void updatePersona(Persona persona);
+
     public void removePersona(Persona persona);
+
     public void refrescar(Persona persona);
 }

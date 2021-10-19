@@ -5,7 +5,6 @@
  */
 package com.arelance.libreriafinal.beans;
 
-
 import com.arelance.libreriafinal.main.Main;
 import com.arelance.libreriafinal.menus.MenuPrincipal;
 import com.arelance.libreriafinal.menus.MenuSecundario;
@@ -22,16 +21,14 @@ import java.util.Set;
  * @author manulibra
  */
 public class BaseDeDatos {
+
     Main main = new Main();//Esta variable es static porque queremos que siempre mire el mismo sitio en memoria
     private Sesion sesion = Sesion.SESION;
-    
-    
+
     public BaseDeDatos() {
-        
+
     }
 
-
-    
     public void guardar(Main main) throws FileNotFoundException, IOException {
         this.main = main;
         FileOutputStream fos = new FileOutputStream("datosusuarios.dat");
@@ -45,7 +42,7 @@ public class BaseDeDatos {
         oos2.close();
     }
 
-    public boolean add(Usuario usuario,DatosPersonales dp) {
+    public boolean add(Usuario usuario, DatosPersonales dp) {
         this.main = main;
         Map<Usuario, DatosPersonales> listaUso = main.getListUsers();
         listaUso.put(new Usuario(usuario.getNick(), usuario.getPassword()), new DatosPersonales(dp.getNombre(), dp.getApellido()));
@@ -90,12 +87,12 @@ public class BaseDeDatos {
             Libro key = entry.getKey();
             if (entry.getValue().size() <= 3) {
                 if (!entry.getValue().contains(sesion.getCurrentUser())) {
-                System.out.println(key);
+                    System.out.println(key);
                 }
             }
-            
+
         }
-         try {
+        try {
             if (main.getListBooks().get(libro) == null) {
                 throw new NullPointerException();
             } else {
@@ -110,13 +107,13 @@ public class BaseDeDatos {
 
     public boolean libroD(Libro libro) {
         this.main = main;
-        for (Map.Entry<Libro, Set<Usuario>> entry :main.getListBooks().entrySet()) {
+        for (Map.Entry<Libro, Set<Usuario>> entry : main.getListBooks().entrySet()) {
             Libro key = entry.getKey();
             if (entry.getValue().contains(sesion.getCurrentUser())) {
                 System.out.println(key);
             }
         }
-         try {
+        try {
             if (main.getListBooks().get(libro) == null) {
                 throw new NullPointerException();
             } else {
@@ -128,6 +125,5 @@ public class BaseDeDatos {
         }
         return false;
     }
-    
-   
+
 }

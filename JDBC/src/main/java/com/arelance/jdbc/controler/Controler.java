@@ -50,7 +50,7 @@ public class Controler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            
+
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             String boton = request.getParameter("boton");
@@ -58,148 +58,148 @@ public class Controler extends HttpServlet {
             List<Integer> idListaArticulo = new ArrayList<>();
             Integer idDelUsuario = null;
             Integer idArticulo;
-            
-            IUsuarioDao implementacionUsuario = new UsuarioDAOServ(); 
+
+            IUsuarioDao implementacionUsuario = new UsuarioDAOServ();
             List<Usuario> listaUsuario = implementacionUsuario.obtener();
 
-            IArticuloDao implementacionArticulo = new ArticuloDAOServ(); 
+            IArticuloDao implementacionArticulo = new ArticuloDAOServ();
             List<Articulo> listaArticulo = implementacionArticulo.obtener();
-            
-            ICarritoDao implementacionCarrito = new CarritoDAOServ(); 
+
+            ICarritoDao implementacionCarrito = new CarritoDAOServ();
             List<Carrito> listaCarrito = implementacionCarrito.obtener();
-            
-            IFacturaDao implementacionFactura = new FacturaDAOServ(); 
-           
+
+            IFacturaDao implementacionFactura = new FacturaDAOServ();
+
             String nombre = (String) request.getSession().getAttribute("nick");
-            
-            if(listaArticuloElegidos != null){
+
+            if (listaArticuloElegidos != null) {
                 for (int i = 0; i < listaArticuloElegidos.length; i++) {
                     idListaArticulo.add(Integer.parseInt(listaArticuloElegidos[i]));
                 }
             }
-            
+
             String accesoCarrito = "/tienda/carrito.jsp";
-            
-            switch(boton){
+
+            switch (boton) {
                 case "Registro":
                     int registrar = 0;
                     for (Usuario usuario : listaUsuario) {
                         if (nick.compareTo(usuario.getNick()) != 0) {
                             registrar++;
-                        }else{
+                        } else {
                             registrar = 0;
                             break;
                         }
-                    }  
-                    if (registrar != 0) {
-                    try {
-                       implementacionUsuario.guardar(new Usuario(nick,password));
-                    } catch (UserIlegalExeption ex) {
-                        Logger.getLogger(Controler.class.getName()).log(Level.SEVERE, null, ex);
                     }
+                    if (registrar != 0) {
+                        try {
+                            implementacionUsuario.guardar(new Usuario(nick, password));
+                        } catch (UserIlegalExeption ex) {
+                            Logger.getLogger(Controler.class.getName()).log(Level.SEVERE, null, ex);
+                        }
                         request.getRequestDispatcher("./login.jsp").
-                            forward(request, response);
-                    }else{
+                                forward(request, response);
+                    } else {
                         String mensaje = "El nick introducido ya existe";
                         request.setAttribute("mensaje", mensaje);
                         request.getServletContext().getRequestDispatcher("/PreRegistro").forward(request, response);
                     }
-                break;
+                    break;
 
                 case "Login":
                     int logearse = 0;
                     for (Usuario usuario : listaUsuario) {
-                        if (nick.compareTo(usuario.getNick()) == 0 ) {
-                            idDelUsuario=usuario.getIdUsuario();
+                        if (nick.compareTo(usuario.getNick()) == 0) {
+                            idDelUsuario = usuario.getIdUsuario();
                             request.getSession().setAttribute("nick", nick);
                             request.setAttribute("idUsuarioEnviado", idDelUsuario);
                             request.getRequestDispatcher("/index.jsp").forward(request, response);
-                        }else{
+                        } else {
                             logearse++;
                         }
                     }
-                    if (logearse == listaUsuario.size()){
+                    if (logearse == listaUsuario.size()) {
                         String mensaje = "Has metido mal el nick o el password vuelve a intentarlo";
                         request.setAttribute("mensaje", mensaje);
                         request.getServletContext().getRequestDispatcher("/PreLogin").forward(request, response);
                     }
-                break;
-                
+                    break;
+
                 case "OutLogin":
-                    if(request.getSession() != null){
+                    if (request.getSession() != null) {
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idDelUsuario=usuario.getIdUsuario(); 
+                                idDelUsuario = usuario.getIdUsuario();
                                 for (Articulo articulo : listaArticulo) {
-                                    if(idListaArticulo.contains(articulo.getIdArticulo())){
+                                    if (idListaArticulo.contains(articulo.getIdArticulo())) {
                                         idArticulo = articulo.getIdArticulo();
                                         implementacionCarrito.guardar(new Carrito(idDelUsuario, idArticulo));
                                     }
                                 }
-                            } 
+                            }
                         }
                         request.getSession().invalidate();
                         response.sendRedirect("./index.jsp");
                     }
-                break;
-                
+                    break;
+
                 case "Comprar":
-                    if(request.getSession() != null){ 
+                    if (request.getSession() != null) {
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idDelUsuario=usuario.getIdUsuario();
+                                idDelUsuario = usuario.getIdUsuario();
                             }
                         }
                         for (Articulo articulo : listaArticulo) {
                             for (Carrito carrito : listaCarrito) {
-                                if(Objects.equals(articulo.getIdArticulo(), carrito.getIdArticulo())){
+                                if (Objects.equals(articulo.getIdArticulo(), carrito.getIdArticulo())) {
                                     idArticulo = articulo.getIdArticulo();
-                                    implementacionFactura.guardar(new Factura(idDelUsuario,idArticulo, articulo.getPrecio()));
+                                    implementacionFactura.guardar(new Factura(idDelUsuario, idArticulo, articulo.getPrecio()));
                                 }
                             }
                         }
                     }
                     implementacionCarrito.eliminar(new Carrito(idDelUsuario));
                     request.getServletContext().getRequestDispatcher("/tienda/informe.jsp").forward(request, response);
-                break;
-                
+                    break;
+
                 case "Anadircarrito":
-                    if(request.getSession() != null){ 
+                    if (request.getSession() != null) {
                         for (Usuario usuario : listaUsuario) {
                             if (nombre.compareTo(usuario.getNick()) == 0) {
-                                idDelUsuario=usuario.getIdUsuario(); 
+                                idDelUsuario = usuario.getIdUsuario();
                                 for (Articulo articulo : listaArticulo) {
-                                    if(idListaArticulo.contains(articulo.getIdArticulo())){
+                                    if (idListaArticulo.contains(articulo.getIdArticulo())) {
                                         idArticulo = articulo.getIdArticulo();
                                         implementacionCarrito.guardar(new Carrito(idDelUsuario, idArticulo));
                                     }
                                 }
-                            } 
+                            }
                         }
                     }
                     request.getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-                break;
-                
+                    break;
+
                 case "Vercarrito":
                     request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
-                break;
-                
+                    break;
+
                 case "Eliminararticulos":
                     idDelUsuario = Integer.parseInt(request.getParameter("idUsuario"));
                     idArticulo = Integer.parseInt(request.getParameter("idArticulo"));
-                    implementacionCarrito.eliminarArt(new Carrito(idDelUsuario,idArticulo));
+                    implementacionCarrito.eliminarArt(new Carrito(idDelUsuario, idArticulo));
                     request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
-                break;
-                
+                    break;
+
                 case "VaciarCarrito":
                     idDelUsuario = Integer.parseInt(request.getParameter("idUsuario"));
                     implementacionCarrito.eliminar(new Carrito(idDelUsuario));
                     request.getServletContext().getRequestDispatcher(accesoCarrito).forward(request, response);
-                break;
-                
+                    break;
+
                 default:
                     response.sendRedirect("./index.jsp");
-                break;
+                    break;
             }
         }
     }

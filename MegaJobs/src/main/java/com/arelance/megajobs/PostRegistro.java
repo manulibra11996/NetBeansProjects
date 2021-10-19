@@ -37,18 +37,18 @@ public class PostRegistro extends HttpServlet {
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             String cpassword = request.getParameter("cpassword");
-            
+
             String boton = request.getParameter("boton");
-            
+
             String mensaje = "Las contraseñas no son iguales escribelas de nuevo";
-            
+
             if (!password.equals(cpassword)) {
                 request.setAttribute("mensajePassword", mensaje);
                 request.getServletContext().getRequestDispatcher("/registro.jsp").
-                    forward(request, response);
-            }else{
+                        forward(request, response);
+            } else {
                 request.getRequestDispatcher("./Controler").
-                    forward(request, response);
+                        forward(request, response);
             }
 
         }

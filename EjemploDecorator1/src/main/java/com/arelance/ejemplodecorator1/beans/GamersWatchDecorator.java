@@ -9,15 +9,15 @@ package com.arelance.ejemplodecorator1.beans;
  *
  * @author Manuel
  */
-public class GamersWatchDecorator extends LuxuryWatchDecorator{
-    
+public class GamersWatchDecorator extends LuxuryWatchDecorator {
+
     public GamersWatchDecorator(Watch watch) {
         super(watch);
     }
 
     @Override
     public void createFunctionality() {
-        super.createFunctionality(); 
+        super.createFunctionality();
         System.out.print(" and more features (Gamers Watch): ");
         this.addPowerLed();
     }
@@ -25,6 +25,5 @@ public class GamersWatchDecorator extends LuxuryWatchDecorator{
     private void addPowerLed() {
         System.out.print(" Power led");
     }
-    
-    
+
 }

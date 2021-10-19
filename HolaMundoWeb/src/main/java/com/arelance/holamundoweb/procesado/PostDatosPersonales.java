@@ -42,11 +42,11 @@ public class PostDatosPersonales extends HttpServlet {
             String accion = request.getParameter("accion");
             if (nombre != null && apellido != null && edad != null && accion != null) {
                 request.getServletContext().getRequestDispatcher("./Controller").
-                    forward(request, response);
+                        forward(request, response);
                 return;
-            }else{
-               response.sendRedirect("./PreDatosPersonales");
-               return; 
+            } else {
+                response.sendRedirect("./PreDatosPersonales");
+                return;
             }
         }
     }

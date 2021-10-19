@@ -14,10 +14,10 @@ import java.time.Month;
  * @author Manuel
  */
 public class Main {
+
     public static void main(String[] args) {
-        
+
 //        -------------------Talla-----------------------------------------
-        
 //        Talla talla = Enum.valueOf(Talla.class, "medium".toUpperCase());
 //        //Ejemplo equals
 //        System.out.println(talla.MEDIUM.equals(talla));
@@ -40,29 +40,25 @@ public class Main {
 //            
 //        }
 //        System.out.println(msg);
-        
-        
 //        ----------------------Dias de semana--------------------------------
-        
         DiasLaborableSemana.LUNES.asignarDiaFestivo();
-        
-        for (DiasLaborableSemana dia : DiasLaborableSemana.values()) {
-            if (dia.isLaborable()) {
-                System.out.println(dia);
-            }
-        }
-        System.out.println(" ");
-        DiasLaborableSemana.intercambiarDiaLaborable(DiasLaborableSemana.MARTES, 
-                DiasLaborableSemana.DOMINGO);
-        
-        for (DiasLaborableSemana dia : DiasLaborableSemana.values()) {
-            if (dia.isLaborable()) {
-                System.out.println(dia);
-            }
-        }
-        System.out.println(" ");
-        
-        System.out.println(DiasLaborableSemana.contarDiasFestivos());
-  
 
-}
+        for (DiasLaborableSemana dia : DiasLaborableSemana.values()) {
+            if (dia.isLaborable()) {
+                System.out.println(dia);
+            }
+        }
+        System.out.println(" ");
+        DiasLaborableSemana.intercambiarDiaLaborable(DiasLaborableSemana.MARTES,
+                DiasLaborableSemana.DOMINGO);
+
+        for (DiasLaborableSemana dia : DiasLaborableSemana.values()) {
+            if (dia.isLaborable()) {
+                System.out.println(dia);
+            }
+        }
+        System.out.println(" ");
+
+        System.out.println(DiasLaborableSemana.contarDiasFestivos());
+
+    }

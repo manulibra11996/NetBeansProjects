@@ -10,6 +10,7 @@ package com.mycompany.telefono.pruebas;
  * @author manulibra
  */
 public class Contactos {
+
     private String nombre;
     private String email;
     private String telefono;
@@ -20,15 +21,11 @@ public class Contactos {
         this.telefono = " ";
     }
 
-    
     public Contactos(String nombre, String email, String telefono) {
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
     }
-
-    
-    
 
     public String getNombre() {
         return nombre;
@@ -53,7 +50,5 @@ public class Contactos {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
-    
+
 }

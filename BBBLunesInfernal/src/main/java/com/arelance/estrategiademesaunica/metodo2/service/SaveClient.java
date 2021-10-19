@@ -16,28 +16,29 @@ import javax.persistence.Persistence;
  * @author Manuel
  */
 public class SaveClient {
-   public static void main( String[ ] args ) {
-      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Eclipselink_JPA" );
-      EntityManager entitymanager = emfactory.createEntityManager( );
-      entitymanager.getTransaction( ).begin( );
 
-      //Teaching staff entity 
-      TeachingStaff2 ts1 = new TeachingStaff2(1,"Gopal","MSc MEd","Maths");
-      TeachingStaff2 ts2 = new TeachingStaff2(2, "Manisha", "BSc BEd", "English");
-      
-      //Non-Teaching Staff entity
-      NonTeachingStaff2 nts1 = new NonTeachingStaff2(3, "Satish", "Accounts");
-      NonTeachingStaff2 nts2 = new NonTeachingStaff2(4, "Krishna", "Office Admin");
+    public static void main(String[] args) {
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Eclipselink_JPA");
+        EntityManager entitymanager = emfactory.createEntityManager();
+        entitymanager.getTransaction().begin();
 
-      //storing all entities
-      entitymanager.persist(ts1);
-      entitymanager.persist(ts2);
-      entitymanager.persist(nts1);
-      entitymanager.persist(nts2);
+        //Teaching staff entity 
+        TeachingStaff2 ts1 = new TeachingStaff2(1, "Gopal", "MSc MEd", "Maths");
+        TeachingStaff2 ts2 = new TeachingStaff2(2, "Manisha", "BSc BEd", "English");
 
-      entitymanager.getTransaction().commit();
-      
-      entitymanager.close();
-      emfactory.close();
-   }
+        //Non-Teaching Staff entity
+        NonTeachingStaff2 nts1 = new NonTeachingStaff2(3, "Satish", "Accounts");
+        NonTeachingStaff2 nts2 = new NonTeachingStaff2(4, "Krishna", "Office Admin");
+
+        //storing all entities
+        entitymanager.persist(ts1);
+        entitymanager.persist(ts2);
+        entitymanager.persist(nts1);
+        entitymanager.persist(nts2);
+
+        entitymanager.getTransaction().commit();
+
+        entitymanager.close();
+        emfactory.close();
+    }
 }

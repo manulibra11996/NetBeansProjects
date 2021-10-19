@@ -9,7 +9,7 @@ package com.arelance.test;
  *
  * @author Manuel
  */
-public interface Accion <T>{
-    
+public interface Accion<T> {
+
     void execute(Contacto t);
 }

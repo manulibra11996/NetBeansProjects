@@ -10,7 +10,7 @@ package com.arelance.jdbc.beans;
  * @author Manuel
  */
 public class Usuario {
-    
+
     private Integer id_usuario;
     private String nick;
     private String contraseña;
@@ -52,6 +52,5 @@ public class Usuario {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
-    
+
 }

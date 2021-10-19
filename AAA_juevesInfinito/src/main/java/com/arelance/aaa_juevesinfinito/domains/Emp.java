@@ -14,13 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
 /**
  *
  * @author Manuel
  */
 @Entity
 @Table(name = "EMP")
-public class Emp implements Serializable{
+public class Emp implements Serializable {
 
     @Id
     @Column(name = "id_emp")
@@ -34,10 +35,12 @@ public class Emp implements Serializable{
     @ManyToMany
     @JoinTable(
             name = "TAREA",
-            joinColumns = {@JoinColumn(name = "id_emp")},
-            inverseJoinColumns = {@JoinColumn(name = "id_proyecto")})
+            joinColumns = {
+                @JoinColumn(name = "id_emp")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "id_proyecto")})
     private List<Proyecto> proyectos;
-    
+
     public int getIdEmp() {
         return idEmp;
     }

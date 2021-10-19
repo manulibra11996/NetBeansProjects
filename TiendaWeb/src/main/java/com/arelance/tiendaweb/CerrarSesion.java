@@ -34,10 +34,10 @@ public class CerrarSesion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-           if(request.getSession() != null){
-               request.getSession().invalidate();
-               response.sendRedirect("./PreIndex");  
-           }
+            if (request.getSession() != null) {
+                request.getSession().invalidate();
+                response.sendRedirect("./PreIndex");
+            }
         }
     }
 

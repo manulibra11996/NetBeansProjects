@@ -19,15 +19,15 @@ public class RecogerDatosUsuario implements View {
         Usuario usuario;
         Scanner sn = new Scanner(System.in);
         System.out.println("Introduzca su nombre");
-        String nombre= sn.next();
+        String nombre = sn.next();
         System.out.println("Introduzca su apellido");
-        String apellido= sn.next();
+        String apellido = sn.next();
         System.out.println("Introduzca un nick de usuario");
         String nick = sn.next();
         System.out.println("Introduzca una contraseña");
         String password = sn.next();
-        usuario=new Usuario(nombre, apellido, nick, password);
-        return  usuario;
+        usuario = new Usuario(nombre, apellido, nick, password);
+        return usuario;
     }
-    
+
 }

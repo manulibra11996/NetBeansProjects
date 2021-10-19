@@ -17,7 +17,7 @@ import javax.ejb.Local;
 public interface ProyectoDAO {
 
     public List<Proyecto> ListarProyecto();
-    
+
     public void AñadirProyecto(Proyecto proyecto);
 
     public void ModificarProyecto(Proyecto proyecto);

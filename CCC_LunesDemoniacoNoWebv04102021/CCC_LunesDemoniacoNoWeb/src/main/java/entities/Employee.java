@@ -29,10 +29,11 @@ public class Employee implements Serializable {
     private String ename;
     private double salary;
     private String deg;
-  
-   @ManyToOne
-   @JoinColumn(referencedColumnName = "id")  //PK de la tabla ref
-   private Department department;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id")  //PK de la tabla ref
+    private Department department;
+
     public Employee() {
     }
 
@@ -52,9 +53,6 @@ public class Employee implements Serializable {
         this.department = department;
     }
 
-
-    
-    
     public Long getId() {
         return id;
     }
@@ -100,8 +98,6 @@ public class Employee implements Serializable {
         return true;
     }
 
-  
-
     public String getEname() {
         return ename;
     }
@@ -131,6 +127,4 @@ public class Employee implements Serializable {
         return "Employee{" + "id=" + id + ", ename=" + ename + ", salary=" + salary + ", deg=" + deg + '}';
     }
 
-    
-    
 }

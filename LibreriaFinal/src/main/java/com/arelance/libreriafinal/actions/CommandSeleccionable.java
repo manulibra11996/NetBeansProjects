@@ -11,17 +11,17 @@ import com.arelance.libreriafinal.beans.Seleccionable;
  *
  * @author manulibra
  */
-public class CommandSeleccionable implements Command{
+public class CommandSeleccionable implements Command {
 
     private Seleccionable seleccionable;
-            
+
     public CommandSeleccionable(Seleccionable seleccionable) {
         this.seleccionable = seleccionable;
     }
-    
+
     @Override
     public void ejecutable() {
         seleccionable.ejecutarOpcion();
     }
-    
+
 }

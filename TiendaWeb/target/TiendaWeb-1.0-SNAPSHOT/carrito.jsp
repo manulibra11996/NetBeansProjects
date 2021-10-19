@@ -15,15 +15,15 @@
     </head>
     <body>
         <p>Usuario
-        <%
-            String nick = request.getParameter("nick");
-            out.print(nick);
+            <%
+                String nick = request.getParameter("nick");
+                out.print(nick);
             %> vas a comprar estos articulos:</p>
-        <%
-            Set<Articulos> articulosc = (Set<Articulos>) request.getSession().getAttribute("articulosc");
-            for (Articulos articulos : articulosc) {
-                    out.print(articulos);
-                }
-        %>
+            <%
+                Set<Articulos> articulosc = (Set<Articulos>) request.getSession().getAttribute("articulosc");
+                for (Articulos articulos : articulosc) {
+                        out.print(articulos);
+                    }
+            %>
     </body>
 </html>

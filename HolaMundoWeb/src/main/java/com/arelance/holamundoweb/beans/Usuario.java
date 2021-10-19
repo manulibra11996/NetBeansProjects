@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Usuario {
-    
+
     private String nombre;
     private String apellido;
     private Integer edad;
@@ -87,7 +87,5 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
     }
-    
-    
-    
+
 }

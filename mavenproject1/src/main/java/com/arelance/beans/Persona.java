@@ -10,5 +10,5 @@ package com.arelance.beans;
  * @author Manuel
  */
 public class Persona {
-    
+
 }

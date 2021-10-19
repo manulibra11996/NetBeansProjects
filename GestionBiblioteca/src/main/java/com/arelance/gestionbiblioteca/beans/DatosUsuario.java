@@ -14,5 +14,5 @@ import java.util.List;
  */
 public enum DatosUsuario {
     INTANCE;
-    public final List<Usuario> lista=new ArrayList<>();
+    public final List<Usuario> lista = new ArrayList<>();
 }

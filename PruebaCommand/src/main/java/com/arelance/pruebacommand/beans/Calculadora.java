@@ -9,15 +9,14 @@ package com.arelance.pruebacommand.beans;
  *
  * @author Manuel
  */
-public class Calculadora implements ISwitchable{
+public class Calculadora implements ISwitchable {
 
     public Calculadora() {
     }
 
-    
     @Override
     public void resultado(double resultado) {
         System.out.println("El resultado es " + resultado);
     }
-    
+
 }

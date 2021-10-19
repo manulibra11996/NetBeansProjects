@@ -4,16 +4,17 @@
  * and open the template in the editor.
  */
 package com.arelance.gestionbiblioteca.beans;
+
 import com.arelance.gestionbiblioteca.views.View;
 
 /**
  *
  * @author Gabri
  */
-public class OpcionRegistrar extends Opcion{
-    
+public class OpcionRegistrar extends Opcion {
+
     private Controller controller = new Controller();
-    
+
     public OpcionRegistrar(View view) {
         super(view);
     }
@@ -24,6 +25,4 @@ public class OpcionRegistrar extends Opcion{
         controller.registrarUsuario();
     }
 
-    
-  
 }

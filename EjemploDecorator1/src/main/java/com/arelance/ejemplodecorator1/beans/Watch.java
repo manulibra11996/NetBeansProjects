@@ -10,6 +10,6 @@ package com.arelance.ejemplodecorator1.beans;
  * @author Manuel
  */
 public interface Watch {
-    
+
     void createFunctionality();
 }

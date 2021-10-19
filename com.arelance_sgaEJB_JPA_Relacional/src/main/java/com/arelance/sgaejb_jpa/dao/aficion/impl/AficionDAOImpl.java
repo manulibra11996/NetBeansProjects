@@ -18,10 +18,11 @@ import javax.persistence.Query;
  * @author Manuel
  */
 @Stateless
-public class AficionDAOImpl implements AficionDAO{
+public class AficionDAOImpl implements AficionDAO {
+
     @PersistenceContext(unitName = "sgaPU")
     EntityManager em;
-    
+
     @Override
     public List<Aficion> listarAficiones() {
         return em.createNamedQuery("Aficion.findAll").getResultList();
@@ -58,5 +59,5 @@ public class AficionDAOImpl implements AficionDAO{
     public void removeAficion(Aficion aficion) {
         em.remove(em.merge(aficion));
     }
-    
+
 }

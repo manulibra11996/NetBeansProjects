@@ -12,10 +12,10 @@ import java.util.Scanner;
  *
  * @author manulibra
  */
-public class VistaMenuSecundario implements ViewOpcion{
-    
+public class VistaMenuSecundario implements ViewOpcion {
+
     private Sesion sesion = Sesion.SESION;
-    
+
     @Override
     public int Opcion() {
         System.out.println(sesion.getCurrentUser().getNick());
@@ -27,5 +27,5 @@ public class VistaMenuSecundario implements ViewOpcion{
         int opcion = teclado.nextInt();
         return opcion;
     }
-    
+
 }

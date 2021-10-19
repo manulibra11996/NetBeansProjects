@@ -26,7 +26,7 @@ public class Employee {
     private double salary;
     private String deg;
 
-    @OneToOne(cascade=CascadeType.PERSIST)  
+    @OneToOne(cascade = CascadeType.PERSIST)
     private Department department;
 
     public Employee(int eid, String ename, double salary, String deg) {

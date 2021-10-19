@@ -9,11 +9,11 @@ package com.arelance.commandpattern;
  *
  * @author Admin
  */
-public class CommandoBaja implements Command<Contacto>{
+public class CommandoBaja implements Command<Contacto> {
 
     @Override
     public void execute(Contacto t) {
-       DataContact.INTANCE.lista.remove(t);
+        DataContact.INTANCE.lista.remove(t);
     }
-    
+
 }

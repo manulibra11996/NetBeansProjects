@@ -34,35 +34,35 @@ public class Controler extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
-            
+
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             Integer edad = Integer.parseInt(request.getParameter("edad"));
             String accion = request.getParameter("accion");
             List<Usuario> listado = (List<Usuario>) request.getSession().getAttribute("listado");
 
-            if(accion.equals("alta")){
+            if (accion.equals("alta")) {
                 request.getServletContext().getRequestDispatcher("/PostAñadirSerlet").
-                    forward(request, response);
+                        forward(request, response);
                 return;
             }
 
-            if(accion.equals("baja")){
+            if (accion.equals("baja")) {
                 request.getServletContext().getRequestDispatcher("/PreConfirmacionBorradoServlet").
-                    forward(request, response);
+                        forward(request, response);
                 return;
             }
-            
-            if(accion.equals("confirmar")){
-                listado.remove(request.getSession().getAttribute("currentUser"));
-                request.getRequestDispatcher("./lista.jsp").forward(request,response);
-                return;
-            } 
 
-            if(accion.equals("cancelar")){        
+            if (accion.equals("confirmar")) {
+                listado.remove(request.getSession().getAttribute("currentUser"));
+                request.getRequestDispatcher("./lista.jsp").forward(request, response);
+                return;
+            }
+
+            if (accion.equals("cancelar")) {
                 response.sendRedirect("./datospersonales.jsp");
                 return;
-            }   
+            }
         }
     }
 

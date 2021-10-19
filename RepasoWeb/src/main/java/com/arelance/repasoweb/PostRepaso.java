@@ -38,10 +38,10 @@ public class PostRepaso extends HttpServlet {
             String[] nombres = request.getParameterValues("nombre");
             if (nombres == null) {
                 request.getRequestDispatcher("./PreRepaso").
-                    forward(request, response);
+                        forward(request, response);
 //                 response.sendRedirect("./index.jsp");
-            }else{
-               
+            } else {
+
                 request.getRequestDispatcher("/informe.jsp").forward(request, response);
             }
         }

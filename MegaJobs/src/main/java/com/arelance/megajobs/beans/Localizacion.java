@@ -10,5 +10,5 @@ package com.arelance.megajobs.beans;
  * @author Manuel
  */
 public enum Localizacion {
-    Local,Nacional,Internacional
+    Local, Nacional, Internacional
 }

@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Admin
  */
 public class Contacto {
-    
+
     private String nombre;
     private String emal;
 
@@ -80,6 +80,5 @@ public class Contacto {
         }
         return true;
     }
-    
-    
+
 }

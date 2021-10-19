@@ -11,7 +11,8 @@ import java.util.Objects;
  *
  * @author Manuel
  */
-public final class Coche implements Cloneable{
+public final class Coche implements Cloneable {
+
     private final String matricula;
     private Propietario propietario;
 
@@ -38,8 +39,8 @@ public final class Coche implements Cloneable{
 
     @Override
     public Coche clone() throws CloneNotSupportedException {
-        Coche clone =(Coche) super.clone();
-        clone.propietario=this.getPropietario();
+        Coche clone = (Coche) super.clone();
+        clone.propietario = this.getPropietario();
         return clone;
     }
 
@@ -76,7 +77,5 @@ public final class Coche implements Cloneable{
     public String toString() {
         return "Coche{" + "matricula: " + matricula + ",propietario: " + propietario + '}';
     }
-    
-    
-    
+
 }

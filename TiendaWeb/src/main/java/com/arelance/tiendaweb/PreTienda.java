@@ -36,10 +36,10 @@ public class PreTienda extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String nick = (String) request.getSession().getAttribute("nick");
-            Set<Articulos> articulosv = (Set<Articulos>) request.getAttribute("articulosv"); 
-           
+            Set<Articulos> articulosv = (Set<Articulos>) request.getAttribute("articulosv");
+
             request.getRequestDispatcher("./tienda.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

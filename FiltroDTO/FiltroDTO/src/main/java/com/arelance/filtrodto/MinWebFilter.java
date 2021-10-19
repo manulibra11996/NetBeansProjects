@@ -21,23 +21,22 @@ import javax.servlet.ServletResponse;
  */
 public class MinWebFilter implements Filter {
 
-      @Override
-      public void doFilter(ServletRequest request, ServletResponse response,
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-          
-         String minimo=request.getParameter("minimo");
-      if(!(minimo!=null && minimo.trim().length()>0)){
-         chain.doFilter(request, response); 
-      }
 
-      List<Fiter> filters = (List<Fiter>) request.getAttribute("filter");    
-      Fiter f = new MinFilter(Integer.parseInt(minimo));
-      filters.add(f);
+        String minimo = request.getParameter("minimo");
+        if (!(minimo != null && minimo.trim().length() > 0)) {
+            chain.doFilter(request, response);
+        }
 
-      chain.doFilter(request, response); 
-     
+        List<Fiter> filters = (List<Fiter>) request.getAttribute("filter");
+        Fiter f = new MinFilter(Integer.parseInt(minimo));
+        filters.add(f);
+
+        chain.doFilter(request, response);
+
     }
 
 }

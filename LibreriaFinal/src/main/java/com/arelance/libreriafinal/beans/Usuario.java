@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public class Usuario implements Comparable<Usuario>,Serializable{
-    
+public class Usuario implements Comparable<Usuario>, Serializable {
+
     private final String nick;
     private final String password;
 
@@ -25,8 +25,6 @@ public class Usuario implements Comparable<Usuario>,Serializable{
     public String getPassword() {
         return password;
     }
-
-    
 
     public String getNick() {
         return nick;
@@ -70,22 +68,16 @@ public class Usuario implements Comparable<Usuario>,Serializable{
         return sb.toString();
     }
 
-    
-
-   
     @Override
     public int compareTo(Usuario u) {
         int retorno = nick.compareTo(u.nick);
         if (retorno == 0) {
             retorno = password.compareTo(u.password);
-            if(retorno!=0)
-                {
-                    System.out.println("password erronea");
-                }
+            if (retorno != 0) {
+                System.out.println("password erronea");
+            }
         }
         return retorno;
     }
-
-   
 
 }

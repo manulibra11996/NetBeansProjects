@@ -15,29 +15,30 @@ import javax.persistence.Persistence;
  * @author Manuel
  */
 public class ejemplaresItem {
+
     public static void main(String[] args) {
-        EntityManagerFactory emf=Persistence.createEntityManagerFactory("criteria_samples");  
-        EntityManager em=emf.createEntityManager();  
-          
-        em.getTransaction().begin();  
-          
-        Item i1 = new  Item();  
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("criteria_samples");
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+
+        Item i1 = new Item();
         i1.setItemName("xxx");
         i1.setItemDescription("xxx");
         i1.setItemPrice(25);
-          
-        Item i2 = new  Item();  
+
+        Item i2 = new Item();
         i2.setItemName("yyy");
         i2.setItemDescription("yyy");
         i2.setItemPrice(30);
-        
-        em.persist(i1);  
-        em.persist(i2);        
-  
-        em.getTransaction().commit();  
-        
-        em.close();   
-        emf.close();  
-         
+
+        em.persist(i1);
+        em.persist(i2);
+
+        em.getTransaction().commit();
+
+        em.close();
+        emf.close();
+
     }
 }

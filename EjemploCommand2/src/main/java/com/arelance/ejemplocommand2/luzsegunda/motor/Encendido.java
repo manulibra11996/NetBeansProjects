@@ -12,18 +12,17 @@ import com.arelance.ejemplocommand2.luzsegunda.beans.ISwitchable;
  *
  * @author Manuel
  */
-public class Encendido implements Command{
+public class Encendido implements Command {
 
     private final ISwitchable switchable;
 
     public Encendido(ISwitchable switchable) {
         this.switchable = switchable;
     }
-    
-    
+
     @Override
     public void execute() {
         switchable.turnOn();
     }
-    
+
 }

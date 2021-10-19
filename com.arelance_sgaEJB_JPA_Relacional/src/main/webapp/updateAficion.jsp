@@ -26,10 +26,10 @@
             <input type="submit" id="eliminar" name=action value="eliminar">
         </form>
         <script>
-            var nombre=form.nombre.value;
-            function comprobar(){
-                form.actualizar.disabled=(nombre===form.nombre.value);
-                
+            var nombre = form.nombre.value;
+            function comprobar() {
+                form.actualizar.disabled = (nombre === form.nombre.value);
+
             }
         </script>
     </body>

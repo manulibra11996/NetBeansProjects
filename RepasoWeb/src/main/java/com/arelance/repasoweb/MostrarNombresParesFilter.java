@@ -22,25 +22,22 @@ import javax.servlet.annotation.WebFilter;
  */
 @WebFilter(filterName = "MostrarNombresPares", urlPatterns = {"/informe.jsp"}, dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD})
 public class MostrarNombresParesFilter implements Filter {
-    
-    
+
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        
+
         Throwable problem = null;
         try {
             String[] nombres = (String[]) request.getParameterValues("nombres");
             String[] seleccionados;
             for (int i = 0; i < nombres.length; i++) {
-                if(i%2 == 0){
-                   seleccionados = nombres; 
+                if (i % 2 == 0) {
+                    seleccionados = nombres;
                 }
             }
-            
-            chain.doFilter(request, response);
 
+            chain.doFilter(request, response);
 
         } catch (Throwable t) {
             // If an exception is thrown somewhere down the filter chain,
@@ -49,7 +46,7 @@ public class MostrarNombresParesFilter implements Filter {
             problem = t;
             t.printStackTrace();
         }
-        
+
         // If there was a problem, we want to rethrow it if it is
         // a known type, otherwise log it.
         if (problem != null) {
@@ -59,9 +56,8 @@ public class MostrarNombresParesFilter implements Filter {
             if (problem instanceof IOException) {
                 throw (IOException) problem;
             }
-            
+
         }
     }
 
-    
 }

@@ -38,31 +38,31 @@ public class PostCalculadora extends HttpServlet {
             double op2 = Double.parseDouble(request.getParameter("op2"));
             String operacion = request.getParameter("operacion");
             double valor = 0;
-            
-            if(op1 != 0 && op2 != 0){
-                switch(operacion){
+
+            if (op1 != 0 && op2 != 0) {
+                switch (operacion) {
                     case "sumar":
                         valor = sumar(op1, op2);
-                    break;
+                        break;
                     case "restar":
                         valor = restar(op1, op2);
-                    break;
+                        break;
                     case "multiplicar":
                         valor = multiplicar(op1, op2);
-                    break;
+                        break;
                     case "dividir":
                         valor = dividir(op1, op2);
-                    break;
+                        break;
                 }
 //                request.setAttribute("op1", op1);
 //                request.setAttribute("op2", op2);
                 request.setAttribute("valor", valor);
                 request.getRequestDispatcher("/index_1.jsp").
-                    forward(request, response);
+                        forward(request, response);
             }
         }
     }
-           
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -101,16 +101,20 @@ public class PostCalculadora extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-        public double sumar(double op1, double op2){
-            return op1+op2;
-        }
-        public double restar(double op1, double op2){
-            return op1-op2;
-        }
-        public double multiplicar(double op1, double op2){
-            return op1*op2;
-        }
-        public double dividir(double op1, double op2){
-            return op1/op2;
-        }
+
+    public double sumar(double op1, double op2) {
+        return op1 + op2;
+    }
+
+    public double restar(double op1, double op2) {
+        return op1 - op2;
+    }
+
+    public double multiplicar(double op1, double op2) {
+        return op1 * op2;
+    }
+
+    public double dividir(double op1, double op2) {
+        return op1 / op2;
+    }
 }

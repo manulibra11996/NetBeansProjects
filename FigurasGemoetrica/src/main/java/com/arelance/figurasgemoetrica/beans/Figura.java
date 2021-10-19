@@ -9,10 +9,10 @@ package com.arelance.figurasgemoetrica.beans;
  *
  * @author Admin
  */
-public  class Figura {
-    
-    public  double area(){
+public class Figura {
+
+    public double area() {
         return 0;
     }
-    
+
 }

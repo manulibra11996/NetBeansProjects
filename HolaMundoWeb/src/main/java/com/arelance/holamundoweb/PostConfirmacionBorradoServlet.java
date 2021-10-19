@@ -35,21 +35,20 @@ public class PostConfirmacionBorradoServlet extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-        
+
             List<Usuario> listado = (List<Usuario>) request.getSession().getAttribute("listado");
-            
-        
-            if(request.getAttribute("accion").equals("confirmar")){
+
+            if (request.getAttribute("accion").equals("confirmar")) {
                 listado.remove(request.getSession().getAttribute("currentUser"));
-                request.getRequestDispatcher("./lista.jsp").forward(request,response);
+                request.getRequestDispatcher("./lista.jsp").forward(request, response);
 //                response.sendRedirect("./datospersonales.jsp");
                 return;
-            } 
+            }
 
-            if(request.getAttribute("accion").equals("cancelar")){        
+            if (request.getAttribute("accion").equals("cancelar")) {
                 response.sendRedirect("./datospersonales.jsp");
                 return;
-            }   
+            }
         }
     }
 

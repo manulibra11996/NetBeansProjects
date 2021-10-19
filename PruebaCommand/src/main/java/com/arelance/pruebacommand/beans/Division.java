@@ -5,22 +5,21 @@
  */
 package com.arelance.pruebacommand.beans;
 
-
 /**
  *
  * @author Manuel
  */
-public class Division implements ICommand{
+public class Division implements ICommand {
 
-   private final Operacion operacion;
+    private final Operacion operacion;
 
     public Division(Operacion operacion) {
         this.operacion = operacion;
     }
 
     @Override
-   public double ejecutar() {
+    public double ejecutar() {
         return operacion.dividir();
     }
-    
+
 }

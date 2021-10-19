@@ -33,9 +33,9 @@ public class PreLogin extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             String mensaje = (String) request.getSession().getAttribute("mensaje");
-   
+
             request.getRequestDispatcher("./login.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

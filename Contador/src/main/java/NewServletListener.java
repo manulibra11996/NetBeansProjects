@@ -13,7 +13,6 @@ import javax.servlet.ServletRequestListener;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  * Web application lifecycle listener.
  *
@@ -33,7 +32,7 @@ public class NewServletListener implements ServletRequestListener, ServletReques
     public void attributeAdded(ServletRequestAttributeEvent srae) {
     }
 
-    @Override   
+    @Override
     public void attributeRemoved(ServletRequestAttributeEvent srae) {
     }
 

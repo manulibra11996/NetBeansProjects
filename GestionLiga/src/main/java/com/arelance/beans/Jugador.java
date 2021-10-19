@@ -10,9 +10,9 @@ package com.arelance.beans;
  * @author Manuel
  */
 public class Jugador {
+
     private String nombre;
     private int dorsal;
-    
 
     public Jugador() {
     }
@@ -21,7 +21,6 @@ public class Jugador {
         this.nombre = nombre;
         this.dorsal = dorsal;
     }
-
 
     public String getNombre() {
         return nombre;
@@ -35,6 +34,4 @@ public class Jugador {
         this.dorsal = dorsal;
     }
 
-   
-    
 }

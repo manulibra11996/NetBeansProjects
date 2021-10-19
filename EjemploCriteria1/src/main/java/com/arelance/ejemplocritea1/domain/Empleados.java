@@ -121,5 +121,5 @@ public class Empleados implements Serializable {
     public String toString() {
         return "com.arelance.jpacriteriaejemplo1.domain.Empleados[ eid=" + eid + " ]";
     }
-    
+
 }

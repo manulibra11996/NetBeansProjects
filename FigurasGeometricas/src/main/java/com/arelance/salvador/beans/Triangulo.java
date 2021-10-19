@@ -9,7 +9,7 @@ package com.arelance.salvador.beans;
  *
  * @author Manuel
  */
-public class Triangulo extends Figura{
+public class Triangulo extends Figura {
 
     private int altura;
     private int base;
@@ -18,10 +18,10 @@ public class Triangulo extends Figura{
         this.altura = altura;
         this.base = base;
     }
-    
+
     @Override
     public double area() {
-        return (base*altura)/2;
+        return (base * altura) / 2;
     }
-    
+
 }

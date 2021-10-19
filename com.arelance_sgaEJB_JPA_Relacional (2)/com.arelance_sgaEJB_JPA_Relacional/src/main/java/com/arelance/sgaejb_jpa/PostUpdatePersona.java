@@ -5,7 +5,6 @@
  */
 package com.arelance.sgaejb_jpa;
 
-
 import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import com.arelance.sgaejb_jpa.services.personaservice.PersonaService;
 import com.arelance.sgajpa.domain.Aficion;
@@ -48,7 +47,7 @@ public class PostUpdatePersona extends HttpServlet {
         String email = request.getParameter("email");
         String telefono = request.getParameter("telefono");
         Integer edad = 0;
-        if (request.getParameter("edad") != ""){
+        if (request.getParameter("edad") != "") {
             edad = Integer.parseInt(request.getParameter("edad"));
         }
         String action = request.getParameter("action");
@@ -74,7 +73,7 @@ public class PostUpdatePersona extends HttpServlet {
 
                     break;
                 case "eliminar":
-                    if (request.getSession().getAttribute("persona") != null){
+                    if (request.getSession().getAttribute("persona") != null) {
                         personaService.removePersona(persona);
                     }
                     break;
@@ -93,9 +92,8 @@ public class PostUpdatePersona extends HttpServlet {
             switch (action_aficion) {
                 case "alta_aficion":
                     persona = new Persona(nombre, apellido, email, telefono, edad);
-                    Persona auxPersona=(Persona) request.getSession().getAttribute("persona");
-                
-                            
+                    Persona auxPersona = (Persona) request.getSession().getAttribute("persona");
+
                     Aficion aficion = new Aficion(request.getParameter("nombre_aficion"), request.getParameter("descripcion"), auxPersona);
                     aficionService.addAficion(aficion);
                     request.getSession().setAttribute("persona", auxPersona);

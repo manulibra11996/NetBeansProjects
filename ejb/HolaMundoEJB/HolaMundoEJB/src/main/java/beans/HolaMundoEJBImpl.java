@@ -12,12 +12,12 @@ import javax.ejb.Stateless;
  * @author salvador
  */
 @Stateless
-public class HolaMundoEJBImpl implements HolaMundoEJBRemote{
+public class HolaMundoEJBImpl implements HolaMundoEJBRemote {
 
     @Override
     public int sumar(int a, int b) {
         System.out.println("Ejecutando método suma en el servidor");
-        return a+b;
+        return a + b;
     }
-    
+
 }

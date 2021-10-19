@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @author Gabri
  */
 public class CRUDRepository {
+
     private BaseDatosUsuario basedatosusuario = new BaseDatosUsuario(new ArrayList<Usuario>());
 
     public boolean add(Usuario usuario) {

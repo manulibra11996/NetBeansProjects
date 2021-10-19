@@ -12,5 +12,5 @@ import com.arelance.lunesdivino.Libro;
  * @author Manuel
  */
 public class Test {
-    
+
 }

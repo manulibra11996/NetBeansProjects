@@ -46,7 +46,7 @@ public class AsigCascade {
         em.persist(sea2);
 
         em.remove(em.merge(sea2));
-        
+
         em.getTransaction().commit();
         em.close();
         emf.close();

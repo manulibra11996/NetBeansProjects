@@ -8,7 +8,6 @@ package com.mycompany.telefono.pruebas;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 /**
  *
  * @author manulibra
@@ -16,113 +15,111 @@ import java.util.Scanner;
 public class Principal {
 //Variables de la clase
     //Variable para poder recibir datos por teclado
+
     private static final Scanner teclado = new Scanner(System.in);
     //Variable que indica la posision del contacto
     private static int contador = -1;
     //Array bidimensional donde se guardan los contactos
     private static final Contactos[][] contactos = new Contactos[5][];
     //Array bidimensional con mensajes para los metodos Buscar y Modificar
-    private static final String[][] mensajes = {{"Inserte el nombre del contacto que buscas: ","El contacto que buscas es " },{"Inserte el nombre del contacto que buscas para modificarlo: ","El contacto que vas a modificar es " }};
+    private static final String[][] mensajes = {{"Inserte el nombre del contacto que buscas: ", "El contacto que buscas es "}, {"Inserte el nombre del contacto que buscas para modificarlo: ", "El contacto que vas a modificar es "}};
     //Array bidimensional con todas las opciones
-    private static final String[][] opciones = {{"Alta","Listar","Buscar","Modificar","Salir"},{"Nombre","Email","Telefono","Salir"}};
+    private static final String[][] opciones = {{"Alta", "Listar", "Buscar", "Modificar", "Salir"}, {"Nombre", "Email", "Telefono", "Salir"}};
     //Variable que indica si un contacto puede modificarse1
     private static boolean mod = true;
     //Variable que le pasa el contacto que buscas para modificar
     private static int buscado = 0;
-    
+
     //Metodos de la clase
-        //Metodo principal
-        public static void main(String[] args) {
+    //Metodo principal
+    public static void main(String[] args) {
         //Variables del metodo
-            //Variable que guarda la opcion que seleccionas
-            int opcion;
-            
-            //Bucle infinito para que selecciones una de las opciones propuestas
-            while (true) {    
-                //Metodo que muestra un mensaje por pantalla indicando el principio del menu
-                System.out.println("Elije una opcion:");
-                //Lamando al metodo llamado Opciones con el valor de la variable 0
-                opciones(0);
-                //Se le asigna a la variable opcion un numero pasado por teclado
-                opcion = teclado.nextInt();
-                //Se comprueba la variable con una instruccion donde se puede 
-                //ejecutar multiples codigos dependiendo de lo que le indiques
-                switch(opcion){
-                    //Opcion numero 1: Da de alta a un nuevo contacto
-                    case 1:
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Comprueba que no halla mas contactos de los que permite la array contactos
-                        if(++contador < contactos.length){
-                            //Guarda en contactos un contacto nuevo
-                            contactos[contador]=anadirContacto();
+        //Variable que guarda la opcion que seleccionas
+        int opcion;
+
+        //Bucle infinito para que selecciones una de las opciones propuestas
+        while (true) {
+            //Metodo que muestra un mensaje por pantalla indicando el principio del menu
+            System.out.println("Elije una opcion:");
+            //Lamando al metodo llamado Opciones con el valor de la variable 0
+            opciones(0);
+            //Se le asigna a la variable opcion un numero pasado por teclado
+            opcion = teclado.nextInt();
+            //Se comprueba la variable con una instruccion donde se puede 
+            //ejecutar multiples codigos dependiendo de lo que le indiques
+            switch (opcion) {
+                //Opcion numero 1: Da de alta a un nuevo contacto
+                case 1:
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Comprueba que no halla mas contactos de los que permite la array contactos
+                    if (++contador < contactos.length) {
+                        //Guarda en contactos un contacto nuevo
+                        contactos[contador] = anadirContacto();
                         //Si ya esta llena se ejecuta el siguente codigo
-                        }else{
-                            //Muesta un mensaje por pantalla
-                            System.out.println("Agenda de contactos completada");
-                        } 
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Sale de esta opcion
-                        break;
-                    //Opcion numero 2: Mostrar una lista de los contatos introducidos
-                    case 2:
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Ejecutamos el metodo mostrarContactos
-//                        mostrarContactos();
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Sale de esta opcion
-                        break;
-                    //Opcion numero 3: Busca un contacto en concreto
-                    case 3:
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Ejecutamos el metodo buscarContactos
-//                        buscarContacto(0,0);
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Sale de esta opcion
-                        break;
-                    //Opcion numero 4: Modifica un contacto en concreto
-                    case 4:
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Ejecutamos el metodo modificarContactos
-//                        modificarContacto();
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                        //Sale de esta opcion
-                        break;
-                    //Opcion numero 5: Salir del programa
-                    case 5:
-                        //Metodo que hace que finalice el programa por completo
-                        System.exit(0);
-                    //Opcion default: Se ejecuta si se pide una opcion no valida
-                    default:
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
+                    } else {
                         //Muesta un mensaje por pantalla
-                        System.out.println("Opcion no valida");
-                        //Inserta una cadena de texto vacia
-                        System.out.println(" ");
-                }
+                        System.out.println("Agenda de contactos completada");
+                    }
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Sale de esta opcion
+                    break;
+                //Opcion numero 2: Mostrar una lista de los contatos introducidos
+                case 2:
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Ejecutamos el metodo mostrarContactos
+//                        mostrarContactos();
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Sale de esta opcion
+                    break;
+                //Opcion numero 3: Busca un contacto en concreto
+                case 3:
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Ejecutamos el metodo buscarContactos
+//                        buscarContacto(0,0);
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Sale de esta opcion
+                    break;
+                //Opcion numero 4: Modifica un contacto en concreto
+                case 4:
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Ejecutamos el metodo modificarContactos
+//                        modificarContacto();
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Sale de esta opcion
+                    break;
+                //Opcion numero 5: Salir del programa
+                case 5:
+                    //Metodo que hace que finalice el programa por completo
+                    System.exit(0);
+                //Opcion default: Se ejecuta si se pide una opcion no valida
+                default:
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
+                    //Muesta un mensaje por pantalla
+                    System.out.println("Opcion no valida");
+                    //Inserta una cadena de texto vacia
+                    System.out.println(" ");
             }
+        }
     }
-    
-    
-    
-    
+
     //Metodo Opciones: Indica las opciones que tiene el menu con una variable 
     //para mostrar las opciones que queremos mostrar
-    public static void opciones(int menu){
-    //Variables del metodo
+    public static void opciones(int menu) {
+        //Variables del metodo
         //Variable que muesta el numero de las opciones
         int numOpcion = 1;
         //Array con los nombres de todas las opciones que se guardan en un array bidimensional
         String[] numOpciones = opciones[menu];
-        
+
         //Bucle para mostrar el numero de la opcion con lo que realiza
         for (String opcion : numOpciones) {
             //Muesta el mensaje con el numero de opcion y lo que realiza
@@ -136,23 +133,23 @@ public class Principal {
 //            numOpcion++;
 //        }
     }
-    
+
     //Metodo anadirContacto: Permite la creacion de contactos nuevos, con la devolucion de
     //un array con la informacion del nuevo contacto
-    public static Contactos[] anadirContacto(){
-    //Variables del metodo
+    public static Contactos[] anadirContacto() {
+        //Variables del metodo
         String nombre = null;
         String email = null;
         String telefono = null;
         //Array con los datos solicitados
-        String[] datos = {"nombre","email","telefono"};
+        String[] datos = {"nombre", "email", "telefono"};
         //Array con los datos introducidos para añadirlos al array contactos
         Contactos[] introducidos = new Contactos[3];
-        
+
         //Bucle donde indica que dato se pude y lo añade al array introducidos
         for (int i = 0; i < datos.length; i++) {
-            System.out.println("Indique el " + datos[i] +": ");
-            switch(i){
+            System.out.println("Indique el " + datos[i] + ": ");
+            switch (i) {
                 case 0:
                     nombre = teclado.next();
                     break;
@@ -163,14 +160,14 @@ public class Principal {
                     telefono = teclado.next();
                     break;
             }
-                
+
         }
 //        pasado[contador]= introducidos;
-        introducidos[contador] = new Contactos(nombre,email,telefono);
+        introducidos[contador] = new Contactos(nombre, email, telefono);
         //Devuelve el valor del array introducidos
         return introducidos;
     }
-    
+
     //Metodo mostrarContactos: Muestra la lista completa de los contactos introducidos
 //    public static void mostrarContactos() {
 //    //Variables del metodo
@@ -321,4 +318,3 @@ public class Principal {
 //        
 //    }
 }
-

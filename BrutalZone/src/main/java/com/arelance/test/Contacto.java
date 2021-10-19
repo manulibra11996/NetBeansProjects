@@ -10,12 +10,13 @@ package com.arelance.test;
  * @author Manuel
  */
 public class Contacto {
+
     private String Nombre;
     private String email;
-    
+
     public Contacto() {
     }
-    
+
     public Contacto(String Nombre, String email) {
         this.Nombre = Nombre;
         this.email = email;
@@ -37,6 +38,4 @@ public class Contacto {
         this.email = email;
     }
 
-   
-    
 }

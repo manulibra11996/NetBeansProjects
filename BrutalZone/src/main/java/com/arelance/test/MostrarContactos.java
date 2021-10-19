@@ -9,13 +9,11 @@ package com.arelance.test;
  *
  * @author Manuel
  */
-public class MostrarContactos implements Accion{
+public class MostrarContactos implements Accion {
 
     @Override
     public void execute(Contacto contacto) {
-        System.out.printf("El contacto se llama %s y tiene el numero de telefono %s %n",contacto.getNombre(),contacto.getTelefono());
+        System.out.printf("El contacto se llama %s y tiene el numero de telefono %s %n", contacto.getNombre(), contacto.getTelefono());
     }
 
-    
-    
 }

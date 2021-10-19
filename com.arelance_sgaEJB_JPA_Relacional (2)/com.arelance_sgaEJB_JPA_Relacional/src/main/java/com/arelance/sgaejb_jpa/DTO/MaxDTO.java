@@ -10,7 +10,7 @@ package com.arelance.sgaejb_jpa.DTO;
  * @author Manuel
  */
 public class MaxDTO {
-    
+
     private int max;
 
     public MaxDTO() {
@@ -52,6 +52,5 @@ public class MaxDTO {
         }
         return true;
     }
-    
-    
+
 }

@@ -9,8 +9,8 @@ package com.arelance.ejemplodecorator2.beans;
  *
  * @author Manuel
  */
-public class DecoradorConcretoB extends Decorador{
-    
+public class DecoradorConcretoB extends Decorador {
+
     public DecoradorConcretoB(ComponenteVisual componenteVisual) {
         super(componenteVisual);
         this.comportamientoAñadido();
@@ -25,7 +25,5 @@ public class DecoradorConcretoB extends Decorador{
     private void comportamientoAñadido() {
         System.out.println("Comportamiento añadido");
     }
-    
-    
-    
+
 }

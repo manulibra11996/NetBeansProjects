@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author salvador
  */
-@WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"},loadOnStartup = 0)
+@WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"}, loadOnStartup = 0)
 public class MainServlet extends HttpServlet {
 
     /**
@@ -32,14 +32,14 @@ public class MainServlet extends HttpServlet {
      */
     @Inject
     private PersonaService personaService;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       request.setAttribute("lista",personaService.listarPersonas());
-       request.setAttribute("lista",personaService.listarPersonas());
-       request.getRequestDispatcher("listado_personas.jsp").forward(request, response);
-       
-        }
-   
+        request.setAttribute("lista", personaService.listarPersonas());
+        request.setAttribute("lista", personaService.listarPersonas());
+        request.getRequestDispatcher("listado_personas.jsp").forward(request, response);
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

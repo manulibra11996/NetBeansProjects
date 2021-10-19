@@ -10,9 +10,9 @@ package com.arelance.salvador.beans;
  * @author Manuel
  */
 public class Figura {
-    
-    public double area(){
+
+    public double area() {
         return -1;
     }
-    
+
 }

@@ -20,39 +20,37 @@ import java.util.TreeSet;
  */
 public class Main {
 
-    
-    Set<Usuario> listUsers =new HashSet<>();
-    Set<Libro> listBooks =new HashSet<>();
+    Set<Usuario> listUsers = new HashSet<>();
+    Set<Libro> listBooks = new HashSet<>();
+
     public static void main(String[] args) {
-        Main main=new Main();
+        Main main = new Main();
         main.precarga();
         while (true) {
-           main.menuPrincipal();
+            main.menuPrincipal();
         }
     }
 
     public void precarga() {
-        
+
         listUsers.add(new Usuario("juan", "belmonte", "jpelirrojo", "1234"));
         listUsers.add(new Usuario("antonio", "cargo", "nators", "5678"));
-        
+
     }
 
-    public  void menuPrincipal() {
+    public void menuPrincipal() {
         System.out.println("menu principal");
         Scanner teclado = new Scanner(System.in);
         int opcion = teclado.nextInt();
         switch (opcion) {
             case 1:
-                Usuario nuevo= registro();
-                listUsers.add(new Usuario(nuevo.getNombre(), nuevo.getApellido(),nuevo.getNick(), nuevo.getPassword()));
+                Usuario nuevo = registro();
+                listUsers.add(new Usuario(nuevo.getNombre(), nuevo.getApellido(), nuevo.getNick(), nuevo.getPassword()));
                 System.out.println("registro");
-                listUsers.forEach(u->System.out.println(u ));
+                listUsers.forEach(u -> System.out.println(u));
                 break;
             case 2:
-                
-               
-                
+
                 boolean acceso = login();
                 if (acceso) {
                     menuSecundario();
@@ -68,7 +66,7 @@ public class Main {
         }
     }
 
-    public  void menuSecundario() {
+    public void menuSecundario() {
         System.out.println("menu secundario");
         Scanner teclado = new Scanner(System.in);
         int opcion = teclado.nextInt();
@@ -86,20 +84,20 @@ public class Main {
                 break;
         }
     }
-    public static Usuario registro()
-    {
-      Usuario usuario;
+
+    public static Usuario registro() {
+        Usuario usuario;
         Scanner sn = new Scanner(System.in);
         System.out.println("Introduzca su nombre");
-        String nombre= sn.next();
+        String nombre = sn.next();
         System.out.println("Introduzca su apellido");
-        String apellido= sn.next();
+        String apellido = sn.next();
         System.out.println("Introduzca un nick de usuario");
         String nick = sn.next();
         System.out.println("Introduzca una contraseña");
         String password = sn.next();
-        usuario=new Usuario(nombre, apellido, nick, password);
-        return  usuario;
+        usuario = new Usuario(nombre, apellido, nick, password);
+        return usuario;
     }
 
     private boolean login() {
@@ -108,8 +106,8 @@ public class Main {
         String nick = sn.next();
         System.out.println("Introduzca una contraseña");
         String password = sn.next();
-        Usuario user= new Usuario(nick, password);
-        
+        Usuario user = new Usuario(nick, password);
+
         return false;
     }
 }

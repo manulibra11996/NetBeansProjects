@@ -5,7 +5,6 @@
  */
 package com.arelance.sgaejb_jpa.services.personaservice;
 
-
 import com.arelance.sgajpa.domain.Persona;
 import java.util.List;
 import javax.ejb.Local;
@@ -16,12 +15,20 @@ import javax.ejb.Local;
  */
 @Local
 public interface PersonaService {
+
     public List<Persona> listarPersonas();
+
     public Persona findPersonaById(Persona persona);
+
     public Persona findPersonaById(Integer id);
+
     public Persona findPersonaByEmail(Persona persona);
+
     public void addPersona(Persona persona);
+
     public void updatePersona(Persona persona);
+
     public void removePersona(Persona persona);
+
     public void refrescar(Persona persona);
 }

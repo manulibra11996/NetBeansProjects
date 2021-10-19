@@ -12,8 +12,6 @@ import java.util.Scanner;
  * @author Manuel
  */
 public class FlujosBucles {
-    
-     
 
     public static void main(String[] args) {
 
@@ -25,15 +23,13 @@ public class FlujosBucles {
         System.out.println(msg);
 
         System.out.println("El numero mayor es: " + Math.max(x, y));
-        
+
 //        System.out.println( validacionRango(x,y) ?  (int)Calculadora.sumar(x, y) + " es mayor a 100" : (int)Calculadora.sumar(x, y) + " es menor a 100"); 
-        
 //        if (validacionRango(x,y)) {
 //            System.out.println((int) Calculadora.sumar(x, y) + " es menor a 100") ;
 //        }else{
 //            System.out.println((int) Calculadora.sumar(x, y) + " es mayor a 100") ;
 //        }
-
 //        if( x > y){
 //            System.out.println( x + " es mayor que " + y);
 //        }else if(x < y){
@@ -41,9 +37,6 @@ public class FlujosBucles {
 //        }else{
 //            System.out.println( x + " es igual a " + y);
 //        }
-        
-       
-
 //        //And
 //        System.out.println(true && true);
 //        System.out.println(false && true);
@@ -55,32 +48,32 @@ public class FlujosBucles {
 //        System.out.println(true || false);
 //        System.out.println(false || false);
     }
-    
-    public static double getData(String msg){
+
+    public static double getData(String msg) {
         Scanner teclado = new Scanner(System.in);
         System.out.println(msg);
         return teclado.nextInt();
     }
-    
+
     //Metodo 1
-    public static boolean validacionRango(double x, double y){
+    public static boolean validacionRango(double x, double y) {
         return Calculadora.sumar(x, y) > 100;
     }
-   
+
     //Metodo 2
-    public static boolean validacionRango(double num){
+    public static boolean validacionRango(double num) {
         return num > 100;
     }
-    
-    public static String getMsg(boolean test){
+
+    public static String getMsg(boolean test) {
         String msg;
-        if(test){
+        if (test) {
             msg = "Es mayor a 100";
-        }else{
+        } else {
             msg = "Es menor a 100";
         }
         return msg;
-        
+
     }
 
 }

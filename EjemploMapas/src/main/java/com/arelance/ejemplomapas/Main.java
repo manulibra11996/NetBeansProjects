@@ -24,7 +24,7 @@ import java.util.Set;
  *
  * @author Manuel
  */
-public class Main{
+public class Main {
 //    public static void main(String[] args) {
 //        Map<String,Persona> map = new HashMap<>();
 //        
@@ -96,24 +96,24 @@ public class Main{
 //        Set<Informe> informeFinal = informesMap.get(new Persona("Pepe","Botella"));
 //        System.out.println("");
 //    }
+
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         List<Persona> personas = new ArrayList<>();
-        personas.add(new Persona("Pepe","Botella"));
-        personas.add(new Persona("Pepe","Martin"));
-        
+        personas.add(new Persona("Pepe", "Botella"));
+        personas.add(new Persona("Pepe", "Martin"));
+
         FileOutputStream fos = new FileOutputStream("t.tmp");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
-        
+
         oos.writeObject(personas);
-        
+
         FileInputStream fis = new FileInputStream("t.tmp");
         ObjectInputStream ois = new ObjectInputStream(fis);
-        
+
         List<Persona> personasLeidas = (List<Persona>) ois.readObject();
-        
-        personasLeidas.forEach(p->System.out.println(p));
-        
-        
+
+        personasLeidas.forEach(p -> System.out.println(p));
+
         ois.close();
         oos.close();
     }

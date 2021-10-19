@@ -20,13 +20,13 @@
 
             for (LibroPersonaDTO lpdto : lista) {
         %>
-        <li>
-            <p><%=lpdto.getTitulo()%></p>
-            <p><%=lpdto.getPaginas()%></p>
-            <p><%=lpdto.getApellidos()%></p>
-        </li>
-        <%
-            }
-        %>
+    <li>
+        <p><%=lpdto.getTitulo()%></p>
+        <p><%=lpdto.getPaginas()%></p>
+        <p><%=lpdto.getApellidos()%></p>
+    </li>
+    <%
+        }
+    %>
 </body>
 </html>

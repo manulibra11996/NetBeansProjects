@@ -10,5 +10,6 @@ package com.arelance.ejemplocomando.luzprimera.beans;
  * @author Manuel
  */
 public interface Command {
+
     void execute();
 }

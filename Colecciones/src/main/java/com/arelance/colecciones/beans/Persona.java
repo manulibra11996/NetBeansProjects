@@ -1,6 +1,5 @@
 package com.arelance.colecciones.beans;
 
-
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -12,17 +11,16 @@ import java.util.TreeSet;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Admin
  */
-public final class Persona implements Comparable<Persona>{
+public final class Persona implements Comparable<Persona> {
+
     private static TreeSet<Persona> personas = new TreeSet<>();
     private final String nombre;
     private final String apellido;
 
-    
     public Persona(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -76,26 +74,26 @@ public final class Persona implements Comparable<Persona>{
     public int compareTo(Persona o) {
         int retorno = nombre.compareTo(o.nombre);
         if (retorno == 0) {
-            retorno = apellido.compareTo(o.apellido); 
+            retorno = apellido.compareTo(o.apellido);
         }
         return retorno;
     }
-    
-    public static void informe(Iterator<Persona> iterator, Persona persona){
-        try{
+
+    public static void informe(Iterator<Persona> iterator, Persona persona) {
+        try {
             personas.remove(persona);
             while (iterator.hasNext()) {
                 Persona next = iterator.next();
-                if(next.equals(persona)){
+                if (next.equals(persona)) {
                     iterator.remove();
                     return;
                 }
             }
-        }catch (ConcurrentModificationException e){
+        } catch (ConcurrentModificationException e) {
             informe(personas.iterator(), persona);
         }
     }
-            
+
     public static void main(String[] args) {
         personas.add(new Persona("Pepe", "Botella"));
         personas.add(new Persona("Ana", "Torroja"));
@@ -103,15 +101,13 @@ public final class Persona implements Comparable<Persona>{
         personas.add(new Persona("Manolo", "Benitez"));
 
         LinkedHashMap linkedHashMap = new LinkedHashMap();
-        
+
         System.out.println(personas.size());
-        
+
         informe(personas.iterator(), new Persona("Ana", "Torroja"));
-        
+
         personas.forEach(p -> System.out.println(p.nombre + " " + p.apellido));
-        
-        
+
     }
-    
-    
+
 }

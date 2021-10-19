@@ -15,14 +15,14 @@ import javax.inject.Inject;
  *
  * @author Manuel
  */
-public class LibroPersonaService implements ILibroPersonaService{
+public class LibroPersonaService implements ILibroPersonaService {
 
     @Inject
     private LibroPersonaDAO libroPersonaDAO;
-    
+
     @Override
     public List<LibroPersonaDTO> obtener() {
-       return libroPersonaDAO.obtener();
+        return libroPersonaDAO.obtener();
     }
-    
+
 }

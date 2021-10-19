@@ -16,19 +16,18 @@ import com.arelance.ejemplocomando.luzprimera.beans.Switch;
  * @author Manuel
  */
 public class PressSwitch {
-    
+
     public static void main(String[] args) {
-        
-        String[] pruebas = {"ON","OFF"};
+
+        String[] pruebas = {"ON", "OFF"};
         Light lamp = new Light();
         Command switchUp = new FlipUpCommand(lamp);
         Command switchDown = new FlipDownCommand(lamp);
-        
+
         Switch mySwitch = new Switch(switchUp, switchDown);
-       
-        
+
         for (String prueba : pruebas) {
-            switch(prueba){
+            switch (prueba) {
                 case "ON":
                     mySwitch.flipUp();
                     break;
@@ -40,6 +39,6 @@ public class PressSwitch {
                     System.exit(-1);
             }
         }
-        
+
     }
 }

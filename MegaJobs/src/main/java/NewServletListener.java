@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSessionListener;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  * Web application lifecycle listener.
  *

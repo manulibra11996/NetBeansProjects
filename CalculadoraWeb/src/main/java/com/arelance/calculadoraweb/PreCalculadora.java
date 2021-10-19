@@ -38,7 +38,7 @@ public class PreCalculadora extends HttpServlet {
 //            
 //            request.setAttribute("op1", op1);
 //            request.setAttribute("op2", op2);
-           request.getServletContext().getRequestDispatcher("/index_1.jsp").
+            request.getServletContext().getRequestDispatcher("/index_1.jsp").
                     forward(request, response);
         }
     }

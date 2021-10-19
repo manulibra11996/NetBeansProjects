@@ -21,11 +21,11 @@ import java.util.Set;
  * @author manulibra
  */
 public class Main {
-    
+
     Map<Usuario, DatosPersonales> listUsers = new HashMap<>();
     Map<Libro, Set<Usuario>> listBooks = new HashMap<>();
     static Main main = new Main();
-    
+
     public Map<Usuario, DatosPersonales> getListUsers() {
         return listUsers;
     }
@@ -41,18 +41,13 @@ public class Main {
     public void setListBooks(Map<Libro, Set<Usuario>> listBooks) {
         this.listBooks = listBooks;
     }
-   
-    
-    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException{
+
+    public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         LecturaArchivos la = new LecturaArchivos();
-        MenuPrincipal mp = new MenuPrincipal();      
-        
-        
+        MenuPrincipal mp = new MenuPrincipal();
+
         la.lecturaArchivos(main);
         mp.menuPrincipal(main);
     }
 
-   
-
-    
 }

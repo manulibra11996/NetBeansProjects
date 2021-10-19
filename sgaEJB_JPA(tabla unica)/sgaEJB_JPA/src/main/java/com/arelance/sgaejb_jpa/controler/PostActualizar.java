@@ -25,6 +25,7 @@ public class PostActualizar extends HttpServlet {
 
     @Inject
     PersonaService personaService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,15 +39,15 @@ public class PostActualizar extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             Integer id = Integer.parseInt(request.getParameter("id"));
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             String email = request.getParameter("email");
             String telefono = request.getParameter("telefono");
             String boton = request.getParameter("boton");
-            
-            if(boton.contentEquals("Actualizar")){
+
+            if (boton.contentEquals("Actualizar")) {
                 Persona persona = new Persona();
                 persona.setIdPersona(id);
                 persona.setNombre(nombre);
@@ -56,7 +57,7 @@ public class PostActualizar extends HttpServlet {
                 personaService.updatePersona(persona);
                 response.sendRedirect("MainServlet");
             }
-            
+
         }
     }
 

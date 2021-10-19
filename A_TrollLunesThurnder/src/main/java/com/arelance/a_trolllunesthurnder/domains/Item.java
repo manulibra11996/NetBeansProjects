@@ -109,5 +109,5 @@ public class Item implements Serializable {
     public String toString() {
         return "com.arelance.a_trolllunesthurnder.domains.Item[ itemId=" + itemId + " ]";
     }
-    
+
 }

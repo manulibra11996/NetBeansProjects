@@ -8,12 +8,11 @@ package com.arelance.libreriafinal.vistas;
 import com.arelance.libreriafinal.beans.Usuario;
 import java.util.Scanner;
 
-
 /**
  *
  * @author manulibra
  */
-public class VistaDatosLogin implements ViewUsuario{
+public class VistaDatosLogin implements ViewUsuario {
 
     @Override
     public Usuario getData() {
@@ -23,8 +22,8 @@ public class VistaDatosLogin implements ViewUsuario{
         String nick = sn.next();
         System.out.println("Introduzca una contraseña");
         String password = sn.next();
-        usuario=new Usuario(nick, password);
-        return  usuario;
+        usuario = new Usuario(nick, password);
+        return usuario;
     }
-    
+
 }

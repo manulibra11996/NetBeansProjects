@@ -5,15 +5,11 @@
  */
 package com.arelance.libreriafinal.vistas;
 
-
-
-
-
 /**
  *
  * @author manulibra
  */
 public interface ViewOpcion {
-        
+
     int Opcion();
 }

@@ -10,31 +10,31 @@ package com.arelance.beans;
  * @author Manuel
  */
 public class Liga {
-    
+
     private static Liga liga;
     private static final int MAXIMO = 8;
     private final Jugador[] jugadores = new Jugador[MAXIMO];
-    
-    private Liga(){
-       rellenarJugadores();
+
+    private Liga() {
+        rellenarJugadores();
     }
-    
-    public static Liga getInstance(){
-        if (liga==null) {
-            liga=new Liga();
+
+    public static Liga getInstance() {
+        if (liga == null) {
+            liga = new Liga();
         }
         return liga;
     }
 
     private void rellenarJugadores() {
-        String[] nombres = {"Pepe","Juan","Antonio","Manolo","Matias","Pedro","Vicente","Raul"};
+        String[] nombres = {"Pepe", "Juan", "Antonio", "Manolo", "Matias", "Pedro", "Vicente", "Raul"};
         for (int i = 0; i < MAXIMO; i++) {
-            jugadores[i] = new Jugador(nombres[i], (int) Math.round(Math.random()*99+1));
+            jugadores[i] = new Jugador(nombres[i], (int) Math.round(Math.random() * 99 + 1));
         }
     }
-    
+
     public static void main(String[] args) {
-       Jugador[] jugadores=Liga.getInstance().jugadores;
+        Jugador[] jugadores = Liga.getInstance().jugadores;
     }
-    
+
 }

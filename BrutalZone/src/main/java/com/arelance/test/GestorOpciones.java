@@ -10,13 +10,14 @@ package com.arelance.test;
  * @author Manuel
  */
 public class GestorOpciones {
+
     private Accion<Contacto>[] opciones;
 
     public GestorOpciones(Accion<Contacto>[] opciones) {
         this.opciones = opciones;
     }
-    
-   public void executeCommand(int index,Contacto contacto){
-       opciones[index].execute(contacto);
-   }
+
+    public void executeCommand(int index, Contacto contacto) {
+        opciones[index].execute(contacto);
+    }
 }

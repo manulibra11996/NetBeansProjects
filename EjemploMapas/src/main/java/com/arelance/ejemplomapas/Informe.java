@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Informe {
-    
+
     private String descripcion;
 
     public Informe(String descripcion) {
@@ -54,6 +54,5 @@ public class Informe {
         }
         return true;
     }
-    
-    
+
 }

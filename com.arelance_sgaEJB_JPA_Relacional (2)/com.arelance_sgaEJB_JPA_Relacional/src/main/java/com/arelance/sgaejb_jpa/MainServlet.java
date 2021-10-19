@@ -40,19 +40,19 @@ public class MainServlet extends HttpServlet {
     private PersonaService personaService;
     @Inject
     private AficionService aficionService;
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      String lista = "lista";
+        String lista = "lista";
         String nombre = request.getParameter("nombre");
         String id = request.getParameter("id");
         if (id != null && !id.equals("")) {
-        
+
             List<Persona> personas = (List<Persona>) personaService.findPersonaById(Integer.parseInt(id));
             if (personas != null) {
                 request.setAttribute(lista, personas);
             }
-            
+
         } else if (nombre != null && !nombre.equals("")) {
             request.setAttribute(lista, personaService.listarFiltroPersonas(nombre));
         } else {

@@ -87,9 +87,8 @@ public class PostUpdatePersona extends HttpServlet {
                 case "alta_aficion":
 
                     persona = new Persona(nombre, apellido, email, telefono);
-                    Persona auxPersona=(Persona) request.getSession().getAttribute("persona");
-                
-                            
+                    Persona auxPersona = (Persona) request.getSession().getAttribute("persona");
+
                     Aficion aficion = new Aficion(request.getParameter("nombre_aficion"), request.getParameter("descripcion"), auxPersona);
                     aficionDao.addAficion(aficion);
                     request.getSession().setAttribute("persona", auxPersona);

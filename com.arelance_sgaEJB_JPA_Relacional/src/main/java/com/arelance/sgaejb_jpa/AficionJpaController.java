@@ -164,5 +164,5 @@ public class AficionJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }

@@ -10,12 +10,12 @@ package com.arelance.ejerciciosuma.operaciones;
  * @author Manuel
  */
 public class OperacionSuma {
-    
+
     private int x;
     private int y;
     private int[] datos;
     private Integer[] datos2;
-    
+
     public OperacionSuma(int x, int y) {
         this.x = x;
         this.y = y;
@@ -25,32 +25,31 @@ public class OperacionSuma {
         this.datos = datos;
     }
 
-    public OperacionSuma(Integer ... datos2) {
+    public OperacionSuma(Integer... datos2) {
         this.datos2 = datos2;
     }
-    
-    public long sumar(){
-        if(datos==null){
-            return x+y;
+
+    public long sumar() {
+        if (datos == null) {
+            return x + y;
         }
-        
+
         return calculo(this.datos);
     }
-    
-     
-    private static long calculo(int[] datos){
+
+    private static long calculo(int[] datos) {
         long resultado = 0;
         for (int dato : datos) {
-            resultado+=dato;
+            resultado += dato;
         }
         return resultado;
     }
-     
-    public static long sumar(int x, int y){
-        return x+y; 
+
+    public static long sumar(int x, int y) {
+        return x + y;
     }
-    
-    public static long sumar(int[] datos){
+
+    public static long sumar(int[] datos) {
         return calculo(datos);
     }
 }

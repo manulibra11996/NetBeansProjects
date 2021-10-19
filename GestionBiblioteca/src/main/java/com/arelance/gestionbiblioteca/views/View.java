@@ -12,6 +12,6 @@ import com.arelance.gestionbiblioteca.beans.Usuario;
  * @author Gabri
  */
 public interface View {
-    
+
     Usuario getData();
 }

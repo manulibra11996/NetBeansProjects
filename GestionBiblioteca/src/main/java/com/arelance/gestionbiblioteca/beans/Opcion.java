@@ -19,10 +19,10 @@ public abstract class Opcion implements Seleccionable {
     public Opcion(View view) {
         this.view = view;
     }
-            
+
     @Override
     public void ejecutarOpcion() {
         usuario = view.getData();
     }
-    
+
 }

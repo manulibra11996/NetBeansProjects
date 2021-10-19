@@ -13,12 +13,12 @@ public class Light {
 
     public Light() {
     }
-    
-    public void turnOn(){
+
+    public void turnOn() {
         System.out.println("La luz esta encendida");
     }
-    
-    public void turnOff(){
+
+    public void turnOff() {
         System.out.println("La luz esta apagada");
     }
 }

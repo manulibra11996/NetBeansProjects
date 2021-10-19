@@ -8,24 +8,21 @@ package com.arelance.filtrodto.dtos;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  *
  * @author Manuel
  */
 public abstract class Filtro {
-    
+
     protected String sqlSentence = "";
-    
+
     protected static final List<Filtro> filtros = new ArrayList<>();
 
     public Filtro buiderFiter(Filtro filtro) {
         filtros.add(filtro);
         return filtro;
     }
-    
-    
+
     public abstract String execute();
 
     public String getSqlSentence() {
@@ -35,6 +32,5 @@ public abstract class Filtro {
     public void setSqlSentence(String sqlSentence) {
         this.sqlSentence = sqlSentence;
     }
-    
-    
+
 }

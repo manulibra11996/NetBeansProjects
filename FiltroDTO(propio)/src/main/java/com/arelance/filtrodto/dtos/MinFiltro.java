@@ -11,24 +11,24 @@ import java.util.Iterator;
  *
  * @author Manuel
  */
-public class MinFiltro extends Filtro{
-    
+public class MinFiltro extends Filtro {
+
     private String minimo;
 
     public MinFiltro(String minimo) {
         this.minimo = minimo;
     }
-    
+
     @Override
     public String execute() {
         for (Iterator<Filtro> iterator = filtros.iterator(); iterator.hasNext();) {
             Filtro next = iterator.next();
-            
+
             sqlSentence = sqlSentence + next.execute();
-            
+
         }
         sqlSentence = sqlSentence + "edad>=" + minimo;
         return sqlSentence;
     }
-    
+
 }

@@ -9,13 +9,13 @@ package com.arelance.lunesdivino;
  *
  * @author Manuel
  */
-public class Main{
-    
+public class Main {
+
     public static void main(String[] args) throws CloneNotSupportedException {
-        StringBuilder ap1= new StringBuilder("Domíngez");
-        StringBuilder ap2= new StringBuilder(" Mañero");
-        
-        Persona p1 = new Persona("isi",ap1, 23);
+        StringBuilder ap1 = new StringBuilder("Domíngez");
+        StringBuilder ap2 = new StringBuilder(" Mañero");
+
+        Persona p1 = new Persona("isi", ap1, 23);
 //        Persona p2 = p1.clone();
 //        System.out.println(p1.equals(p2));
 //        p2.getApellido().append(ap2);
@@ -33,6 +33,5 @@ public class Main{
             e.printStackTrace();
         }
     }
-     
-   
+
 }

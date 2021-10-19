@@ -9,18 +9,17 @@ package com.arelance.ejemplocommand2.luzsegunda.beans;
  *
  * @author Manuel
  */
-public class FlipDownCommand implements Command{
+public class FlipDownCommand implements Command {
 
     private final ISwitchable switchableReceiver;
 
     public FlipDownCommand(ISwitchable switchableReceiver) {
         this.switchableReceiver = switchableReceiver;
     }
-    
-    
+
     @Override
     public void execute() {
         switchableReceiver.turnOff();
     }
-    
+
 }

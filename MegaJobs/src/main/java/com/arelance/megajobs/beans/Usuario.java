@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Usuario {
+
     private String nick;
     private String password;
 
@@ -69,6 +70,5 @@ public class Usuario {
         int retorno = nick.compareTo(u.nick);
         return retorno;
     }
-    
-    
+
 }

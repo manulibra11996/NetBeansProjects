@@ -15,11 +15,11 @@ import javax.persistence.Table;
  *
  * @author Manuel
  */
-@Entity  
-@Table(name="course")  
-public class Asignatura{
-          
-    @Id 
+@Entity
+@Table(name = "course")
+public class Asignatura {
+
+    @Id
     @Column(name = "c_id")
     private int id;
     @Column(name = "c_name")
@@ -59,6 +59,5 @@ public class Asignatura{
     public void setHours(int hours) {
         this.hours = hours;
     }
-    
-    
+
 }

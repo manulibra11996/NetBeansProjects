@@ -24,52 +24,50 @@ import javax.naming.NamingException;
  *
  * @author Manuel
  */
-public class UsuarioDAOImpl implements IUsuarioDao{
+public class UsuarioDAOImpl implements IUsuarioDao {
 
     @Override
     public List<Usuario> obtener() {
-        ResultSet rs=null;
+        ResultSet rs = null;
 
-        String sql="SELECT * FROM usuario";
+        String sql = "SELECT * FROM usuario";
 
-        List<Usuario> listaUsuarios= new ArrayList<>();
+        List<Usuario> listaUsuarios = new ArrayList<>();
 
-        try {	
-            Connection conn=  Conexion.conectar();
-            rs=conn.createStatement().executeQuery(sql);
+        try {
+            Connection conn = Conexion.conectar();
+            rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
-                    Usuario u=new Usuario();
-                    u.setId_usuario(rs.getInt(1));
-                    u.setNick(rs.getString(2));
-                    u.setContraseña(rs.getString(3));
-                    listaUsuarios.add(u);
+                Usuario u = new Usuario();
+                u.setId_usuario(rs.getInt(1));
+                u.setNick(rs.getString(2));
+                u.setContraseña(rs.getString(3));
+                listaUsuarios.add(u);
             }
             rs.close();
             conn.close();
         } catch (SQLException e) {
             System.out.println("Error: Clase UsuarioDaoImple, método obtener");
-        } 
+        }
 
         return listaUsuarios;
     }
 
     @Override
     public void guardar(Usuario usuario) {
-        ResultSet rs=null;
+        ResultSet rs = null;
 
-        String sql="INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContraseña() +"')";
+        String sql = "INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContraseña() + "')";
 
-       
+        try {
+            Connection conn = Conexion.conectar();
+            rs = conn.createStatement().executeQuery(sql);
 
-        try {			
-                Connection conn=  Conexion.conectar();
-                rs=conn.createStatement().executeQuery(sql);
-               
-                rs.close();
-                Conexion.conectar().close();
+            rs.close();
+            Conexion.conectar().close();
         } catch (SQLException e) {
-                System.out.println("Error: Clase UsuarioDaoImple, método obtener");
-        } 
+            System.out.println("Error: Clase UsuarioDaoImple, método obtener");
+        }
 
     }
 

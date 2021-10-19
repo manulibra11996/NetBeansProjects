@@ -21,17 +21,17 @@ import com.arelance.ejemplocommand2.luzsegunda.prueba.Television;
  * @author Manuel
  */
 public class PressSwitch {
- 
+
     public static void main(String[] args) {
-        
+
         System.out.println("Pruebas luz");
-        String[] pruebas = {"ON","OFF"};
+        String[] pruebas = {"ON", "OFF"};
         Light lamp = new Light();
         Command switchUp = new FlipUpCommand(lamp);
         Command switchDown = new FlipDownCommand(lamp);
-        
+
         for (String prueba : pruebas) {
-            switch(prueba){
+            switch (prueba) {
                 case "ON":
                     switchUp.execute();
                     break;
@@ -43,16 +43,16 @@ public class PressSwitch {
                     System.exit(-1);
             }
         }
-        
+
         System.out.println("");
         System.out.println("Pruebas television");
-        String[] pruebasTele = {"ON","OFF"};
-        Television tele= new Television();
+        String[] pruebasTele = {"ON", "OFF"};
+        Television tele = new Television();
         Command switchArriba = new EncendidoTele(tele);
         Command switchAbajo = new ApagadoTele(tele);
-        
+
         for (String prueba : pruebasTele) {
-            switch(prueba){
+            switch (prueba) {
                 case "ON":
                     switchArriba.execute();
                     break;
@@ -64,16 +64,16 @@ public class PressSwitch {
                     System.exit(-1);
             }
         }
-        
+
         System.out.println("");
         System.out.println("Pruebas motor");
-        String[] pruebasMotor = {"ON","OFF"};
-        Motor motor= new Motor();
+        String[] pruebasMotor = {"ON", "OFF"};
+        Motor motor = new Motor();
         Command encendido = new Encendido(motor);
         Command apagado = new Apagado(motor);
-        
+
         for (String prueba : pruebasMotor) {
-            switch(prueba){
+            switch (prueba) {
                 case "ON":
                     encendido.execute();
                     break;

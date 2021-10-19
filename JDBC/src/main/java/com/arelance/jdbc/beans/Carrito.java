@@ -10,7 +10,7 @@ package com.arelance.jdbc.beans;
  * @author Manuel
  */
 public class Carrito {
-    
+
     private Integer idCarrito;
     private Integer idUsuario;
     private Integer idArticulo;
@@ -29,7 +29,7 @@ public class Carrito {
     public Carrito(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
-    
+
     public Carrito() {
     }
 
@@ -57,6 +57,4 @@ public class Carrito {
         this.idArticulo = idArticulo;
     }
 
-    
-    
 }

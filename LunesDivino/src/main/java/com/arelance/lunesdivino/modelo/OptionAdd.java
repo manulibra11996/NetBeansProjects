@@ -5,20 +5,17 @@
  */
 package com.arelance.lunesdivino.modelo;
 
-
 import com.arelance.lunesdivino.modelo.views.View;
 
 /**
  *
  * @author Manuel
  */
-public class OptionAdd extends Opcion{
+public class OptionAdd extends Opcion {
 
     public OptionAdd(View view) {
         super(view);
     }
-    
-
 
     @Override
     public void ejecutarOpcion() {

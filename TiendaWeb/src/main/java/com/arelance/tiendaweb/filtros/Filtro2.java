@@ -20,8 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @WebFilter(filterName = "Filtro2", urlPatterns = {"/tienda/*"})
 public class Filtro2 implements Filter {
-    
-   
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         Filter.super.init(filterConfig); //To change body of generated methods, choose Tools | Templates.
@@ -29,7 +28,7 @@ public class Filtro2 implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        
+
 //        System.out.println("Soy el filtro 2");
 //
 //        if (request instanceof  HttpServletRequest ) {
@@ -49,6 +48,5 @@ public class Filtro2 implements Filter {
     public void destroy() {
         Filter.super.destroy(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

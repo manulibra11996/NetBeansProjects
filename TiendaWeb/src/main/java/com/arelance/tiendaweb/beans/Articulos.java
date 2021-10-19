@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Articulos {
+
     private String nombre;
     private String Descripcion;
     private TipoArticulos categoria;
@@ -86,7 +87,5 @@ public class Articulos {
     public String toString() {
         return nombre + " " + Descripcion + " " + categoria;
     }
-    
-    
-    
+
 }

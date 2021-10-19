@@ -18,15 +18,15 @@ import javax.persistence.Query;
  * @author Manuel
  */
 @Stateless
-public class LibroPersonaDAO implements ILibroPersonaDAO{
+public class LibroPersonaDAO implements ILibroPersonaDAO {
 
     @PersistenceContext(unitName = "UnidadPersona")
     EntityManager em;
-    
+
     @Override
     public List<LibroPersonaDTO> obtener() {
         Query query = em.createQuery("select l from Persona p INNER JOIN p.libros l", LibroPersonaDTO.class);
         return (List<LibroPersonaDTO>) query.getResultList();
     }
-    
+
 }

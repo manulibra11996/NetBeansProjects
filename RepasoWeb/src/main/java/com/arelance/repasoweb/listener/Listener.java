@@ -17,8 +17,8 @@ public class Listener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-         String[] personas = new String[]{"Pepe","Antonio","Manuel","Juan"};
-         sce.getServletContext().setAttribute("personas", personas);
+        String[] personas = new String[]{"Pepe", "Antonio", "Manuel", "Juan"};
+        sce.getServletContext().setAttribute("personas", personas);
     }
 
     @Override

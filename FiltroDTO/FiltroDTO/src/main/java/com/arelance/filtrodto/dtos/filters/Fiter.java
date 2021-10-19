@@ -16,7 +16,7 @@ public interface Fiter {
     public static String getSqlSentecnce(List<Fiter> fiters) {
         String sqlSentecnce = "";
         for (Fiter fiter : fiters) {
-           sqlSentecnce = sqlSentecnce.concat(fiter.execute()).concat(" ");
+            sqlSentecnce = sqlSentecnce.concat(fiter.execute()).concat(" ");
         }
         return sqlSentecnce.trim();
     }

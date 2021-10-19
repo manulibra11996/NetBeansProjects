@@ -13,25 +13,26 @@ import javax.persistence.PrimaryKeyJoinColumn;
  * @author Manuel
  */
 @Entity
-@PrimaryKeyJoinColumn(referencedColumnName="sid")
+@PrimaryKeyJoinColumn(referencedColumnName = "sid")
 
 public class NonTeachingStaff2 extends Staff2 {
-   private String areaexpertise;
 
-   public NonTeachingStaff2(int sid, String sname, String areaexpertise) {
-      super(sid, sname);
-      this.areaexpertise = areaexpertise;
-   }
+    private String areaexpertise;
 
-   public NonTeachingStaff2() {
-      super();
-   }
+    public NonTeachingStaff2(int sid, String sname, String areaexpertise) {
+        super(sid, sname);
+        this.areaexpertise = areaexpertise;
+    }
 
-   public String getAreaexpertise() {
-      return areaexpertise;
-   }
+    public NonTeachingStaff2() {
+        super();
+    }
 
-   public void setAreaexpertise(String areaexpertise) {
-      this.areaexpertise = areaexpertise;
-   }
+    public String getAreaexpertise() {
+        return areaexpertise;
+    }
+
+    public void setAreaexpertise(String areaexpertise) {
+        this.areaexpertise = areaexpertise;
+    }
 }

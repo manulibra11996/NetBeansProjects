@@ -13,33 +13,27 @@ import java.util.List;
  * @author Admin
  */
 public abstract class Fiter {
-    
- 
+
     /**
      * @return the sqlSentecnce
      */
     public String getSqlSentecnce() {
-        
-        String sqlSentecnce="";
-        for(Fiter fiter:fiters){
-            sqlSentecnce=sqlSentecnce.concat(fiter.execute()).concat(" ");
+
+        String sqlSentecnce = "";
+        for (Fiter fiter : fiters) {
+            sqlSentecnce = sqlSentecnce.concat(fiter.execute()).concat(" ");
         }
-        
+
         return sqlSentecnce.trim();
     }
-    
-  
-    
-    protected static final List<Fiter> fiters=new ArrayList<>();
 
-    
+    protected static final List<Fiter> fiters = new ArrayList<>();
 
     public static Fiter buiderFiter(Fiter fiter) {
-     fiters.add(fiter);
-     return  fiter;
+        fiters.add(fiter);
+        return fiter;
     }
-    
-    
+
     public abstract String execute();
-    
+
 }

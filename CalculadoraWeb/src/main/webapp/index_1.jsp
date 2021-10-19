@@ -34,20 +34,20 @@ public double dividir(double op1, double op2){
         <h1>Calculadora</h1>
         <form action="./PostCalculadora" method="GET">
             <label>op1:</label><input type="text" name="op1"  
-                        placeholder="0" value="<%=request.getParameter("op1")%>"/>
+                                      placeholder="0" value="<%=request.getParameter("op1")%>"/>
             <label>op2:</label><input type="text" name="op2" 
-                        placeholder="0" value="<%=request.getParameter("op2")%>"/>
+                                      placeholder="0" value="<%=request.getParameter("op2")%>"/>
             <input type="submit" name="operacion" value="sumar"/>
             <input type="submit" name="operacion" value="restar"/>
             <input type="submit" name="operacion" value="multiplicar">
             <input type="submit" name="operacion" value="dividir">
         </form>
-        
-            <% if(request.getParameter("op1") != null && request.getParameter("op2") != null){
-            out.print("<label>Resultado:</label>");
-            out.print("<input type='text' name='resultado'"); 
-            out.print("value=" + request.getAttribute("valor"));
-            }%>
-        
+
+        <% if(request.getParameter("op1") != null && request.getParameter("op2") != null){
+        out.print("<label>Resultado:</label>");
+        out.print("<input type='text' name='resultado'"); 
+        out.print("value=" + request.getAttribute("valor"));
+        }%>
+
     </body>
 </html>

@@ -7,14 +7,13 @@ package com.arelance.lunesdivino.modelo.actions;
 
 import com.arelance.lunesdivino.modelo.Seleccionable;
 
-
 /**
  *
  * @author Manuel
  */
-public class CommandAlta implements Command{
-    
-    private  Seleccionable seleccionable;
+public class CommandAlta implements Command {
+
+    private Seleccionable seleccionable;
 
     public CommandAlta(Seleccionable seleccionable) {
         this.seleccionable = seleccionable;
@@ -24,5 +23,5 @@ public class CommandAlta implements Command{
     public void execute() {
         seleccionable.ejecutarOpcion();
     }
-    
+
 }

@@ -10,7 +10,7 @@ package com.arelance.jdbc.beans;
  * @author Manuel
  */
 public class Factura {
-    
+
     private Integer idFactura;
     private Integer idUsuario;
     private Integer idArticulo;
@@ -37,7 +37,7 @@ public class Factura {
     public Factura(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
-    
+
     public Factura() {
     }
 
@@ -73,5 +73,4 @@ public class Factura {
         this.precio = precio;
     }
 
-   
 }

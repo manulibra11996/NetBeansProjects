@@ -10,5 +10,5 @@ package com.arelance.gestionliga;
  * @author Manuel
  */
 public class Principal {
-    
+
 }

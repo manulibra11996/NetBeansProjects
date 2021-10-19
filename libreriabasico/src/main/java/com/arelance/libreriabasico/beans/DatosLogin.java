@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class DatosLogin {
+
     private final String nick;
     private String password;
 
@@ -65,7 +66,5 @@ public class DatosLogin {
     public String toString() {
         return "DatosLogin{" + "nick=" + nick + ", password=" + password + '}';
     }
-    
-    
-    
+
 }

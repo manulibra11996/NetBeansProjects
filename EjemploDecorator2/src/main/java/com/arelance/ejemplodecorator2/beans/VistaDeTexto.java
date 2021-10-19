@@ -9,11 +9,11 @@ package com.arelance.ejemplodecorator2.beans;
  *
  * @author Manuel
  */
-public class VistaDeTexto implements ComponenteVisual{
+public class VistaDeTexto implements ComponenteVisual {
 
     @Override
     public void operacion() {
         System.out.println("Vista de texto");
     }
-    
+
 }

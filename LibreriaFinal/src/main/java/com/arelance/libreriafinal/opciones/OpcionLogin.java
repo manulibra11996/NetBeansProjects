@@ -8,15 +8,14 @@ package com.arelance.libreriafinal.opciones;
 import com.arelance.libreriafinal.beans.Controller;
 import com.arelance.libreriafinal.vistas.ViewUsuario;
 
-
-
 /**
  *
  * @author manulibra
  */
-public class OpcionLogin extends Opciones{
+public class OpcionLogin extends Opciones {
+
     private Controller controller = new Controller();
-    
+
     public OpcionLogin(ViewUsuario view) {
         super(view);
     }

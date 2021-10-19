@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Usuario {
-    
+
     private String nombre;
     private String apellido;
     private Integer edad;
@@ -82,7 +82,5 @@ public class Usuario {
         }
         return true;
     }
-    
-    
-    
+
 }

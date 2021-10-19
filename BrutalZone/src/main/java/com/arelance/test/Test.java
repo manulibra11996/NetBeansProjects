@@ -14,6 +14,7 @@ import java.util.List;
  * @author Manuel
  */
 public class Test {
+
     public static void main(String[] args) {
 //        Comparator comparator;
 //        Boolean t = true;
@@ -25,30 +26,30 @@ public class Test {
 //        Integer x = 5;
 //        int resultado = x+3;
 //        System.out.println(resultado);
-        
-        String[] nombres = new String[]{ "Pepe", "Eva", "Marta", "Juan"};
-        
-        Comparator<String> comparator= new Comparator<>(){
+
+        String[] nombres = new String[]{"Pepe", "Eva", "Marta", "Juan"};
+
+        Comparator<String> comparator = new Comparator<>() {
             @Override
-            public int compare(String o1,String o2){
-                return Integer.compare(o1.length(),  o2.length());
-            };
+            public int compare(String o1, String o2) {
+                return Integer.compare(o1.length(), o2.length());
+            }
+        ;
         };
         
-        Comparator<String> comparator2= new Comparator<>(){
+        Comparator<String> comparator2 = new Comparator<>() {
             @Override
-            public int compare(String o1,String o2){
+            public int compare(String o1, String o2) {
                 return o1.compareTo(o2);
-            };
+            }
+        ;
         };
         
         Arrays.sort(nombres, comparator.thenComparing(comparator2));
         for (String nombre : nombres) {
             System.out.println(nombre);
         }
-        
-        
+
     }
-    
-   
+
 }

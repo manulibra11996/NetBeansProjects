@@ -22,32 +22,32 @@ import javax.naming.NamingException;
  *
  * @author Manuel
  */
-public class ArticuloDAOImpl implements IArticuloDao{
+public class ArticuloDAOImpl implements IArticuloDao {
 
     @Override
     public List<Articulo> obtener() {
-        ResultSet rs=null;
+        ResultSet rs = null;
 
-        String sql="SELECT * FROM articulo";
+        String sql = "SELECT * FROM articulo";
 
-        List<Articulo> listaArticulo= new ArrayList<>();
+        List<Articulo> listaArticulo = new ArrayList<>();
 
-        try {		
-            Connection conn=  Conexion.conectar();
-            rs=conn.createStatement().executeQuery(sql);
+        try {
+            Connection conn = Conexion.conectar();
+            rs = conn.createStatement().executeQuery(sql);
             while (rs.next()) {
-                    Articulo a=new Articulo();
-                    a.setId_articulo(rs.getInt(1));
-                    a.setNombre(rs.getString(2));
-                    a.setDescripcion(rs.getString(3));
-                    a.setPrecio(rs.getDouble(4));
-                    listaArticulo.add(a);
+                Articulo a = new Articulo();
+                a.setId_articulo(rs.getInt(1));
+                a.setNombre(rs.getString(2));
+                a.setDescripcion(rs.getString(3));
+                a.setPrecio(rs.getDouble(4));
+                listaArticulo.add(a);
             }
             rs.close();
             conn.close();
         } catch (SQLException e) {
-                System.out.println("Error: Clase ArticuloDaoImple, método obtener");
-        }finally{ 
+            System.out.println("Error: Clase ArticuloDaoImple, método obtener");
+        } finally {
             return listaArticulo;
         }
     }

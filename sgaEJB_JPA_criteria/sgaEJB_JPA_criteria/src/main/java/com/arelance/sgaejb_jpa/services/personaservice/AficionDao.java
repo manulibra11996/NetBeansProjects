@@ -18,13 +18,12 @@ import javax.ejb.Local;
 public interface AficionDao {
 
     public List<Aficion> listarAficiones();
+
     public Set<String> listarResumenAficiones();
 
     public Aficion findAficionById(Aficion aficion);
 
     public Aficion findAficionById(Integer id);
-
-  
 
     public void addAficion(Aficion aficion);
 

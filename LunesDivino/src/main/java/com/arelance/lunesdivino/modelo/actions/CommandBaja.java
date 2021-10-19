@@ -11,18 +11,17 @@ import com.arelance.lunesdivino.modelo.Seleccionable;
  *
  * @author Manuel
  */
-public class CommandBaja implements Command{
+public class CommandBaja implements Command {
 
     private Seleccionable seleccionable;
 
     public CommandBaja(Seleccionable seleccionable) {
         this.seleccionable = seleccionable;
     }
-    
-    
+
     @Override
     public void execute() {
         seleccionable.ejecutarOpcion();
     }
-    
+
 }

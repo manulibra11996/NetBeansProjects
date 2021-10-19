@@ -32,10 +32,10 @@ public class PostIndex extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-          String boton = request.getParameter("boton");
-          request.getRequestDispatcher("./Controler").
-                    forward(request, response);
-        
+        String boton = request.getParameter("boton");
+        request.getRequestDispatcher("./Controler").
+                forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

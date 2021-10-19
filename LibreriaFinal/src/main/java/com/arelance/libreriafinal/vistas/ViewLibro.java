@@ -12,7 +12,7 @@ import com.arelance.libreriafinal.beans.Libro;
  * @author manulibra
  */
 public interface ViewLibro {
-    
+
     Libro getData();
-    
+
 }

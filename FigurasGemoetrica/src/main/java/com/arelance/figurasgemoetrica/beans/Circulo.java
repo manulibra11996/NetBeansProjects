@@ -9,7 +9,7 @@ package com.arelance.figurasgemoetrica.beans;
  *
  * @author Admin
  */
-public  class Circulo extends Figura{
+public class Circulo extends Figura {
 
     private double radio;
 
@@ -19,7 +19,7 @@ public  class Circulo extends Figura{
 
     @Override
     public double area() {
-        return Math.PI*Math.pow(radio, 2);
-       }
-    
+        return Math.PI * Math.pow(radio, 2);
+    }
+
 }

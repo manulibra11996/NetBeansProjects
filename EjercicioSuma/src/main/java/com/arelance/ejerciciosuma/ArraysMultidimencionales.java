@@ -10,8 +10,9 @@ package com.arelance.ejerciciosuma;
  * @author Manuel
  */
 public class ArraysMultidimencionales {
+
     public static void main(String[] args) {
-        
+
 //        Integer[][] datos = new Integer[3][3];
 //        
 //        rellenar(datos,0,1);
@@ -27,23 +28,23 @@ public class ArraysMultidimencionales {
 //        modificar(x);
 //        System.out.println(x);
 //
-        Integer[][] datos= new Integer[2][];
+        Integer[][] datos = new Integer[2][];
         rellenar(datos);
         mostrar(datos);
-        
+
     }
-    
-    public static void rellenar(Integer[][] datos){
+
+    public static void rellenar(Integer[][] datos) {
         int contador = 0;
         for (int i = 0; i < datos.length; i++) {
-            datos[i] = new Integer[]{contador+=2,contador+=2,contador+=2};
+            datos[i] = new Integer[]{contador += 2, contador += 2, contador += 2};
         }
     }
-    
-    public static void modificar(int x){
-        x=9;
+
+    public static void modificar(int x) {
+        x = 9;
     }
-    
+
 //    public static void rellenar(Integer [][] datos, int contador,int incremento){
 //        for (int i = 0; i < datos.length; i++) {
 //            
@@ -53,9 +54,9 @@ public class ArraysMultidimencionales {
 //            
 //        }
 //    }
-    public static void mostrar(Integer[][] datos){
+    public static void mostrar(Integer[][] datos) {
         for (int i = 0; i < datos.length; i++) {
-            
+
             for (int j = 0; j < datos[i].length; j++) {
                 System.out.print(datos[i][j] + " ");
             }

@@ -9,16 +9,16 @@ package com.arelance.ejemplodecorator2.beans;
  *
  * @author Manuel
  */
-public abstract class Decorador implements ComponenteVisual{
-      
+public abstract class Decorador implements ComponenteVisual {
+
     private final ComponenteVisual componenteVisual;
-    
-    public Decorador(ComponenteVisual componenteVisual){
+
+    public Decorador(ComponenteVisual componenteVisual) {
         this.componenteVisual = componenteVisual;
     }
-    
+
     @Override
-    public void operacion(){
+    public void operacion() {
         this.componenteVisual.operacion();
     }
 }

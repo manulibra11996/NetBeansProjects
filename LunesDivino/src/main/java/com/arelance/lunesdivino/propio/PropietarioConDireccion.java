@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class PropietarioConDireccion extends Propietario {
+
     private StringBuilder calle;
     private int numero;
     private int piso;
@@ -25,14 +26,12 @@ public class PropietarioConDireccion extends Propietario {
         this.piso = piso;
     }
 
-    public PropietarioConDireccion(StringBuilder nombre, StringBuilder apellido, int edad ,StringBuilder calle, int numero, int piso ) {
+    public PropietarioConDireccion(StringBuilder nombre, StringBuilder apellido, int edad, StringBuilder calle, int numero, int piso) {
         super(nombre, apellido, edad);
         this.calle = calle;
         this.numero = numero;
         this.piso = piso;
     }
-
-    
 
     public StringBuilder getCalle() {
         return calle;
@@ -91,9 +90,6 @@ public class PropietarioConDireccion extends Propietario {
         return true && super.equals(other);
     }
 
-
- 
-
     @Override
     public String toString() {
         return super.toString() + " Calle: " + calle + ", Numero: " + numero + " y Piso: " + piso;
@@ -104,7 +100,6 @@ public class PropietarioConDireccion extends Propietario {
         PropietarioConDireccion clone = (PropietarioConDireccion) super.clone();
         clone.calle = new StringBuilder(this.calle);
         return clone;
-    } 
-    
-    
+    }
+
 }

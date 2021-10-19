@@ -22,5 +22,4 @@ public class OpcionSalir extends Opcion {
         super.ejecutarOpcion();
     }
 
-    
 }

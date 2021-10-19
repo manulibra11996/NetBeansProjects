@@ -9,18 +9,17 @@ package com.arelance.ejemplocommand2.luzsegunda;
  *
  * @author Manuel
  */
-public class FlipUpCommand implements Command{
-    
+public class FlipUpCommand implements Command {
+
     private final ISwitchable switchableReceiver;
 
     public FlipUpCommand(ISwitchable switchableReceiver) {
         this.switchableReceiver = switchableReceiver;
     }
-    
-    
+
     @Override
     public void execute() {
         switchableReceiver.turnOn();
     }
-    
+
 }

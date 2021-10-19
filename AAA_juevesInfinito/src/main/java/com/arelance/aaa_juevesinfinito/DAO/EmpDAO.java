@@ -17,7 +17,7 @@ import javax.ejb.Local;
 public interface EmpDAO {
 
     public List<Emp> ListarEmp();
-    
+
     public void AñadirEmp(Emp emp);
 
     public void ModificarEmp(Emp emp);

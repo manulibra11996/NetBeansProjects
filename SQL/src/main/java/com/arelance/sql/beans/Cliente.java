@@ -10,6 +10,7 @@ package com.arelance.sql.beans;
  * @author Manuel
  */
 public class Cliente {
+
     private final int id_cliente;
     private String nombre;
     private String articulo;
@@ -23,7 +24,7 @@ public class Cliente {
     public int getId_cliente() {
         return id_cliente;
     }
-    
+
     public String getNombre() {
         return nombre;
     }

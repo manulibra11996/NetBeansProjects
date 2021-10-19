@@ -96,5 +96,5 @@ public class Departamentos implements Serializable {
     public String toString() {
         return "com.arelance.jpacriteriaejemplo1.domain.Departamentos[ did=" + did + " ]";
     }
-    
+
 }

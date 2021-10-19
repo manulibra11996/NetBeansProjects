@@ -42,6 +42,4 @@ public class EmpDAOImpl implements EmpDAO {
         em.remove(em.merge(emp));
     }
 
-   
-
 }

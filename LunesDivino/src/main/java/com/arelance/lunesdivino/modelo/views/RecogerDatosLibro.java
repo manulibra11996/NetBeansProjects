@@ -11,18 +11,18 @@ import com.arelance.lunesdivino.modelo.Libro;
  *
  * @author Admin
  */
-public class RecogerDatosLibro implements View{
+public class RecogerDatosLibro implements View {
 
     @Override
     public Libro getData() {
         Libro libro;
         System.out.println("Dame el título");
-        String titulo="XXXX";
+        String titulo = "XXXX";
         System.out.println("Dame el ISBN");
-        String ISBN="0000000000+XXXXX";
-        libro=new Libro(titulo, ISBN);
-        return  libro;
-       
+        String ISBN = "0000000000+XXXXX";
+        libro = new Libro(titulo, ISBN);
+        return libro;
+
     }
-    
+
 }

@@ -12,7 +12,7 @@ import com.arelance.libreriafinal.beans.DatosPersonales;
  * @author manulibra
  */
 public interface ViewDatos {
-        
+
     DatosPersonales getData();
-    
+
 }

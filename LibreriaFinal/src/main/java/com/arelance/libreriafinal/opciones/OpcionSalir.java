@@ -13,22 +13,19 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 /**
  *
  * @author manulibra
  */
-public class OpcionSalir extends Opciones{
+public class OpcionSalir extends Opciones {
+
     private Controller controller = new Controller();
     private Main main = new Main();
-
 
     public OpcionSalir(ViewUsuario view, Main main) {
         super(view);
         this.main = main;
     }
-
 
     @Override
     public void ejecutarOpcion() {

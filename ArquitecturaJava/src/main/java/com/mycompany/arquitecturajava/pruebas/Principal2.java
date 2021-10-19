@@ -17,20 +17,20 @@ import javax.persistence.Persistence;
  * @author manulibra
  */
 public class Principal2 {
- 
+
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("UnidadPersonas");
         EntityManager em = emf.createEntityManager();
-        List<Persona> lista=em.createQuery("select p from Persona p", Persona.class).getResultList();
- 
-        for (Persona p:lista) {
- 
+        List<Persona> lista = em.createQuery("select p from Persona p", Persona.class).getResultList();
+
+        for (Persona p : lista) {
+
             System.out.println(p.getApellidos());
-            for(Libro l :p.getLibros()) {
- 
+            for (Libro l : p.getLibros()) {
+
                 System.out.println(l.getTitulo());
                 System.out.println(l.getPaginas());
- 
+
             }
         }
     }

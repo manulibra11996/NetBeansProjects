@@ -15,7 +15,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface staff {
-    
+
     public List<Staff> obtener();
-    
+
 }

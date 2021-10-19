@@ -17,20 +17,20 @@ import java.util.Scanner;
  * @author Manuel
  */
 public class Main {
-    
+
     public static void main(String[] args) {
-        
+
         View view = new RecogerDatosLibro();
         Command alta = new CommandAlta(new OptionAdd(view));
         Command baja = new CommandBaja(new OptionDelete(view));
-        
+
         Command[] commands = new Command[2];
-        commands[0]=alta;
-        commands[1]=baja;
-        
+        commands[0] = alta;
+        commands[1] = baja;
+
         System.out.println("Selecciona la opcion");
         Scanner teclado = new Scanner(System.in);
         commands[teclado.nextInt()].execute();
-        
+
     }
 }

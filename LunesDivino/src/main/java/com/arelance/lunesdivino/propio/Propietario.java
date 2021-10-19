@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Propietario implements Cloneable {
+
     private StringBuilder nombre;
     private StringBuilder apellido;
     private int edad;
@@ -40,7 +41,6 @@ public class Propietario implements Cloneable {
     public void setApellido(StringBuilder apellido) {
         this.apellido = apellido;
     }
-
 
     public int getEdad() {
         return edad;
@@ -90,11 +90,10 @@ public class Propietario implements Cloneable {
         clone.apellido = new StringBuilder(this.apellido);
         return clone;
     }
-    
+
     @Override
     public String toString() {
         return "Nombre: " + nombre + ", Apellidos: " + apellido + " y Edad: " + edad;
     }
-    
-    
+
 }

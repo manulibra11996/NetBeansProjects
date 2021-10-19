@@ -16,27 +16,27 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "aficiones")
-@NamedQueries({@NamedQuery(name="Find.findAll",query = "SELECT a FROM Aficion a")})
-public class Aficion implements Serializable{
-    
-     private static Long serialVersionUID = 1L;
-   
-    
+@NamedQueries({
+    @NamedQuery(name = "Find.findAll", query = "SELECT a FROM Aficion a")})
+public class Aficion implements Serializable {
+
+    private static Long serialVersionUID = 1L;
+
     @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_aficion")
     private int idAficion;
     @Column(name = "nombre_aficion")
     private String nombre;
     private String descripcion;
     @ManyToOne
-    @JoinColumn(name = "id_persona",referencedColumnName="id_persona")
+    @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
     private Persona persona;
 
     public Aficion() {
     }
 
-    public Aficion( String nombre, String descripcion, Persona persona) {
+    public Aficion(String nombre, String descripcion, Persona persona) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.persona = persona;
@@ -78,8 +78,6 @@ public class Aficion implements Serializable{
         }
         return true;
     }
-
-   
 
     /**
      * @return the idAficion
@@ -136,6 +134,5 @@ public class Aficion implements Serializable{
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-    
-    
+
 }

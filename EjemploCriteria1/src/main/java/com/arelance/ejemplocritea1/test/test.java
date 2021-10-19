@@ -15,6 +15,7 @@ import java.util.HashSet;
  * @author Manuel
  */
 public class test {
+
     public static void main(String[] args) {
         Collection<Empleados> c1 = new ArrayList<>();
         Collection<Empleados> c2 = new HashSet<Empleados>();

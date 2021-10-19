@@ -11,17 +11,16 @@ import com.arelance.lunesdivino.modelo.views.View;
  *
  * @author Manuel
  */
-public class Opcion implements Seleccionable{
+public class Opcion implements Seleccionable {
 
     protected View view;
     protected Libro libro;
     protected Controller controller = Controller.MAINCONTROLLER;
-    
+
     public Opcion(View view) {
         this.view = view;
     }
-    
-    
+
     @Override
     public void ejecutarOpcion() {
         libro = view.getData();
@@ -29,5 +28,5 @@ public class Opcion implements Seleccionable{
             System.out.println("Se a dado de alta al libro " + libro.getTitulo());
         }
     }
-    
+
 }

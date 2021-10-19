@@ -21,7 +21,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "PROYECTO")
-public class Proyecto implements Serializable{
+public class Proyecto implements Serializable {
 
     @Id
     @Column(name = "id_proyecto")
@@ -33,8 +33,10 @@ public class Proyecto implements Serializable{
     @ManyToMany
     @JoinTable(
             name = "TAREA",
-            joinColumns = {@JoinColumn(name = "id_proyecto")},
-            inverseJoinColumns = {@JoinColumn(name = "id_emp")})
+            joinColumns = {
+                @JoinColumn(name = "id_proyecto")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "id_emp")})
     private List<Emp> emps;
 
     public int getIdProyecto() {

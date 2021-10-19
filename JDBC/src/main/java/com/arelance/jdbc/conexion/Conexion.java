@@ -23,12 +23,11 @@ public class Conexion {
     private Conexion() {
     }
 
-    
     public static Connection conectar() {
         Connection con = null;
 
         try {
-            Context ctx=new InitialContext();
+            Context ctx = new InitialContext();
             DataSource ds = (DataSource) ctx.lookup("jdbc/Examen");
             con = ds.getConnection();
         } catch (SQLException e) {

@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Manuel
  */
 public class EjemploMenu {
+
     public static void main(String[] args) {
         Scanner keyBoard = new Scanner(System.in);
         int opcion;
@@ -20,10 +21,10 @@ public class EjemploMenu {
         System.out.println("2-Buscar contacto");
         System.out.println("3-Mostrar agenda");
         System.out.println("4-Salir programa");
-        while(true){
+        while (true) {
             System.out.println("Introduce la opcion:");
             opcion = keyBoard.nextInt();
-            switch(opcion){
+            switch (opcion) {
                 case 1:
                     System.out.println("alta");
                     break;
@@ -40,6 +41,6 @@ public class EjemploMenu {
                     System.out.println("La opción no existe");
             }
         }
-        
+
     }
 }

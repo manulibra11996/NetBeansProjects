@@ -25,7 +25,8 @@ import javax.persistence.OneToMany;
  * @author salvador
  */
 @Entity
-@NamedQueries({@NamedQuery(name="Persona.findAll",query="SELECT p FROM Persona p ORDER BY p.idPersona")
+@NamedQueries({
+    @NamedQuery(name = "Persona.findAll", query = "SELECT p FROM Persona p ORDER BY p.idPersona")
 }
 )
 public class Persona implements Serializable {
@@ -39,8 +40,8 @@ public class Persona implements Serializable {
     private String apellido;
     private String email;
     private String telefono;
-    @OneToMany(mappedBy ="persona")
-    private  List<Aficion> aficiones;
+    @OneToMany(mappedBy = "persona")
+    private List<Aficion> aficiones;
 
     public Persona() {
     }

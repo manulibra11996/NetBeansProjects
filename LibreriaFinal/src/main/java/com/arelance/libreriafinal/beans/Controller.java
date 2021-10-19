@@ -16,50 +16,48 @@ import com.arelance.libreriafinal.vistas.VistaRegistroDatosPersonales;
 import com.arelance.libreriafinal.vistas.VistaRegistroUsuario;
 import java.io.IOException;
 
-
-
-
 /**
  *
  * @author manulibra
  */
 public class Controller {
+
     private CRUDRepositorio repositorio = new CRUDRepositorio();
     private ViewUsuario viewUsuario;
     private ViewDatos viewDatos;
     private ViewLibro viewLibro;
-    
-    public boolean registrarUsuario(){
+
+    public boolean registrarUsuario() {
         viewUsuario = new VistaRegistroUsuario();
         viewDatos = new VistaRegistroDatosPersonales();
         Usuario usuario = viewUsuario.getData();
         DatosPersonales dp = viewDatos.getData();
-        return  repositorio.add(usuario,dp);
+        return repositorio.add(usuario, dp);
     }
-    
-    public boolean loginUsuario(){
+
+    public boolean loginUsuario() {
         viewUsuario = new VistaDatosLogin();
         Usuario usuario = viewUsuario.getData();
-        return  repositorio.login(usuario);
+        return repositorio.login(usuario);
     }
-    
-    public void salida(Main main) throws IOException{
+
+    public void salida(Main main) throws IOException {
         repositorio.salir(main);
     }
-    
-    public void desLoginUsuario(){
+
+    public void desLoginUsuario() {
         repositorio.desLogin();
     }
 
     public boolean alquiler() {
         viewLibro = new VistaObtenerLibro();
         Libro libro = viewLibro.getData();
-        return  repositorio.libroA(libro);
+        return repositorio.libroA(libro);
     }
 
     public boolean devolucion() {
         viewLibro = new VistaObtenerLibro();
         Libro libro = viewLibro.getData();
-        return  repositorio.libroD(libro);
+        return repositorio.libroD(libro);
     }
 }

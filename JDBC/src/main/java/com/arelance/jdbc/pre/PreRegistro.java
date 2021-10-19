@@ -33,9 +33,9 @@ public class PreRegistro extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             String mensaje = (String) request.getSession().getAttribute("mensaje");
-   
+
             request.getRequestDispatcher("./registro.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

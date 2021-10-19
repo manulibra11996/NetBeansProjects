@@ -14,13 +14,13 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class CarritoDAOServ implements ICarritoDao{
+public class CarritoDAOServ implements ICarritoDao {
 
     private ICarritoDao carritoDao = new CarritoDAOImpl();
 
     @Override
     public List<Carrito> obtener() {
-         return carritoDao.obtener();
+        return carritoDao.obtener();
     }
 
     @Override

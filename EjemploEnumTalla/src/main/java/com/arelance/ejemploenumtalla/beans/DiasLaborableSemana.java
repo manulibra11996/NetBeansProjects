@@ -10,7 +10,7 @@ package com.arelance.ejemploenumtalla.beans;
  * @author Manuel
  */
 public enum DiasLaborableSemana {
-    LUNES(true),MARTES(true),MIERCOLES(true),JUEVES(true),VIERNES(true),SABADO(false),DOMINGO(false);
+    LUNES(true), MARTES(true), MIERCOLES(true), JUEVES(true), VIERNES(true), SABADO(false), DOMINGO(false);
     private boolean laborable;
 
     private DiasLaborableSemana(boolean laborable) {
@@ -25,36 +25,35 @@ public enum DiasLaborableSemana {
         this.laborable = laborable;
     }
 
-   
-    public DiasLaborableSemana asignarDiaFestivo (){
-        DiasLaborableSemana retVal=null;
-        
-        laborable=false;
-                
+    public DiasLaborableSemana asignarDiaFestivo() {
+        DiasLaborableSemana retVal = null;
+
+        laborable = false;
+
         for (DiasLaborableSemana diaSemana : DiasLaborableSemana.values()) {
             if (!this.equals(diaSemana) && diaSemana.laborable == false) {
-                diaSemana.laborable =! diaSemana.laborable;
+                diaSemana.laborable = !diaSemana.laborable;
                 retVal = diaSemana;
                 return retVal;
             }
         }
         return retVal;
     }
-    
-    public static void intercambiarDiaLaborable (DiasLaborableSemana dia1, 
-            DiasLaborableSemana dia2) throws UnableCrossDaysExeption{
+
+    public static void intercambiarDiaLaborable(DiasLaborableSemana dia1,
+            DiasLaborableSemana dia2) throws UnableCrossDaysExeption {
         if (dia1.equals(dia2)) {
             throw new UnableCrossDaysExeption();
         }
-        if(dia1.laborable != dia2.laborable){
+        if (dia1.laborable != dia2.laborable) {
             dia1.laborable = dia2.laborable;
-            dia2.laborable =! dia1.laborable;
+            dia2.laborable = !dia1.laborable;
         }
     }
-    
-    public static int contarDiasFestivos(){
+
+    public static int contarDiasFestivos() {
         int contador = 0;
-        
+
         for (DiasLaborableSemana diaSemana : DiasLaborableSemana.values()) {
             if (!diaSemana.isLaborable()) {
                 contador++;

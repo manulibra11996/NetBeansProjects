@@ -16,7 +16,7 @@ import javax.ejb.Stateless;
  * @author Manuel
  */
 @Stateless(name = "lista1")
-public class UsuarioServiceImpl implements UsuarioService{
+public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<Usuario> findAll() {
@@ -24,8 +24,8 @@ public class UsuarioServiceImpl implements UsuarioService{
         usuarios.add(new Usuario("Juan"));
         usuarios.add(new Usuario("Gabriel"));
         usuarios.add(new Usuario("Pedro"));
-        
+
         return usuarios;
     }
-    
+
 }

@@ -13,10 +13,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <h1>Buscando la persona con email</h1>
-       <%
-           Persona personaEncontrada = (Persona) request.getAttribute("personaEncontrada");
-       %>
-            <p><%=personaEncontrada.getNombre()%></p>
+        <h1>Buscando la persona con email</h1>
+        <%
+            Persona personaEncontrada = (Persona) request.getAttribute("personaEncontrada");
+        %>
+        <p><%=personaEncontrada.getNombre()%></p>
     </body>
 </html>

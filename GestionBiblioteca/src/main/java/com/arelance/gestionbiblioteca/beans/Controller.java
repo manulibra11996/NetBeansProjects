@@ -14,12 +14,13 @@ import com.arelance.gestionbiblioteca.views.View;
  * @author Gabri
  */
 public class Controller {
-    private CRUDRepository cRUDRepository=new CRUDRepository();
+
+    private CRUDRepository cRUDRepository = new CRUDRepository();
     private View view;
-    
-    public boolean registrarUsuario(){
-        view=new RecogerDatosUsuario();
-        Usuario usuario=view.getData();
-        return  cRUDRepository.add(usuario);
-}
+
+    public boolean registrarUsuario() {
+        view = new RecogerDatosUsuario();
+        Usuario usuario = view.getData();
+        return cRUDRepository.add(usuario);
+    }
 }

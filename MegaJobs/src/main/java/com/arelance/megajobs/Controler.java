@@ -38,54 +38,54 @@ public class Controler extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             String boton = request.getParameter("boton");
-            
+
             Set<Usuario> registro = (Set<Usuario>) request.getSession().getAttribute("registro");
             registro.add(new Usuario("user1", "user1"));
             Set<Oferta> ofertas = (Set<Oferta>) request.getSession().getAttribute("registro");
-            ofertas.add(new Oferta("Programador Junior.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec elit sit amet ligula pretium iaculis ac non sem. Praesent consequat nunc at risus auctor, dictum varius sapien dignissim.", 
+            ofertas.add(new Oferta("Programador Junior.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec elit sit amet ligula pretium iaculis ac non sem. Praesent consequat nunc at risus auctor, dictum varius sapien dignissim.",
                     Localizacion.Local, 10000, Experiencia.Junior));
-            
-            switch(boton){
+
+            switch (boton) {
                 case "registro":
                     response.sendRedirect("./PreRegistro");
                     break;
                 case "login":
-                     response.sendRedirect("./PreLogin"); 
+                    response.sendRedirect("./PreLogin");
                     break;
                 case "Registro":
-                    for(Usuario usuario: registro){
+                    for (Usuario usuario : registro) {
                         if (nick.compareTo(usuario.getNick()) != 0) {
-                            registro.add(new Usuario(nick,password));
+                            registro.add(new Usuario(nick, password));
                             request.getRequestDispatcher("./login.jsp").
-                                forward(request, response);
-                        }else{
+                                    forward(request, response);
+                        } else {
                             String mensaje = "El nick ya es utilizado";
                             request.setAttribute("mensaje", mensaje);
                             request.getServletContext().getRequestDispatcher("/PreRegistro").forward(request, response);
-                        }  
-                    } 
+                        }
+                    }
                     break;
                 case "Login":
-                     for(Usuario usuario: registro){
-                        if (nick.compareTo(usuario.getNick()) == 0 ) {
+                    for (Usuario usuario : registro) {
+                        if (nick.compareTo(usuario.getNick()) == 0) {
                             request.getSession().setAttribute("nick", nick);
                             request.getRequestDispatcher("/index.jsp").forward(request, response);
-                        }else{
+                        } else {
                             String mensaje = "Has metido mal el nick o el password vuelve a intentarlo";
                             request.setAttribute("mensaje", mensaje);
                             request.getServletContext().getRequestDispatcher("/PreLogin").
-                                forward(request, response);
+                                    forward(request, response);
                         }
                     }
                     break;
                 case "OutLogin":
-                    if(request.getSession() != null){
+                    if (request.getSession() != null) {
                         request.getSession().invalidate();
-                        response.sendRedirect("./PreIndex");  
+                        response.sendRedirect("./PreIndex");
                     }
                     break;
             }

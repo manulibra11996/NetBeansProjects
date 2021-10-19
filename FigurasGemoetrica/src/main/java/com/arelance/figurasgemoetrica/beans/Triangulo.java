@@ -9,7 +9,7 @@ package com.arelance.figurasgemoetrica.beans;
  *
  * @author Admin
  */
-public class Triangulo extends Figura{
+public class Triangulo extends Figura {
 
     private int altura;
     private int base;
@@ -21,8 +21,8 @@ public class Triangulo extends Figura{
 
     @Override
     public double area() {
-        
-        return (base*altura)/2;
-      }
-    
+
+        return (base * altura) / 2;
+    }
+
 }

@@ -22,20 +22,19 @@ import javax.servlet.annotation.WebFilter;
 @WebFilter
 public class MinWebFiltro implements Filter {
 
-   
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
+
         String valor2 = request.getParameter("valor2");
 
         if (valor2 != null && valor2.trim().length() > 0) {
             Filtro f = new MinFiltro(valor2);
             Filtro fx = null;
-            if(request.getAttribute("filtro") != null){
+            if (request.getAttribute("filtro") != null) {
                 fx = (Filtro) request.getAttribute("filtro");
                 fx.buiderFiter(f);
-            }else{
+            } else {
                 request.setAttribute("filtro", f);
             }
         }
@@ -50,5 +49,5 @@ public class MinWebFiltro implements Filter {
             problem = t;
             t.printStackTrace();
         }
-    }    
+    }
 }

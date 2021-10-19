@@ -19,39 +19,36 @@ import javax.persistence.ManyToMany;
 @Entity
 public class Clas {
 
-   @Id
-   @GeneratedValue( strategy = GenerationType.AUTO )
-   
-   private int cid;
-   private String cname;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 
-  
+    private int cid;
+    private String cname;
 
-   public Clas(){
-      super();
-   }
-   
-   public Clas(int cid, String cname) {
-      super();
-      this.cid = cid;
-      this.cname = cname;
-   }
-   
-   public int getCid(){
-      return cid;
-   }
-   
-   public void setCid(int cid) {
-      this.cid = cid;
-   }
-   
-   public String getCname() {
-      return cname;
-   }
-   
-   public void setCname(String cname) {
-      this.cname = cname;
-   }
-   
-  
+    public Clas() {
+        super();
+    }
+
+    public Clas(int cid, String cname) {
+        super();
+        this.cid = cid;
+        this.cname = cname;
+    }
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
 }

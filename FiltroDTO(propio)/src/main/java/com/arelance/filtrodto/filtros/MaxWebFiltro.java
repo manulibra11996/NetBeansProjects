@@ -21,25 +21,24 @@ import javax.servlet.annotation.WebFilter;
  */
 @WebFilter
 public class MaxWebFiltro implements Filter {
-    
+
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        
+
         String valor3 = request.getParameter("valor3");
 
         if (valor3 != null && valor3.trim().length() > 0) {
             Filtro f = new MaxFiltro(valor3);
             Filtro fx = null;
-            if(request.getAttribute("filtro") != null){
+            if (request.getAttribute("filtro") != null) {
                 fx = (Filtro) request.getAttribute("filtro");
                 fx.buiderFiter(f);
-            }else{
+            } else {
                 request.setAttribute("filtro", f);
             }
         }
-        
+
         Throwable problem = null;
         try {
             chain.doFilter(request, response);
@@ -50,5 +49,5 @@ public class MaxWebFiltro implements Filter {
             problem = t;
             t.printStackTrace();
         }
-    }    
+    }
 }

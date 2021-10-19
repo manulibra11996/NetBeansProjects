@@ -5,13 +5,11 @@
  */
 package beans;
 
-
-
 /**
  *
  * @author salvador
  */
-
 public interface HolaMundoEJBRemote {
+
     public int sumar(int a, int b);
 }

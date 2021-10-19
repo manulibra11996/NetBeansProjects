@@ -14,16 +14,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-
-
 /**
  *
  * @author manulibra
  */
 public class LecturaArchivos {
-    public void lecturaArchivos(Main main) throws FileNotFoundException, IOException, ClassNotFoundException{
-        
-        
+
+    public void lecturaArchivos(Main main) throws FileNotFoundException, IOException, ClassNotFoundException {
+
         FileInputStream fis = new FileInputStream("datosusuarios.dat");
         ObjectInputStream ois = new ObjectInputStream(fis);
         Map<Usuario, DatosPersonales> usuariosLeidos = (Map<Usuario, DatosPersonales>) ois.readObject();
@@ -36,9 +34,9 @@ public class LecturaArchivos {
         //librosLeidos.keySet().forEach(p -> System.out.println(p));
         main.setListBooks(librosLeidos);
         ois2.close();
-        
-        if(main.getListBooks().isEmpty()){
-            Map<Libro,Set<Usuario>> listaLibros = main.getListBooks();
+
+        if (main.getListBooks().isEmpty()) {
+            Map<Libro, Set<Usuario>> listaLibros = main.getListBooks();
             listaLibros.put(new Libro("libro1", "0001"), new HashSet<>());
             listaLibros.put(new Libro("libro2", "0002"), new HashSet<>());
             listaLibros.put(new Libro("libro3", "0003"), new HashSet<>());

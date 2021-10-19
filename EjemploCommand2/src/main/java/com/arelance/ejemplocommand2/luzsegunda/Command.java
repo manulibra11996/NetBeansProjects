@@ -10,5 +10,6 @@ package com.arelance.ejemplocommand2.luzsegunda;
  * @author Manuel
  */
 public interface Command {
+
     void execute();
 }

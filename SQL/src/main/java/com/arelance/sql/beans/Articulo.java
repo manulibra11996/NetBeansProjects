@@ -10,6 +10,7 @@ package com.arelance.sql.beans;
  * @author Manuel
  */
 public class Articulo {
+
     private final int id_articulo;
     private String nombre;
     private String precio;
@@ -31,7 +32,7 @@ public class Articulo {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public String getPrecio() {
         return precio;
     }
@@ -39,6 +40,5 @@ public class Articulo {
     public void setPrecio(String precio) {
         this.precio = precio;
     }
-    
-    
+
 }

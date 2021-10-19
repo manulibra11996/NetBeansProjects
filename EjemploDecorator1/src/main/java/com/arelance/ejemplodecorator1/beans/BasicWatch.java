@@ -9,15 +9,15 @@ package com.arelance.ejemplodecorator1.beans;
  *
  * @author Manuel
  */
-public class BasicWatch implements Watch{
+public class BasicWatch implements Watch {
 
     @Override
     public void createFunctionality() {
         System.out.println(" Basic Watch with: ");
         this.addTimer();
     }
-    
-    private void addTimer(){
+
+    private void addTimer() {
         System.out.print(" Timer");
     }
 }

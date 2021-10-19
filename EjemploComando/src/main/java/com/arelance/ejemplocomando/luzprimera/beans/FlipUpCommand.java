@@ -9,16 +9,16 @@ package com.arelance.ejemplocomando.luzprimera.beans;
  *
  * @author Manuel
  */
-public class FlipUpCommand implements Command{
-    
+public class FlipUpCommand implements Command {
+
     private Light theLight;
-    
-    public FlipUpCommand(Light light){
+
+    public FlipUpCommand(Light light) {
         this.theLight = light;
     }
-    
+
     @Override
-    public void execute(){
+    public void execute() {
         theLight.turnOn();
     }
 }

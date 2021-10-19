@@ -12,8 +12,8 @@ import com.arelance.gestionbiblioteca.beans.Seleccionable;
  * @author Gabri
  */
 public class CommandSeleccionable implements Command {
-    
-     private Seleccionable seleccionable;
+
+    private Seleccionable seleccionable;
 
     public CommandSeleccionable(Seleccionable seleccionable) {
         this.seleccionable = seleccionable;
@@ -23,5 +23,4 @@ public class CommandSeleccionable implements Command {
         seleccionable.ejecutarOpcion();
     }
 
-    
 }

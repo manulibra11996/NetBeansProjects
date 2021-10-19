@@ -15,16 +15,17 @@ import javax.naming.NamingException;
  * @author salvador
  */
 public class Test {
+
     public static void main(String[] args) {
         System.out.println("Iniciando Llmada Ejb");
-        try{
-            Context jndi=new InitialContext();
+        try {
+            Context jndi = new InitialContext();
 //            java:global/HolaMundoEJB-1.0-SNAPSHOT/HolaMundoEJBImpl!beans.HolaMundoEJBRemote
 //            HolaMundoEJBRemote holaMundoEJBRemote=(HolaMundoEJBRemote) jndi.lookup("java:global/HolaMundoEJB/HolaMundoEJBImpl!beans.HolaMundoEJBRemote");
-            HolaMundoEJBRemote holaMundoEJBRemote=(HolaMundoEJBRemote) jndi.lookup("java:global/HolaMundoEJB-1.0-SNAPSHOT/HolaMundoEJBImpl!beans.HolaMundoEJBRemote");
-            System.out.println( holaMundoEJBRemote.sumar(5, 3));
-        }catch(NamingException ex){
-            
+            HolaMundoEJBRemote holaMundoEJBRemote = (HolaMundoEJBRemote) jndi.lookup("java:global/HolaMundoEJB-1.0-SNAPSHOT/HolaMundoEJBImpl!beans.HolaMundoEJBRemote");
+            System.out.println(holaMundoEJBRemote.sumar(5, 3));
+        } catch (NamingException ex) {
+
         }
     }
 }

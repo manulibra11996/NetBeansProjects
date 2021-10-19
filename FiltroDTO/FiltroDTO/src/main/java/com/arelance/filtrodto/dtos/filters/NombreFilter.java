@@ -9,16 +9,17 @@ package com.arelance.filtrodto.dtos.filters;
  *
  * @author Admin
  */
-public class NombreFilter implements Fiter{
+public class NombreFilter implements Fiter {
+
     private String nombre;
 
     public NombreFilter(String nombre) {
-        this.nombre=nombre;
+        this.nombre = nombre;
     }
 
     @Override
     public String execute() {
-        return "nombre="+nombre;
+        return "nombre=" + nombre;
     }
- 
+
 }

@@ -25,9 +25,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "MainServlet", urlPatterns = {"/MainServlet"})
 public class MainServlet extends HttpServlet {
-    
+
     @EJB(beanName = "lista2")
     private UsuarioService usuarioService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

@@ -35,6 +35,7 @@ public class PreAnadirAficion extends HttpServlet {
      */
     @Inject
     private AficionService aficionService;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -42,8 +43,8 @@ public class PreAnadirAficion extends HttpServlet {
             String nombre = request.getParameter("nombre");
             String descripcion = request.getParameter("descripcion");
             String boton = request.getParameter("boton");
-            
-            if(boton.contentEquals("Registro")){
+
+            if (boton.contentEquals("Registro")) {
                 Aficion aficion = new Aficion();
                 aficion.setNombre(nombre);
                 aficion.setDescripcion(descripcion);

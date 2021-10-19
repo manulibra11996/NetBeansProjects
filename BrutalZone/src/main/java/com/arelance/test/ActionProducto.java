@@ -10,7 +10,7 @@ package com.arelance.test;
  * @author Manuel
  */
 public interface ActionProducto {
-    
+
     public abstract void execute(Producto producto);
-    
+
 }

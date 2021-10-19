@@ -34,6 +34,7 @@ public class PreAnadir extends HttpServlet {
      */
     @Inject
     private PersonaService personaService;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -43,8 +44,8 @@ public class PreAnadir extends HttpServlet {
             String email = request.getParameter("email");
             String telefono = request.getParameter("telefono");
             String boton = request.getParameter("boton");
-            
-            if(boton.contentEquals("Registro")){
+
+            if (boton.contentEquals("Registro")) {
                 Persona persona = new Persona();
                 persona.setNombre(nombre);
                 persona.setApellido(apellido);

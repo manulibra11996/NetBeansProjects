@@ -10,23 +10,26 @@ package com.mycompany.telefono.pruebas;
  * @author manulibra
  */
 public class Contacto {
+
     private String nombre;
     private int telefono;
 
-    public Contacto()
-    {
-    this.nombre=null;
-    this.telefono=0;
+    public Contacto() {
+        this.nombre = null;
+        this.telefono = 0;
     }
+
     public Contacto(String nombre, int telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
     }
-    public void set_nombre(String nomb){        
-        this.nombre=nomb.toUpperCase();
+
+    public void set_nombre(String nomb) {
+        this.nombre = nomb.toUpperCase();
     }
-    public void set_telefono(int telf){
-        this.telefono=telf;
+
+    public void set_telefono(int telf) {
+        this.telefono = telf;
     }
 
     public String getNombre() {
@@ -36,7 +39,5 @@ public class Contacto {
     public int getTelefono() {
         return telefono;
     }
-    
-    
-    
+
 }

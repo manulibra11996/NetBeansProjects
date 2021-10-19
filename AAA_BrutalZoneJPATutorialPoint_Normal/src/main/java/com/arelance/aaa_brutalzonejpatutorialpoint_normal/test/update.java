@@ -15,30 +15,28 @@ import javax.persistence.Persistence;
  * @author Manuel
  */
 public class update {
-    
-    public static void  main (String args []){
-        
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory ( "Student_details" );  
-        EntityManager em = emf.createEntityManager ();  
-          
-      
-        em.getTransaction().begin(); 
-        
-        StudentEntityList s = em.find (StudentEntityList.class, 102 );  
-        System.out.println ( "Antes de la actualización" );  
-        System.out.println ( "Id. De estudiante =" + s.getId ());  
-        System.out.println ( "Nombre del estudiante =" + s.getName ());  
-        System.out.println ( "Edad del estudiante =" + s.getAge());  
-          
-        s.setAge(30 );  
-          
-        System.out.println ( "Después de la actualización" );  
-        System.out.println ( "Id. De estudiante =" + s.getId ());  
-        System.out.println ( "Nombre del estudiante =" + s.getName ());  
-        System.out.println ( "Edad del estudiante =" + s.getAge());  
-        
-        em.getTransaction().commit();  
-          
-          
-    }  
+
+    public static void main(String args[]) {
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Student_details");
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+
+        StudentEntityList s = em.find(StudentEntityList.class, 102);
+        System.out.println("Antes de la actualización");
+        System.out.println("Id. De estudiante =" + s.getId());
+        System.out.println("Nombre del estudiante =" + s.getName());
+        System.out.println("Edad del estudiante =" + s.getAge());
+
+        s.setAge(30);
+
+        System.out.println("Después de la actualización");
+        System.out.println("Id. De estudiante =" + s.getId());
+        System.out.println("Nombre del estudiante =" + s.getName());
+        System.out.println("Edad del estudiante =" + s.getAge());
+
+        em.getTransaction().commit();
+
+    }
 }

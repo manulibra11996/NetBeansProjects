@@ -67,6 +67,6 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> listarFiltroPersonas(String nombreParametro) {
-       return   personaDAO.listarFiltroPersonas(nombreParametro);
+        return personaDAO.listarFiltroPersonas(nombreParametro);
     }
 }

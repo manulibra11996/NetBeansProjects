@@ -10,15 +10,15 @@ package com.arelance.commandpattern;
  * @author Admin
  */
 public class GestorOpciones {
-    
+
     private Command<Contacto>[] opciones;
 
     public GestorOpciones(Command<Contacto>[] opciones) {
         this.opciones = opciones;
     }
-    
-    public void executeCommand(int index,Contacto contacto){
+
+    public void executeCommand(int index, Contacto contacto) {
         opciones[index].execute(contacto);
     }
-    
+
 }

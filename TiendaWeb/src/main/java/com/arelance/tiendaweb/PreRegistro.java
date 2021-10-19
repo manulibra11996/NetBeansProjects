@@ -33,7 +33,7 @@ public class PreRegistro extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             response.sendRedirect("./registro.jsp");
-            
+
         }
     }
 

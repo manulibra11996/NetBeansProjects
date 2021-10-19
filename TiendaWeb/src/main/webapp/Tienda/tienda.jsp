@@ -21,10 +21,10 @@
             Articulos articulo3 = new Articulos("Mesa de salon", "Mesa de madera de 2m de largo, 0.5m de ancho y 1m de altura", TipoArticulos.hogar);
         %>
         <p>Bienvenido 
-        <%
-            String nick = request.getParameter("nick");
-            out.print(nick);
-        %>
+            <%
+                String nick = request.getParameter("nick");
+                out.print(nick);
+            %>
         <form action="./PostTienda" method="GET">
             <p><input type="checkbox" name="articulos" value="<%=articulo1.getNombre()%>"><%=articulo1%></p>
             <p><input type="checkbox" name="articulos" value="<%=articulo2.getNombre()%>"><%=articulo2%></p>
@@ -33,6 +33,6 @@
             <input type="submit" name="boton" value="cerrar">
             <input type="reset"  value="Limpiar campos">
         </form>
-        </p>
-    </body>
+    </p>
+</body>
 </html>

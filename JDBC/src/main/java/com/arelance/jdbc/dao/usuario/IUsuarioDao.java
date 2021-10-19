@@ -13,7 +13,8 @@ import java.util.List;
  * @author Manuel
  */
 public interface IUsuarioDao {
-    
+
     public List<Usuario> obtener();
+
     public void guardar(Usuario usuario);
 }

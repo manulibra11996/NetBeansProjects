@@ -16,7 +16,7 @@
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
             <a href="PreUpdatePersona?idPersona=${persona.idPersona}"><c:out value="${persona.nombre}"/><p></>
-        </c:forEach>  
+                </c:forEach>  
 
-    </body>
-</html>
+                </body>
+                </html>

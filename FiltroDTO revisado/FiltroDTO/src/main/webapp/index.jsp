@@ -21,7 +21,7 @@
       fx.execute();
       out.print(fx.getSqlSentecnce());
   }
-            %>
+        %>
         <h1>Hello World!</h1>
         <form action="MainServlet" method="GET">
             <label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre">

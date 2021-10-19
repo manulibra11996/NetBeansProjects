@@ -13,8 +13,6 @@ import com.arelance.lunesdivino.modelo.views.View;
  */
 public interface Seleccionable {
 
-    
-    
     void ejecutarOpcion();
-    
+
 }

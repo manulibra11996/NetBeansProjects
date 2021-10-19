@@ -33,6 +33,6 @@ public interface PersonaService {
 
     public Iterator<Object> datosResumenPersona();
 
-    public List<Persona>  listarFiltroPersonas(String nombreParametro);
-   
+    public List<Persona> listarFiltroPersonas(String nombreParametro);
+
 }

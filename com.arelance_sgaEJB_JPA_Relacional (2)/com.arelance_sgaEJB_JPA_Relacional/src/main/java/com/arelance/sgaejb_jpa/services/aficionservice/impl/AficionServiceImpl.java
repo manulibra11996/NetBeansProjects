@@ -5,7 +5,6 @@
  */
 package com.arelance.sgaejb_jpa.services.aficionservice.impl;
 
-
 import com.arelance.sgaejb_jpa.dao.aficion.AficionDAO;
 import com.arelance.sgaejb_jpa.services.aficionservice.AficionService;
 import java.util.List;
@@ -20,7 +19,7 @@ import javax.inject.Inject;
  */
 @Stateless
 public class AficionServiceImpl implements AficionService {
-   
+
     @Inject
     private AficionDAO aficionDAO;
 
@@ -54,7 +53,6 @@ public class AficionServiceImpl implements AficionService {
         return aficionDAO.findAficionById(id);
     }
 
-  
     @Override
     public Set<String> listarResumenAficiones() {
         return aficionDAO.listarResumenAficiones();

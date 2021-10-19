@@ -15,6 +15,5 @@ import java.util.List;
 public enum DataContact {
     INTANCE;
     public final List<Contacto> lista = new ArrayList<>();
-    
-    
+
 }

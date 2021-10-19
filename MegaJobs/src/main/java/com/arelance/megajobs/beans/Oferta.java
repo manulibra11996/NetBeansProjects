@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Oferta {
+
     private String descripcionLarga;
     private Localizacion localizacion;
     private Integer salario;
@@ -97,6 +98,5 @@ public class Oferta {
     public String toString() {
         return "descripcionLarga=" + descripcionLarga + ", localizacion=" + localizacion + ", salario=" + salario + ", experiencia=" + experiencia;
     }
-    
-    
+
 }

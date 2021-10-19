@@ -10,5 +10,5 @@ package com.arelance.aaa_brutalzonejpatutorialpoint_normal;
  * @author manulibra
  */
 public class NewClass {
-    
+
 }

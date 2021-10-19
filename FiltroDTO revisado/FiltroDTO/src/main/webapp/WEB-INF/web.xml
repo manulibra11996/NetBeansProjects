@@ -15,7 +15,7 @@
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
-      <filter-mapping>
+    <filter-mapping>
         <filter-name>MinimusWebFilter</filter-name>
         <url-pattern>/Destino</url-pattern>
         <dispatcher>REQUEST</dispatcher>

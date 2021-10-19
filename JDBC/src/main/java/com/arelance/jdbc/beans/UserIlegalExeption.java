@@ -13,7 +13,7 @@ public class UserIlegalExeption extends Exception {
 
     @Override
     public String getMessage() {
-        return "No existe el nick o el pasword"; 
+        return "No existe el nick o el pasword";
     }
-    
+
 }

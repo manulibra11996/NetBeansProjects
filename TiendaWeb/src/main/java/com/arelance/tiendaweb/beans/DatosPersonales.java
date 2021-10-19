@@ -16,7 +16,8 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public final class  DatosPersonales implements Serializable{
+public final class DatosPersonales implements Serializable {
+
     private String nombre;
     private String apellido;
     private String edad;
@@ -92,5 +93,4 @@ public final class  DatosPersonales implements Serializable{
         return "DatosPersonales{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + '}';
     }
 
-    
 }

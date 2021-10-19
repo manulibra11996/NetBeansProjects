@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author manulibra
  */
-public class VistaMenuPrincipal  implements ViewOpcion{
+public class VistaMenuPrincipal implements ViewOpcion {
 
     @Override
     public int Opcion() {
@@ -23,6 +23,5 @@ public class VistaMenuPrincipal  implements ViewOpcion{
         int opcion = teclado.nextInt();
         return opcion;
     }
-
 
 }

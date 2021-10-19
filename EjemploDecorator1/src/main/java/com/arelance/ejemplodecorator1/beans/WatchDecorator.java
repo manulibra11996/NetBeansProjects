@@ -9,16 +9,16 @@ package com.arelance.ejemplodecorator1.beans;
  *
  * @author Manuel
  */
-public abstract class WatchDecorator implements Watch{
-    
+public abstract class WatchDecorator implements Watch {
+
     private final Watch watch;
-    
-    public WatchDecorator(Watch watch){
+
+    public WatchDecorator(Watch watch) {
         this.watch = watch;
     }
-    
+
     @Override
-    public void createFunctionality(){
+    public void createFunctionality() {
         this.watch.createFunctionality();
     }
 }

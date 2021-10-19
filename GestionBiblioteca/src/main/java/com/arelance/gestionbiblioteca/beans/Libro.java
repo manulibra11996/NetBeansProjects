@@ -12,7 +12,7 @@ import java.util.Objects;
  * @author Gabri
  */
 public final class Libro {
-    
+
     private String titulo;
     private String ISBN;
 
@@ -60,6 +60,5 @@ public final class Libro {
         }
         return true;
     }
-    
-    
+
 }

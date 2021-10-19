@@ -17,8 +17,8 @@
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
             <a href="PreActualizar?id=<c:out value="${persona.idPersona}"/>"><c:out value="${persona.nombre}"/></a><a href="PreBorrar?id=<c:out value="${persona.idPersona}"/>">
-                    Borrar<br /></a> 
-        </c:forEach>  
+                Borrar<br /></a> 
+            </c:forEach>  
         <a href="PreBusquedaID">Buscando a Maria por id</a>
         <br />
         <a href="PreBusquedaEmail">Buscando a Maria por email</a>

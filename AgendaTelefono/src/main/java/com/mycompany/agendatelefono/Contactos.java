@@ -10,6 +10,7 @@ package com.mycompany.agendatelefono;
  * @author manulibra
  */
 public class Contactos {
+
     private String Nombre;
     private String Apellidos;
     private String Telefono;
@@ -23,7 +24,6 @@ public class Contactos {
     public Contactos() {
     }
 
-    
     public String getNombre() {
         return Nombre;
     }
@@ -47,6 +47,5 @@ public class Contactos {
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
     }
-    
-    
+
 }

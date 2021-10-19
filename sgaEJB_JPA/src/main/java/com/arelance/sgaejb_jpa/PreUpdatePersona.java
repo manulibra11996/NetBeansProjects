@@ -22,8 +22,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "PreUpdatePersona", urlPatterns = {"/PreUpdatePersona"})
 public class PreUpdatePersona extends HttpServlet {
+
     @Inject
     private PersonaService personaService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -35,8 +37,8 @@ public class PreUpdatePersona extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      request.getSession().setAttribute("persona",personaService.findPersonaById(Integer.parseInt(request.getParameter("idPersona"))));
-      request.getRequestDispatcher("update.jsp").forward(request, response);
+        request.getSession().setAttribute("persona", personaService.findPersonaById(Integer.parseInt(request.getParameter("idPersona"))));
+        request.getRequestDispatcher("update.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

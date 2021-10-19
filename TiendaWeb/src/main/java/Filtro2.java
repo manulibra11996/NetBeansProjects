@@ -20,8 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @WebFilter(filterName = "Filtro2", urlPatterns = {"/*"})
 public class Filtro2 implements Filter {
-    
-   
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         Filter.super.init(filterConfig); //To change body of generated methods, choose Tools | Templates.
@@ -29,10 +28,10 @@ public class Filtro2 implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        
+
         System.out.println("Soy el filtro 2");
 
-        if (request instanceof  HttpServletRequest ) {
+        if (request instanceof HttpServletRequest) {
             HttpServletRequest httpServletRequest = (HttpServletRequest) request;
             if (httpServletRequest.getSession(false) != null) {
                 httpServletRequest.getRequestDispatcher("./login.jsp").forward(request, response);
@@ -49,6 +48,5 @@ public class Filtro2 implements Filter {
     public void destroy() {
         Filter.super.destroy(); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }

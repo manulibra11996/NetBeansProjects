@@ -24,9 +24,9 @@
             <p>Codigo Postal: <input type="text" name="cp" placeholder="Escribe el codigo postal"></p>
             <p>Login</p>
             <p>Nick: <input type="text" name="nick" placeholder="Escribe tu nick" required="required"></p>
-            <% if(request.getParameter("password") != null && request.getParameter("cpassord") != null){
-                out.print("<h3>"+request.getAttribute("mensaje")+"</h3>");
-            }%>
+                <% if(request.getParameter("password") != null && request.getParameter("cpassord") != null){
+                    out.print("<h3>"+request.getAttribute("mensaje")+"</h3>");
+                }%>
             <p>Password: <input type="text" name="password" placeholder="Escribe una contraseña" required="required"></p>
             <p>Confirmar password: <input type="text" name="cpassword" placeholder="Vuelve a escribir la contraseña" required="required"></p>
             <input type="submit" name="boton" value="Registro">

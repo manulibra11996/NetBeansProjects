@@ -13,9 +13,9 @@
     </head>
     <body>
         <h1>Inicio de sesion</h1>
-         <% if(request.getAttribute("mensaje") != null){
-            out.print("<h3>"+request.getAttribute("mensaje")+"</h3>");
-        }%>
+        <% if(request.getAttribute("mensaje") != null){
+           out.print("<h3>"+request.getAttribute("mensaje")+"</h3>");
+       }%>
         <form action="./PostLogin" method="GET">
             <p>Nick: <input type="text" name="nick" placeholder="Escribe tu nick" required="required"></p>
             <p>Password: <input type="password" name="password" placeholder="Escribe una contraseña" required="required"></p>

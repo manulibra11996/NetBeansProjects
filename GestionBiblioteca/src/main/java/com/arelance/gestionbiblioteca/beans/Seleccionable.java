@@ -10,6 +10,6 @@ package com.arelance.gestionbiblioteca.beans;
  * @author Gabri
  */
 public interface Seleccionable {
-    
+
     void ejecutarOpcion();
 }

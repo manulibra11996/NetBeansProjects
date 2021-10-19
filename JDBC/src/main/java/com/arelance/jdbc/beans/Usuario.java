@@ -10,7 +10,7 @@ package com.arelance.jdbc.beans;
  * @author Manuel
  */
 public class Usuario {
-    
+
     private Integer idUsuario;
     private String nick;
     private String contrasena;
@@ -24,7 +24,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nick, String contrasena) throws UserIlegalExeption{
+    public Usuario(String nick, String contrasena) throws UserIlegalExeption {
         if (nick == null || contrasena == null) {
             throw new UserIlegalExeption();
         }
@@ -56,6 +56,4 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
-   
-    
 }

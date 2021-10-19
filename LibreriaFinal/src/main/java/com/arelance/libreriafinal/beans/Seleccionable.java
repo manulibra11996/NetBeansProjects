@@ -10,6 +10,6 @@ package com.arelance.libreriafinal.beans;
  * @author manulibra
  */
 public interface Seleccionable {
-    
+
     void ejecutarOpcion();
 }

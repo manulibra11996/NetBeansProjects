@@ -9,7 +9,7 @@ package com.arelance.brutalzone.beans;
  *
  * @author Admin
  */
-public class Empleado extends Persona{
+public class Empleado extends Persona {
 
     private float salario;
 
@@ -20,7 +20,7 @@ public class Empleado extends Persona{
     public Empleado(float salario, String nombre) {
         super(nombre);
         this.salario = salario;
-     
+
     }
 
     /**
@@ -49,7 +49,7 @@ public class Empleado extends Persona{
         if (this == obj) {
             return true;
         }
-       
+
         if (obj == null) {
             return false;
         }
@@ -62,9 +62,5 @@ public class Empleado extends Persona{
         }
         return super.equals(other);
     }
-    
-    
-   
-    
-    
+
 }

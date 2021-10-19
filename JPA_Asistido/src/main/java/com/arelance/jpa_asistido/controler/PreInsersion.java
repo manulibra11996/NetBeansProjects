@@ -25,6 +25,7 @@ public class PreInsersion extends HttpServlet {
 
     @Inject
     PersonaService personaService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -43,8 +44,8 @@ public class PreInsersion extends HttpServlet {
             String email = request.getParameter("email");
             String telefono = request.getParameter("telefono");
             String boton = request.getParameter("boton");
-            
-            if(boton.contentEquals("Registro")){
+
+            if (boton.contentEquals("Registro")) {
                 Persona persona = new Persona();
                 persona.setFirstname(nombre);
                 persona.setLastname(apellido);
@@ -53,7 +54,7 @@ public class PreInsersion extends HttpServlet {
                 personaService.addPersona(persona);
                 response.sendRedirect("MainServlet");
             }
-            
+
         }
     }
 

@@ -9,23 +9,21 @@ import com.arelance.libreriafinal.beans.Controller;
 import com.arelance.libreriafinal.vistas.ViewDatos;
 import com.arelance.libreriafinal.vistas.ViewUsuario;
 
-
-
 /**
  *
  * @author manulibra
  */
-public class OpcionRegistro extends Opciones{
-    
+public class OpcionRegistro extends Opciones {
+
     private Controller controller = new Controller();
-    
-    public OpcionRegistro(ViewUsuario viewUsuario,ViewDatos viewDatos) {
-        super(viewUsuario,viewDatos);
+
+    public OpcionRegistro(ViewUsuario viewUsuario, ViewDatos viewDatos) {
+        super(viewUsuario, viewDatos);
     }
 
     @Override
     public void ejecutarOpcion() {
         controller.registrarUsuario();
     }
-    
+
 }

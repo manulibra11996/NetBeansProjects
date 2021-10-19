@@ -19,24 +19,26 @@ import javax.persistence.Query;
  * @author salvador
  */
 @Stateless
-public class PersonaDAOImpl implements PersonaDAO{
+public class PersonaDAOImpl implements PersonaDAO {
+
     @PersistenceContext(unitName = "sgaPU")
     EntityManager em;
 
     @Override
     public List<Persona> listarPersonas() {
-       return  em.createNamedQuery("Persona.findAll").getResultList();
+        return em.createNamedQuery("Persona.findAll").getResultList();
     }
-    
-  @Override
+
+    @Override
     public Persona findPersonaByID(Persona persona) {
-      return em.find(Persona.class, persona.getIdPersona());
+        return em.find(Persona.class, persona.getIdPersona());
     }
+
     @Override
     public Persona findPersonaByEmail(Persona persona) {
-        Query query =em.createQuery("from Persona p where p.email= :email");
+        Query query = em.createQuery("from Persona p where p.email= :email");
         query.setParameter("email", persona.getEmail());
-      return (Persona) query.getSingleResult();
+        return (Persona) query.getSingleResult();
     }
 
     @Override
@@ -46,19 +48,17 @@ public class PersonaDAOImpl implements PersonaDAO{
 
     @Override
     public void updatePersona(Persona persona) {
-     em.merge(persona);
+        em.merge(persona);
     }
 
     @Override
     public void removePersona(Persona persona) {
-     em.remove( em.merge(persona));
+        em.remove(em.merge(persona));
     }
 
     @Override
     public Persona findPersonaByID(int id) {
-       return em.find(Persona.class, id);
+        return em.find(Persona.class, id);
     }
 
-  
- 
 }

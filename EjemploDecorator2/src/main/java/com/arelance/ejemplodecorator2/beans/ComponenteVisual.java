@@ -10,5 +10,6 @@ package com.arelance.ejemplodecorator2.beans;
  * @author Manuel
  */
 public interface ComponenteVisual {
+
     void operacion();
 }

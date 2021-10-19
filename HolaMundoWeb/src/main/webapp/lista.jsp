@@ -14,13 +14,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-       <% List<Usuario> usuarios = (List<Usuario>) session.getAttribute("listado");%>
-       
-       <h4>Total de usuarios: <%=usuarios.size()%></h4>
-       <%
-           for (Usuario usuario : usuarios) {
-               out.print("<p>" + usuario.toString() + "</p>");
-            }
-       %>
+        <% List<Usuario> usuarios = (List<Usuario>) session.getAttribute("listado");%>
+
+        <h4>Total de usuarios: <%=usuarios.size()%></h4>
+        <%
+            for (Usuario usuario : usuarios) {
+                out.print("<p>" + usuario.toString() + "</p>");
+             }
+        %>
     </body>
 </html>

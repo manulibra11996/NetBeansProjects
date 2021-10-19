@@ -11,5 +11,6 @@ package com.arelance.ejemplocommand2.luzsegunda.beans;
  */
 @FunctionalInterface
 public interface Command {
+
     void execute();
 }

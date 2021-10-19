@@ -9,15 +9,15 @@ package com.arelance.test;
  *
  * @author Manuel
  */
-public class ValidarProducto implements ActionProducto{
+public class ValidarProducto implements ActionProducto {
 
     @Override
     public void execute(Producto producto) {
-        if(producto.getPrecio() >= 100){
-            System.out.printf("El producto con el nombre de %s tiene un precio de %s",producto.getNombre(),producto.getPrecio());
-        }else{
+        if (producto.getPrecio() >= 100) {
+            System.out.printf("El producto con el nombre de %s tiene un precio de %s", producto.getNombre(), producto.getPrecio());
+        } else {
             System.out.println("Precio no valido");
         }
     }
-    
+
 }

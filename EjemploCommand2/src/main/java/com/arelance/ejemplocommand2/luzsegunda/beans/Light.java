@@ -9,19 +9,19 @@ package com.arelance.ejemplocommand2.luzsegunda.beans;
  *
  * @author Manuel
  */
-public class Light implements ISwitchable{
+public class Light implements ISwitchable {
 
     public Light() {
     }
-        
+
     @Override
-     public void turnOn(){
+    public void turnOn() {
         System.out.println("La luz esta encendida");
     }
-    
+
     @Override
-    public void turnOff(){
+    public void turnOff() {
         System.out.println("La luz esta apagada");
     }
-    
+
 }

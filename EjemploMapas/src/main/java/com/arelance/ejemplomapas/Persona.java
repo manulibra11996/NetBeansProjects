@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Manuel
  */
-public final class Persona implements Serializable{
+public final class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,18 +27,13 @@ public final class Persona implements Serializable{
     public Persona() {
     }
 
-   
-
     public String getNombre() {
         return nombre;
     }
 
-
     public String getApellido() {
         return apellido;
     }
-
-
 
     @Override
     public int hashCode() {
@@ -74,7 +69,4 @@ public final class Persona implements Serializable{
         return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + '}';
     }
 
-    
-    
-    
 }

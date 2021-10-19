@@ -15,24 +15,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+
         <p>Bienvenido 
-        <%
-            String nick = request.getParameter("nick");
-            out.print(nick);
-        %>
+            <%
+                String nick = request.getParameter("nick");
+                out.print(nick);
+            %>
         <form action="./PostTienda" method="GET">
-        <%
-            Set<Articulos> articulosv = (Set<Articulos>) request.getAttribute("articulosv"); 
-            for (Articulos articulos : articulosv) {
-                out.print("<p><input type=\"checkbox\" name=\"articulos\" value=\" " + articulos + "\">" + articulos + "</p>");
-            }
+            <%
+                Set<Articulos> articulosv = (Set<Articulos>) request.getAttribute("articulosv"); 
+                for (Articulos articulos : articulosv) {
+                    out.print("<p><input type=\"checkbox\" name=\"articulos\" value=\" " + articulos + "\">" + articulos + "</p>");
+                }
  
-        %>
+            %>
             <input type="submit" name="boton" value="carrito">
             <input type="submit" name="boton" value="cerrar">
             <input type="reset"  value="Limpiar campos">
         </form>
-        </p>
-    </body>
+    </p>
+</body>
 </html>

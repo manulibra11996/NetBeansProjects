@@ -10,18 +10,17 @@ package com.arelance.zonadeguerra;
  * @author Manuel
  */
 public class Contexto {
-    private static Contexto contexto ;
-    
+
+    private static Contexto contexto;
+
     private Contexto() {
     }
-    
-   public static Contexto getInstance(){
-       if(contexto == null){
-           contexto = new Contexto();
-       }
-       return contexto;
-   } 
-   
-   
+
+    public static Contexto getInstance() {
+        if (contexto == null) {
+            contexto = new Contexto();
+        }
+        return contexto;
+    }
 
 }

@@ -19,7 +19,7 @@
             <label>Maximo</label><input type="text" name="valor3" id="valor3">
             <input type="submit" name="enviar" value="enviar" id="enviar">
         </form>
-            
+
     </body>
-    
+
 </html>

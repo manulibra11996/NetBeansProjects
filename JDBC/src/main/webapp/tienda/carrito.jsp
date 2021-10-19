@@ -37,51 +37,51 @@
             String idArticulo = "";
             for (Usuario usuario : listaUsuario) {
                 if (usuario.getNick().equals(request.getSession().getAttribute("nick"))){%>
-                    <h1>Carrito de <%=usuario.getNick()%></h1>
-                <% 
-                    idUsuario = usuario.getId_usuario().toString();
+        <h1>Carrito de <%=usuario.getNick()%></h1>
+        <% 
+            idUsuario = usuario.getId_usuario().toString();
+        }
+    }
+    if(listaCarrito.size() != 0){    
+        %>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+            <%
+            for (Articulo articulo : listaArticulo){
+                cantidad = 0;
+                for (Carrito carrito: listaCarrito) {
+                    if (articulo.getIdArticulo() == carrito.getIdArticulo()) {
+                        cantidad ++;
+                    }     
                 }
+                idArticulo = articulo.getIdArticulo().toString();
+                if(cantidad != 0){%>
+            <tr>
+                <td><%=articulo.getNombre()%></td> 
+                <td><%=articulo.getDescripcion()%></td> 
+                <td><%=articulo.getPrecio()%> &#8364 </td>
+                <td><%=cantidad%></td>
+                <td><a href="http://localhost:8080/JDBC/Controler?boton=Eliminararticulos&idUsuario=<%=idUsuario%>&idArticulo=<%=idArticulo%>">Eliminar <%=cantidad%> articulos</a></td>
+            </tr>
+            <%
+                    total=total+(articulo.getPrecio()*cantidad);
+                }  
             }
-            if(listaCarrito.size() != 0){    
             %>
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th></th>
-                    </tr>
-                <%
-                for (Articulo articulo : listaArticulo){
-                    cantidad = 0;
-                    for (Carrito carrito: listaCarrito) {
-                        if (articulo.getIdArticulo() == carrito.getIdArticulo()) {
-                            cantidad ++;
-                        }     
-                    }
-                    idArticulo = articulo.getIdArticulo().toString();
-                    if(cantidad != 0){%>
-                        <tr>
-                            <td><%=articulo.getNombre()%></td> 
-                            <td><%=articulo.getDescripcion()%></td> 
-                            <td><%=articulo.getPrecio()%> &#8364 </td>
-                            <td><%=cantidad%></td>
-                            <td><a href="http://localhost:8080/JDBC/Controler?boton=Eliminararticulos&idUsuario=<%=idUsuario%>&idArticulo=<%=idArticulo%>">Eliminar <%=cantidad%> articulos</a></td>
-                        </tr>
-                <%
-                        total=total+(articulo.getPrecio()*cantidad);
-                    }  
-                }
-                %>
-                </table>
-                <p>Precio total: <%=total%> &#8364</p>
-                <a href="http://localhost:8080/JDBC/Controler?boton=VaciarCarrito&idUsuario=<%=idUsuario%>">Vaciado de carrito</a>
-            <%}else{%>
-                <p>El carrito esta vacio</p>
-            <%}%>
-            <br />
-            <br />
-            <a href="http://localhost:8080/JDBC/index.jsp">Volver a la tienda</a>
+        </table>
+        <p>Precio total: <%=total%> &#8364</p>
+        <a href="http://localhost:8080/JDBC/Controler?boton=VaciarCarrito&idUsuario=<%=idUsuario%>">Vaciado de carrito</a>
+        <%}else{%>
+        <p>El carrito esta vacio</p>
+        <%}%>
+        <br />
+        <br />
+        <a href="http://localhost:8080/JDBC/index.jsp">Volver a la tienda</a>
     </body>
 </html>

@@ -35,14 +35,14 @@ public class PreConfirmacionBorradoServlet extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-        
+
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             Integer edad = Integer.parseInt(request.getParameter("edad"));
             out.print(nombre + " " + apellido + " " + edad);
-            request.setAttribute("currentUser", new Usuario(nombre,apellido,edad));
+            request.setAttribute("currentUser", new Usuario(nombre, apellido, edad));
             request.getServletContext().getRequestDispatcher("/confirmacion.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

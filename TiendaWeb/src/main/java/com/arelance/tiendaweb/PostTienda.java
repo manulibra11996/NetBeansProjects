@@ -35,14 +35,13 @@ public class PostTienda extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
 //            Articulos[] articulos = request.getParameterValues("articulos");
-            
-            
+
             String nick = (String) request.getSession().getAttribute("nick");
-            
+
             String boton = request.getParameter("boton");
-            
+
             String[] articulos = request.getParameterValues("articulos");
-            
+
             request.setAttribute("articulos", articulos);
             request.getRequestDispatcher("./Controler").forward(request, response);
         }

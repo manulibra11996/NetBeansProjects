@@ -1,6 +1,5 @@
 package com.arelance.ejemplocalculadora;
 
-
 import java.util.Objects;
 
 /*
@@ -8,12 +7,12 @@ import java.util.Objects;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Admin
  */
 public class Persona {
+
     private String nombre;
     private String apellido;
 
@@ -76,5 +75,5 @@ public class Persona {
     public Persona clone() throws CloneNotSupportedException {
         return (Persona) super.clone(); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

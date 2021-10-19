@@ -10,7 +10,7 @@ package com.mycompany.jpaembeddedandembeddable.beans;
  * @author manulibra
  */
 public class Company {
-    
+
     private Integer id;
 
     private String name;
@@ -80,6 +80,5 @@ public class Company {
     public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
     }
-    
-    
+
 }

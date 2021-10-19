@@ -13,9 +13,12 @@ import java.util.List;
  * @author Manuel
  */
 public interface ICarritoDao {
-    
+
     public List<Carrito> obtener();
+
     public void guardar(Carrito carrito);
+
     public void eliminar(Carrito carrito);
+
     public void eliminarArt(Carrito carrito);
 }

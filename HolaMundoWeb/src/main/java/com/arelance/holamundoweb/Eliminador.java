@@ -32,27 +32,26 @@ public class Eliminador extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         Integer edad = Integer.parseInt(request.getParameter("edad"));
         String accion = request.getParameter("accion");
         List<Usuario> listado = (List<Usuario>) request.getSession().getAttribute("listado");
-        
-        
-        if(accion.equals("confirmar")){
+
+        if (accion.equals("confirmar")) {
 //            Usuario usuario = (Usuario) request.getAttribute("usuario");
 //            listado.remove(new Usuario(usuario.getNombre(), usuario.getApellido(), usuario.getEdad()));
             listado.remove(new Usuario(nombre, apellido, edad));
             response.sendRedirect("./datospersonales.jsp");
             return;
-        } 
-        
-        if(accion.equals("cancelar")){        
+        }
+
+        if (accion.equals("cancelar")) {
             response.sendRedirect("./datospersonales.jsp");
             return;
         }
-       
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

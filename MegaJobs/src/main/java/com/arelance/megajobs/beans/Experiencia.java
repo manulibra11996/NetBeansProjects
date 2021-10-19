@@ -10,5 +10,5 @@ package com.arelance.megajobs.beans;
  * @author Manuel
  */
 public enum Experiencia {
-    Junior,Senior
+    Junior, Senior
 }

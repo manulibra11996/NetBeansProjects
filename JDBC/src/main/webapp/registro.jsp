@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <%@include file="./formularion_registro.jspf" %>
+        <%@include file="./formularion_registro.jspf" %>
     </body>
 </html>

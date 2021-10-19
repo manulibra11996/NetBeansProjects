@@ -14,6 +14,6 @@
     </head>
     <body>
         <%@include file="./formularion_login.jspf" %>
-    
+
     </body>
 </html>

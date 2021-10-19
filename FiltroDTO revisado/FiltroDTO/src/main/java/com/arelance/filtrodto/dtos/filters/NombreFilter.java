@@ -11,20 +11,19 @@ import java.util.Iterator;
  *
  * @author Admin
  */
-public class NombreFilter extends Fiter{
+public class NombreFilter extends Fiter {
+
     private String nombre;
 
     public NombreFilter(String nombre) {
-        this.nombre=nombre;
+        this.nombre = nombre;
     }
 
     @Override
     public String execute() {
-     
-        return "nombre="+nombre;
+
+        return "nombre=" + nombre;
         // 
     }
-    
-    
-    
+
 }

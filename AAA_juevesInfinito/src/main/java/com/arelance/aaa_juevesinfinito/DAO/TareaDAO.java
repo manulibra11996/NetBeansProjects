@@ -17,7 +17,7 @@ import javax.ejb.Local;
 public interface TareaDAO {
 
     public List<Tarea> ListarTarea();
-    
+
     public void AñadirTarea(Tarea tarea);
 
     public void ModificarTarea(Tarea tarea);

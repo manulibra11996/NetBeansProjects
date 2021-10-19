@@ -164,6 +164,7 @@ public class DepartmentJpaController implements Serializable {
             em.close();
         }
     }
+
     //findDepartment(1L).getEmployee();
     public Department findDepartment(Long id) {
         EntityManager em = getEntityManager();
@@ -180,12 +181,12 @@ public class DepartmentJpaController implements Serializable {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
             Root<Department> rt = cq.from(Department.class);
             cq.select(em.getCriteriaBuilder().count(rt));
-            
+
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();
         } finally {
             em.close();
         }
     }
-    
+
 }

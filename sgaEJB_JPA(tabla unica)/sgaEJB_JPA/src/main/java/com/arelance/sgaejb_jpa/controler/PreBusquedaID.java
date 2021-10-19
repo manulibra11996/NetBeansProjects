@@ -25,6 +25,7 @@ public class PreBusquedaID extends HttpServlet {
 
     @Inject
     PersonaService personaService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,7 +39,7 @@ public class PreBusquedaID extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
+
             Persona persona = new Persona();
             persona.setIdPersona(1);
             request.setAttribute("personaEncontrada", personaService.findPersonaByID(persona));

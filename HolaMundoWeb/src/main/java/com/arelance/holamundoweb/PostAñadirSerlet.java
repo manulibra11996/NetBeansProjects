@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Manuel
  */
-@WebServlet(name = "PostAñadirSerlet", urlPatterns = {"/PostAñadirSerlet","/index.html"})
+@WebServlet(name = "PostAñadirSerlet", urlPatterns = {"/PostAñadirSerlet", "/index.html"})
 public class PostAñadirSerlet extends HttpServlet {
 
     /**
@@ -32,18 +32,16 @@ public class PostAñadirSerlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         Integer edad = Integer.parseInt(request.getParameter("edad"));
         List<Usuario> listado = (List<Usuario>) request.getSession().getAttribute("listado");
-        
-       
+
         listado.add(new Usuario(nombre, apellido, edad));
         response.sendRedirect("./datospersonales.jsp");
         return;
-        
-               
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

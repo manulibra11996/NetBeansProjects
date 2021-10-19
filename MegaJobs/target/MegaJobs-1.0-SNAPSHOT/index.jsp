@@ -14,11 +14,11 @@
     <body>
         <%if(request.getSession().getAttribute("nick") == null){  
         %>
-            <%@include file="./login.jspf" %>
+        <%@include file="./login.jspf" %>
         <%}else{%>
-            <%@include file="./logeado.jspf" %>
+        <%@include file="./logeado.jspf" %>
         <%}%>
-        
+
         <%@include file="./ofertas.jspf" %>
     </body>
 </html>

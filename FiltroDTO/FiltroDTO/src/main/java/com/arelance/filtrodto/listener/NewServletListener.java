@@ -17,9 +17,8 @@ public class NewServletListener implements ServletContextListener {
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-       
+
         sce.getServletContext().setAttribute("initialLoad", true);
     }
 
-   
 }

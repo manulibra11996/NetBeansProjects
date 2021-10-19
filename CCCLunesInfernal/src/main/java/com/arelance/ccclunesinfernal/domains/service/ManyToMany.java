@@ -64,8 +64,7 @@ public class ManyToMany {
         entitymanager.persist(teacher3);
 
         entitymanager.getTransaction().commit();
-        
-        
+
         entitymanager.close();
         emfactory.close();
     }

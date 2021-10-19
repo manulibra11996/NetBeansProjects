@@ -34,9 +34,9 @@ public class PreRegistro extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String mensaje = (String) request.getSession().getAttribute("mensaje");
-   
+
             request.getRequestDispatcher("./registro.jsp").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

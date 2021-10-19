@@ -28,7 +28,6 @@ public class SessionMyFilter_1 implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        
 
 //        if (request instanceof  HttpServletRequest ) {
 //            HttpServletRequest httpServletRequest = (HttpServletRequest) request;
@@ -47,5 +46,5 @@ public class SessionMyFilter_1 implements Filter {
     public void destroy() {
         Filter.super.destroy(); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

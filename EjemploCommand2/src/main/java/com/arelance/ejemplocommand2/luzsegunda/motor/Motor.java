@@ -12,7 +12,7 @@ import com.arelance.ejemplocommand2.luzsegunda.beans.ISwitchable;
  *
  * @author Manuel
  */
-public class Motor implements ISwitchable{
+public class Motor implements ISwitchable {
 
     @Override
     public void turnOn() {
@@ -24,6 +24,4 @@ public class Motor implements ISwitchable{
         System.out.println("El motor esta apagado");
     }
 
-   
-    
 }

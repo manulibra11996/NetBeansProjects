@@ -14,13 +14,12 @@ import javax.persistence.Embeddable;
  * @author Manuel
  */
 @Embeddable
-public class TareaID implements Serializable{
+public class TareaID implements Serializable {
 
     @Column(name = "id_emp")
     private int idEmp;
     @Column(name = "id_proyecto")
     private int idProyecto;
-
 
     @Override
     public boolean equals(Object obj) {
@@ -66,6 +65,5 @@ public class TareaID implements Serializable{
     public void setIdProyecto(int idProyecto) {
         this.idProyecto = idProyecto;
     }
-    
-    
+
 }

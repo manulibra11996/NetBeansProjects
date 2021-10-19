@@ -7,13 +7,12 @@ package com.arelance.tiendaweb.beans;
 
 import java.util.Objects;
 
-
-
 /**
  *
  * @author Manuel
  */
 public class Usuario {
+
     private DatosPersonales dp;
     private Direccion d;
 
@@ -74,8 +73,5 @@ public class Usuario {
     public String toString() {
         return "Usuario{" + "Datos personales=" + dp.toString() + ", Direccion=" + d.toString() + '}';
     }
-   
-    
-    
-    
+
 }

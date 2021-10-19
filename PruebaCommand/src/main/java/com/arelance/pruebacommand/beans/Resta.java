@@ -5,12 +5,11 @@
  */
 package com.arelance.pruebacommand.beans;
 
-
 /**
  *
  * @author Manuel
  */
-public class Resta implements ICommand{
+public class Resta implements ICommand {
 
     private final Operacion operacion;
 
@@ -19,8 +18,8 @@ public class Resta implements ICommand{
     }
 
     @Override
-   public double ejecutar() {
+    public double ejecutar() {
         return operacion.resta();
     }
-    
+
 }

@@ -29,14 +29,14 @@ public class test_groupby {
 
         Root<Item> root = criteriaQuery.from(Item.class);
         criteriaQuery.select(criteriaBuilder.count(root.get("itemPrice"))).groupBy(root.get("itemPrice")).
-                having( criteriaBuilder.gt(criteriaBuilder.count(root.get("itemPrice")), 1));
+                having(criteriaBuilder.gt(criteriaBuilder.count(root.get("itemPrice")), 1));
 
         TypedQuery<Long> typedQuery = em.createQuery(criteriaQuery);
         List<Long> lista = typedQuery.getResultList();
 
         //  Item_.itemName.
-        for(Long d:lista){
-        System.out.println(d);
+        for (Long d : lista) {
+            System.out.println(d);
         }
 
     }

@@ -35,12 +35,11 @@ public class PostLogin extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
-            
+
             String boton = request.getParameter("boton");
-            
-            
+
             request.getRequestDispatcher("./Controler").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

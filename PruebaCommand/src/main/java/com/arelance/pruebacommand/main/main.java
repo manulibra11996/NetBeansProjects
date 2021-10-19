@@ -18,24 +18,24 @@ import java.util.Scanner;
  * @author Manuel
  */
 public class main {
-    
+
     public static void main(String[] args) {
 
-        Operacion operacion = new Operacion(5,3);
-        
+        Operacion operacion = new Operacion(5, 3);
+
         ICommand suma = new Suma(operacion);
         ICommand resta = new Resta(operacion);
- 
+
         ICommand multiplicacion = new Multiplicacion(operacion);
         ICommand division = new Division(operacion);
-        
-        ICommand[] operaciones = {suma,resta,multiplicacion,division};
-        
+
+        ICommand[] operaciones = {suma, resta, multiplicacion, division};
+
         Scanner teclado = new Scanner(System.in);
         System.out.println("Selecciona una operación");
         int index = teclado.nextInt();
         System.out.println(operaciones[index].ejecutar());
-         
+
     }
-   
+
 }

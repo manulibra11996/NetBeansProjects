@@ -34,24 +34,21 @@ public class TestIn {
         List<String> names = new ArrayList<>();
         names.add("item1");
         names.add("item2");
-        
 
         for (String title : names) {
             inClause.value(title);
         }
-        
+
         Predicate mayor10 = criteriaBuilder.gt(root.get("itemPrice"), 10);
-        Predicate or = criteriaBuilder.or(mayor10,inClause);
-        
-        
+        Predicate or = criteriaBuilder.or(mayor10, inClause);
+
         criteriaQuery.select(root).where(or);
-        TypedQuery<Item> query=em.createQuery(criteriaQuery);
-        List<Item> items=query.getResultList();
-        
-        for(Item item:items){
+        TypedQuery<Item> query = em.createQuery(criteriaQuery);
+        List<Item> items = query.getResultList();
+
+        for (Item item : items) {
             System.out.println("itemName: " + item.getItemName() + " precio: " + item.getItemPrice());
         }
-       
 
     }
 }

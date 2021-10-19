@@ -9,11 +9,11 @@ package com.arelance.test;
  *
  * @author Manuel
  */
-public class ComandoBaja implements Accion<Contacto>{
+public class ComandoBaja implements Accion<Contacto> {
 
     @Override
     public void execute(Contacto t) {
-       
+
     }
-    
+
 }

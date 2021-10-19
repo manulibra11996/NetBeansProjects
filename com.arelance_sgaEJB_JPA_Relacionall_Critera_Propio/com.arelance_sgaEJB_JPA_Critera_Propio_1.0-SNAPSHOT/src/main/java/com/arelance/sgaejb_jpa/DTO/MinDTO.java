@@ -10,7 +10,7 @@ package com.arelance.sgaejb_jpa.DTO;
  * @author Manuel
  */
 public class MinDTO {
-    
+
     private int min;
 
     public MinDTO() {
@@ -52,6 +52,5 @@ public class MinDTO {
         }
         return true;
     }
-    
-    
+
 }

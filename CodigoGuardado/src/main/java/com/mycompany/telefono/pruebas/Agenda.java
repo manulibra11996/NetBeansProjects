@@ -142,28 +142,25 @@ public class Agenda {
                     if (respuesta.equals("S")) {
                         Contacto[] temporal = new Contacto[99];
                         int ii = 0;
-                        boolean encontrado2=false;
+                        boolean encontrado2 = false;
                         for (int i = 0; i < this.contador_contactos; i++) {
 
                             if (i != eliminar_numero) {
                                 // Creo el objeto temporal para el borrado
-                                if (!encontrado2)
-                                {
-                                  temporal[ii] = this.lista_contactos[ii];
-                                  ii++;
-                                }
-                                else
-                                {
-                                    if (ii<this.contador_contactos)
-                                    { temporal[ii] = this.lista_contactos[ii+1];
-                                     ii++;
+                                if (!encontrado2) {
+                                    temporal[ii] = this.lista_contactos[ii];
+                                    ii++;
+                                } else {
+                                    if (ii < this.contador_contactos) {
+                                        temporal[ii] = this.lista_contactos[ii + 1];
+                                        ii++;
                                     }
                                 }
 
                             } else {
                                 temporal[ii] = this.lista_contactos[ii + 1];
                                 ii++;
-                                encontrado2=true;
+                                encontrado2 = true;
 
                             }
                         }
@@ -221,5 +218,5 @@ public class Agenda {
         } catch (IOException ex) {
             Logger.getLogger(Agenda.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }  
+    }
 }

@@ -37,14 +37,16 @@ public class MainServlet extends HttpServlet {
 //              url=  "index.jsp";
 //            }
 
-            request.getRequestDispatcher("Destino").forward(request, response);
-        
+        request.getRequestDispatcher("Destino").forward(request, response);
+
     }
-/**
- * Detecta quoeidfwoe wejfjeiopfjiop.
- * @return true/false para el inital load
- * @exception weijhweoifwerfiowerhfufifwfhpiufh9fhi
- */
+
+    /**
+     * Detecta quoeidfwoe wejfjeiopfjiop.
+     *
+     * @return true/false para el inital load
+     * @exception weijhweoifwerfiowerhfufifwfhpiufh9fhi
+     */
 //    private boolean testLoad() {
 //        String attr="initialLoad";
 //        Boolean sw = (boolean) getServletContext().getAttribute(attr);
@@ -57,7 +59,6 @@ public class MainServlet extends HttpServlet {
 //
 //        return (boolean) getServletContext().getAttribute(attr);
 //    }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -14,9 +14,9 @@ import java.util.logging.Logger;
  *
  * @author Admin
  */
-public class Libreria implements Cloneable{
+public class Libreria implements Cloneable {
 
-    private  List<Libro> libros;
+    private List<Libro> libros;
 
     public Libreria() {
         libros = new ArrayList<>();
@@ -33,8 +33,8 @@ public class Libreria implements Cloneable{
 
     @Override
     public Libreria clone() throws CloneNotSupportedException {
-        Libreria clone=(Libreria) super.clone();
-        clone.libros=this.getLibros();
+        Libreria clone = (Libreria) super.clone();
+        clone.libros = this.getLibros();
         return clone; //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -49,13 +49,11 @@ public class Libreria implements Cloneable{
     public static void main(String[] args) throws CloneNotSupportedException {
         List<Libro> libros = new ArrayList<>();
 
-       
-            Libreria libreria = new Libreria(libros);
-            Libreria clone;
-            clone = libreria.clone();
-            clone.add(new Libro());
-            System.out.println(clone.libros.size());
-     
+        Libreria libreria = new Libreria(libros);
+        Libreria clone;
+        clone = libreria.clone();
+        clone.add(new Libro());
+        System.out.println(clone.libros.size());
 
     }
 

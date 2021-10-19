@@ -12,13 +12,12 @@ import com.arelance.lunesdivino.services.CRUDRepository;
  * @author Admin
  */
 public enum Controller {
-    
+
     MAINCONTROLLER;
-    private CRUDRepository cRUDRepository=new CRUDRepository();
+    private CRUDRepository cRUDRepository = new CRUDRepository();
 
-
-    public boolean altaLibro(Libro libro){
-        return  cRUDRepository.add(libro);
+    public boolean altaLibro(Libro libro) {
+        return cRUDRepository.add(libro);
     }
-    
+
 }

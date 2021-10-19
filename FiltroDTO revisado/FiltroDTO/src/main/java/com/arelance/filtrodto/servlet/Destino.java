@@ -33,12 +33,10 @@ public class Destino extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("index.jsp").forward(request, response);
-       
+
 //       Fiter fx=(Fiter) request.getAttribute("filter");
 //       fx.execute();
 //       fx.getSqlSentecnce();
-        
-     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

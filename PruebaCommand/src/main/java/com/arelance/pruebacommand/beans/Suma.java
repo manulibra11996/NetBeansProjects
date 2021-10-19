@@ -5,13 +5,11 @@
  */
 package com.arelance.pruebacommand.beans;
 
-
-
 /**
  *
  * @author Manuel
  */
-public class Suma implements ICommand{
+public class Suma implements ICommand {
 
     private final Operacion operacion;
 
@@ -19,10 +17,9 @@ public class Suma implements ICommand{
         this.operacion = operacion;
     }
 
-   
     @Override
     public double ejecutar() {
         return operacion.sumar();
     }
-    
+
 }

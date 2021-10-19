@@ -28,6 +28,7 @@ public class PostUpdateAficion extends HttpServlet {
     private AficionService aficionService;
     @Inject
     private PersonaService personaService;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

@@ -29,17 +29,17 @@
             </c:forEach>  
             <hr>
         </c:forEach>  
-  <a href="PreUpdatePersona"><c:out value="alta"/><p></a>
-  <c:out value="${'id menor:'.concat(minID)}"/>
-  <c:out value="${'id mayor:'.concat(maxID)}"/>
-  <c:out value="${'total personas:'.concat(total)}"/>
-  <c:out value="${'promedio edad:'.concat(media)}"/>
-    <c:forEach var="aficion" items="${aficiones}">  
+        <a href="PreUpdatePersona"><c:out value="alta"/><p></a>
+            <c:out value="${'id menor:'.concat(minID)}"/>
+            <c:out value="${'id mayor:'.concat(maxID)}"/>
+            <c:out value="${'total personas:'.concat(total)}"/>
+            <c:out value="${'promedio edad:'.concat(media)}"/>
+            <c:forEach var="aficion" items="${aficiones}">  
             <hr>
-                     <c:out value="${aficion}"/><br>
-            
+            <c:out value="${aficion}"/><br>
+
             <hr>
         </c:forEach>  
-  aficiones
+        aficiones
     </body>
 </html>

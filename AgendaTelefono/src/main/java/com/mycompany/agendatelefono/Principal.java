@@ -7,7 +7,6 @@ import com.mycompany.agendatelefono.InsertandoContactos;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author manulibra
@@ -15,6 +14,6 @@ import com.mycompany.agendatelefono.InsertandoContactos;
 public class Principal {
 
     public static void main(String[] args) {
-        
+
     }
 }

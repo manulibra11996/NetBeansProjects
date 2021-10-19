@@ -22,14 +22,14 @@ public double sumar(double op1, double op2){
             <label>op2:</label><input type="text" name="op2">
             <input type="submit" value="sumar">
         </form>
-        
-            <% if(request.getParameter("op1") != null && request.getParameter("op2") != null){
+
+        <% if(request.getParameter("op1") != null && request.getParameter("op2") != null){
                 
-            %>
-            
-            <label>Resultado:</label><input type="text" name="resultado" value="
-                <%=sumar(Double.parseDouble(request.getParameter("op1")), Double.parseDouble(request.getParameter("op2")))%>">
-            <%}%>
-        
+        %>
+
+        <label>Resultado:</label><input type="text" name="resultado" value="
+                                        <%=sumar(Double.parseDouble(request.getParameter("op1")), Double.parseDouble(request.getParameter("op2")))%>">
+        <%}%>
+
     </body>
 </html>

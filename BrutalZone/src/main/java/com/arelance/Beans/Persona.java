@@ -11,7 +11,8 @@ import java.util.Objects;
  *
  * @author Manuel
  */
-public class Persona implements Comparable<Persona>{
+public class Persona implements Comparable<Persona> {
+
     private String nombre;
 
     public Persona(String nombre) {
@@ -55,6 +56,5 @@ public class Persona implements Comparable<Persona>{
     public int compareTo(Persona o) {
         return nombre.compareTo(o.nombre);
     }
-    
-    
+
 }

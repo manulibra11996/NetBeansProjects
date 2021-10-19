@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author manulibra
  */
-public class VistaObtenerLibro implements ViewLibro{
+public class VistaObtenerLibro implements ViewLibro {
 
     @Override
     public Libro getData() {
@@ -24,5 +24,5 @@ public class VistaObtenerLibro implements ViewLibro{
         Libro alquilo = new Libro(titulo, isbn);
         return alquilo;
     }
-    
+
 }

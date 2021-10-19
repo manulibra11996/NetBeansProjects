@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author manulibra
  */
-public class VistaRegistroDatosPersonales implements ViewDatos{
+public class VistaRegistroDatosPersonales implements ViewDatos {
 
     @Override
     public DatosPersonales getData() {
@@ -25,5 +25,5 @@ public class VistaRegistroDatosPersonales implements ViewDatos{
         personales = new DatosPersonales(nombre, apellido);
         return personales;
     }
-    
+
 }

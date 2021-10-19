@@ -10,5 +10,6 @@ package com.arelance.libreriafinal.actions;
  * @author manulibra
  */
 public interface Command {
-     void ejecutable();
+
+    void ejecutable();
 }

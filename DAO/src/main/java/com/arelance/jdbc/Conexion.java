@@ -25,14 +25,14 @@ public class Conexion {
         Connection con = null;
 
         try {
-            Context ctx=new InitialContext();
+            Context ctx = new InitialContext();
             DataSource ds = (DataSource) ctx.lookup("jdbc/Examen");
             con = ds.getConnection();
         } catch (SQLException e) {
             System.out.println("No se pudo conectar a la base de datos");
         } catch (NamingException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
+        } finally {
             return con;
         }
     }

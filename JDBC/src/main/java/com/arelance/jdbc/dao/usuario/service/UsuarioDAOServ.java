@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class UsuarioDAOServ implements IUsuarioDao{
+public class UsuarioDAOServ implements IUsuarioDao {
 
     private IUsuarioDao usuarioDao = new UsuarioDAOImpl();
 
@@ -27,9 +27,5 @@ public class UsuarioDAOServ implements IUsuarioDao{
     public void guardar(Usuario usuario) {
         usuarioDao.guardar(usuario);
     }
-
-
-    
-    
 
 }

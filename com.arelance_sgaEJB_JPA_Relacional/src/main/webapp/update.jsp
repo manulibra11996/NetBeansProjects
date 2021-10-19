@@ -19,7 +19,7 @@
                 <label for="nombre">nombre:</label><input id="nombre" type="text" name="nombre" value="${persona.nombre}" onchange="comprobar()">
                 <label for="apellido">apellido:</label><input id="apellido" type="text" name="apellido" value="${persona.apellido}" onchange="comprobar()">
                 <label for="email">email:</label><input id="email" type="text" name="email" value="${persona.email}" onchange="comprobar()">
-                 <label for="telefono">telefono:</label><input id="telefono" type="text" name="telefono" value="${persona.telefono}" onchange="comprobar()">
+                <label for="telefono">telefono:</label><input id="telefono" type="text" name="telefono" value="${persona.telefono}" onchange="comprobar()">
             </c:if>
             <c:if test="${persona==null}">
                 <c:out value="no existe la perona seleccionada"/>
@@ -28,10 +28,10 @@
             <input type="submit" id="eliminar" name=action value="eliminar">
         </form>
         <script>
-            var nombre=form.nombre.value;
-            function comprobar(){
-                form.actualizar.disabled=(nombre===form.nombre.value);
-                
+            var nombre = form.nombre.value;
+            function comprobar() {
+                form.actualizar.disabled = (nombre === form.nombre.value);
+
             }
         </script>
     </body>

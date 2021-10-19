@@ -12,8 +12,9 @@ import java.util.Objects;
  * @author Manuel
  */
 public class DatosPersonales {
+
     private final String nombre;
-    private  final String apellido;
+    private final String apellido;
 
     public DatosPersonales(String nombre, String apellido) {
         this.nombre = nombre;
@@ -61,6 +62,5 @@ public class DatosPersonales {
     public String toString() {
         return "DatosPersonales{" + "nombre=" + nombre + ", apellido=" + apellido + '}';
     }
-    
-    
+
 }

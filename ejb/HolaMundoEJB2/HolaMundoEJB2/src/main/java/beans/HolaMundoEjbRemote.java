@@ -13,5 +13,6 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface HolaMundoEjbRemote {
-    public int sumar(int x,int y);
+
+    public int sumar(int x, int y);
 }

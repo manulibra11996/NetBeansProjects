@@ -79,27 +79,27 @@ public class CriteriaApi {
         Join<Empleados, Departamentos> project = emp.join("did");
         c.multiselect(emp, criteriaBuilder.count(project)).
                 groupBy(emp.get("salary")).having(criteriaBuilder.ge(
-                        criteriaBuilder.count(project), 2));
+                criteriaBuilder.count(project), 2));
         TypedQuery<Object[]> query3 = entitymanager.createQuery(c);
         List<Object[]> avgItemPriceList2 = query3.getResultList();
-        
+
         for (Object[] objects : avgItemPriceList2) {
             System.out.println(objects);
         }
         CriteriaQuery<Long> cr3 = criteriaBuilder.createQuery(Long.class);
         Root<Empleados> root3 = cr3.from(Empleados.class);
-  
-       criteriaBuilder.sum(root3.get("salary"),3000);
+
+        criteriaBuilder.sum(root3.get("salary"), 3000);
         cr3.select(criteriaBuilder.count(root3.get("deg"))).
                 groupBy(root3.get("deg")).having();
-               
+
         TypedQuery<Long> query4 = entitymanager.createQuery(cr3);
         List<Long> avgItemPriceList3 = query4.getResultList();
 
         for (Long l : avgItemPriceList3) {
             System.out.println(l);
         }
-        
+
         entitymanager.close();
         emfactory.close();
     }

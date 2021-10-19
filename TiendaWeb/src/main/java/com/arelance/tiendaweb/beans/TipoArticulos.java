@@ -10,5 +10,5 @@ package com.arelance.tiendaweb.beans;
  * @author Manuel
  */
 public enum TipoArticulos {
-    deportes,textil,hogar;
+    deportes, textil, hogar;
 }

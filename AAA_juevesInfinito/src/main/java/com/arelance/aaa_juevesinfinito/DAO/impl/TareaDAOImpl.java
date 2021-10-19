@@ -42,6 +42,4 @@ public class TareaDAOImpl implements TareaDAO {
         em.remove(em.merge(tarea));
     }
 
-   
-
 }

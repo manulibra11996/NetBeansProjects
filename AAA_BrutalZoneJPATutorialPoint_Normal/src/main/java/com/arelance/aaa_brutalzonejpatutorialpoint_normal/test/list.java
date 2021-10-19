@@ -52,7 +52,7 @@ public class list {
         System.out.print("Direccion del estudiante = ");
         for (int i = 0; i < s.getAddress().size(); i++) {
             Address get = s.getAddress().get(i);
-            if(i != (s.getAddress().size() - 1 )){
+            if (i != (s.getAddress().size() - 1)) {
                 System.out.print(get.getE_city() + " , ");
             } else {
                 System.out.print(get.getE_city());

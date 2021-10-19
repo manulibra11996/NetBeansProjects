@@ -13,8 +13,10 @@ import java.util.List;
  * @author Manuel
  */
 public interface IFacturaDao {
-    
+
     public List<Factura> obtener();
+
     public void guardar(Factura factura);
+
     public void eliminar(Factura factura);
 }

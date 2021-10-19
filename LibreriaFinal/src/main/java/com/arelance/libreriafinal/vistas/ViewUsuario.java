@@ -7,15 +7,12 @@ package com.arelance.libreriafinal.vistas;
 
 import com.arelance.libreriafinal.beans.Usuario;
 
-
-
 /**
  *
  * @author manulibra
  */
-public interface ViewUsuario{
-    
+public interface ViewUsuario {
+
     Usuario getData();
-    
 
 }

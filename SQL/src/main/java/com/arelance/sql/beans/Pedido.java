@@ -10,6 +10,7 @@ package com.arelance.sql.beans;
  * @author Manuel
  */
 public class Pedido {
+
     private final int id_pedido;
     private int id_cliente;
 
@@ -29,6 +30,5 @@ public class Pedido {
     public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
     }
-    
-    
+
 }

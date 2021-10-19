@@ -11,19 +11,19 @@ import java.util.Iterator;
  *
  * @author Admin
  */
-public class MinFilter extends Fiter{
-    
+public class MinFilter extends Fiter {
+
     private int minimo;
 
     public MinFilter(int minimo) {
         this.minimo = minimo;
     }
-    
-     @Override
+
+    @Override
     public String execute() {
-    
-        return "edad>="+minimo;
+
+        return "edad>=" + minimo;
         // 
     }
-    
+
 }

@@ -23,7 +23,7 @@ public class eliminar {
 
         StudentEntityList s = em.find(StudentEntityList.class, 102);
         if (s != null) {
-             em.remove(s);
+            em.remove(s);
         }
 
         em.getTransaction().commit();

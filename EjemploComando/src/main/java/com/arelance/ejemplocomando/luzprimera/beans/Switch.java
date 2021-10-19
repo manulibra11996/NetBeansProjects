@@ -10,7 +10,7 @@ package com.arelance.ejemplocomando.luzprimera.beans;
  * @author Manuel
  */
 public class Switch {
-    
+
     private Command flipUpCommand;
     private Command flipDownCommand;
 
@@ -18,13 +18,13 @@ public class Switch {
         this.flipUpCommand = flipUpCommand;
         this.flipDownCommand = flipDownCommand;
     }
-    
-    public void flipUp(){
+
+    public void flipUp() {
         flipUpCommand.execute();
     }
-    
-    public void flipDown(){
+
+    public void flipDown() {
         flipDownCommand.execute();
     }
-    
+
 }

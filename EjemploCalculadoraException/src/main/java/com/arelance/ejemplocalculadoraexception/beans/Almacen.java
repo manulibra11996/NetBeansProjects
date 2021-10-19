@@ -13,14 +13,14 @@ import java.util.List;
  * @author Manuel
  */
 public class Almacen {
+
     List<Persona> datos = new ArrayList<>();
 
-    public boolean add(Persona e) throws Exception{
+    public boolean add(Persona e) throws Exception {
         if (e == null) {
             throw new Exception();
         }
         return datos.add(e);
     }
-    
-    
+
 }

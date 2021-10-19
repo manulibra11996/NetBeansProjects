@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Admin
  */
 public class Usuario {
+
     private DatosPersonales datosPersonales;
     private DatosLogin datosLogin;
 
@@ -19,7 +20,6 @@ public class Usuario {
         this.datosPersonales = datosPersonales;
         this.datosLogin = datosLogin;
     }
-    
 
     public DatosPersonales getDatosPersonales() {
         return datosPersonales;
@@ -71,7 +71,4 @@ public class Usuario {
         return "Usuario{" + "datosPersonales=" + datosPersonales.toString() + ", datosLogin=" + datosLogin.toString() + '}';
     }
 
-    
-    
-    
 }

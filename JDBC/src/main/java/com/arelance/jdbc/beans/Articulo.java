@@ -5,14 +5,12 @@
  */
 package com.arelance.jdbc.beans;
 
-
 /**
  *
  * @author Manuel
  */
-
 public class Articulo {
-    
+
     private Integer idArticulo;
     private String nombre;
     private String descripcion;
@@ -59,6 +57,5 @@ public class Articulo {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-  
-    
+
 }

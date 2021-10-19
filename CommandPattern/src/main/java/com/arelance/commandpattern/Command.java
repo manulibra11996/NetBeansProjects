@@ -9,8 +9,8 @@ package com.arelance.commandpattern;
  *
  * @author Admin
  */
-public interface Command <T>{
-    
+public interface Command<T> {
+
     void execute(T t);
-    
+
 }

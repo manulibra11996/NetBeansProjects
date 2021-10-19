@@ -18,20 +18,20 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class ArticuloDAOImpl implements IArticuloDao{
+public class ArticuloDAOImpl implements IArticuloDao {
 
     @Override
     public List<Articulo> obtener() {
 
-        String sql="SELECT * FROM articulo";
+        String sql = "SELECT * FROM articulo";
 
-        List<Articulo> listaArticulo= new ArrayList<>();
+        List<Articulo> listaArticulo = new ArrayList<>();
 
-        try {		
+        try {
             try (Connection conn = Conexion.conectar()) {
-                try (ResultSet rs = conn.createStatement().executeQuery(sql)){
+                try (ResultSet rs = conn.createStatement().executeQuery(sql)) {
                     while (rs.next()) {
-                        Articulo a=new Articulo();
+                        Articulo a = new Articulo();
                         a.setIdArticulo(rs.getInt(1));
                         a.setNombre(rs.getString(2));
                         a.setDescripcion(rs.getString(3));
@@ -41,7 +41,7 @@ public class ArticuloDAOImpl implements IArticuloDao{
                 }
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase ArticuloDaoImple, método obtener");//Pide cambiarlo a logger log
+            System.out.println("Error: Clase ArticuloDaoImple, método obtener");//Pide cambiarlo a logger log
         }
         return listaArticulo;
 

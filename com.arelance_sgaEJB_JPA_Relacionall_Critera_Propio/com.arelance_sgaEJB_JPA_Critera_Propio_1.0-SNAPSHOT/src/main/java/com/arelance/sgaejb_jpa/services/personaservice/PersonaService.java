@@ -36,17 +36,17 @@ public interface PersonaService {
     public Iterator<Object> datosResumenPersona();
 
     public List<Persona> listarFiltroPersonas(String nombreParametro);
-    
+
     public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max);
-    
+
     public Iterator<Object> listarFiltroPersonas(MinDTO min);
-    
+
     public Iterator<Object> listarFiltroPersonas(MaxDTO max);
-    
-    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max,String nombreParametro);
-    
-    public Iterator<Object> listarFiltroPersonas(MinDTO min,String nombreParametro);
-    
-    public Iterator<Object> listarFiltroPersonas(MaxDTO max,String nombreParametro);
-    
+
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max, String nombreParametro);
+
+    public Iterator<Object> listarFiltroPersonas(MinDTO min, String nombreParametro);
+
+    public Iterator<Object> listarFiltroPersonas(MaxDTO max, String nombreParametro);
+
 }

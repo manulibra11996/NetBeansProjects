@@ -46,12 +46,12 @@ public class MainServlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String id = request.getParameter("id");
         if (id != null && !id.equals("")) {
-        
+
             List<Persona> personas = personaService.findPersonaById(Integer.parseInt(id));
             if (personas != null) {
                 request.setAttribute(lista, personas);
             }
-            
+
         } else if (nombre != null && !nombre.equals("")) {
             request.setAttribute(lista, personaService.listarFiltroPersonas(nombre));
         } else {

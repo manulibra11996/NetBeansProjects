@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author Manuel
  */
 public class Prueba {
+
     public static void main(String[] args) {
 
 //        Scanner teclado = new Scanner(System.in); 
@@ -32,9 +33,9 @@ public class Prueba {
 //          introducidos.setEmail(email); 
 //          introducidos.setTelefono(telefono); 
 //          
-          String[][] mensajes = {{"Inserte el nombre del contacto que buscas: ","El contacto que buscas es " },
-             {"Inserte el nombre del contacto que buscas para modificarlo: ","El contacto que vas a modificar es " }};
-          
-          System.out.println(mensajes[0][0] + mensajes [1][0]);
+        String[][] mensajes = {{"Inserte el nombre del contacto que buscas: ", "El contacto que buscas es "},
+        {"Inserte el nombre del contacto que buscas para modificarlo: ", "El contacto que vas a modificar es "}};
+
+        System.out.println(mensajes[0][0] + mensajes[1][0]);
     }
 }

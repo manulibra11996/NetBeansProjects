@@ -18,20 +18,20 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class UsuarioDAOImpl implements IUsuarioDao{
+public class UsuarioDAOImpl implements IUsuarioDao {
 
     @Override
     public List<Usuario> obtener() {
 
-        String sql="SELECT * FROM usuario";
+        String sql = "SELECT * FROM usuario";
 
-        List<Usuario> listaUsuarios= new ArrayList<>();
+        List<Usuario> listaUsuarios = new ArrayList<>();
 
-        try {	
+        try {
             try (Connection conn = Conexion.conectar()) {
-                try(ResultSet rs = conn.createStatement().executeQuery(sql)){
+                try (ResultSet rs = conn.createStatement().executeQuery(sql)) {
                     while (rs.next()) {
-                        Usuario u=new Usuario();
+                        Usuario u = new Usuario();
                         u.setIdUsuario(rs.getInt(1));
                         u.setNick(rs.getString(2));
                         u.setContrasena(rs.getString(3));
@@ -48,15 +48,15 @@ public class UsuarioDAOImpl implements IUsuarioDao{
 
     @Override
     public void guardar(Usuario usuario) {
-        String sql="INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContrasena()+"')";
+        String sql = "INSERT INTO usuario (nick,contraseña) VALUES ('" + usuario.getNick() + "','" + usuario.getContrasena() + "')";
 
-        try {			
+        try {
             try (Connection conn = Conexion.conectar()) {
                 conn.createStatement().executeUpdate(sql);
             }
         } catch (SQLException e) {
-                System.out.println("Error: Clase UsuarioDaoImple, método guardar");//Pide cambiarlo a logger log
-        } 
+            System.out.println("Error: Clase UsuarioDaoImple, método guardar");//Pide cambiarlo a logger log
+        }
 
     }
 

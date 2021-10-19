@@ -10,10 +10,11 @@ package com.arelance.gestioncontactos;
  * @author Manuel
  */
 public class Principal {
+
     public static void main(String[] args) {
         int opcion = 0;
-        do{
-            
-        }while(opcion!=0);
+        do {
+
+        } while (opcion != 0);
     }
 }

@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author manulibra
  */
-public class VistaRegistroUsuario implements ViewUsuario{
+public class VistaRegistroUsuario implements ViewUsuario {
 
     @Override
     public Usuario getData() {
@@ -26,6 +26,4 @@ public class VistaRegistroUsuario implements ViewUsuario{
         return usuario;
     }
 
-    
-    
 }

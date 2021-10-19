@@ -19,6 +19,7 @@ import javax.persistence.criteria.Root;
  * @author Manuel
  */
 public class test1 {
+
     public static void main(String[] args) {
 //
         EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("com.arelance_AAA_Criteria_jar_1.0-SNAPSHOTPU");

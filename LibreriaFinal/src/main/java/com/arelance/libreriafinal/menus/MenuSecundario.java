@@ -20,21 +20,21 @@ import com.arelance.libreriafinal.vistas.VistaRegistroUsuario;
  * @author manulibra
  */
 public class MenuSecundario {
-     public void menuSecundario() {
-        ViewUsuario viewUsuario=new VistaRegistroUsuario();
+
+    public void menuSecundario() {
+        ViewUsuario viewUsuario = new VistaRegistroUsuario();
         ViewOpcion viewOpcion = new VistaMenuSecundario();
         Command alquiler = new CommandSeleccionable(new OpcionAlquiler(viewUsuario));
         Command devolver = new CommandSeleccionable(null);
         Command cerrar = new CommandSeleccionable(new OpcionDesLogin(viewUsuario));
         BaseDeDatos baseDeDatos = new BaseDeDatos();
-        
+
         Command[] commans = new Command[3];
         commans[1] = alquiler;
         commans[2] = devolver;
         commans[0] = cerrar;
 
-        
-        while(true){
+        while (true) {
 //            System.out.println("Selecciona la opcion");
 //            System.out.println("1 = Alquiler");
 //            System.out.println("2 = Devolver");

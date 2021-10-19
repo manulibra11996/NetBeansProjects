@@ -5,7 +5,6 @@ package com.arelance.holamundo;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Manuel
@@ -15,9 +14,10 @@ package com.arelance.holamundo;
 //nombres de clase:CamelCase
 //Listado modificadores acceso: public, private, protected, package
 public class Saludo {
+
     //metodo
     public static void main(String[] args) {
         System.out.println("Hola mundo");
     }
-    
+
 }

@@ -10,7 +10,8 @@ package com.arelance.holamundo.util;
  * @author Manuel
  */
 public class Test {
-    public int obtenerDato(){
+
+    public int obtenerDato() {
         return 0;
     }
 }

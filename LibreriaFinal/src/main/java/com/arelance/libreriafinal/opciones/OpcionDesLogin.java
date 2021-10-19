@@ -12,9 +12,10 @@ import com.arelance.libreriafinal.vistas.ViewUsuario;
  *
  * @author manulibra
  */
-public class OpcionDesLogin extends Opciones{
+public class OpcionDesLogin extends Opciones {
+
     private Controller controller = new Controller();
-    
+
     public OpcionDesLogin(ViewUsuario view) {
         super(view);
     }

@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Direccion {
+
     private String calle;
     private String numero;
     private String codigoPostal;
@@ -86,6 +87,5 @@ public class Direccion {
     public String toString() {
         return "Direccion{" + "calle=" + calle + ", numero=" + numero + ", codigoPostal=" + codigoPostal + '}';
     }
-    
-    
+
 }

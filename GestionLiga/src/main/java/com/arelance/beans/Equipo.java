@@ -10,5 +10,6 @@ package com.arelance.beans;
  * @author Manuel
  */
 public class Equipo {
+
     public Jugador[] jugadores;
 }

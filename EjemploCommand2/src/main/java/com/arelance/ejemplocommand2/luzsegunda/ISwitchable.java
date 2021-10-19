@@ -10,6 +10,8 @@ package com.arelance.ejemplocommand2.luzsegunda;
  * @author Manuel
  */
 public interface ISwitchable {
+
     void turnOn();
+
     void turnOff();
 }

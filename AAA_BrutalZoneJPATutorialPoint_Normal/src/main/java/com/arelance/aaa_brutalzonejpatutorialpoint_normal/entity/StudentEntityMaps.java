@@ -17,50 +17,50 @@ import javax.persistence.Table;
  *
  * @author Manuel
  */
-@Entity  
-@Table(name="student")  
-public class StudentEntityMaps {  
-  
-    @Id 
+@Entity
+@Table(name = "student")
+public class StudentEntityMaps {
+
+    @Id
     @Column(name = "s_id")
     private int id;
     @Column(name = "s_name")
     private String name;
     @Column(name = "s_edad")
     private int age;
-    
-    @ElementCollection  
-    private Map<Integer,Address> map=new HashMap<Integer,Address>();   
+
+    @ElementCollection
+    private Map<Integer, Address> map = new HashMap<Integer, Address>();
 
     public StudentEntityMaps(int id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
     }
-    
+
     public StudentEntityMaps(int id) {
         this.id = id;
     }
-    
-    public StudentEntityMaps() {  
-        super();  
-    }  
-  
-    public int getId() {  
-        return id;  
-    }  
-  
-    public void setId(int id) {  
-        this.id = id;  
-    }  
-  
-    public String getName() {  
-        return name;  
-    }  
-  
-    public void setName(String name) {  
-        this.name = name;  
-    }  
+
+    public StudentEntityMaps() {
+        super();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getAge() {
         return age;
@@ -78,5 +78,4 @@ public class StudentEntityMaps {
         this.map = map;
     }
 
-    
 }

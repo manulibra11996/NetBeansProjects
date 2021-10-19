@@ -5,15 +5,14 @@
  */
 package com.arelance.test;
 
-
-
 /**
  *
  * @author Manuel
  */
 public class Principal {
+
     public static void main(String[] args) {
-        Accion<Contacto> tarea1 = new Accion<Contacto>(){
+        Accion<Contacto> tarea1 = new Accion<Contacto>() {
             @Override
             public void execute(Contacto t) {
                 DataContact.INTANCE.lista.add(t);
@@ -22,8 +21,8 @@ public class Principal {
         };
         Accion[] opciones = new Accion[]{tarea1};
         GestorOpciones gestorOpciones = new GestorOpciones(opciones);
-        
-        gestorOpciones.executeCommand(0, new Contacto("pepe","p@gmail.com"));
+
+        gestorOpciones.executeCommand(0, new Contacto("pepe", "p@gmail.com"));
         System.out.println(DataContact.INTANCE.lista.size());
     }
 }

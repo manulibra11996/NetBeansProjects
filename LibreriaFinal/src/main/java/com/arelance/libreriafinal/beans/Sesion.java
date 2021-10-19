@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package com.arelance.libreriafinal.beans;
+
 /**
  *
  * @author nators
  */
 public enum Sesion {
-    
+
     SESION;
     private Usuario currentUser;
 

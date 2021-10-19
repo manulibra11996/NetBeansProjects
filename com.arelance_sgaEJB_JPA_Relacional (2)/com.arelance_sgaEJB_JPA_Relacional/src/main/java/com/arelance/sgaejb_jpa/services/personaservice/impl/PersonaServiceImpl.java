@@ -66,12 +66,12 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> listarFiltroPersonas(String nombreParametro) {
-       return  personaDAO.listarFiltroPersonas(nombreParametro);
+        return personaDAO.listarFiltroPersonas(nombreParametro);
     }
 
     @Override
     public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max) {
-       return personaDAO.listarFiltroPersonas(min, max);
+        return personaDAO.listarFiltroPersonas(min, max);
     }
 
     @Override
@@ -86,7 +86,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public Iterator<Object> listarFiltroPersonas(MinDTO min, MaxDTO max, String nombreParametro) {
-       return personaDAO.listarFiltroPersonas(min, max, nombreParametro);
+        return personaDAO.listarFiltroPersonas(min, max, nombreParametro);
     }
 
     @Override

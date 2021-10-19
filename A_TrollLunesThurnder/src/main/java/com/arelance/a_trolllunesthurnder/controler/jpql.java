@@ -32,7 +32,7 @@ public class jpql {
             System.out.print("--");
         }
 
-       entitymanager.close();
-       emfactory.close();
+        entitymanager.close();
+        emfactory.close();
     }
 }

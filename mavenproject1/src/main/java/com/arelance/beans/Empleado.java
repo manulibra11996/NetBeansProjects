@@ -9,10 +9,11 @@ package com.arelance.beans;
  *
  * @author Manuel
  */
-public class Empleado extends Persona{
+public class Empleado extends Persona {
+
     public static void main(String[] args) {
         Persona persona = new Empleado();
-        
+
         System.out.println(persona instanceof Persona);
         Persona xxx = new Persona();
         System.out.println(persona.getClass() == xxx.getClass());

@@ -30,35 +30,37 @@ public class MainServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-      String url = "";
-      String seguir = "enviar";
+            throws ServletException, IOException {
+        String url = "";
+        String seguir = "enviar";
 
-      if (request.getParameter("enviar") != null){
-        if(request.getParameter("enviar").equals(seguir)){
-            url = "filtrar/muestra.jsp";
+        if (request.getParameter("enviar") != null) {
+            if (request.getParameter("enviar").equals(seguir)) {
+                url = "filtrar/muestra.jsp";
+            }
+        } else if (!testLoad()) {
+            url = "index.jsp";
         }
-      }else if(!testLoad()){
-        url = "index.jsp"; 
-      }
-      request.getRequestDispatcher(url).forward(request, response);
+        request.getRequestDispatcher(url).forward(request, response);
     }
+
     /**
-     * 
+     *
      * @return true/false para el inital load
      */
-    private boolean testLoad(){
+    private boolean testLoad() {
         String attr = "initialLoad";
         Boolean sw = (boolean) getServletContext().getAttribute("initialLoad");
-        if(sw == null){
+        if (sw == null) {
             throw new NullPointerException();
         }
-        if ( sw == true) {
-            getServletContext().setAttribute(attr,!sw);
+        if (sw == true) {
+            getServletContext().setAttribute(attr, !sw);
         }
         return (boolean) getServletContext().getAttribute(attr);
-        
+
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

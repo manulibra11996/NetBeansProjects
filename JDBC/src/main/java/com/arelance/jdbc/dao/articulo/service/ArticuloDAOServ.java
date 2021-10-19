@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author Manuel
  */
-public class ArticuloDAOServ implements IArticuloDao{
+public class ArticuloDAOServ implements IArticuloDao {
 
     private IArticuloDao articuloDao = new ArticuloDAOImpl();
 
@@ -22,7 +22,5 @@ public class ArticuloDAOServ implements IArticuloDao{
     public List<Articulo> obtener() {
         return articuloDao.obtener();
     }
-    
-    
 
 }

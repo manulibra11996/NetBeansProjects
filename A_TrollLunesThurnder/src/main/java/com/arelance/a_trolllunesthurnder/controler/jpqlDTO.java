@@ -24,7 +24,7 @@ public class jpqlDTO {
 
         //Scalar function
         Query query = entitymanager.createQuery("select new com.arelance.a_trolllunesthurnder.domains.ContadorPrecioDTO(count(i.itemPrice),i.itemPrice) "
-                + "from Item i group by i.itemPrice having count(i.itemPrice) > 1", 
+                + "from Item i group by i.itemPrice having count(i.itemPrice) > 1",
                 ContadorPrecioDTO.class);
         List<ContadorPrecioDTO> list = query.getResultList();
 
@@ -32,8 +32,7 @@ public class jpqlDTO {
             System.out.println(contadorPrecioDTO.getContador());
         }
 
-
-       entitymanager.close();
-       emfactory.close();
+        entitymanager.close();
+        emfactory.close();
     }
 }

@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Admin
  */
 public class Persona {
+
     private String nombre;
 
     public Persona(String nombre) {
@@ -41,7 +42,7 @@ public class Persona {
 
     @Override
     public boolean equals(Object obj) {
-       
+
         if (this == obj) {
             return true;
         }
@@ -57,11 +58,12 @@ public class Persona {
         }
         return true;
     }
+
     public static void main(String[] args) {
-        Persona p1=new Empleado("pepe");
-       Persona p2=new Empleado("pepe");
-      
-        System.out.println( p2.equals(p1));
+        Persona p1 = new Empleado("pepe");
+        Persona p2 = new Empleado("pepe");
+
+        System.out.println(p2.equals(p1));
     }
-    
+
 }

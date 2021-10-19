@@ -36,9 +36,9 @@ public class PostRegistro extends HttpServlet {
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             String boton = request.getParameter("boton");
-            
+
             request.getRequestDispatcher("./Controler").
-                forward(request, response);
+                    forward(request, response);
         }
     }
 

@@ -21,12 +21,12 @@ import com.arelance.a_trolllunesthurnder.domains.Item_;
 public class TestCriteriaUpdate {
 
     public static void main(String[] args) {
-        
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("criteria_samples");
         EntityManager em = emf.createEntityManager();
         CriteriaBuilder criteriaBuilder = em.getCriteriaBuilder();
         CriteriaUpdate<Item> criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Item.class);
-     
+
         Root<Item> root = criteriaUpdate.from(Item.class);
         criteriaUpdate.set("itemPrice", 10);
         criteriaUpdate.set(Item_.itemName, "itemX");

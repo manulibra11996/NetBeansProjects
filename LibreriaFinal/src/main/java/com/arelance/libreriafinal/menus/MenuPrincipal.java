@@ -24,21 +24,22 @@ import com.arelance.libreriafinal.vistas.VistaRegistroUsuario;
  * @author manulibra
  */
 public class MenuPrincipal {
-     public void menuPrincipal(Main main) {
-        ViewUsuario viewUsuario=new VistaRegistroUsuario();
-        ViewDatos viewDatos=new VistaRegistroDatosPersonales();
+
+    public void menuPrincipal(Main main) {
+        ViewUsuario viewUsuario = new VistaRegistroUsuario();
+        ViewDatos viewDatos = new VistaRegistroDatosPersonales();
         ViewOpcion viewOpcion = new VistaMenuPrincipal();
-        Command registro = new CommandSeleccionable(new OpcionRegistro(viewUsuario,viewDatos));
+        Command registro = new CommandSeleccionable(new OpcionRegistro(viewUsuario, viewDatos));
         Command login = new CommandSeleccionable(new OpcionLogin(viewUsuario));
-        Command salir = new CommandSeleccionable(new OpcionSalir(viewUsuario,main));
+        Command salir = new CommandSeleccionable(new OpcionSalir(viewUsuario, main));
         BaseDeDatos baseDeDatos = new BaseDeDatos();
-        
+
         Command[] commans = new Command[3];
         commans[1] = registro;
         commans[2] = login;
         commans[0] = salir;
 
-        while(true){
+        while (true) {
 //            System.out.println("Selecciona la opcion");
 //            System.out.println("1 = Registro");
 //            System.out.println("2 = Login");

@@ -11,8 +11,8 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public  final class Libro {
-    
+public final class Libro {
+
     private String titulo;
     private String ISBN;
 
@@ -30,8 +30,6 @@ public  final class Libro {
     public String getTitulo() {
         return titulo;
     }
-
-  
 
     /**
      * @return the ISBN
@@ -69,8 +67,4 @@ public  final class Libro {
         return true;
     }
 
-   
-    
-    
-    
 }

@@ -11,5 +11,6 @@ package com.arelance.pruebacommand.beans;
  */
 @FunctionalInterface
 public interface ISwitchable {
+
     void resultado(double resultado);
 }

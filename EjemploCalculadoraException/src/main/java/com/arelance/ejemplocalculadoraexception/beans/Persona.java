@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Manuel
  */
 public class Persona {
+
     private String nombre;
     private String apellido;
 
@@ -70,14 +71,12 @@ public class Persona {
 
     @Override
     public Persona clone() throws CloneNotSupportedException {
-        return (Persona) super.clone(); 
+        return (Persona) super.clone();
     }
 
     @Override
     public String toString() {
         return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + '}';
     }
-    
-    
-    
+
 }

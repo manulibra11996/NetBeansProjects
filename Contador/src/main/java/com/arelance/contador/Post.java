@@ -33,9 +33,9 @@ public class Post extends HttpServlet {
             throws ServletException, IOException {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-                Integer contador = Integer.parseInt(request.getParameter("contador"));
-                request.setAttribute("contador", ++contador);
-                request.getRequestDispatcher("/index.jsp").
+            Integer contador = Integer.parseInt(request.getParameter("contador"));
+            request.setAttribute("contador", ++contador);
+            request.getRequestDispatcher("/index.jsp").
                     forward(request, response);
         }
     }

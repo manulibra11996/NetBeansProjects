@@ -20,19 +20,17 @@ import javax.servlet.annotation.WebFilter;
  */
 @WebFilter(filterName = "SelectorNombresFilter", urlPatterns = {"/informe.jsp"}, dispatcherTypes = {DispatcherType.REQUEST, DispatcherType.FORWARD})
 public class SelectorNombresFilter implements Filter {
-    
-    
+
     public void doFilter(ServletRequest request, ServletResponse response,
             FilterChain chain)
             throws IOException, ServletException {
-        
-        
+
         Throwable problem = null;
         try {
-            if(request.getParameterValues("nombre") == null){
+            if (request.getParameterValues("nombre") == null) {
                 request.getRequestDispatcher("./PreRepaso").forward(request, response);
                 return;
-            }else{
+            } else {
                 chain.doFilter(request, response);
             }
 
@@ -43,7 +41,7 @@ public class SelectorNombresFilter implements Filter {
             problem = t;
             t.printStackTrace();
         }
-        
+
         // If there was a problem, we want to rethrow it if it is
         // a known type, otherwise log it.
         if (problem != null) {
@@ -53,9 +51,8 @@ public class SelectorNombresFilter implements Filter {
             if (problem instanceof IOException) {
                 throw (IOException) problem;
             }
-            
+
         }
     }
 
-    
 }

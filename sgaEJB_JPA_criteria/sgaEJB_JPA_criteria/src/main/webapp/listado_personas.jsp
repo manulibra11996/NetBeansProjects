@@ -15,9 +15,9 @@
     <body>
         <form id="filtroForm" action="MainServlet">
             <label for="filtro">filtro nombre:</label> <input type="text" id=filtro name="nombre"> 
-               <label for="id_filtro">filtro id:</label> <input type="text" id=id_filtro name="id"> 
+            <label for="id_filtro">filtro id:</label> <input type="text" id=id_filtro name="id"> 
             <input type="submit" name="filtro_action" value="filtrar">
-            
+
         </form>
         <h1>listado personas</h1>
         <c:forEach var="persona" items="${lista}">  
@@ -28,16 +28,16 @@
             </c:forEach>  
             <hr>
         </c:forEach>  
-  <a href="PreUpdatePersona"><c:out value="alta"/><p></a>
-  <c:out value="${'id menor:'.concat(min)}"/>
-  <c:out value="${'id mayor:'.concat(max)}"/>
-  <c:out value="${'total personas:'.concat(total)}"/>
-    <c:forEach var="aficion" items="${aficiones}">  
+        <a href="PreUpdatePersona"><c:out value="alta"/><p></a>
+            <c:out value="${'id menor:'.concat(min)}"/>
+            <c:out value="${'id mayor:'.concat(max)}"/>
+            <c:out value="${'total personas:'.concat(total)}"/>
+            <c:forEach var="aficion" items="${aficiones}">  
             <hr>
-                     <c:out value="${aficion}"/><br>
-            
+            <c:out value="${aficion}"/><br>
+
             <hr>
         </c:forEach>  
-  aficiones
+        aficiones
     </body>
 </html>

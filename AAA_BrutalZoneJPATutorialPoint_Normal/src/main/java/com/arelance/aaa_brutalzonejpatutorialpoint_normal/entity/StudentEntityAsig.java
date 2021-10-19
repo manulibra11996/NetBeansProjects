@@ -16,20 +16,20 @@ import javax.persistence.Table;
  *
  * @author Manuel
  */
-@Entity  
-@Table(name="student")  
-public class StudentEntityAsig {  
-  
-    @Id 
+@Entity
+@Table(name = "student")
+public class StudentEntityAsig {
+
+    @Id
     @Column(name = "s_id")
     private int id;
     @Column(name = "s_name")
     private String name;
     @Column(name = "s_edad")
     private int age;
-    
-    @OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})  
-    private Asignatura asig;  
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    private Asignatura asig;
 
     public StudentEntityAsig(int id, String name, int age, Asignatura asig) {
         this.id = id;
@@ -37,26 +37,26 @@ public class StudentEntityAsig {
         this.age = age;
         this.asig = asig;
     }
-     
-    public StudentEntityAsig() {  
-        super();  
-    }  
-  
-    public int getId() {  
-        return id;  
-    }  
-  
-    public void setId(int id) {  
-        this.id = id;  
-    }  
-  
-    public String getName() {  
-        return name;  
-    }  
-  
-    public void setName(String name) {  
-        this.name = name;  
-    }  
+
+    public StudentEntityAsig() {
+        super();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public int getAge() {
         return age;
@@ -73,5 +73,5 @@ public class StudentEntityAsig {
     public void setAsig(Asignatura asig) {
         this.asig = asig;
     }
-      
+
 }

@@ -13,7 +13,8 @@ import java.util.List;
  * @author Gabri
  */
 public class BaseDatosUsuario {
-     private  List<Usuario> usuarios;
+
+    private List<Usuario> usuarios;
 
     public BaseDatosUsuario() {
         usuarios = new ArrayList<>();

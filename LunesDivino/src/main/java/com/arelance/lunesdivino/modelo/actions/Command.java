@@ -11,5 +11,6 @@ package com.arelance.lunesdivino.modelo.actions;
  */
 @FunctionalInterface
 public interface Command {
-    void  execute();
+
+    void execute();
 }

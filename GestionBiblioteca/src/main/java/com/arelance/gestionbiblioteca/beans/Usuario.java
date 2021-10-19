@@ -12,12 +12,12 @@ import java.util.Objects;
  * @author Gabri
  */
 public class Usuario {
-    
+
     private final String nombre;
     private final String apellido;
     private final String nick;
     private String password;
-   
+
     public Usuario(String nombre, String apellido, String nick, String password) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -81,7 +81,5 @@ public class Usuario {
         }
         return true;
     }
-    
-    
-    
+
 }

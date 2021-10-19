@@ -16,9 +16,10 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public final class  DatosPersonales implements Serializable{
-    private  String nombre;
-    private  String apellido;
+public final class DatosPersonales implements Serializable {
+
+    private String nombre;
+    private String apellido;
 
     public String getNombre() {
         return nombre;
@@ -71,6 +72,4 @@ public final class  DatosPersonales implements Serializable{
         return sb.toString();
     }
 
-    
-    
 }

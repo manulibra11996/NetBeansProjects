@@ -21,9 +21,7 @@ public class OpcionLogin extends Opcion {
     @Override
     public void ejecutarOpcion() {
         super.ejecutarOpcion();
-        
+
     }
 
-    
-    
 }

@@ -17,9 +17,9 @@ import java.util.Scanner;
  * @author Gabri
  */
 public class Principal {
-    
+
     public static void main(String[] args) {
-         View view=new RecogerDatosUsuario();
+        View view = new RecogerDatosUsuario();
         Command registro = new CommandSeleccionable(new OpcionRegistrar(view));
 
         Command[] commans = new Command[1];

@@ -16,34 +16,33 @@ import javax.persistence.Persistence;
  * @author Manuel
  */
 public class OnetoOne {
-    
-    public static void main(String[] args) 
-   {
-      EntityManagerFactory emfactory = Persistence.createEntityManagerFactory( "Student_details" );
-      EntityManager entitymanager = emfactory.createEntityManager( );
-      
-      entitymanager.getTransaction( ).begin( );
 
-      //Create Department Entity
-      Department department = new Department();
-      department.setName("Development");
+    public static void main(String[] args) {
+        EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Student_details");
+        EntityManager entitymanager = emfactory.createEntityManager();
 
-      //Store Department
-      entitymanager.persist(department);
+        entitymanager.getTransaction().begin();
 
-      //Create Employee Entity
-      Employee employee = new Employee();
-      employee.setEname("Satish");
-      employee.setSalary(45000.0);
-      employee.setDeg("Technical Writer");
-      employee.setDepartment(department);
+        //Create Department Entity
+        Department department = new Department();
+        department.setName("Development");
 
-      //Store Employee
-      entitymanager.persist(employee);
+        //Store Department
+        entitymanager.persist(department);
 
-      entitymanager.getTransaction().commit();
-      
-      entitymanager.close();
-      emfactory.close();
-   }
+        //Create Employee Entity
+        Employee employee = new Employee();
+        employee.setEname("Satish");
+        employee.setSalary(45000.0);
+        employee.setDeg("Technical Writer");
+        employee.setDepartment(department);
+
+        //Store Employee
+        entitymanager.persist(employee);
+
+        entitymanager.getTransaction().commit();
+
+        entitymanager.close();
+        emfactory.close();
+    }
 }

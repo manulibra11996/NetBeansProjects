@@ -11,21 +11,20 @@ import java.util.Objects;
  *
  * @author Manuel
  */
-public class Persona implements Cloneable{
+public class Persona implements Cloneable {
+
     private String nombre;
-    private StringBuilder apellido ;
+    private StringBuilder apellido;
     private Integer edad;
 
     public Persona() {
     }
 
-    public Persona(String nombre, StringBuilder  apellido, Integer edad) {
+    public Persona(String nombre, StringBuilder apellido, Integer edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
     }
-
-   
 
     public String getNombre() {
         return nombre;
@@ -39,11 +38,9 @@ public class Persona implements Cloneable{
         return apellido;
     }
 
-    public void setApellido(StringBuilder  apellido) {
+    public void setApellido(StringBuilder apellido) {
         this.apellido = apellido;
     }
-
-    
 
     public Integer getEdad() {
         return edad;
@@ -85,20 +82,17 @@ public class Persona implements Cloneable{
         }
         return true;
     }
-    
-    
-    
+
     @Override
-    public Persona clone() throws CloneNotSupportedException  {
-      Persona clone = (Persona) super.clone();
-      clone.apellido = new StringBuilder(this.apellido);
-      return clone;
+    public Persona clone() throws CloneNotSupportedException {
+        Persona clone = (Persona) super.clone();
+        clone.apellido = new StringBuilder(this.apellido);
+        return clone;
     }
 
     @Override
     public String toString() {
         return "[nombre: " + nombre + "] [apellido: " + apellido + "] [edad: " + edad + "]";
     }
-    
-    
+
 }

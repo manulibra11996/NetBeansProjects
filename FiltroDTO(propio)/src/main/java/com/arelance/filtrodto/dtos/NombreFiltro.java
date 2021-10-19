@@ -11,24 +11,24 @@ import java.util.Iterator;
  *
  * @author Manuel
  */
-public class NombreFiltro extends Filtro{
+public class NombreFiltro extends Filtro {
 
     private String nombre;
-    
+
     public NombreFiltro(String nombre) {
-        this.nombre=nombre;
+        this.nombre = nombre;
     }
-    
+
     @Override
     public String execute() {
         for (Iterator<Filtro> iterator = filtros.iterator(); iterator.hasNext();) {
             Filtro next = iterator.next();
-            
-            sqlSentence=sqlSentence+next.execute();
-           
+
+            sqlSentence = sqlSentence + next.execute();
+
         }
-        sqlSentence=sqlSentence+"nombre="+nombre;
+        sqlSentence = sqlSentence + "nombre=" + nombre;
         return sqlSentence;
     }
-    
+
 }

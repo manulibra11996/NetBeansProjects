@@ -5,8 +5,6 @@
  */
 package com.arelance.jpa_asistido.services.personaservice.impl;
 
-
-
 import com.arelance.jpa_asistido.dao.persona.PersonaDAO;
 import com.arelance.jpa_asistido.domain.Persona;
 import com.arelance.jpa_asistido.services.personaservice.PersonaService;
@@ -24,18 +22,18 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public List<Persona> listarPersonas() {
-       
+
         return personaDAO.listarPersonas();
     }
-    
+
     @Override
-    public Persona findPersonaByID(Persona persona){
+    public Persona findPersonaByID(Persona persona) {
         return personaDAO.findPersonaByID(persona);
     }
 
     @Override
     public Persona findPersonaByEmail(Persona persona) {
-      return personaDAO.findPersonaByEmail(persona);
+        return personaDAO.findPersonaByEmail(persona);
     }
 
     @Override
@@ -50,7 +48,7 @@ public class PersonaServiceImpl implements PersonaService {
 
     @Override
     public void removePersona(Persona persona) {
-     personaDAO.removePersona(persona);
+        personaDAO.removePersona(persona);
     }
 
 }

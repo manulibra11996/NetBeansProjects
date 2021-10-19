@@ -9,11 +9,11 @@ package com.arelance.Beans;
  *
  * @author Manuel
  */
-public class Empleado extends Persona{
+public class Empleado extends Persona {
 
     private float salario;
 
-    public Empleado(String nombre, float salario ) {
+    public Empleado(String nombre, float salario) {
         super(nombre);
         this.salario = salario;
     }
@@ -25,8 +25,6 @@ public class Empleado extends Persona{
     public Empleado() {
         super(null);
     }
-    
-    
 
     public float getSalario() {
         return salario;
@@ -48,7 +46,7 @@ public class Empleado extends Persona{
         if (this == obj) {
             return true;
         }
-       
+
         if (obj == null) {
             return false;
         }
@@ -59,17 +57,15 @@ public class Empleado extends Persona{
 //        if (Float.floatToIntBits(this.salario) != Float.floatToIntBits(other.salario)) {
 //            return false;
 //        }
-        return super.equals(other)&&(Float.floatToIntBits(this.salario) == Float.floatToIntBits(other.salario));
+        return super.equals(other) && (Float.floatToIntBits(this.salario) == Float.floatToIntBits(other.salario));
     }
-    
+
     public int compareTo(Empleado o) {
         int resultado = super.compareTo(o);
-        if(resultado == 0 && o.getClass().equals(this.getClass())){
+        if (resultado == 0 && o.getClass().equals(this.getClass())) {
             resultado = Float.compare(salario, o.salario);
         }
         return resultado;
     }
-    
-    
-    
+
 }

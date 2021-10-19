@@ -11,5 +11,6 @@ package com.arelance.pruebacommand.beans;
  */
 @FunctionalInterface
 public interface ICommand {
+
     double ejecutar();
 }

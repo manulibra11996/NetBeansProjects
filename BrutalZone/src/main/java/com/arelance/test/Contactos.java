@@ -10,6 +10,7 @@ package com.arelance.test;
  * @author Manuel
  */
 public class Contactos {
+
     private String Nombre;
     private String telefono;
 
@@ -28,6 +29,5 @@ public class Contactos {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
-    
+
 }

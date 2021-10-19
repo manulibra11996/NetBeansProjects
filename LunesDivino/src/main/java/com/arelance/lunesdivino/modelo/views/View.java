@@ -12,7 +12,7 @@ import com.arelance.lunesdivino.modelo.Libro;
  * @author Admin
  */
 public interface View {
-    
-   Libro getData();
-    
+
+    Libro getData();
+
 }

@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  *
  * @author Manuel
  */
-public class staffDAO implements staff{
+public class staffDAO implements staff {
 
     @PersistenceContext(unitName = "Eclipselink_JPA")
     EntityManager em;
@@ -24,5 +24,5 @@ public class staffDAO implements staff{
     public List<Staff> obtener() {
         return em.createNamedQuery("Staff.findAll").getResultList();
     }
-    
+
 }
