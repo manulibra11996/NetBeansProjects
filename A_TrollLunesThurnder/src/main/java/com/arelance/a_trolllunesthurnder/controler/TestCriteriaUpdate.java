@@ -12,6 +12,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaUpdate;
 import javax.persistence.criteria.Root;
 import com.arelance.a_trolllunesthurnder.domains.Item;
+import com.arelance.a_trolllunesthurnder.domains.Item_;
 
 /**
  *
@@ -27,8 +28,9 @@ public class TestCriteriaUpdate {
         CriteriaUpdate<Item> criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Item.class);
      
         Root<Item> root = criteriaUpdate.from(Item.class);
-        criteriaUpdate.set("itemPrice", 25);
-        criteriaUpdate.where(criteriaBuilder.equal(root.get("itemPrice"), 10));
+        criteriaUpdate.set("itemPrice", 10);
+        criteriaUpdate.set(Item_.itemName, "itemX");
+        criteriaUpdate.where(criteriaBuilder.equal(root.get("itemPrice"), 25));
 
         em.getTransaction().begin();
         em.createQuery(criteriaUpdate).executeUpdate();
