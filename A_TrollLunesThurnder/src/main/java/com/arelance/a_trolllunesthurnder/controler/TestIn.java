@@ -16,6 +16,7 @@ import javax.persistence.criteria.CriteriaBuilder.In;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import com.arelance.a_trolllunesthurnder.domains.Item;
+import javax.persistence.criteria.Predicate;
 
 /**
  *
@@ -33,16 +34,22 @@ public class TestIn {
         List<String> names = new ArrayList<>();
         names.add("item1");
         names.add("item2");
+        
 
         for (String title : names) {
             inClause.value(title);
         }
-        criteriaQuery.select(root).where(inClause);
+        
+        Predicate mayor10 = criteriaBuilder.gt(root.get("itemPrice"), 10);
+        Predicate or = criteriaBuilder.or(mayor10,inClause);
+        
+        
+        criteriaQuery.select(root).where(or);
         TypedQuery<Item> query=em.createQuery(criteriaQuery);
         List<Item> items=query.getResultList();
         
         for(Item item:items){
-            System.out.println("itemName:"+item.getItemName()+ "precio:"+item.getItemPrice());
+            System.out.println("itemName: " + item.getItemName() + " precio: " + item.getItemPrice());
         }
        
 
