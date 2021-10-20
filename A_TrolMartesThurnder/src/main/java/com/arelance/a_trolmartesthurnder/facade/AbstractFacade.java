@@ -84,4 +84,26 @@ public abstract class AbstractFacade<T> {
         TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
         return (List<T>) typedQuery.getResultList();
     }
+    
+    public  List<T> OrdenAscendente() {
+        CriteriaQuery<Empleado> criteriaQuery = getEntityManager().getCriteriaBuilder().createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from).
+                groupBy(criteriaQuery.from(entityClass).get("empDep")).
+                having(getEntityManager().getCriteriaBuilder().gt(getEntityManager().getCriteriaBuilder().count(
+                        criteriaQuery.from(entityClass).get("empDep")), 1));
+        TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
+        return (List<T>) typedQuery.getResultList();
+    }
+    
+    public  List<T> OrdenDescendente() {
+        CriteriaQuery<Empleado> criteriaQuery = getEntityManager().getCriteriaBuilder().createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from).
+                groupBy(criteriaQuery.from(entityClass).get("empDep")).
+                having(getEntityManager().getCriteriaBuilder().gt(getEntityManager().getCriteriaBuilder().count(
+                        criteriaQuery.from(entityClass).get("empDep")), 1));
+        TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
+        return (List<T>) typedQuery.getResultList();
+    }
 }
