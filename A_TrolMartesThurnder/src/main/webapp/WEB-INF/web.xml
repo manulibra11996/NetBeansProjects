@@ -8,6 +8,10 @@
             30
         </session-timeout>
     </session-config>
+    <error-page> 
+        <exception-type>java.lang.Exception</exception-type> 
+        <location>/errorVarios</location> 
+    </error-page> 
     <welcome-file-list>
         <welcome-file>
             PreIndex

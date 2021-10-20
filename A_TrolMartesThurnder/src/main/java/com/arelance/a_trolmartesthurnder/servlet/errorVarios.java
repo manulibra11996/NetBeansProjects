@@ -5,12 +5,12 @@
  */
 package com.arelance.a_trolmartesthurnder.servlet;
 
-import com.arelance.a_trolmartesthurnder.entity.Empleado;
-import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
-import javax.inject.Inject;
+import java.util.Arrays;
+import static javax.servlet.RequestDispatcher.ERROR_EXCEPTION_TYPE;
+import static javax.servlet.RequestDispatcher.ERROR_MESSAGE;
+import static javax.servlet.RequestDispatcher.ERROR_STATUS_CODE;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Manuel
  */
-@WebServlet(name = "PostIndex", urlPatterns = {"/PostIndex"})
-public class PostIndex extends HttpServlet {
+@WebServlet(name = "errorHandler", urlPatterns = {"/errorHandler"})
+public class errorVarios extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,26 +33,20 @@ public class PostIndex extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Inject
-    private EmpleadoFacadeLocal facadeLocal;
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            if (request.getParameter("nombre") != null) {
-                String nombre = request.getParameter("nombre");
-                List<Empleado> empleados = facadeLocal.findDep(nombre);
-                request.setAttribute("lista", empleados);
-            }
-            if (request.getParameter("orden").equals("asc")) {
-                List<Empleado> empleados = facadeLocal.OrdenAscendente();
-                request.setAttribute("lista", empleados);
-            } else {
-                List<Empleado> empleados = facadeLocal.OrdenDescendente();
-                request.setAttribute("lista", empleados);
-            }
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet errorHandler</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet errorHandler at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -67,8 +61,22 @@ public class PostIndex extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+            throws IOException {
+        response.setContentType("text/html; charset=utf-8");
+        try (PrintWriter writer = response.getWriter()) {
+            writer.write("<html><head><title>Error description</title></head><body>");
+            writer.write("<h2>Error description</h2>");
+            writer.write("<ul>");
+            Arrays.asList(
+                    ERROR_STATUS_CODE,
+                    ERROR_EXCEPTION_TYPE,
+                    ERROR_MESSAGE)
+                    .forEach(e
+                            -> writer.write("<li>" + e + ":" + request.getAttribute(e) + " </li>")
+                    );
+            writer.write("</ul>");
+            writer.write("</html></body>");
+        }
     }
 
     /**

@@ -20,11 +20,10 @@
             <p for="text">Nombre del departamento:
             <input type="text" id="nombre" placeholder="dep1" name="nombre" maxlength="45"></p>
             <p>Ordenacion por salario: 
-                Ascendente:<input type="radio" id="orden" value="asc">
-                Descendente:<input type="radio" id="orden" value="desc"></p>
+                Ascendente:<input type="radio" id="orden"  name="orden" value="asc">
+                Descendente:<input type="radio" id="orden" name="orden" value="desc"></p>
             <input type="submit" name="action" value="Filtrar">
          </form>
-        <a href="PostIndex2">Solo mostrar los departamentos con mas de un empleado</a>
         <%
             List<Empleado> lista = (List<Empleado>) request.getAttribute("lista");
 
