@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.a_trolmartesthurnder.Service.implementacion;
+package com.arelance.a_trolmartesthurnder.Service.imp;
 
 import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
 import com.arelance.a_trolmartesthurnder.DAO.EmpleadoDAO;
@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 /**
  *
- * @author lenovo
+ * @author Manuel
  */
 public class EmpleadoServiceImpl implements EmpleadoService {
 
@@ -32,7 +32,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
 
     @Override
     public void ModificarEmpleado(Empleado empleado) {
-       empleadoDAO.ModificarEmpleado(empleado);
+        empleadoDAO.ModificarEmpleado(empleado);
     }
 
     @Override
@@ -44,6 +44,4 @@ public class EmpleadoServiceImpl implements EmpleadoService {
     public Empleado BuscarId(int id) {
         return empleadoDAO.BuscarId(id);
     }
-
-   
 }

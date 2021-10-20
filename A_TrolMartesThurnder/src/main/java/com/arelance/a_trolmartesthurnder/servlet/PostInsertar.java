@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author manul
+ * @author Manuel
  */
-@WebServlet(name = "PostEliminar", urlPatterns = {"/PostEliminar"})
-public class PostEliminar extends HttpServlet {
+@WebServlet(name = "PostInsertar", urlPatterns = {"/PostInsertar"})
+public class PostInsertar extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,20 +32,19 @@ public class PostEliminar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-       @Inject
+    @Inject
     private EmpleadoFacadeLocal facadeLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-             String nombre = request.getParameter("nombre");
+        try (PrintWriter out = response.getWriter()) {
+            String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             Integer salario = Integer.parseInt(request.getParameter("salario"));
             String departamento = request.getParameter("departamento");
-            int id = Integer.parseInt(request.getParameter("id"));
-            Empleado e = new Empleado(id, nombre, apellido, salario, departamento);
-            facadeLocal.remove(e);
+            Empleado e = new Empleado(nombre, apellido, salario, departamento);
+            facadeLocal.create(e);
             request.getRequestDispatcher("PreIndex").forward(request, response);
         }
     }

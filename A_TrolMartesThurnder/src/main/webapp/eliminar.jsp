@@ -12,20 +12,19 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <form action="../PostEliminar" method="GET" id="formulario">
-            <fieldset>
-                    <label for="text">Nombre:</label>
-                    <input type="text" id="nombre" value="${modificar.getEmpName()}" name="nombre" maxlength="45" readonly="readonly">
-                    <label for="text">Apellido:</label>
-                    <input type="text" id="apellido" value="${modificar.getEmpLastName()}" name="apellido" maxlength="45" readonly="readonly">
-                    <label for="text">Salario:</label>
-                    <input type="number" id="salario" value="${modificar.getEmpSalary()}"  name="salario" readonly="readonly">
-                    <label for="departamento">Departamento:</label>
-                    <input type="departamento" id="departamento" value="${modificar.getEmpDep()}" name="departamento" readonly="readonly">
-                    <input type="submit" name="action" value="Eliminar">
-                    <input type="reset" name="action" value="Limpiar">
-                    <a href="../PreIndex" role="button">Volver</a>
-            </fieldset>
+        <form action="PostEliminar" method="GET" id="formulario">
+            <input type="text" id="id" value="${eliminar.getIdempleado()}" name="id" hidden="hidden">
+            <p for="text">Nombre:
+                <input type="text" id="nombre" value="${eliminar.getEmpName()}" name="nombre" maxlength="45" required></p>
+            <p for="text">Apellido:
+                <input type="text" id="apellido" value="${eliminar.getEmpLastName()}" name="apellido" maxlength="45" required></p>
+            <p for="text">Salario:
+                <input type="number" id="salario" value="${eliminar.getEmpSalary()}"  name="salario" required></p>
+            <p for="departamento">Departamento:
+                <input type="departamento" id="departamento" value="${eliminar.getEmpDep()}" name="departamento" required></p>
+            <input type="submit" name="action" value="Eliminar">
+            <input type="reset" name="action" value="Limpiar">
+            <a href="PreIndex">Volver</a>
         </form>
     </body>
 </html>

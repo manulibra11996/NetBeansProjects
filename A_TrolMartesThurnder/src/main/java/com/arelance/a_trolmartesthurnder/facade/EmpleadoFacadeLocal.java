@@ -11,7 +11,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author manul
+ * @author Manuel
  */
 @Local
 public interface EmpleadoFacadeLocal {
@@ -29,5 +29,14 @@ public interface EmpleadoFacadeLocal {
     List<Empleado> findRange(int[] range);
 
     int count();
+    
+    List<Empleado> findDep(String nombre);
+    
+    List<Empleado> DepartamentosMayores1();
+    
+    List<Empleado> OrdenAscendente();
+    
+    List<Empleado> OrdenDescendente();
+    
     
 }

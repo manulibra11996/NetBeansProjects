@@ -62,6 +62,13 @@ public class Empleado implements Serializable {
     public Empleado(String empName) {
         this.empName = empName;
     }
+
+    public Empleado(String empName, String empLastName, Integer empSalary, String empDep) {
+        this.empName = empName;
+        this.empLastName = empLastName;
+        this.empSalary = empSalary;
+        this.empDep = empDep;
+    }
     
     public Empleado(Integer idempleado, String empName, String empLastName, Integer empSalary, String empDep) {
         this.idempleado = idempleado;

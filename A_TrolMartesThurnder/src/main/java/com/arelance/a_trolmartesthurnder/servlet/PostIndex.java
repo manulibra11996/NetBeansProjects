@@ -9,6 +9,7 @@ import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author manul
+ * @author Manuel
  */
-@WebServlet(name = "PostEliminar", urlPatterns = {"/PostEliminar"})
-public class PostEliminar extends HttpServlet {
+@WebServlet(name = "PostIndex", urlPatterns = {"/PostIndex"})
+public class PostIndex extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,21 +33,17 @@ public class PostEliminar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-       @Inject
+    @Inject
     private EmpleadoFacadeLocal facadeLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-             String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            Integer salario = Integer.parseInt(request.getParameter("salario"));
-            String departamento = request.getParameter("departamento");
-            int id = Integer.parseInt(request.getParameter("id"));
-            Empleado e = new Empleado(id, nombre, apellido, salario, departamento);
-            facadeLocal.remove(e);
-            request.getRequestDispatcher("PreIndex").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            String nombre = request.getParameter("nombre");
+            List<Empleado> empleados = facadeLocal.findDep(nombre);
+            request.setAttribute("lista", empleados);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 

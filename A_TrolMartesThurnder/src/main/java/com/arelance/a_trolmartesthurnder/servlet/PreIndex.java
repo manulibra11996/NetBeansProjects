@@ -5,9 +5,7 @@
  */
 package com.arelance.a_trolmartesthurnder.servlet;
 
-import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
-import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacade;
 import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,6 +35,7 @@ public class PreIndex extends HttpServlet {
      */
     @Inject
     private EmpleadoFacadeLocal facadeLocal;
+
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

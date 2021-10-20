@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.a_trolmartesthurnder.DAO.implementacion;
+package com.arelance.a_trolmartesthurnder.DAO.imp;
 
 import com.arelance.a_trolmartesthurnder.DAO.EmpleadoDAO;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
@@ -20,7 +20,7 @@ import javax.persistence.criteria.Root;
 
 /**
  *
- * @author lenovo
+ * @author Manuel
  */
 @Stateless
 public class EmpeladoDAOImp implements EmpleadoDAO {
@@ -77,5 +77,4 @@ public class EmpeladoDAOImp implements EmpleadoDAO {
         TypedQuery<Empleado> typedQuery = em.createQuery(select);
         return typedQuery.getSingleResult();
     }
-
 }

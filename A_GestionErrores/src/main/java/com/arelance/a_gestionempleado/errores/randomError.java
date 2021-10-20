@@ -3,13 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.arelance.a_trolmartesthurnder.servlet;
+package com.arelance.a_gestionempleado.errores;
 
-import com.arelance.a_trolmartesthurnder.entity.Empleado;
-import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author manul
+ * @author Manuel
  */
-@WebServlet(name = "PostEliminar", urlPatterns = {"/PostEliminar"})
-public class PostEliminar extends HttpServlet {
+@WebServlet(name = "randomError", urlPatterns = {"/randomError"})
+public class randomError extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,21 +29,20 @@ public class PostEliminar extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-       @Inject
-    private EmpleadoFacadeLocal facadeLocal;
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-             String nombre = request.getParameter("nombre");
-            String apellido = request.getParameter("apellido");
-            Integer salario = Integer.parseInt(request.getParameter("salario"));
-            String departamento = request.getParameter("departamento");
-            int id = Integer.parseInt(request.getParameter("id"));
-            Empleado e = new Empleado(id, nombre, apellido, salario, departamento);
-            facadeLocal.remove(e);
-            request.getRequestDispatcher("PreIndex").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet randomError</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet randomError at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -60,9 +56,8 @@ public class PostEliminar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response){
+         throw new IllegalStateException("Random error");
     }
 
     /**

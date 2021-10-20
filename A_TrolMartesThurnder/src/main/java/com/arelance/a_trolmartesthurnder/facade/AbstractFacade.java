@@ -5,12 +5,16 @@
  */
 package com.arelance.a_trolmartesthurnder.facade;
 
+import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 
 /**
  *
- * @author manul
+ * @author Manuel
  */
 public abstract class AbstractFacade<T> {
 
@@ -60,5 +64,24 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
+
+    public List<T> findDep(String nombre) {
+        CriteriaQuery<Empleado> criteriaQuery = getEntityManager().getCriteriaBuilder().createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from);
+        select.where(getEntityManager().getCriteriaBuilder().equal(from.get("empDep"), nombre));
+        TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
+        return (List<T>) typedQuery.getResultList();
+    }
     
+    public  List<T> DepartamentosMayores1() {
+        CriteriaQuery<Empleado> criteriaQuery = getEntityManager().getCriteriaBuilder().createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from).
+                groupBy(criteriaQuery.from(entityClass).get("empDep")).
+                having(getEntityManager().getCriteriaBuilder().gt(getEntityManager().getCriteriaBuilder().count(
+                        criteriaQuery.from(entityClass).get("empDep")), 1));
+        TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
+        return (List<T>) typedQuery.getResultList();
+    }
 }

@@ -14,7 +14,17 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h2>Hola</h2>
+        <h2>Lista de empleados</h2>
+        <h3>Filtro de departamento</h3>
+         <form action="PostIndex" method="GET" id="formulario">
+            <p for="text">Nombre del departamento:
+            <input type="text" id="nombre" placeholder="dep1" name="nombre" maxlength="45"></p>
+            <p>Ordenacion por salario: 
+                Ascendente:<input type="radio" id="orden" value="asc">
+                Descendente:<input type="radio" id="orden" value="desc"></p>
+            <input type="submit" name="action" value="Filtrar">
+         </form>
+        <a href="PostIndex2">Solo mostrar los departamentos con mas de un empleado</a>
         <%
             List<Empleado> lista = (List<Empleado>) request.getAttribute("lista");
 
@@ -25,5 +35,6 @@
             <%
                 }
             %>
+        <a href="insertar.jsp">Alta</a>
     </body>
 </html>

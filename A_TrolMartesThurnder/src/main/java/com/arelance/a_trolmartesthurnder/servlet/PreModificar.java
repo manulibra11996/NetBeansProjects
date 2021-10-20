@@ -5,8 +5,8 @@
  */
 package com.arelance.a_trolmartesthurnder.servlet;
 
-import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
+import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.inject.Inject;
@@ -33,14 +33,14 @@ public class PreModificar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Inject
-    private EmpleadoService empleadoService;
+    private EmpleadoFacadeLocal facadeLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
             int id = Integer.parseInt(request.getParameter("idEmpleado"));
-            Empleado empleado = empleadoService.BuscarId(id);
+            Empleado empleado = facadeLocal.find(id);
             request.setAttribute("modificar", empleado);
             request.getRequestDispatcher("modificar.jsp").forward(request, response);
         }

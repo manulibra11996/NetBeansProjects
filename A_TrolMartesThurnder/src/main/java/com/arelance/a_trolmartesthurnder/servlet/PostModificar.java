@@ -5,8 +5,8 @@
  */
 package com.arelance.a_trolmartesthurnder.servlet;
 
-import com.arelance.a_trolmartesthurnder.Service.EmpleadoService;
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
+import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.inject.Inject;
@@ -33,15 +33,20 @@ public class PostModificar extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Inject
-    private EmpleadoService empleadoService;
+    private EmpleadoFacadeLocal facadeLocal;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            Empleado e = (Empleado) request.getSession().getAttribute("Empleado");
-            empleadoService.ModificarEmpleado(e);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            String nombre = request.getParameter("nombre");
+            String apellido = request.getParameter("apellido");
+            Integer salario = Integer.parseInt(request.getParameter("salario"));
+            String departamento = request.getParameter("departamento");
+            int id = Integer.parseInt(request.getParameter("id"));
+            Empleado e = new Empleado(id, nombre, apellido, salario, departamento);
+            facadeLocal.edit(e);
+            request.getRequestDispatcher("PreIndex").forward(request, response);
         }
     }
 
