@@ -43,6 +43,8 @@ public class PreIndex extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             List<Empleado> empleados = facadeLocal.findAll();
             request.setAttribute("lista", empleados);
+            int departamentos = facadeLocal.DepartamentosMayores1().size();
+            request.setAttribute("dep", departamentos);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

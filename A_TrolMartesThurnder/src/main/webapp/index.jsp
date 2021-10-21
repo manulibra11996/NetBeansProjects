@@ -26,6 +26,7 @@
             <p>Descendente:<input type="radio" id="orden" name="orden" value="desc" class="form-check-label"></p>
             <input type="submit" name="action" value="Filtrar" class="btn btn-secondary">
         </form>
+        <p class="text-center">El numero de departamentos con dos o mas empleados es: <%=request.getAttribute("dep")%></p>
         <table class="table table-striped">
             <thead class="table-dark">
                 <tr>

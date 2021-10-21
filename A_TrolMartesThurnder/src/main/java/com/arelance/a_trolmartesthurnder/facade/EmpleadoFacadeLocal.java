@@ -32,7 +32,7 @@ public interface EmpleadoFacadeLocal {
     
     List<Empleado> findDep(String nombre);
     
-    List<Empleado> DepartamentosMayores1();
+    List<Long> DepartamentosMayores1();
     
     List<Empleado> OrdenAscendente();
     

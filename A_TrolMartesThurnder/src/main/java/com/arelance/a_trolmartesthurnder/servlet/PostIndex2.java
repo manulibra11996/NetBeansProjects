@@ -40,7 +40,7 @@ public class PostIndex2 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            List<Empleado> empleados = facadeLocal.DepartamentosMayores1();
+            List<Long> empleados = facadeLocal.DepartamentosMayores1();
             request.setAttribute("lista", empleados);
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

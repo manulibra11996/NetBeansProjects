@@ -6,6 +6,7 @@
 package com.arelance.a_trolmartesthurnder.facade;
 
 import com.arelance.a_trolmartesthurnder.entity.Empleado;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +29,7 @@ public class EmpleadoFacade extends AbstractFacade<Empleado> implements Empleado
     public EmpleadoFacade() {
         super(Empleado.class);
     }
+
+    
     
 }
