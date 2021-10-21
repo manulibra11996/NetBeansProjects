@@ -11,29 +11,46 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
         <title>JSP Page</title>
     </head>
     <body>
         <h2>Lista de empleados</h2>
-        <h3>Filtro de departamento</h3>
-         <form action="PostIndex" method="GET" id="formulario">
+        <h4>Filtro de departamento</h4>
+        <form action="PostIndex" method="GET" id="formulario">
             <p for="text">Nombre del departamento:
-            <input type="text" id="nombre" placeholder="dep1" name="nombre" maxlength="45"></p>
-            <p>Ordenacion por salario: 
-                Ascendente:<input type="radio" id="orden"  name="orden" value="asc">
-                Descendente:<input type="radio" id="orden" name="orden" value="desc"></p>
-            <input type="submit" name="action" value="Filtrar">
-         </form>
-        <%
-            List<Empleado> lista = (List<Empleado>) request.getAttribute("lista");
+                <input type="text" id="nombre" placeholder="dep1" name="nombre" maxlength="45" class="form-control"></p>
+            <p>Ordenacion por salario:</p>
+            <p>Ascendente:<input type="radio" id="orden"  name="orden" value="asc" class="form-check-label"></p>
+            <p>Descendente:<input type="radio" id="orden" name="orden" value="desc" class="form-check-label"></p>
+            <input type="submit" name="action" value="Filtrar" class="btn btn-secondary">
+        </form>
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Salario en millones/anuales</th>
+                    <th>Departamento</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+                <%
+                    List<Empleado> lista = (List<Empleado>) request.getAttribute("lista");
 
-            for (Empleado empleado : lista) {
-        %>
-        <p><%=empleado.getEmpName()%><a href="PreModificar?idEmpleado=<%=empleado.getIdempleado()%>">Modificar</a>
-            <a href="PreEliminar?idEmpleado=<%=empleado.getIdempleado()%>">Eliminar</a></p>
-            <%
-                }
-            %>
-        <a href="insertar.jsp">Alta</a>
+                    for (Empleado empleado : lista) {
+                %>
+                <tr>
+                    <td><%=empleado.getEmpName()%></td><td><%=empleado.getEmpLastName()%></td>
+                    <td><%=empleado.getEmpSalary()%></td><td><%=empleado.getEmpDep()%></td>
+                    <td><a href="PreModificar?idEmpleado=<%=empleado.getIdempleado()%>">Modificar</a></td>
+                    <td><a href="PreEliminar?idEmpleado=<%=empleado.getIdempleado()%>">Eliminar</a></td></tr>
+                    <%
+                        }
+                    %>
+        </table>
+        <a href="insertar.jsp" class="btn btn-success" role="button">Alta</a>
     </body>
 </html>
