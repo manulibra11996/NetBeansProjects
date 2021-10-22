@@ -3,6 +3,5 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="criteria" transaction-type="JTA">
     <jta-data-source>jdbc/Criteria</jta-data-source>
-    <class>com.arelance.a_trolmartesthurnder.entity.Empleado</class>
   </persistence-unit>
 </persistence>

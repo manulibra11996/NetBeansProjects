@@ -32,6 +32,12 @@ public interface EmpleadoFacadeLocal {
     
     List<Empleado> findDep(String nombre);
     
+    Empleado findNom(String nombre);
+    
+    Empleado findApe(String nombre);
+    
+    List<Empleado> findSal(String nombre);
+    
     List<Long> DepartamentosMayores1();
     
     List<Empleado> OrdenAscendente();
