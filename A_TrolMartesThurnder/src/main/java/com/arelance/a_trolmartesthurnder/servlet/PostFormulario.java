@@ -9,7 +9,6 @@ import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Manuel
+ * @author manul
  */
-@WebServlet(name = "PostIndex", urlPatterns = {"/PostIndex"})
-public class PostIndex extends HttpServlet {
+@WebServlet(name = "PostFormulario", urlPatterns = {"/PostFormulario"})
+public class PostFormulario extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,21 +39,29 @@ public class PostIndex extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            if (request.getParameter("nombre") != null) {
-                String nombre = request.getParameter("nombre");
-                if (facadeLocal.findDep(nombre) != null) {
-                    List<Empleado> empleados = facadeLocal.findDep(nombre);
-                    request.setAttribute("lista", empleados);
-                }
+            String nombre = request.getParameter("nombre");
+            String apellido = request.getParameter("apellido");
+            Integer salario = Integer.parseInt(request.getParameter("salario"));
+            String departamento = request.getParameter("departamento");
+            int id = Integer.parseInt(request.getParameter("id"));
+            String tipo = request.getParameter("action");
+            switch (tipo) {
+                case "Alta":
+                    Empleado ea = new Empleado( nombre, apellido, salario, departamento);
+                    facadeLocal.edit(ea);
+                    break;
+                case "Modificar":
+                    Empleado em = new Empleado(id, nombre, apellido, salario, departamento);
+                    facadeLocal.edit(em);
+                    break;
+                case "Eliminar":
+                    Empleado ee = new Empleado(id, nombre, apellido, salario, departamento);
+                    facadeLocal.remove(ee);
+                    break;
+                default:
+                    break;
             }
-            if (request.getParameter("orden").equals("asc")) {
-                List<Empleado> empleados = facadeLocal.OrdenAscendente();
-                request.setAttribute("lista", empleados);
-            } else {
-                List<Empleado> empleados = facadeLocal.OrdenDescendente();
-                request.setAttribute("lista", empleados);
-            }
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("PreIndex").forward(request, response);
         }
     }
 

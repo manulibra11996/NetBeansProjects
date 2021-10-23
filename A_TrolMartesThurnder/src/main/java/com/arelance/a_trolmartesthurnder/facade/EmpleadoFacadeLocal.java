@@ -44,5 +44,7 @@ public interface EmpleadoFacadeLocal {
     
     List<Empleado> OrdenDescendente();
     
+    List<Empleado> Orden(String orden);
+    
     
 }

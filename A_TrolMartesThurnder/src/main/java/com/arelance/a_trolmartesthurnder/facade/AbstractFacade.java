@@ -208,4 +208,22 @@ public abstract class AbstractFacade<T> {
         TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
         return (List<T>) typedQuery.getResultList();
     }
+
+    /**
+     * 
+     * @param orden recibe el orden ya sea de modo ascendente o descendente
+     * @return devuelve el listado de empleados ordenados por el salario
+     */
+    public List<T> Orden(String orden) {
+        CriteriaQuery<Empleado> criteriaQuery = getEntityManager().getCriteriaBuilder().createQuery(Empleado.class);
+        Root<Empleado> from = criteriaQuery.from(Empleado.class);
+        CriteriaQuery<Empleado> select = criteriaQuery.select(from);
+        if (orden == "asc") {
+            criteriaQuery.orderBy(getEntityManager().getCriteriaBuilder().asc(from.get("empSalary")));
+        } else {
+            criteriaQuery.orderBy(getEntityManager().getCriteriaBuilder().desc(from.get("empSalary")));
+        }
+        TypedQuery<Empleado> typedQuery = getEntityManager().createQuery(select);
+        return (List<T>) typedQuery.getResultList();
+    }
 }

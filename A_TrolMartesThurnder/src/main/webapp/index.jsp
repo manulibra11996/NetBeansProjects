@@ -49,13 +49,13 @@
             <tr>
                 <td><%=empleado.getEmpName()%></td><td><%=empleado.getEmpLastName()%></td>
                 <td><%=empleado.getEmpSalary()%></td><td><%=empleado.getEmpDep()%></td>
-                <td><a href="PreModificar?idEmpleado=<%=empleado.getIdempleado()%>">Modificar</a></td>
-                <td><a href="PreEliminar?idEmpleado=<%=empleado.getIdempleado()%>">Eliminar</a></td></tr>
+                <td><a href="PreFormulario?idEmpleado=<%=empleado.getIdempleado()%>&tipo=Modificar">Modificar</a></td>
+                <td><a href="PreFormulario?idEmpleado=<%=empleado.getIdempleado()%>&tipo=Eliminar">Eliminar</a></td></tr>
                 <%
                         }
                     }
                 %>
         </table>
-        <a href="insertar.jsp" class="btn btn-success" role="button">Alta</a>
+        <a href="PreFormulario?tipo=Alta" class="btn btn-success" role="button">Alta</a>
     </body>
 </html>

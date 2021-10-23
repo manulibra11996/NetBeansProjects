@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Manuel
  */
-@WebServlet(name = "errorHandler", urlPatterns = {"/errorHandler"})
+@WebServlet(name = "errorVarios", urlPatterns = {"/errorVarios"})
 public class errorVarios extends HttpServlet {
 
     /**
