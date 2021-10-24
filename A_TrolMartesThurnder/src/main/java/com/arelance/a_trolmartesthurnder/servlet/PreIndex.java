@@ -36,17 +36,15 @@ public class PreIndex extends HttpServlet {
     @Inject
     private EmpleadoFacadeLocal facadeLocal;
 
-
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            if(facadeLocal.findAll() != null){
-            List<Empleado> empleados = facadeLocal.findAll();
-            request.setAttribute("lista", empleados);
+            if (facadeLocal.findAll() != null) {
+                List<Empleado> empleados = facadeLocal.findAll();
+                request.setAttribute("lista", empleados);
             }
-            int departamentos = facadeLocal.DepartamentosMayores1().size();
-            request.setAttribute("dep", departamentos);
+            request.setAttribute("dep", request.getSession().getAttribute("dep"));
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

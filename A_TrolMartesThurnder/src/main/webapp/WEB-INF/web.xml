@@ -14,7 +14,7 @@
     </error-page> 
     <welcome-file-list>
         <welcome-file>
-            PreIndex
+            Inicio
         </welcome-file>
     </welcome-file-list>
 </web-app>

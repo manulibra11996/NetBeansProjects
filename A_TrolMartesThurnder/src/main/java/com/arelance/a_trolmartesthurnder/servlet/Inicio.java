@@ -5,11 +5,9 @@
  */
 package com.arelance.a_trolmartesthurnder.servlet;
 
-import com.arelance.a_trolmartesthurnder.entity.Empleado;
 import com.arelance.a_trolmartesthurnder.facade.EmpleadoFacadeLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,10 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Manuel
+ * @author manul
  */
-@WebServlet(name = "PostIndex", urlPatterns = {"/PostIndex"})
-public class PostIndex extends HttpServlet {
+@WebServlet(name = "Inicio", urlPatterns = {"/Inicio"})
+public class Inicio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,26 +33,14 @@ public class PostIndex extends HttpServlet {
      */
     @Inject
     private EmpleadoFacadeLocal facadeLocal;
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            if (request.getParameter("nombre") != null) {
-                String nombre = request.getParameter("nombre");
-                if (facadeLocal.findDep(nombre) != null) {
-                    List<Empleado> empleados = facadeLocal.findDep(nombre);
-                    request.setAttribute("lista", empleados);
-                }
-            }
-            if (request.getParameter("orden").equals("asc")) {
-                List<Empleado> empleados = facadeLocal.Orden("asc");
-                request.setAttribute("lista", empleados);
-            } else {
-                List<Empleado> empleados = facadeLocal.Orden("desc");
-                request.setAttribute("lista", empleados);
-            }
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            int departamentos = facadeLocal.DepartamentosMayores1().size();
+            request.getSession().setAttribute("dep", departamentos);
+            request.getRequestDispatcher("PreIndex").forward(request, response);
         }
     }
 
