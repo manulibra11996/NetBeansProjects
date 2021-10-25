@@ -39,20 +39,22 @@ public class PostIndex extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             if (request.getParameter("nombre") != null) {
                 String nombre = request.getParameter("nombre");
-                if (facadeLocal.findDep(nombre) != null) {
+                if (facadeLocal.findDep(nombre).equals("0")) {
                     List<Empleado> empleados = facadeLocal.findDep(nombre);
                     request.setAttribute("lista", empleados);
                 }
             }
-            if (request.getParameter("orden").equals("asc")) {
-                List<Empleado> empleados = facadeLocal.Orden("asc");
-                request.setAttribute("lista", empleados);
-            } else {
-                List<Empleado> empleados = facadeLocal.Orden("desc");
-                request.setAttribute("lista", empleados);
+            if (request.getParameter("orden") != null) {
+                if (request.getParameter("orden").equals("asc")) {
+                    List<Empleado> empleados = facadeLocal.Orden("asc");
+                    request.setAttribute("lista", empleados);
+                } else {
+                    List<Empleado> empleados = facadeLocal.Orden("desc");
+                    request.setAttribute("lista", empleados);
+                }
             }
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

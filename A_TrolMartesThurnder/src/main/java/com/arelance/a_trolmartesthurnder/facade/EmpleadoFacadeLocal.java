@@ -40,10 +40,6 @@ public interface EmpleadoFacadeLocal {
     
     List<Long> DepartamentosMayores1();
     
-    List<Empleado> OrdenAscendente();
-    
-    List<Empleado> OrdenDescendente();
-    
     List<Empleado> Orden(String orden);
     
     
