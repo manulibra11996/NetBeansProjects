@@ -8,7 +8,7 @@
             30
         </session-timeout>
     </session-config>
-     <error-page> 
+    <error-page> 
         <exception-type>java.lang.Exception</exception-type> 
         <location>/errorHandler</location> 
     </error-page> 

@@ -24,7 +24,7 @@
             <p>Ordenacion por salario:</p>
             <p>Ascendente:<input type="radio" id="orden"  name="orden" value="asc" class="form-check-label"></p>
             <p>Descendente:<input type="radio" id="orden" name="orden" value="desc" class="form-check-label"></p>
-            <input type="submit" name="action" value="Filtrar" class="btn btn-secondary">
+            <input type="submit" name="action" value="Filtrar" class="btn btn-dark">
         </form>
         <p class="text-center">El numero de departamentos con dos o mas empleados es: <%=request.getAttribute("dep")%></p>
         <%

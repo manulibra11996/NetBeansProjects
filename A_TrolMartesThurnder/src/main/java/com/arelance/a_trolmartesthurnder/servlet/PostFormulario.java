@@ -38,24 +38,24 @@ public class PostFormulario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellido");
             Integer salario = Integer.parseInt(request.getParameter("salario"));
             String departamento = request.getParameter("departamento");
-            int id = Integer.parseInt(request.getParameter("id"));
-            String tipo = request.getParameter("action");
-            switch (tipo) {
+            switch (request.getParameter("tipo")) {
                 case "Alta":
-                    Empleado ea = new Empleado( nombre, apellido, salario, departamento);
-                    facadeLocal.edit(ea);
+                    Empleado ea = new Empleado(nombre, apellido, salario, departamento);
+                    facadeLocal.create(ea);
                     break;
                 case "Modificar":
-                    Empleado em = new Empleado(id, nombre, apellido, salario, departamento);
+                    int idm = Integer.parseInt(request.getParameter("id"));
+                    Empleado em = new Empleado(idm, nombre, apellido, salario, departamento);
                     facadeLocal.edit(em);
                     break;
                 case "Eliminar":
-                    Empleado ee = new Empleado(id, nombre, apellido, salario, departamento);
+                    int ide = Integer.parseInt(request.getParameter("id"));
+                    Empleado ee = new Empleado(ide, nombre, apellido, salario, departamento);
                     facadeLocal.remove(ee);
                     break;
                 default:

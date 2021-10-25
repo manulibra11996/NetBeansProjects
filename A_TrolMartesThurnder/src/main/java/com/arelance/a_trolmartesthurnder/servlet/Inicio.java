@@ -39,7 +39,9 @@ public class Inicio extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             int departamentos = facadeLocal.DepartamentosMayores1().size();
+            
             request.getSession().setAttribute("dep", departamentos);
+            
             request.getRequestDispatcher("PreIndex").forward(request, response);
         }
     }

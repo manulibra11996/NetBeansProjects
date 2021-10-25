@@ -23,7 +23,6 @@
             String valueApellido = "";
             String valueSalario = "";
             String valueDep = "";
-            String valueId = "";
             String titulo = "";
 
             switch (tipo) {
@@ -32,7 +31,6 @@
                     valueApellido = " placeholder=\"Gonzales\" required";
                     valueSalario = " placeholder=\"20\" required";
                     valueDep = " placeholder=\"Dep1\" required";
-                    valueId = "";
                     titulo = "Alta de un empleado";
                     break;
                 case "Modificar":
@@ -40,7 +38,6 @@
                     valueApellido = " required";
                     valueSalario = " required";
                     valueDep = " required";
-                    valueId = "";
                     titulo = "Modificacion de un empleado";
                     break;
                 case "Eliminar":
@@ -54,15 +51,19 @@
         %>
         <h2><%=titulo%></h2>
         <form action="PostFormulario" method="GET" id="formulario">
+            <input type="text" id="tipo" name="tipo" hidden="hidden" value="<%=tipo%>">
+                <%
+                    if (!tipo.equals("Alta")) {%>
             <input type="text" id="id" name="id" hidden="hidden" value="${datos.getIdempleado()}">
+            <%}%>
             <p for="text">Nombre:
-                <input type="text" id="nombre" maxlength="45" class="form-control mt-3"  value="${datos.getEmpName()}" <%=valueNombre%>></p>
+                <input type="text" id="nombre"  name="nombre" maxlength="45" class="form-control mt-3"  value="${datos.getEmpName()}" <%=valueNombre%>></p>
             <p for="text">Apellido:
-                <input type="text" id="apellido" maxlength="45" class="form-control mt-3" value="${datos.getEmpLastName()}" <%=valueApellido%>></p>
+                <input type="text" id="apellido" name="apellido" maxlength="45" class="form-control mt-3" value="${datos.getEmpLastName()}" <%=valueApellido%>></p>
             <p for="text">Salario:
-                <input type="number" id="salario"  pattern="[0-9]" class="form-control mt-3" value="${datos.getEmpSalary()}" <%=valueSalario%>></p>
+                <input type="number" id="salario" name="salario"  pattern="[0-9]" class="form-control mt-3" value="${datos.getEmpSalary()}" <%=valueSalario%>></p>
             <p for="departamento">Departamento:
-                <input type="departamento" id="departamento" class="form-control mt-3" value="${datos.getEmpDep()}" <%=valueDep%>></p>
+                <input type="departamento" id="departamento"  name="departamento"  class="form-control mt-3" value="${datos.getEmpDep()}" <%=valueDep%>></p>
                 <%
                     if (tipo.equals("Eliminar")) {%>
             <input type="submit" name="action" value="Si" class="btn btn-primary">
