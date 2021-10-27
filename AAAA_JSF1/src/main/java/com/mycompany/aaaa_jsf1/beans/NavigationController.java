@@ -17,8 +17,8 @@ import javax.faces.bean.ManagedProperty;
 @RequestScoped
 public class NavigationController {
 
-//    @ManagedProperty(value = "#{param.pageId}")
-//    private String pageId;
+    @ManagedProperty(value = "#{param.pageId}")
+    private String pageId;
 
     /**
      * Creates a new instance of NavigationController
@@ -27,18 +27,18 @@ public class NavigationController {
         super();
     }
 
-//    public String showPage() {
-//        if (pageId == null) {
-//            return "inicio";
-//        }
-//        if (pageId.equals("1")) {
-//            return "destino";
-//        } else if (pageId.equals("2")) {
-//            return "diferente";
-//        } else {
-//            return "inicio";
-//        }
-//    }
+    public String showPage() {
+        if (pageId == null) {
+            return "inicio";
+        }
+        if (pageId.equals("1")) {
+            return "destino";
+        } else if (pageId.equals("2")) {
+            return "diferente";
+        } else {
+            return "inicio";
+        }
+    }
 
     public String processPage1() {
         return "page";

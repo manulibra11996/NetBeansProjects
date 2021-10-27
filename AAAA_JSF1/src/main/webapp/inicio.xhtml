@@ -10,8 +10,27 @@
         <h:form >
             <h:outputText value="#{rotulos.titulo}" id="titulo"/> 
             <h:inputText value="#{datosPersonalesBeans.nombre}" id="nombre" label="Nombre" required="true"/><br />
-            <h:commandLink action = "#{navigationController.processPage1()}" value = "#{rotulos.boton}"/><br />
-            <h:commandLink action = "#{navigationController.processPage2()}" value = "#{rotulos.boton2}"/><br />
+            <h:commandLink action = "#{navigationController.processPage1}" value = "#{rotulos.boton}"/><br />
+            <h:commandLink action = "#{navigationController.processPage2}" value = "#{rotulos.boton2}"/><br />
+
+            <br />
+            <h:commandLink action = "#{navigationController.showPage}" value = "#{rotulos.boton}">
+                <f:param name = "pageId" value = "1" />
+            </h:commandLink>
+            <h:commandLink action = "#{navigationController.showPage}" value = "#{rotulos.boton2}">
+                <f:param name = "pageId" value = "2" />
+            </h:commandLink>
+            <h:commandLink action = "#{navigationController.showPage}" value = "#{rotulos.botonindex}">
+                <f:param name = "pageId" value = "3" />
+            </h:commandLink>
+            
+            <br />
+            <h:commandLink action = "#{navigationController.processPage1}" value = "#{rotulos.boton}">
+                <f:param name = "pageId" value = "1" />
+            </h:commandLink>
+            <h:commandLink action = "#{navigationController.processPage2}" value = "#{rotulos.boton2}">
+                <f:param name = "pageId" value = "2" />
+            </h:commandLink>
         </h:form>
     </h:body>
 </html>

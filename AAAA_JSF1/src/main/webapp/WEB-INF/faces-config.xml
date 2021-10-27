@@ -31,19 +31,17 @@
     </application>
     
     <navigation-rule> 
-   <from-view-id>home.xhtml</from-view-id> 
+        <from-view-id>inicio.xhtml</from-view-id> 
    
-   <navigation-case> 
-      <from-action>#{navigationController.processPage1}</from-action> 
-      <from-outcome>page</from-outcome> 
-      <to-view-id>destino.xhtml</to-view-id> 
-   </navigation-case> 
+        <navigation-case> 
+            <from-outcome>#{navigationController.processPage1}</from-outcome> 
+            <to-view-id>destino.xhtml</to-view-id> 
+        </navigation-case> 
    
-   <navigation-case> 
-      <from-action>#{navigationController.processPage2}</from-action> 
-      <from-outcome>page</from-outcome> 
-      <to-view-id>diferente.xhtml</to-view-id> 
-   </navigation-case> 
+        <navigation-case> 
+            <from-outcome>#{navigationController.processPage2}</from-outcome> 
+            <to-view-id>diferente.xhtml</to-view-id> 
+        </navigation-case> 
 
-</navigation-rule> 
+    </navigation-rule> 
 </faces-config>
