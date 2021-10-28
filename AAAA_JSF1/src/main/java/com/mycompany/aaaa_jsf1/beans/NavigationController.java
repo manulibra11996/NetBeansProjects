@@ -41,10 +41,19 @@ public class NavigationController {
     }
 
     public String processPage1() {
-        return "page";
+        return "destino";
     }
 
     public String processPage2() {
-        return "page";
+        return "diferente";
     }
+
+    public String getPageId() {
+        return pageId;
+    }
+
+    public void setPageId(String pageId) {
+        this.pageId = pageId;
+    }
+    
 }
