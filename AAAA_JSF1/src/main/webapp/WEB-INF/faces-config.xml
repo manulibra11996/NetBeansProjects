@@ -28,6 +28,10 @@
             <base-name>datos.rotulos</base-name>
             <var>rotulos</var>
         </resource-bundle>
+        <resource-bundle>
+            <base-name>datos.imagenes</base-name>
+            <var>imagenes</var>
+        </resource-bundle>
     </application>
     
     

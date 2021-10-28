@@ -25,7 +25,7 @@
         </dependency>
     </dependencies>
     
-     <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -58,6 +58,14 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
+                            <outputDirectory>${basedir}/target/AAAA_JSF1-1.0-SNAPSHOT/src/main/webapp/resource
+                            </outputDirectory>
+                            <resources>          
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>     
                             <outputDirectory>${endorsed.dir}</outputDirectory>
                             <silent>true</silent>
                             <artifactItems>
