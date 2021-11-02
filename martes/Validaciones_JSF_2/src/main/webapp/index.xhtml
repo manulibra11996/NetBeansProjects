@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-tdansitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+                <tr>
+                    <td><h:outputLabel for="nombre" value="Nombre:"/></td>
+                    <td><h:inputText id="nombre" value="#{candidato.nombre}" required="true" label="nombre" p:placeholder="Introduce tu nombre" /></td>
+                    <td><h:message for="nombre"/></td>
+                </tr>
+                 <tr>
+                    <td><h:outputLabel for="apellido" value="Apellido:"/></td>
+                    <td><h:inputText id="apellido" value="#{candidato.apellido}" required="true" label="apellido"  p:placeholder="Introduce tu apellido" /></td>
+                    <td><h:message for="apellido"/></td>
+                </tr>
+                  <tr>
+                    <td><h:outputLabel for="salario" value="Salario"/></td>
+                    <td><h:inputText id="salario" value="#{candidato.salario}" label="salario">
+                            <f:validateLongRange minimum="500" maximum="5000"/>
+                        </h:inputText></td>
+                    <td><h:message for="salario"/></td>
+                </tr>
+            </table>
+            <h:commandButton value="Enviar" action="#{vacanteForm.enviar}"/>
+        </h:form>
+    </h:body>
+</html>
+
