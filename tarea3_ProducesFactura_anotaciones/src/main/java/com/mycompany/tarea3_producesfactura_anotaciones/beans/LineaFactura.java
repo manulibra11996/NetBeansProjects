@@ -5,7 +5,6 @@
  */
 package com.mycompany.tarea3_producesfactura_anotaciones.beans;
 
-import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -30,6 +29,13 @@ public class LineaFactura {
     public LineaFactura() {
     }
 
+    
+    public LineaFactura(int precio, int cantidad, String nombre_producto) {
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.nombre_producto = nombre_producto;
+    }
+ 
     public int getPrecio() {
         return precio;
     }

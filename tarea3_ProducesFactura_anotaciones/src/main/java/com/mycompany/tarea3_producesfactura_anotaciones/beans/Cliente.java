@@ -5,27 +5,27 @@
  */
 package com.mycompany.tarea3_producesfactura_anotaciones.beans;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
  *
  * @author manuel
  */
+@Named(value = "cliente")
+@RequestScoped
 public class Cliente {
 
     @NotNull(message = "El nombre no puede ser nulo")
-    private String nombre;
+    private String nombre = "Gabriel";
     @NotNull(message = "El email no puede estar vacío")
     @Email(message = "Email debe ser válido")
-    private String email;
+    private String email = "aaa@bbb";
     @NotNull(message = "El apellido no puede ser nulo")
-    private String apellidos;
+    private String apellidos = "Gomez";
 
-    public Cliente() {
-    }
 
     public String getNombre() {
         return nombre;
@@ -49,5 +49,9 @@ public class Cliente {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+    
+    public String nombreCompleto(){
+        return this.nombre + " " + this.apellidos;
     }
 }

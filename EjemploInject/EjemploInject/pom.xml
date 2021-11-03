@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mycompany</groupId>
-    <artifactId>tarea3_ProducesFactura_anotaciones</artifactId>
+    <artifactId>EjemploInject</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>tarea3_ProducesFactura_anotaciones-1.0-SNAPSHOT</name>
+    <name>EjemploInject-1.0-SNAPSHOT</name>
     
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -23,15 +23,9 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
     
-    <build>
+     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

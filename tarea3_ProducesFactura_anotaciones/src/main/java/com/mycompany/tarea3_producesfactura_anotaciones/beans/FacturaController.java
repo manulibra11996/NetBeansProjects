@@ -5,48 +5,35 @@
  */
 package com.mycompany.tarea3_producesfactura_anotaciones.beans;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.New;
 import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
  *
  * @author manuel
  */
-@Named
+@Named(value = "facturaControler")
 @RequestScoped
 public class FacturaController {
-
-    private Factura factura;
-    
-    
-    @PostConstruct
-    public void init() {
-         factura = new Factura();
-        factura.getCliente().setNombre("Gabriel");
-        factura.getCliente().setApellidos("Perez");
-        factura.getCliente().setEmail("aaa@aaa.com");
-        LineaFactura linea1 = new LineaFactura();
-        linea1.setNombre_producto("figura");
-        linea1.setPrecio(20);
-        linea1.setCantidad(2);
-        LineaFactura linea2 = new LineaFactura();
-        linea2.setNombre_producto("balon");
-        linea2.setPrecio(25);
-        linea2.setCantidad(3);
-        factura.getLineaFactura().add(linea1);
-        factura.getLineaFactura().add(linea2);
-        factura.setNombre("Factura de prueba");
-        factura.setNumeroFactura(1);
-    }
 
     @Produces
     @Named
     @RequestScoped
-    public Factura crearFactura() {
+    public Factura getFactura(@New Factura factura) {
+        LineaFactura linea1 = new LineaFactura(15, 1, "figura");
+        LineaFactura linea2 = new LineaFactura(20, 5, "balon");
+
+        factura.setNombre("Factura Cliente " + factura.getCliente().nombreCompleto());
+        factura.setNumeroFactura(507892);
+        factura.addLineaFactura(linea1);
+        factura.addLineaFactura(linea2);
+//        factura.setCliente(cliente);
+
         return factura;
     }
 }

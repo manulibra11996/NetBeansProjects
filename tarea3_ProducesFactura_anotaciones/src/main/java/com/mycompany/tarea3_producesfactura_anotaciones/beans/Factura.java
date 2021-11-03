@@ -5,7 +5,9 @@
  */
 package com.mycompany.tarea3_producesfactura_anotaciones.beans;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
@@ -18,10 +20,9 @@ import javax.validation.constraints.NotNull;
  *
  * @author manuel
  */
-@Model
 public class Factura {
 
-    @NotNull(message = "El cliente no puede ser nulo")
+ 
     private Cliente cliente;
     @NotNull(message = "El numedo de la factura no puede ser nulo")
     @Min(value = 1)
@@ -31,13 +32,18 @@ public class Factura {
     @NotNull(message = "La linea de la factura no puede ser nulo")
     private List<LineaFactura> lineaFactura;
 
-    @Produces
-    @Named
-    @RequestScoped
+    
+    @PostConstruct
+    public void init(){
+        lineaFactura = new ArrayList();
+    }
+    
+   
     public Cliente getCliente() {
         return cliente;
     }
 
+    @Inject
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
@@ -64,6 +70,10 @@ public class Factura {
 
     public void setLineaFactura(List<LineaFactura> lineaFactura) {
         this.lineaFactura = lineaFactura;
+    }
+    
+    public void addLineaFactura(LineaFactura lineaFactura){
+        this.lineaFactura.add(lineaFactura);
     }
 
 }
