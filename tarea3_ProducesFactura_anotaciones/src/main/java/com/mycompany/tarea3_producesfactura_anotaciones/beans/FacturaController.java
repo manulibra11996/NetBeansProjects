@@ -14,6 +14,7 @@ import javax.inject.Named;
  *
  * @author manuel
  */
+
 @Named(value = "facturaControler")
 @RequestScoped
 public class FacturaController {
@@ -29,7 +30,6 @@ public class FacturaController {
         factura.setNumeroFactura(507892);
         factura.addLineaFactura(linea1);
         factura.addLineaFactura(linea2);
-//        factura.setCliente(cliente);
 
         return factura;
     }

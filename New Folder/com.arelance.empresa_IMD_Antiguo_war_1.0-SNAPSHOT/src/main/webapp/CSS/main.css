@@ -1,0 +1,74 @@
+
+
+/*Cambiamos la fuente al cuerpo de la página*/
+body{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #eee;
+
+
+}
+.nav-link{
+    color:white;
+}
+/*Asignamos fuente distinta para usar como logotipo.*/
+.navbar-brand{
+    font-family: 'Aquire',sans-serif;
+    color:white;
+}
+/*Negrita para los campos de texto.*/
+
+
+/*Barra de búsqueda.*/
+* {
+    box-sizing: border-box;
+}
+/*Barra de búsqueda.*/
+#myInput { 
+    text-align:center;
+    margin:0 auto;
+    margin-bottom:20px;
+    text-align: center;
+    width: 500px;
+    height: auto;
+}
+/*Barra de búsqueda.*/
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+/*Barra de búsqueda.*/
+#myUL li a {
+
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: flex;
+
+}
+/*Barra de búsqueda.*/
+#myUL li a:hover:not(.header) {
+    background-color: #eee;
+}
+/*Barra de búsqueda.*/
+footer{
+    text-align: center;
+    margin-bottom:10px;
+}
+/*Barra de búsqueda.*/
+.form-control{
+
+    text-align:center;
+}
+/*Barra de búsqueda.*/
+input:focus{
+    font-weight: bold;
+
+}
+/*Barra de búsqueda.*/
+

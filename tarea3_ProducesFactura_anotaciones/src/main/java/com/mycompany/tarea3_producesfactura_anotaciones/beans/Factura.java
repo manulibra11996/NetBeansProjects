@@ -18,6 +18,7 @@ import javax.validation.constraints.NotNull;
  */
 public class Factura {
 
+    @NotNull(message = "El cliente no puede ser nulo")
     private Cliente cliente;
     @NotNull(message = "El numedo de la factura no puede ser nulo")
     @Min(value = 1)
@@ -29,7 +30,7 @@ public class Factura {
 
     @PostConstruct
     public void init() {
-        lineaFactura = new ArrayList();
+        lineaFactura = new ArrayList<>();
     }
 
     public Cliente getCliente() {
