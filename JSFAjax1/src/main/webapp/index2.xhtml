@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+       <tr>
+                    <td>Nombre:</td>
+                    <td>
+                        <h:inputText value="#{personaBean.nombre}">
+                            <f:ajax event="keyup" render=":for2:zona"/>
+                        </h:inputText>
+                    </td>
+                    <td>
+                        <h:outputLabel for="nombreP" value="Nombre: "/>
+                        <h:inputText id="nombre" value="#{personaBean.nombre}">
+                            <f:ajax event="keyup" render="mensaje-nombre" listener="#{personaBean.validarNombre}"/>
+                        </h:inputText>
+                        <h:outputText id="mensaje-nombre" class="mensaje-error" value="#{personaBean.errorMensajeName}"/>
+                    </td>
+                </tr>
+    </h:body>
+</html>
+

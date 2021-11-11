@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="formulario">
+            <h3>Introduce tu nombre</h3>
+            <table>
+                <tr>
+                    <td>
+                        <h:outputLabel for="contraseña" value="Contraseña "/>
+                        <h:inputText id="contraseña" value="#{personaBean.contraseña}">
+                            <f:ajax event="keyup" render="mensaje-contraseña contraseña2" listener="#{personaBean.validarContraseña()}"/>
+                        </h:inputText>
+                        <h:outputText id="mensaje-contraseña" class="mensaje-error" value="#{personaBean.errorMensajeContraseña}"/>
+                    </td>
+                    <td>
+                        <h:outputLabel for="contraseña2" value="Comprobar contraseña "/>
+                        <h:inputText id="contraseña2" value="#{personaBean.contraseña2}" 
+                                     disabled="#{personaBean.contraseña==null?true:false}">
+                            <f:ajax event="keyup" render="mensaje boton" listener="#{personaBean.validarContraseña2()}"/>
+                        </h:inputText>
+                        <h:outputText id="mensaje" class="mensaje-error" value="#{personaBean.errorMensajeContraseña2}"/>
+                    </td>
+                    <td>
+                        <f:ajax event="keyup" render="mensaje-comprobacion" listener="#{personaBean.comprobarContraseña()}"/>
+                        <h:outputText id="mensaje-comprobacion" class="mensaje-error" value="#{personaBean.errorMensajeContraseña}"/>
+                        <h:button id="boton" disabled="#{personaBean.errorMensajeContraseña==null?true:false}" value="Registrar"></h:button>
+                    </td>
+                </tr>
+            </table>
+        </h:form> 
+        <h:form id="for2">
+             <h:outputText id="zona" value="#{personaBean.nombre}"/>
+        </h:form>
+       
+    </h:body>
+</html>
+
