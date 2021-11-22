@@ -38,21 +38,47 @@
                                itemLabel="#{state.descripcion}" />
             </h:selectOneRadio>
 
+            <h:outputLabel value="Con Checkbox"/>
+            <h:selectManyCheckbox value="#{persona.marcaTelefoMovil}" id="movil">
+                <f:selectItems value="#{persona.valuesMovil}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"/>
+            </h:selectManyCheckbox>
+
+            <h:outputLabel value="Con Combo"/><br/>
+            <h:selectOneMenu value="#{persona.provincia}" id="provincia">
+                <f:selectItems value="#{persona.valuesProvincia}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"/>
+            </h:selectOneMenu>
+            <br/>
+            <h:outputLabel value="Con Lista"/><br/>
+            <h:selectOneListbox value="#{persona.actividad}" id="actividad">
+                <f:selectItems value="#{persona.valuesActividad}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"/>
+            </h:selectOneListbox>
         </h:form>
 
         <hr />
-        
+
         <h:outputText value="#{'Nombre :'.concat(persona.nombre)}"/><br/>
         <h:outputText value="#{'Email :'.concat(persona.email)}"/><br/>
         <h:outputText value="#{'Sexo '.concat(persona.sexo)}"/><br/>
 
         <hr/>
 
-        <h:outputLabel value="Lista de marcar de teléfonos:" rendered="#{persona.marcaTelefoMovil.stream().count()>0}"/>
+        <h:outputLabel value="marcar de teléfonos:" rendered="#{persona.marcaTelefoMovil.stream().count()>0}"/>
         <ui:repeat value="#{persona.marcaTelefoMovil}" var="mob"><br/>		
             #{mob}
-        </ui:repeat>
-
+        </ui:repeat><br/>
+        <h:outputLabel value="Provincia seleccionada:" rendered="#{persona.provincia.length()>0}"/><br/>
+        <h:outputLabel value="#{persona.provincia}" rendered="#{persona.provincia.length()>0}"/><br/>
+        <h:outputLabel value="Actividad elegida:" rendered="#{persona.actividad.length()>0}"/><br/>
+        <h:outputLabel value="#{persona.actividad}" rendered="#{persona.actividad.length()>0}"/><br/>
     </h:body>
 </html>
 

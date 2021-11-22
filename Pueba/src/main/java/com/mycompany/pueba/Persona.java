@@ -22,6 +22,10 @@ public class Persona {
     private String sexo = "Mujer";
 
     private String[] marcaTelefoMovil;
+    
+    private String provincia;
+    
+    private String actividad;
 
     public String getNombre() {
         return nombre;
@@ -73,8 +77,37 @@ public class Persona {
         this.sexo = sexo;
     }
 
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(String actividad) {
+        this.actividad = actividad;
+    }
+    
+    
     public Sexo[] getValues() {
         return Sexo.values();
+    }
+    
+    public Movil[] getValuesMovil() {
+        return Movil.values();
+    }
+    
+    public Provincia[] getValuesProvincia() {
+        return Provincia.values();
+    }
+    
+    public Actividad[] getValuesActividad() {
+        return Actividad.values();
     }
 
 //    public enum Sexo {
