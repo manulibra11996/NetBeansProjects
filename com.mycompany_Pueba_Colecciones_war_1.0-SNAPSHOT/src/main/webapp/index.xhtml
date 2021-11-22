@@ -7,11 +7,6 @@
       xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
     <h:head>
         <title>Facelet Title</title>
-        <style>
-            .clase{
-                background-color: aquamarine;
-            }
-        </style>
     </h:head>
     <h:body>
         <h:form>
@@ -42,35 +37,33 @@
                                itemValue="#{state.descripcion}"
                                itemLabel="#{state.descripcion}" />
             </h:selectOneRadio>
-            
-            <h:panelGroup styleClass="clase">
-                <h:outputLabel value="Con Checkbox"/>
-                <h:selectManyCheckbox value="#{persona.marcaTelefoMovil}" id="movil" layout="pageDirection">
-                    <f:selectItems value="#{persona.valuesMovil}" 
-                                   var="movil" 
-                                   itemValue="#{state.descripcion}"
-                                   itemLabel="#{state.descripcion}"
-                                   id="movilElegido"/>
-                </h:selectManyCheckbox>
 
-                <h:outputLabel value="Con Combo"/><br/>
-                <h:selectOneMenu value="#{persona.provincia}" id="provincia">
-                    <f:selectItems value="#{persona.valuesProvincia}" 
-                                   var="movil" 
-                                   itemValue="#{state.descripcion}"
-                                   itemLabel="#{state.descripcion}"
-                                   id="provinciaElegida"/>
-                </h:selectOneMenu>
-                <br/>
-                <h:outputLabel value="Con Lista"/><br/>
-                <h:selectOneListbox value="#{persona.actividad}" id="actividad">
-                    <f:selectItems value="#{persona.valuesActividad}" 
-                                   var="movil" 
-                                   itemValue="#{state.descripcion}"
-                                   itemLabel="#{state.descripcion}"
-                                   id="actividadElegida"/>
-                </h:selectOneListbox>
-            </h:panelGroup>
+            <h:outputLabel value="Con Checkbox"/>
+            <h:selectManyCheckbox value="#{persona.marcaTelefoMovil}" id="movil">
+                <f:selectItems value="#{persona.valuesMovil}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"
+                               id="movilElegido"/>
+            </h:selectManyCheckbox>
+
+            <h:outputLabel value="Con Combo"/><br/>
+            <h:selectOneMenu value="#{persona.provincia}" id="provincia">
+                <f:selectItems value="#{persona.valuesProvincia}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"
+                               id="provinciaElegida"/>
+            </h:selectOneMenu>
+            <br/>
+            <h:outputLabel value="Con Lista"/><br/>
+            <h:selectOneListbox value="#{persona.actividad}" id="actividad">
+                <f:selectItems value="#{persona.valuesActividad}" 
+                               var="movil" 
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}"
+                               id="actividadElegida"/>
+            </h:selectOneListbox>
         </h:form>
 
         <hr />

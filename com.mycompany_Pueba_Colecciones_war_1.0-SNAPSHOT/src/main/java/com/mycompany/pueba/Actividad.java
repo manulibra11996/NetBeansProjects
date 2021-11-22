@@ -9,12 +9,12 @@ package com.mycompany.pueba;
  *
  * @author manuel
  */
-public enum Provincia {
-    ALMERIA("Almeria"), CADIZ("Cadiz"), CORDOBA("Cordoba"), GRANADA("Granada"), HUELVA("Huelva"), JAEN("Jaen"), MALAGA("Malaga"), SEVILLA("Sevilla");
-    
+public enum Actividad {
+    LEER("Leer"), COCINAR("Cocinar"), CAMINAR("Caminar");
+
     private String descripcion;
 
-    private Provincia(String descripcion) {
+    private Actividad(String descripcion) {
         this.descripcion = descripcion;
     }
 
