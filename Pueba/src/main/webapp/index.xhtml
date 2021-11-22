@@ -11,7 +11,6 @@
     <h:body>
         <h:form>
             <h:outputLabel for="nombre">Nombre :</h:outputLabel><h:inputText id="nombre" value="#{persona.nombre}"/><br/>
-
             <h:outputLabel for="email">email :</h:outputLabel><h:inputText id="emal" value="#{persona.email}" pt:type="email" autocomplete="true"/>
             <h:outputText value="#{persona.email}"/>
             <h:commandButton value="enviar"/>
@@ -30,7 +29,7 @@
                 <f:selectItem itemValue="hombre" itemLabel="hombre" />
                 <f:selectItem itemValue="Mujer" itemLabel="Mujer" />           
             </h:selectOneRadio>
-            
+
             <h:outputLabel value="Con Enum Sexo"/>
             <h:selectOneRadio value="#{persona.sexo}">
                 <f:selectItems value="#{persona.values}"
@@ -38,12 +37,12 @@
                                itemValue="#{state.descripcion}"
                                itemLabel="#{state.descripcion}" />
             </h:selectOneRadio>
-            
+
         </h:form>
 
         <hr />
+        
         <h:outputText value="#{'Nombre :'.concat(persona.nombre)}"/><br/>
-
         <h:outputText value="#{'Email :'.concat(persona.email)}"/><br/>
         <h:outputText value="#{'Sexo '.concat(persona.sexo)}"/><br/>
 
@@ -52,9 +51,6 @@
         <h:outputLabel value="Lista de marcar de teléfonos:" rendered="#{persona.marcaTelefoMovil.stream().count()>0}"/>
         <ui:repeat value="#{persona.marcaTelefoMovil}" var="mob"><br/>		
             #{mob}
-
-
-
         </ui:repeat>
 
     </h:body>

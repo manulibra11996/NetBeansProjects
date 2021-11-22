@@ -19,7 +19,7 @@ public class Persona {
 
     private String nombre;
     private String email;
-    private String sexo="Mujer";
+    private String sexo = "Mujer";
 
     private String[] marcaTelefoMovil;
 
@@ -45,12 +45,9 @@ public class Persona {
         this.email = email;
     }
 
-    
-    
     /**
      * @return the marcaTelefoMovil
      */
-    
     public String[] getMarcaTelefoMovil() {
         return marcaTelefoMovil;
     }
@@ -75,24 +72,24 @@ public class Persona {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+
     public Sexo[] getValues() {
         return Sexo.values();
     }
-    public enum Sexo {
-    HOMBRE("hombre"),MUJER("Mujer");
 
-    private Sexo(String descripcion) {
-        this.descripcion = descripcion;
-    }
-     
-    private String descripcion;
-   
-    
-    
-    public String getDescripcion(){
-        return descripcion;
-    }
-    
-}
+//    public enum Sexo {
+//        HOMBRE("hombre"), MUJER("Mujer");
+//
+//        private String descripcion;
+//
+//        private Sexo(String descripcion) {
+//            this.descripcion = descripcion;
+//        }
+//
+//        public String getDescripcion() {
+//            return descripcion;
+//        }
+//
+//    }
 
 }
