@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:graphicImage  value = "#{imagenes.logo}" id="imagen" /><br />
+            <h:outputLabel value="Con Enum Sexo"/>
+            <h:selectOneRadio value="#{coche.comprador}" id="comprador">
+                <f:selectItems value="#{coche.valuesComprador}"
+                               var="state"
+                               itemValue="#{state.descripcion}"
+                               itemLabel="#{state.descripcion}" 
+                               id="compradorElegido"/>
+            </h:selectOneRadio>
+                <h:outputLabel value="Con Checkbox"/>
+                <h:selectManyCheckbox value="#{coche.extras}" id="extra" layout="pageDirection">
+                    <f:selectItems value="#{coche.valuesExtra}" 
+                                   var="extra" 
+                                   itemValue="#{extra.descripcion}"
+                                   itemLabel="#{extra.descripcion}"
+                                   id="extraElegido"/>
+                </h:selectManyCheckbox>
+
+                <h:outputLabel value="Con Combo"/><br/>
+                <h:selectOneMenu value="#{coche.marca}" id="marca">
+                    <f:selectItems value="#{coche.valuesMarca}" 
+                                   var="marca" 
+                                   itemValue="#{marca.descripcion}"
+                                   itemLabel="#{marca.descripcion}"
+                                   id="marcaElegida"/>
+                </h:selectOneMenu>
+                <br/>
+                <h:outputLabel value="Con Combo"/><br/>
+                <h:selectOneMenu value="#{coche.modelo}" id="modelo">
+                    <f:selectItems value="#{coche.valuesModelo}" 
+                                   var="modelo" 
+                                   itemValue="#{modelo.descripcion}"
+                                   itemLabel="#{modelo.descripcion}"
+                                   id="modeloElegida"/>
+                </h:selectOneMenu>
+                <br/>
+                <h:outputLabel value="Con Lista"/><br/>
+                <h:selectOneListbox value="#{coche.color}" id="color">
+                    <f:selectItems value="#{coche.valuesColor}" 
+                                   var="color" 
+                                   itemValue="#{color.descripcion}"
+                                   itemLabel="#{color.descripcion}"
+                                   id="colorElegida"/>
+                </h:selectOneListbox>
+                <fieldset title="Extras" id="extra">
+                    <h:outputLabel for="nombre" value="Extras" />
+                </fieldset>
+        </h:form>
+    </h:body>
+</html>
+

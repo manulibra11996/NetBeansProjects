@@ -10,27 +10,29 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputLabel for="nombre">Nombre :</h:outputLabel><h:inputText id="nombre" value="#{persona.nombre}"/><br/>
+            <h:outputLabel for="nombre">Nombre :</h:outputLabel><br/>
+            <h:inputText id="nombre" value="#{persona.nombre}"/><br/>
 
-            <h:outputLabel for="email">email :</h:outputLabel><h:inputText id="emal" value="#{persona.email}" pt:type="email" autocomplete="true"/>
-            <h:outputText value="#{persona.email}"/>
+            <h:outputLabel for="email">email :</h:outputLabel><br/>
+            <h:inputText id="emal" value="#{persona.email}" pt:type="email" autocomplete="true"/>  <br/>  <br/>  
             <h:commandButton value="enviar"/>
             <br/>
+      
             <h:outputLabel>MobileNames:</h:outputLabel>
             <br/>
-            <h:selectManyListbox value="#{persona.marcaTelefoMovil}" >
-                <f:selectItem itemValue="Nokia" itemLabel="Nokia" />
-                <f:selectItem itemValue="Samsung" itemLabel="Samsung" />
-                <f:selectItem itemValue="Blackberry" itemLabel="Blackberry" />
-                <f:selectItem itemValue="Sony" itemLabel="Sony" />
-                <f:selectItem itemValue="Mi3" itemLabel="Mi3" />
-            </h:selectManyListbox>
-
+            <h:selectManyCheckbox layout="pageDirection" value="#{marca.mtlf}" >
+                <f:selectItems value="#{marca.mobValue}"
+                               var="m1"
+                               itemLabel="#{m1.mlabel}"
+                               itemValue="#{m1.mvalue}"/>
+          
+            </h:selectManyCheckbox>
+    
             <h:selectOneRadio value="#{persona.sexo}">
                 <f:selectItem itemValue="hombre" itemLabel="hombre" />
                 <f:selectItem itemValue="Mujer" itemLabel="Mujer" />           
             </h:selectOneRadio>
-            
+      <hr>
             <h:outputLabel value="Con Enum Sexo"/>
             <h:selectOneRadio value="#{persona.sexo}">
                 <f:selectItems value="#{persona.values}"
@@ -38,24 +40,35 @@
                                itemValue="#{state.descripcion}"
                                itemLabel="#{state.descripcion}" />
             </h:selectOneRadio>
-            
+      </hr>
+            <h:outputLabel value="Selecciona una provincia"/>
+            <h:selectOneMenu value="#{persona.provincia}">
+                <f:selectItems value="#{persona.provincias}"
+                               var="p"
+                               itemValue="#{p.descripcion}"
+                               itemLabel="#{p.descripcion}"/>
+            </h:selectOneMenu><br/>
+            <h:outputLabel value="Actividades favoritas"/><br/>
+            <h:selectOneListbox  value="#{actividad.actividadesPreferidas}">
+                <f:selectItems value="#{actividad.listaActividad}"/>            
+            </h:selectOneListbox>
         </h:form>
 
         <hr />
         <h:outputText value="#{'Nombre :'.concat(persona.nombre)}"/><br/>
 
         <h:outputText value="#{'Email :'.concat(persona.email)}"/><br/>
-        <h:outputText value="#{'Sexo '.concat(persona.sexo)}"/><br/>
+        <h:outputText value="#{'Sexo : '.concat(persona.sexo)}"/><br/>
+        <h:outputText value="#{'Provincia : '.concat(persona.provincia)}"/><br/>
+        <h:outputText value="#{'Actividad favorita : '.concat(actividad.actividadesPreferidas)}"/><br/>
+
 
         <hr/>
 
-        <h:outputLabel value="Lista de marcar de teléfonos:" rendered="#{persona.marcaTelefoMovil.stream().count()>0}"/>
-        <ui:repeat value="#{persona.marcaTelefoMovil}" var="mob"><br/>		
+        <h:outputLabel value="Lista de marcar de teléfonos:" rendered="#{marca.mtlf.stream().count()>0}"/>
+        <ui:repeat value="#{marca.mtlf}" var="mob"><br/>		
             #{mob}
-
-
-
-        </ui:repeat>
+        </ui:repeat><br/>
 
     </h:body>
 </html>

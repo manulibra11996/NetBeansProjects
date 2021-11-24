@@ -19,9 +19,9 @@ public class Persona {
 
     private String nombre;
     private String email;
-    private String sexo;
-    private String provincia;
+    private String sexo="Mujer";
 
+    private String[] marcaTelefoMovil;
 
     public String getNombre() {
         return nombre;
@@ -51,7 +51,16 @@ public class Persona {
      * @return the marcaTelefoMovil
      */
     
+    public String[] getMarcaTelefoMovil() {
+        return marcaTelefoMovil;
+    }
 
+    /**
+     * @param marcaTelefoMovil the marcaTelefoMovil to set
+     */
+    public void setMarcaTelefoMovil(String[] marcaTelefoMovil) {
+        this.marcaTelefoMovil = marcaTelefoMovil;
+    }
 
     /**
      * @return the sexo
@@ -66,15 +75,6 @@ public class Persona {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-
-    public String getProvincia() {
-        return provincia;
-    }
-
-    public void setProvincia(String provincia) {
-        this.provincia = provincia;
-    }
-    
     public Sexo[] getValues() {
         return Sexo.values();
     }
@@ -94,9 +94,5 @@ public class Persona {
     }
     
 }
-    public Provincia[] getProvincias(){
-    return Provincia.values();
-    
-    }
 
 }
