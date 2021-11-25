@@ -10,7 +10,7 @@ package com.mycompany.coches;
  * @author manuel
  */
 public enum Color {
-      HOMBRE("hombre"), MUJER("Mujer");
+      NEGRO("Negro"), GRIS("Gris");
 
         private String descripcion;
 

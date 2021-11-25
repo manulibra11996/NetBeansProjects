@@ -10,7 +10,7 @@ package com.mycompany.coches;
  * @author manuel
  */
 public enum Extra {
-      HOMBRE("hombre"), MUJER("Mujer");
+      CLIMATIZADOR("Climatizador"), GPS("GPS"),PARKINGASISTENTE("ParkingAsistente");
 
         private String descripcion;
 

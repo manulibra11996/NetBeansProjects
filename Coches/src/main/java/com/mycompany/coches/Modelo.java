@@ -10,7 +10,7 @@ package com.mycompany.coches;
  * @author manuel
  */
 public enum Modelo {
-      HOMBRE("hombre"), MUJER("Mujer");
+      SUV("SUV"), TODOTERRENO("Todoterreno");
 
         private String descripcion;
 

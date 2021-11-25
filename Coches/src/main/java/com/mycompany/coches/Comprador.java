@@ -10,7 +10,7 @@ package com.mycompany.coches;
  * @author manuel
  */
 public enum Comprador {
-      HOMBRE("hombre"), MUJER("Mujer");
+      PARTICULAR("Particular"), EMPRESA("Empresa");
 
         private String descripcion;
 
