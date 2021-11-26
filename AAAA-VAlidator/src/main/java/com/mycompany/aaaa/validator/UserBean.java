@@ -7,6 +7,10 @@ package com.mycompany.aaaa.validator;
 
 import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 import javax.inject.Named;
 
 /**
@@ -27,4 +31,10 @@ public class UserBean implements Serializable{
     this.username = username;
   }
 
+  public void nombreValidator(FacesContext fc, UIComponent uic, Object t) throws ValidatorException {
+        String nombre = (String) t;
+        if (nombre.length() < 4 || nombre.length() > 8) {
+            throw new ValidatorException(new FacesMessage("No es ok la lonjitud", "has bien las cosas"));
+        }
+    }
 }

@@ -12,8 +12,9 @@
                 Enter UserName : 
                 <h:inputText id="username" value="#{user.username}" 
                              size="20" required="true"
-                             label="UserName" >
-                    <f:validator validatorId="com.mycompany.aaaa.validator.NombreValidator"/>
+                             label="UserName" validator="#{user.nombreValidator}">
+                    <f:validator validatorId="com.mycompany.aaaa.validator.NombreMenorValidator" />
+                    <f:validator validatorId="com.mycompany.aaaa.validator.NombreMayorValidator" />
                 </h:inputText>
                 <h:message for="username" style="color:red" />
             </h:panelGrid>
