@@ -23,5 +23,25 @@
 	</tbody>
 	
 </table>
+<h1>Empleados</h1>
+<table >
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Departamento</th>
+			<th>Sexo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="empleado:${empleados}" />
+			<td th:text="${empleado.nombre}" />
+			<td th:text="${empleado.apellido}" />
+			<td th:text="${empleado.departamento}" />
+			<td th:text="${empleado.sexo==0 ? 'Hombre':'Mujer'}" />
+			
+		</tr>
+	</tbody>
+</table>
 </body>
 </html>
