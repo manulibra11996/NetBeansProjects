@@ -1,4 +1,4 @@
-package com.example;
+package Beans;
 
 public enum Sexo {
 Hombre,Mujer

@@ -1,4 +1,4 @@
-package com.example;
+package Beans;
 
 public enum Departamentos {
 	RRHH,Contabilidad,Programacion
