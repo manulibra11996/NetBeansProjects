@@ -27,6 +27,7 @@
 <table >
 	<thead>
 		<tr>
+			<th>id</th>
 			<th>Nombre</th>
 			<th>Apellido</th>
 			<th>Departamento</th>
@@ -34,12 +35,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr th:each="empleado:${empleados}" />
-			<td th:text="${empleado.nombre}" />
+		<tr th:each="empleado:${empleados}" >
+			<td th:text="${empleado.id}" />
+			<td>
+			<a th:href="@{123/} + ${empleado.nombre}"><p th:text="${empleado.nombre}" /></a>
+			</td>
 			<td th:text="${empleado.apellido}" />
 			<td th:text="${empleado.departamento}" />
-			<td th:text="${empleado.sexo==0 ? 'Hombre':'Mujer'}" />
-			
+			<td th:text="${empleado.sexo==0 ? 'Hombre':'Mujer'}" />	
 		</tr>
 	</tbody>
 </table>
