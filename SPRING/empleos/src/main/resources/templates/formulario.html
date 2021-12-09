@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/guardarPuebas}" method="post">
+
+		<label for="nombre">nombre:</label> 
+		<input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+
+		<label for="fecha">fecha</label> 
+		<input type="date" class="form-control" id="fecha" placeholder="dd-MM-yyyy" name="fecha">
+
+		<button type="submit" id="crear" class="btn btn-primary">crear</button>
+	</form>
+</body>
+</html>

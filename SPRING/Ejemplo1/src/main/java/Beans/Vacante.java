@@ -76,5 +76,4 @@ public class Vacante {
 		this.sexo = sexo;
 	}
 
-
 }

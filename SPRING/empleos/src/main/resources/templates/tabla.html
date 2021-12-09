@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="html://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+</head>
+<body>
+	<img th:src="@{/images/bolsa_dinero.png}" width="136" heigth="136">
+	<h1>Listado de Vacantes</h1>
+	<table class="table table-hover table-bordered">
+		<thead class="table-dark">
+			<tr>
+				<th>Imagen</th>
+				<th>Nombre</th>
+				<th>Descripcion</th>
+				<th>Fecha</th>
+				<th>Salario</th>
+				<th>Detalle</th>
+				<th>Destacado</th>
+				<th>Destacado</th>
+			</tr>
+		</thead>
+
+		<tr th:each="vacante : ${vacantes}">
+		<td><img th:src="@{/images/{imagen} (imagen=${vacante.imagen})}" width="50" heigth="50"></td>S
+			<td th:text="${vacante.nombre}"></td>
+			<td th:text="${vacante.descripcion}"></td>
+			<td th:text="${vacante.fecha}"></td>
+			<td th:text="${vacante.salario}"></td>
+			<td><a th:href="@{'/verDetalle/' + ${vacante.id}}" class="btn btn-info" role="button">ver detalle</a></td>
+			<!-- este es el operador Elvis y es para el contenido -->
+			<td th:text="${vacante.destacado==1 ? 'Si':'No'}">
+			</td>
+			<td>
+			<span th:if="${vacante.destacado==1}"
+				class="badge bg-success">Si</span>
+				 <span
+				th:unless="${vacante.destacado==1}" class="badge bg-danger">No</span>
+			</td>
+
+		</tr>
+
+	</table>
+	<a href="/crearVacante" class="btn btn-info" role="button">crear vacante</a>
+	<a href="/formulario" class="btn btn-info" role="button">Pruebas</a>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+</body>
+</html>
