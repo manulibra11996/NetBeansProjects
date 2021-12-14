@@ -1,12 +1,11 @@
-package com.arelance.biblioteca.modelo;
+package com.example.BibliotecaAutomatica.modelo;
 
 public class Libro {
 	private Integer id;
-	private String ISBN;
+	private String isbn;
 	private String titulo;
 	private Autor autor;
 	
-
 	public Libro() {
 		// TODO Auto-generated constructor stub
 	}
@@ -19,12 +18,12 @@ public class Libro {
 		this.id = id;
 	}
 
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getTitulo() {
@@ -35,6 +34,7 @@ public class Libro {
 		this.titulo = titulo;
 	}
 
+
 	public Autor getAutor() {
 		return autor;
 	}
@@ -43,6 +43,5 @@ public class Libro {
 		this.autor = autor;
 	}
 
-	
 
 }

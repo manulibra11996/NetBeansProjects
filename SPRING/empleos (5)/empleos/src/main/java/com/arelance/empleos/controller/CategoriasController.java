@@ -1,9 +1,10 @@
-package com.arelance.biblioteca.controller;
+package com.arelance.empleos.controller;
 
-
-
-
-/*@Controller
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+@Controller
 @RequestMapping(value = "/categorias")
 public class CategoriasController {
 	@RequestMapping(value="/create",method=RequestMethod.GET)
@@ -19,4 +20,4 @@ public class CategoriasController {
 		return "categorias/listCategorias";
 	}
 
-}*/
+}

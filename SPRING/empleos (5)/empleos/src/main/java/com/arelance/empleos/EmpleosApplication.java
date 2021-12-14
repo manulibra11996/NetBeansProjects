@@ -1,14 +1,13 @@
-package com.arelance.bibioteca;
+package com.arelance.empleos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BibliotecaApplication {
+public class EmpleosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BibliotecaApplication.class, args);
+		SpringApplication.run(EmpleosApplication.class, args);
 	}
 
 }
-

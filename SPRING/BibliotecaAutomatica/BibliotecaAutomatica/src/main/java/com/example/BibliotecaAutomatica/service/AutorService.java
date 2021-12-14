@@ -1,12 +1,12 @@
-package com.arelance.biblioteca.service;
+package com.example.BibliotecaAutomatica.service;
 
 import java.util.LinkedList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.arelance.biblioteca.modelo.Autor;
-import com.arelance.biblioteca.modelo.Nacionalidad;
+import com.example.BibliotecaAutomatica.modelo.Autor;
+import com.example.BibliotecaAutomatica.modelo.Nacionalidad;
 
 @Service
 public class AutorService implements IAutorService {
@@ -43,7 +43,7 @@ public class AutorService implements IAutorService {
 	}
 	
 	@Override
-	public List<Autor> listarLibros() {
+	public List<Autor> listarAutores() {
 		// TODO Auto-generated method stub
 		return autores;
 	}
@@ -53,5 +53,6 @@ public class AutorService implements IAutorService {
 		// TODO Auto-generated method stub
 		return this.autores.add(autor);
 	}
+
 
 }
