@@ -4,7 +4,7 @@ public class Libro {
 	private Integer id;
 	private String isbn;
 	private String titulo;
-	private Autor autor;
+	private String autor;
 	
 	public Libro() {
 		// TODO Auto-generated constructor stub
@@ -35,11 +35,11 @@ public class Libro {
 	}
 
 
-	public Autor getAutor() {
+	public String getAutor() {
 		return autor;
 	}
 
-	public void setAutor(Autor autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
 

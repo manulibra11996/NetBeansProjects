@@ -24,24 +24,7 @@
 		</tr>
 
 	</table>
-	<a >crear Libro</a>
-	<h1>Listado de Autores</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Apellido</th>
-				<th>Nacionalidad</th>
-			</tr>
-		</thead>
-
-		<tr th:each="autor : ${autores}">
-			<td th:text="${autor.nombre}"></td>
-			<td th:text="${autor.apellido}"></td>
-			<td th:text="${autor.nacionalidad}"></td>
-			<td><a >Borrar</a></td>
-		</tr>
-
-	</table>
+	<a href="/libros/insertar">crear Libro</a>
+	
 </body>
 </html>
