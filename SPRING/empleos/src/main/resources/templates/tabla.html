@@ -27,7 +27,7 @@
 		</thead>
 
 		<tr th:each="vacante : ${vacantes}">
-		<td><img th:src="@{/images/{imagen} (imagen=${vacante.imagen})}" width="50" heigth="50"></td>S
+		<td><img th:src="@{/images/{imagen} (imagen=${vacante.imagen})}" width="50" heigth="50"></td>
 			<td th:text="${vacante.nombre}"></td>
 			<td th:text="${vacante.descripcion}"></td>
 			<td th:text="${vacante.fecha}"></td>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="html://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Biblioteca</title>
+</head>
+<body>
+	<h1>Listado de Libros</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ISBM</th>
+				<th>Titulo</th>
+				<th>Autor</th>
+				<th>Borrado</th>
+			</tr>
+		</thead>
+
+		<tr th:each="libro : ${libros}">
+			<td th:text="${libro.ISBM}"></td>
+			<td th:text="${libro.titulo}"></td>
+			<td th:text="${libro.Autor}"></td>
+			<td><a th:href="">Borrar</a></td>
+		</tr>
+
+	</table>
+	<a href="/crearVacante">crear Libro</a>
+</body>
+</html>
