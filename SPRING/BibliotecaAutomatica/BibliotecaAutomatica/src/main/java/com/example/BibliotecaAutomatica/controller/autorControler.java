@@ -10,16 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.BibliotecaAutomatica.modelo.Libro;
+import com.example.BibliotecaAutomatica.modelo.Autor;
 import com.example.BibliotecaAutomatica.service.IAutorService;
-import com.example.BibliotecaAutomatica.service.ILibroService;
 
 @Controller
-@RequestMapping(value="/libros")
-public class librosControler {
-	
-	@Autowired
-	private ILibroService libroService;
+@RequestMapping(value="/autores")
+public class autorControler {
 	
 	@Autowired
 	private IAutorService autorService;
@@ -27,18 +23,18 @@ public class librosControler {
 	@GetMapping("/insertar")
 	public String verDetalle(Model model) {
 		model.addAttribute("autores",autorService.listarAutores());
-		return "libros/insertar";	
+		return "autores/insertar";	
 	}
 	
 	@PostMapping("/guardar")
-	public String guardarVacante(Model model,Libro libro,BindingResult result,RedirectAttributes attributes) {
+	public String guardarVacante(Model model,Autor autor,BindingResult result,RedirectAttributes attributes) {
 		if(result.hasErrors()) {
 			for(ObjectError error:result.getAllErrors()) {
 				System.err.println("Error:"+error.getDefaultMessage());
 			}
-			return "/libros/insertar";
+			return "/autores/insertar";
 		}
-		libroService.altaLibro(libro);
+		autorService.altaAutor(autor);
 		return "redirect:/";
 		
 	}
