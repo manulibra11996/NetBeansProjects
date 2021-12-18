@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Bienvenidos a clase</h1>
+<!--  <h2 th:text="${nombre}">sin nombre</h2> -->
+<ol>
+	<li th:each="ciudad:${ciudades}" th:text="'Nombre ciudad:' + ${#strings.toUpperCase(ciudad)}">
+</ol>
+<table >
+	<thead>
+		<tr>
+			<th>Ciudad</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="ciudad:${ciudades}">
+			<td th:text="${#strings.toUpperCase(ciudad)}">
+		</tr>
+	</tbody>
+	
+</table>
+</body>
+</html>

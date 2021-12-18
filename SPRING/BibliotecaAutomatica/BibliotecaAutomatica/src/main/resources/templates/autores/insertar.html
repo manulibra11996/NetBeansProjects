@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Alta de Autor</h2>
+	<form th:action="@{/autores/guardar}" method="post">
+
+		<label for="nombre">Nombre:</label> 
+		<input type="text" id="nombre" name="nombre" placeholder="nombre"> 
+		<br />
+		<label for="apellido">Apellido:</label>
+		<input type="text" id="apellido" name="apellido" placeholder="apellido">
+		<br />
+		<label for="nacionalidad">Nacionalidad:</label> 
+		<select id="nacionalidad" name="nacionalidad">
+			<option th:each="autor : ${autores}" th:value="${autor.nacionalidad}"
+				th:text="${autor.nacionalidad}"></option>
+		</select>
+		<br />
+		<button type="submit" id="crear">crear</button>
+	</form>
+</body>
+</html>

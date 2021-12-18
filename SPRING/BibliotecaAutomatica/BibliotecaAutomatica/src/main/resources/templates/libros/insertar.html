@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="html://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Alta de libro</h2>
+	<form th:action="@{/libros/guardar}" method="post">
+
+		<label for="isbn">ISBN:</label> 
+		<input type="text" id="isbn" name="isbn" placeholder="isbn"> 
+		<br />
+		<label for="titulo">Titulo:</label>
+		<input type="text" id="titulo" name="titulo" placeholder="titulo">
+		<br />
+		<label for="autor">Autor:</label> 
+		<select id="autor" name="autor">
+			<option th:each="autor : ${autores}" th:value="${autor.nombre}"
+				th:text="${autor.nombre}"></option>
+		</select><a href="/autores/insertar">Insertar un nuevo autor</a>
+		<br />
+		<button type="submit" id="crear">crear</button>
+	</form>
+
+</body>
+</html>

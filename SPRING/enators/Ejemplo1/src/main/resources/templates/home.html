@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Bienvenidos a clase</h1>
+<!--  <h2 th:text="${nombre}">sin nombre</h2> -->
+<ol>
+	<li th:each="ciudad:${ciudades}" th:text="'Nombre ciudad:' + ${#strings.toUpperCase(ciudad)}">
+</ol>
+<table >
+	<thead>
+		<tr>
+			<th>Ciudad</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="ciudad:${ciudades}">
+			<td th:text="${#strings.toUpperCase(ciudad)}">
+		</tr>
+	</tbody>
+	
+</table>
+<h1>Empleados</h1>
+<img th:src="@{/images/bolsa_dinero.png}" width="136" height="136" />
+<table >
+	<thead>
+		<tr>
+			<th>imagen</th>
+			<th>id</th>
+			<th>Nombre</th>
+			<th>Apellido</th>
+			<th>Departamento</th>
+			<th>Sexo</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="empleado:${empleados}" >
+			<td>
+				<img th:src="@{/images/{imagen} (imagen=${empleado.imagen})}" width="50" height="50" />
+			</td>
+			<td th:text="${empleado.id}" />
+			<td>
+			<a th:href="@{/perfil/usuario/informacion/} + ${empleado.nombre}"><p th:text="${empleado.nombre}" /></a>
+			</td>
+			<td th:text="${empleado.apellido}" />
+			<td th:text="${empleado.departamento}" />
+			<td th:text="${empleado.sexo==0 ? 'Hombre':'Mujer'}" />	
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
