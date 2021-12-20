@@ -6,6 +6,8 @@
 package com.mycompany.ejerciciolambdn8.main;
 
 import com.mycompany.ejerciciolambdn8.interfaces.Operacion;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +16,7 @@ import com.mycompany.ejerciciolambdn8.interfaces.Operacion;
 public class main {
 
     private static int operaciones(int x, int y, Operacion operacion) {
-        return operacion.calcular(x, y);
+        return (int) operacion.calcular(x, y);
     }
   
     public static void main(String[] args) {
@@ -22,10 +24,11 @@ public class main {
         Operacion<Integer> Restar = (x, y) -> x - y;
         Operacion<Integer> Multiplicar = (x, y) -> x * y;
         Operacion<Integer> Dividir = (x, y) -> x / y;
+        List<Operacion<Integer>> lista = new LinkedList<>();
+        lista.add(Sumar);
+        lista.add(Restar);
 
-        System.out.println(operaciones(3, 5, Sumar));
-        System.out.println(operaciones(3, 5, Restar));
-        System.out.println(operaciones(3, 5, Multiplicar));
-        System.out.println(operaciones(3, 5, Dividir));
+        lista.forEach(op->System.out.println(op.calcular(5, 3)));
+        
     }
 }
