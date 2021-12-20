@@ -10,6 +10,16 @@ public class Autor {
 	public Autor() {
 		super();
 	}
+	
+
+	public Autor(Integer id, String nombre, String apellido, Nacionalidad nacionalidad) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.nacionalidad = nacionalidad;
+	}
+
 
 	public Integer getId() {
 		return id;

@@ -17,12 +17,9 @@ import com.example.BibliotecaAutomatica.service.IAutorService;
 @RequestMapping(value="/autores")
 public class autorControler {
 	
-	@Autowired
-	private IAutorService autorService;
 	
 	@GetMapping("/insertar")
 	public String verDetalle(Model model) {
-		model.addAttribute("autores",autorService.listarAutores());
 		return "autores/insertar";	
 	}
 	
@@ -34,7 +31,7 @@ public class autorControler {
 			}
 			return "/autores/insertar";
 		}
-		autorService.altaAutor(autor);
+
 		return "redirect:/";
 		
 	}

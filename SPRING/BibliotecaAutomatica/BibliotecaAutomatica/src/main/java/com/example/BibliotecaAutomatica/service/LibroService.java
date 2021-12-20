@@ -5,7 +5,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.example.BibliotecaAutomatica.modelo.Autor;
 import com.example.BibliotecaAutomatica.modelo.Libro;
+import com.example.BibliotecaAutomatica.modelo.Nacionalidad;
 
 @Service
 public class LibroService implements ILibroService{
@@ -26,18 +28,19 @@ public class LibroService implements ILibroService{
 	private List<Libro> getLibros(){
 		this.libros = new LinkedList<>();
 		try {
+
 			Libro v1 = new Libro();
 			v1.setId(1);
 			v1.setIsbn("1257854");
 			v1.setTitulo("La historia interminable");
-			v1.setAutor("AAA");
+			v1.setAutor(new Autor(1, "AAA", "XXX", Nacionalidad.Terricola));
 			libros.add(v1);
 			
 			Libro v2 = new Libro();
 			v2.setId(2);
 			v2.setIsbn("1575");
 			v2.setTitulo("Narnia");
-			v2.setAutor("BBB");
+			v2.setAutor(new Autor(2, "BBB", "YYY", Nacionalidad.Extraterreste));
 			libros.add(v2);
 			
 		}catch (Exception e) {

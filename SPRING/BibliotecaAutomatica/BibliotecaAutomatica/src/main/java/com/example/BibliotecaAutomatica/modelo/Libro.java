@@ -4,10 +4,19 @@ public class Libro {
 	private Integer id;
 	private String isbn;
 	private String titulo;
-	private String autor;
+	private Autor autor;
 	
 	public Libro() {
 		// TODO Auto-generated constructor stub
+	}
+	
+
+	public Libro(Integer id, String isbn, String titulo, Autor autor) {
+		super();
+		this.id = id;
+		this.isbn = isbn;
+		this.titulo = titulo;
+		this.autor = autor;
 	}
 
 	public Integer getId() {
@@ -34,14 +43,12 @@ public class Libro {
 		this.titulo = titulo;
 	}
 
-
-	public String getAutor() {
+	public Autor getAutor() {
 		return autor;
 	}
 
-	public void setAutor(String autor) {
+	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
-
 
 }

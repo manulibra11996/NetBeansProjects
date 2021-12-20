@@ -26,7 +26,7 @@ public class librosControler {
 	
 	@GetMapping("/insertar")
 	public String verDetalle(Model model) {
-		model.addAttribute("autores",autorService.listarAutores());
+		model.addAttribute("autores",autorService.listarAutors());
 		return "libros/insertar";	
 	}
 	

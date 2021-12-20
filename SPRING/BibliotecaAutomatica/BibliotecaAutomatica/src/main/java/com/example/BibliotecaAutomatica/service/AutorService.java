@@ -9,50 +9,60 @@ import com.example.BibliotecaAutomatica.modelo.Autor;
 import com.example.BibliotecaAutomatica.modelo.Nacionalidad;
 
 @Service
-public class AutorService implements IAutorService {
+public class AutorService implements IAutorService{
 
-	private List<Autor> autores;
+	private List<Autor> Autors;
+	
 
 	public AutorService() {
-		autores = getAutor();
+		Autors = getAutors();
+	}
+
+	@Override
+	public List<Autor> listarAutors() {
+		return Autors;
 	}
 	
 	@SuppressWarnings("finally")
-	private List<Autor> getAutor() {
-		this.autores = new LinkedList<>();
+	private List<Autor> getAutors(){
+		this.Autors = new LinkedList<>();
 		try {
-			Autor a1 = new Autor();
-			a1.setId(1);
-			a1.setNombre("AAA");
-			a1.setApellido("XXX");
-			a1.setNacionalidad(Nacionalidad.Terricola);
-			autores.add(a1);
 
-			Autor a2 = new Autor();
-			a2.setId(1);
-			a2.setNombre("BBB");
-			a2.setApellido("YYY");
-			a2.setNacionalidad(Nacionalidad.Extraterreste);
-			autores.add(a2);
 			
-		} catch (Exception e) {
+			
+		}catch (Exception e) {
 			throw e;
-		} finally {
-			return autores;
+		}finally {
+			return Autors;
 		}
 	}
-	
+
 	@Override
-	public List<Autor> listarAutores() {
-		// TODO Auto-generated method stub
-		return autores;
+	public Autor buscarPorID(Integer id) {
+		Autor Autor = null;
+		for (Autor AutorItem : Autors) {
+			if(AutorItem.getId() == id) {
+				Autor = AutorItem;
+				 break;
+			}
+			
+		}
+		return Autor;
 	}
 
 	@Override
 	public boolean altaAutor(Autor autor) {
-		// TODO Auto-generated method stub
-		return this.autores.add(autor);
+		return this.Autors.add(autor);
 	}
 
+	@Override
+	public boolean bajaAutor(Autor autor) {
+		return this.Autors.add(autor);
+	}
+
+	@Override
+	public boolean modificarAutor(Autor autor) {
+		return false;
+	}
 
 }
