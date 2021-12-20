@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function initMap() {
+	  var myLatLng = {lat: -25.363, lng: 131.044};
+
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 4,
+	    center: myLatLng
+	  });
+
+	  var marker = new google.maps.Marker({
+	    position: myLatLng,
+	    map: map,
+	    title: 'Hello World!'
+	  });
+	}</script>
+</head>
+<body>
+<h1>hola mundo</h1>
+ <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSZlArL_JY15qAFCL3hzjyIRTJ_bg0m_w&callback=initMap">
+    </script>
+</body>
+</html>
