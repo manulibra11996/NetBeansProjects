@@ -6,7 +6,8 @@
 </head>
 <body>
 <p>lista users</p>
-
+<a class="btn btn-primary btn-sm" th:href="@{/pageCrearCliente}" 
+th:text="'Nuevo cliente'" title="Crear nuevo registro"></a>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -26,6 +27,13 @@
     <td th:text="${user.fechanacimiento}"></td>
     <td th:text="${user.telefono}"></td>
         <td th:text="${user.email}"></td>
+        
+        <td ><a class="btn btn-success btn-sm" th:href="@{/edit/} + ${user.idCliente}" 
+th:text="'Editar'" title="Editar"></a>
+</td>
+        <td><a class="btn btn-danger btn-sm" th:href="@{/delete/} + ${user.idCliente}" 
+th:text="'Eliminar'" title="Eliminar" onclick="return confirm('Borrar o no borrar, esa es la ?')"></a>
+</td>
   </tbody>
 </table>
 </body>
