@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<p>lista opinion</p>
+	<a class="btn btn-primary btn-sm" th:href="@{/pageCrearOpinion}"
+		th:text="'Nueva Opinion'" title="Crear nueva opinion"></a>
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th scope="col">Id</th>
+				<th scope="col">titulo</th>
+				<th scope="col">Descripcion</th>
+				<th scope="col">estrela</th>
+				<th scope="col">contra opinion</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="opinion:${listaopinion}">
+				<td th:text="${opinion.idOpinion}"></td>
+				<td th:text="${opinion.tituloOpinion}"></td>
+				<td th:text="${opinion.textoOpinion}"></td>
+				<td th:text="${opinion.estrellas}"></td>
+				<td th:text="${opinion.contraOpinion}"></td>
+
+				<td><a class="btn btn-success btn-sm"
+					th:href="@{/editOpinion/} + ${opinion.idOpinion}"
+					th:text="'Editar'" title="Editar"></a></td>
+				<td><a class="btn btn-danger btn-sm"
+					th:href="@{/deleteOpinion/} + ${opinion.idOpinion}"
+					th:text="'Eliminar'" title="Eliminar"
+					onclick="return confirm('Borrar o no borrar, esa es la cuestion')"></a>
+				</td>
+		</tbody>
+	</table>
+</body>
+
+</body>
+</html>

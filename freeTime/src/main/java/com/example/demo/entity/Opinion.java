@@ -20,16 +20,16 @@ public class Opinion implements Serializable{
 	@Column(name="idopinion")
 	private Long idOpinion;
 	
-	@Column(name="TituloOpinion")
+	@Column(name="titulo_Opinion")
 	private String tituloOpinion;
 	
-	@Column(name = "TextoOpinion")
+	@Column(name = "texto_Opinion")
 	private String textoOpinion;
 
 	@Column(name = "Estrellas")
 	private Integer estrellas;
 	
-	@Column(name = "ContraOpinion")
+	@Column(name = "contra_Opinion")
 	private String contraOpinion;
 
 	public Long getIdOpinion() {

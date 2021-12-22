@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="html://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<form th:action="@{/guardar}" method="post" th:object="${vacante}" enctype="multipart/form-data">
+	
+		<div th:if="${#fields.hasErrors('*')}" class="alert-danger"
+			role="alert">
+			Lista de Errores:
+			<ul>
+				<li th:each="err : ${#fields.errors('*')}" th:text="${err}" />
+			</ul>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="nombre">nombre:</label> <input type="text"
+		class="form-control" id="nombre" name="nombre" th:field="*{nombre}" placeholder="nombre">
+			</div>
+			<div class="form-group col-md-6">
+				<label for="descripcion">descripción</label> 
+				<input type="text" class="form-control" id="descripcion" th:field="*{descripcion}" name="descripcion" placeholder="descripción">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="fecha">fecha</label> <input type="date"
+				class="form-control" id="fecha" th:field="*{fecha}" name="fecha" placeholder="dd-MM-yyyy"
+				>
+		</div>
+		<div class="form-group">
+			<label for="salario">Salario</label> <input type="text" min="0"
+				class="form-control" id="salario" th:field="*{salario}" name="salario">
+		</div>
+		<div class="form-group">
+			<label for="archivoImagen">Archivo Imagen</label> <input type="file" 
+				class="form-control" id="archivoImagen" name="archivoImagen">
+		</div>
+		<div class="form-row">
+
+			<div class="form-group col-md-4">
+				<label for="destacado">Destacado</label> <select id="destacado" th:field="*{destacado}"
+					class="form-control" name="destacado">
+				
+					<option value="0">SI</option>
+					<option value="1" SELECTED>NO</option>
+				</select>
+			</div>
+
+		</div>
+		<button type="submit" id="crear" class="btn btn-primary">crear</button>
+	</form>
+	</form>
+</body>
+</html>

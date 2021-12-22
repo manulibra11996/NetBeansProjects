@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/guardarOpinion}" th:object="${opinion}"
+		method="POST">
+		<div class="form-group row">
+			<input type="hidden" th:field="*{idOpinion}"> <label
+				class="col-md-2" for="titulo">Titulo:</label> <input type="text"
+				th:field="*{tituloOpinion}"
+				class="form-control form-control-sm col-md-6" id="tituloOpinion"
+				placeholder="Titulo de la opinion"> <small></small>
+		</div>
+		<div class="form-group row">
+			<label class="col-md-2" for="texto">Descripcion:</label> <input type="text"
+				th:field="*{textoOpinion}"
+				class="form-control form-control-sm col-md-6" id="textoOpinion"
+				placeholder="Descripcion de la opinion"> <small></small>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-2" for="estrellas">estrellas:</label> <input
+				type="number" th:field="*{estrellas}"
+				class="form-control form-control-sm col-md-6" id="estrellas"
+				placeholder="Estrellas que le asignas"> <small></small>
+		</div>
+		<div class="form-group row">
+			<label class="col-md-2" for="contra">Contra opinion:</label> <input
+				type="text" th:field="*{contraOpinion}"
+				class="form-control form-control-sm col-md-6" id="contraOpinion"
+				placeholder="Contra opinion"> <small></small>
+		</div>
+
+		<div class="card-footer bg-dark">
+
+			<input type="submit" class="btn btn-primary btn-sm" value="Guardar" />
+		</div>
+
+	</form>
+</body>
+</html>
